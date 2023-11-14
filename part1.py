@@ -15,7 +15,7 @@ with open("data/dblp.txt") as f:
                     databases[i][j] = col[len(identify_string[j]):]
                     break
 
-databases=[data for data in databases if data[-1]!='']
+databases=[data for data in databases if data[-1]!=''] #kaki kaki
 databases = [data for data in databases if (
     (int(data[-1]) >= 1995) and (int(data[-1]) <= 2004) and (('SIGMOD' in data[-2]) or ('VLDB' in data[-2])))]
 
