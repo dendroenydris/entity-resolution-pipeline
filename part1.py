@@ -1,4 +1,4 @@
-import numpy as np
+
 databases = []
 
 def prepare(file_name):
