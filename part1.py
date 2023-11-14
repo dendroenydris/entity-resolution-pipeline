@@ -30,5 +30,4 @@ def prepare(file_name):
                 line = line+col+'; '
             f.write(line+'\n')
 
-for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
-    prepare("data/dblp.txt")
+prepare("data/citation-acm-v8.txt")
