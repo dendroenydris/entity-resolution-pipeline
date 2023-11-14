@@ -3,7 +3,7 @@ databases = []
 
 def prepare(file_name):
     # paper ID, paper title, author names, publication venue, and year of publication
-    with open(file_name, encoding="utf-8") as f:
+    with open(file_name) as f:
         list_of_files = f.read().split("\n\n")
         databases = [['' for j in range(5)] for i in range(len(list_of_files))]
 
@@ -20,11 +20,14 @@ def prepare(file_name):
     databases = [data for data in databases if (
         (int(data[-1]) >= 1995) and (int(data[-1]) <= 2004) and (('SIGMOD' in data[-2]) or ('VLDB' in data[-2])))]
 
-    with open(file_name[:-4] + "_1995_2004.csv", 'a', encoding="utf-8") as f:
-        f.write("paper ID; paper title; author names; publication venue; year of publication\n")
-        for cols in databases:
-            line = "; ".join(cols)  # Joining columns with a semicolon
-            f.write(line + '\n')
 
+    with open(file_name[:-4]+"_1995_2004.csv", 'a') as f:
+        f.write(
+            "paper ID; paper title; author names; publication venue; year of publication,\n")
+        for cols in databases:
+            line = ""
+            for col in cols:
+                line = line+col+'; '
+            f.write(line+'\n')
 
 prepare("data/citation-acm-v8.txt")
