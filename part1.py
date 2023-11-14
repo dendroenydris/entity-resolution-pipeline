@@ -23,7 +23,7 @@ def prepare(file_name):
 
     with open(file_name[:-4]+"_1995_2004.csv", 'a') as f:
         f.write(
-            "paper ID, paper title, author names, publication venue, year of publication,\n")
+            "paper ID; paper title; author names; publication venue; year of publication,\n")
         for cols in databases:
             line = ""
             for col in cols:
