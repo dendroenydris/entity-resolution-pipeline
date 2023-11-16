@@ -1,6 +1,6 @@
 ## DIA project
 
-### Part 1 - Data Acquisition and Preparation
+### Part 1 - Data Acquisition and Preparation !
 
 <p> In this part we obtain the research publication datasets. The datasets are in text format.  
 As a prerequisite for <strong>Entity Resolution and model trainin</strong> </p>
