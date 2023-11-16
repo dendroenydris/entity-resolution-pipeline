@@ -13,6 +13,6 @@ We have created a dataset following:
 > 
 > - VLDB and SIGMOD venues.
 
-Using Pytho, we achived resullts of two CSV fills, which would be used as a future datasets. 
+Using Python, we achived resullts of two CSV fills, which would be used as a future datasets. 
 
 <img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo - Download Image Now - Lemon  - Fruit, Squeezing, Crushed - iStock" width="136" data-align="right">
