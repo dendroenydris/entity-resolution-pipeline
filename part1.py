@@ -1,5 +1,6 @@
 
 databases = []
+columns = ["paper ID", "paper title", "author names", "publication venue", "year of publication"]
 
 def prepare(file_name):
 
