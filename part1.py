@@ -33,13 +33,13 @@ def prepare(file_name):
     # Write the filtered data to a CSV file
     with open(file_name[:-4]+"_1995_2004.csv", 'w') as f:
         f.write(
-            "paper ID; paper title; author names; publication venue; year of publication;\n")
+            "paper ID;;paper title;;author names;;publication venue;;year of publication;;\n")
         for cols in databases:
             line = ""
             for col in cols:
-                line = line+col+'; '
+                line = line+col+';;'
             f.write(line+'\n')
 
 # Process the function on our two data files !
 for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
-    prepare("data/dblp.txt")
+    prepare(data)
