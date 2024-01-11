@@ -62,7 +62,7 @@ def create_jaccard_baseline():
     return merged_df, execution_time
 
 def cosion_similarity():
-    return 0
+    return 1
 
 def create_YearComparison(df1, df2, similarity_threshold):
     start_time = time.time()
