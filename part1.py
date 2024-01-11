@@ -1,4 +1,3 @@
-
 databases = []
 columns = ["paper ID", "paper title", "author names", "publication venue", "year of publication"]
 
@@ -40,6 +39,7 @@ def prepare(file_name):
                 line = line+col+';;'
             f.write(line+'\n')
 
-# Process the function on our two data files !
-for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
-    prepare(data)
+if __name__ == "__main__":
+    # Process the function on our two data files !
+    for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
+        prepare(data)

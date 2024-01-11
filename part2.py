@@ -2,9 +2,6 @@ import os
 import pandas as pd
 import time
 
-df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";;", engine="python")
-df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";;", engine="python")
-similarity_threshold = 0.5
 
 # Define a Jaccard similarity function
 def jaccard_similarity(set1, set2):
@@ -15,6 +12,7 @@ def jaccard_similarity(set1, set2):
         return 0.0  # to handle the case when both sets are empty
 
     return intersection_size / union_size
+
 
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row):
@@ -28,7 +26,7 @@ def calculate_jaccard_similarity(row):
     return jaccard_similarity(set1, set2)
 
 
-def create_jaccard_baseline():
+def create_jaccard_baseline(d1, d2):
     start_time = time.time()
     # Add a common key to perform a cross join product
     df1["key"] = 1
@@ -56,13 +54,14 @@ def create_jaccard_baseline():
     file_name = f"Jaccard_baseline_{similarity_threshold}.csv"
     # Write matched pairs to a new CSV file
     merged_df.to_csv(file_name, index=False)
-
     end_time = time.time()
     execution_time = end_time - start_time
     return merged_df, execution_time
 
+
 def cosion_similarity():
     return 0
+
 
 def create_YearComparison(df1, df2, similarity_threshold):
     start_time = time.time()
@@ -110,7 +109,7 @@ def create_YearComparison(df1, df2, similarity_threshold):
 
     file_name = f"MatchedEntities_YearJaccard_{similarity_threshold}.csv"
     # Write matched pairs to a new CSV file
-    result_df.to_csv(file_name, index=False)
+    result_df.to_csv("results/" + file_name, index=False)
 
     end_time = time.time()
     execution_time = end_time - start_time
@@ -159,11 +158,11 @@ def create_TwoYearComparison(df1, df2, similarity_threshold):
         + result_df["paper title_df1"]
         + result_df["paper title_df2"]
     )
-    
+
     # Write matched pairs to a new CSV file
     file_name = f"MatchedEntities_TwoYearJaccard_{similarity_threshold}.csv"
     # Write matched pairs to a new CSV file
-    result_df.to_csv(file_name, index=False)
+    result_df.to_csv("results/" + file_name, index=False)
 
     end_time = time.time()
     execution_time = end_time - start_time
@@ -223,19 +222,23 @@ def calculate_confusion_matrix(baseline_df, blocked_df, blocking_method):
     )
 
     results.to_csv(
-        "method_results.csv",
+        "results/method_results.csv",
         mode="a",
         header=not os.path.exists("method_results.csv"),
         index=False,
     )
 
 
-# Example usage
-baseline_df, baseline_execution_time = create_jaccard_baseline()
-# blocked_df, blocked_execution_time = create_YearComparison(df1,df2,similarity_threshold)
-blocked_df, blocked_execution_time = create_TwoYearComparison(
-    df1, df2, similarity_threshold
-)
-
-# Run the method and record results
-calculate_confusion_matrix(baseline_df, blocked_df, "TwoYear")
+if __name__ == "__main__":
+    # import database
+    df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";;", engine="python")
+    df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";;", engine="python")
+    similarity_threshold = 0.5
+    # Example usage
+    baseline_df, baseline_execution_time = create_jaccard_baseline(df1, df2)
+    # blocked_df, blocked_execution_time = create_YearComparison(df1,df2,similarity_threshold)
+    blocked_df, blocked_execution_time = create_TwoYearComparison(
+        df1, df2, similarity_threshold
+    )
+    # Run the method and record results
+    calculate_confusion_matrix(baseline_df, blocked_df, "TwoYear")
