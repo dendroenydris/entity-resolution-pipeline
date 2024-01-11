@@ -60,7 +60,7 @@ def create_jaccard_baseline(d1, d2):
 
 
 def cosion_similarity():
-    return 0
+    return 1
 
 
 def create_YearComparison(df1, df2, similarity_threshold):
