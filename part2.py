@@ -26,7 +26,7 @@ def calculate_jaccard_similarity(row):
     return jaccard_similarity(set1, set2)
 
 
-def create_jaccard_baseline(d1, d2):
+def create_jaccard_baseline(df1, df2, similarity_threshold):
     start_time = time.time()
     # Add a common key to perform a cross join product
     df1["key"] = 1
@@ -53,14 +53,14 @@ def create_jaccard_baseline(d1, d2):
     # Construct the new file name with the variable
     file_name = f"Jaccard_baseline_{similarity_threshold}.csv"
     # Write matched pairs to a new CSV file
-    merged_df.to_csv("results/"+file_name, index=False)
+    merged_df.to_csv(file_name, index=False)
     end_time = time.time()
     execution_time = end_time - start_time
     return merged_df, execution_time
 
 
-def cosion_similarity():
-    return 1
+def create_cosine_baseline(df1, df2, similarity_threshold):
+    return 1, 2  # Should return the merged_df and execution time, like in jaccard
 
 
 def create_YearComparison(df1, df2, similarity_threshold):
@@ -169,7 +169,7 @@ def create_TwoYearComparison(df1, df2, similarity_threshold):
 
     return result_df, execution_time
 # Function for blocking by first letter of title
-def create_LetterComparison(df1, df2, similarity_threshold):
+def create_FirstLetterComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Drop rows with NaN values in text columns
@@ -207,7 +207,7 @@ def create_LetterComparison(df1, df2, similarity_threshold):
     )
 
     # Write matched pairs to a new CSV file
-    result_df.to_csv("results/"+"MatchedEntities_LetterJaccard.csv", index=False)
+    result_df.to_csv("MatchedEntities_LetterJaccard.csv", index=False)
 
     end_time = time.time()
     execution_time = end_time - start_time
@@ -215,7 +215,7 @@ def create_LetterComparison(df1, df2, similarity_threshold):
     return result_df, execution_time
 
 
-def create_numAuthorsBlocking(df1, df2):
+def create_numAuthorsComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Drop rows with NaN values in author names columns
@@ -262,70 +262,12 @@ def create_numAuthorsBlocking(df1, df2):
     )
 
     # Write matched pairs to a new CSV file
-    result_df.to_csv("results/"+"MatchedEntities_numAuthors.csv", index=False)
+    result_df.to_csv("MatchedEntities_numAuthors.csv", index=False)
 
     end_time = time.time()
     execution_time = end_time - start_time
 
     return result_df, execution_time
-
-# def calculate_confusion_matrix(baseline_df, blocked_df, blocking_method):
-#     # Check the actual column names in your DataFrames
-#
-#     # Print the column names to identify the correct common colu
-#     # result = pd.merge(left, right, on=["a", "b"])
-#     inner_join = pd.merge(baseline_df, blocked_df, how="inner", on=["ID"])
-#     inner_no_duplicates = inner_join.drop_duplicates(subset=["ID"])
-#
-#     baseline_no_duplicates = baseline_df.drop_duplicates(subset=["ID"])
-#     tp = inner_no_duplicates.shape[0]
-#
-#     fn = baseline_no_duplicates.shape[0] - tp
-#
-#     blocked_no_duplicates = blocked_df.drop_duplicates(subset=["ID"])
-#     right_join = pd.merge(
-#         baseline_no_duplicates, blocked_no_duplicates, how="right", on=["ID"]
-#     )
-#     fp = right_join.shape[0] - inner_no_duplicates.shape[0]
-#
-#     # Set index=False to exclude the index column in the CSV file
-#
-#     print("tp", tp)
-#     print("fn", fn)
-#     print("fp", fp)
-#
-#     # Calculate precision, recall, and F1 score
-#     precision_baseline = tp / (tp + fp)
-#     recall_baseline = tp / (tp + fn)
-#     f1_baseline = (
-#         2
-#         * (precision_baseline * recall_baseline)
-#         / (precision_baseline + recall_baseline)
-#         if precision_baseline + recall_baseline > 0
-#         else 0
-#     )
-#
-#     # Record results to a CSV file
-#     results = pd.DataFrame(
-#         {
-#             "Blocking Method": [str(blocking_method)],
-#             "Matching Method (Baseline)": ["Jaccard Similarity"],
-#             "Similarity threshold": [similarity_threshold],
-#             "Baseline pairs": [baseline_no_duplicates.shape[0]],
-#             "Blocked pairs": [blocked_no_duplicates.shape[0]],
-#             "Precision ": [precision_baseline],
-#             "Recall ": [recall_baseline],
-#             "F1 Score ": [f1_baseline],
-#             "Blocking Execution Time ": [blocked_execution_time],
-#         }
-#     )
-#
-#     results.to_csv(
-#         "results/method_results.csv",
-#         mode="a",
-#         header=not os.path.exists("method_results.csv"),
-#         index=False,
-#     )
 
 def calculate_confusion_matrix(baseline_df, blocked_df):
     inner_join = pd.merge(baseline_df, blocked_df, how="inner", on=["ID"])
@@ -350,56 +292,69 @@ def calculate_confusion_matrix(baseline_df, blocked_df):
     return tp, fn, fp, precision, recall, f1
 
 
-def run_all_blocking_methods(df1, df2, similarity_threshold):
-    baseline_df, baseline_execution_time = create_jaccard_baseline(df1, df2)
+def run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods):
+    # Create an empty DataFrame to store the results
+    results_list = []
 
-    # Run Year Comparison
-    year_df, year_execution_time = create_YearComparison(df1, df2, similarity_threshold)
-    tp_year, fn_year, fp_year, precision_year, recall_year, f1_year = calculate_confusion_matrix(baseline_df, year_df)
+    # Iterate through each baseline configuration
+    for baseline_config in baseline_configurations:
+        # Extract similarity threshold from the current baseline configuration
+        similarity_threshold = baseline_config["threshold"]
 
-    # Run TwoYear Comparison
-    two_year_df, two_year_execution_time = create_TwoYearComparison(df1, df2, similarity_threshold)
-    tp_two_year, fn_two_year, fp_two_year, precision_two_year, recall_two_year, f1_two_year = calculate_confusion_matrix(baseline_df, two_year_df)
+        # Calculate baseline
+        baseline_df, baseline_execution_time = calculate_baseline(df1, df2, baseline_config)
 
-    # Run Letter Comparison
-    letter_df, letter_execution_time = create_LetterComparison(df1, df2, similarity_threshold)
-    tp_letter, fn_letter, fp_letter, precision_letter, recall_letter, f1_letter = calculate_confusion_matrix(baseline_df, letter_df)
+        # Iterate through each blocking method
+        for blocking_method in blocking_methods:
+            # Dynamically call the blocking method function
+            blocking_function = globals()[f"create_{blocking_method}Comparison"]
+            blocking_df, blocking_execution_time = blocking_function(df1, df2, similarity_threshold)
 
-    # Run Coauthor Comparison
-    coauthor_df, coauthor_execution_time = create_numAuthorsBlocking(df1, df2)
-    tp_coauthor, fn_coauthor, fp_coauthor, precision_coauthor, recall_coauthor, f1_coauthor = calculate_confusion_matrix(
-        baseline_df, coauthor_df)
+            # Calculate confusion matrix
+            tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(baseline_df, blocking_df)
+
+            # Append results to the list
+            results_list.append({
+                "Baseline Method": baseline_config["method"],
+                "Similarity Threshold": similarity_threshold,
+                "Blocking Method": blocking_method,
+                "Execution Time": blocking_execution_time,
+                "Pairs Count": len(blocking_df),
+                "TP": tp,
+                "FN": fn,
+                "FP": fp,
+                "Precision": precision,
+                "Recall": recall,
+                "F1 Score": f1,
+            })
+
+    # Convert the results list to a DataFrame
+    results = pd.DataFrame(results_list)
 
     # Write results to a single CSV file
-    results = pd.DataFrame({
-        "Blocking Method": ["Year", "TwoYear", "FirstLetter", "numAuthors"],
-        "Similarity Threshold": [similarity_threshold] * 4,
-        "Execution Time": [year_execution_time, two_year_execution_time, letter_execution_time,
-                           coauthor_execution_time],
-        "Pairs Count": [len(year_df), len(two_year_df), len(letter_df), len(coauthor_df)],
-        "TP": [tp_year, tp_two_year, tp_letter, tp_coauthor],
-        "FN": [fn_year, fn_two_year, fn_letter, fn_coauthor],
-        "FP": [fp_year, fp_two_year, fp_letter, fp_coauthor],
-        "Precision": [precision_year, precision_two_year, precision_letter, precision_coauthor],
-        "Recall": [recall_year, recall_two_year, recall_letter, recall_coauthor],
-        "F1 Score": [f1_year, f1_two_year, f1_letter, f1_coauthor],
-    })
-
     results.to_csv("results/all_blocking_methods_results.csv", index=False)
+
+def calculate_baseline(df1, df2, baseline_config):
+    if baseline_config["method"] == "Jaccard":
+        return create_jaccard_baseline(df1, df2, baseline_config["threshold"])
+    elif baseline_config["method"] == "Cosine":
+        return create_cosine_baseline(df1, df2, baseline_config["threshold"])
+    # Add more baseline methods as needed
 
 if __name__ == "__main__":
     # import database
     df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";;", engine="python")
     df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";;", engine="python")
-    similarity_threshold = 0.5
-    # # Example usage
-    # baseline_df, baseline_execution_time = create_jaccard_baseline(df1, df2)
-    # # blocked_df, blocked_execution_time = create_YearComparison(df1,df2,similarity_threshold)
-    # blocked_df, blocked_execution_time = create_TwoYearComparison(
-    #     df1, df2, similarity_threshold
-    # )
-    # # Run the method and record results
-    # calculate_confusion_matrix(baseline_df, blocked_df, "TwoYear")
 
-    # Run all blocking methods and record results
-    run_all_blocking_methods(df1, df2, similarity_threshold)
+    baseline_configurations = [
+        {"method": "Jaccard", "threshold": 0.7},
+        {"method": "Jaccard", "threshold": 0.5},
+        #{"method": "Cosine", "threshold": 0.5},  # comment to be removed when Cosine baseline is written.
+        # Add more baseline configurations as needed
+    ]
+
+    # Define blocking methods
+    blocking_methods = ["Year", "TwoYear", "FirstLetter", "numAuthors"]
+
+    # Run all blocking methods for each baseline and record results
+    run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods)
