@@ -18,9 +18,13 @@ def jaccard_similarity(set1, set2):
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row):
     # Convert the values to sets and calculate Jaccard similarity
-    set1 = set(row["paper title_df1"].split())
-    set2 = set(row["paper title_df2"].split())
-    return jaccard_similarity(set1, set2)
+    L = ["paper title", "author names", "publication venue", "year of publication"]
+    value = 0
+    for char in L:
+        set1 = set(row[char + "_df1"].split())
+        set2 = set(row[char + "_df2"].split())
+        value += jaccard_similarity(set1, set2)
+    return value / len(L)
 
 
 def create_jaccard_baseline(df1, df2, similarity_threshold):
@@ -372,9 +376,9 @@ def calculate_baseline(df1, df2, baseline_config):
 if __name__ == "__main__":
     # import database
     df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";;", engine="python")
-    df1['index'] = np.arange(len(df1))
+    df1["index"] = np.arange(len(df1))
     df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";;", engine="python")
-    df2['index'] = np.arange(len(df2))+len(df1)
+    df2["index"] = np.arange(len(df2)) + len(df1)
 
     baseline_configurations = [
         {"method": "Jaccard", "threshold": 0.7},

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def dfs(graph, node, value, visited, L_propa):
     # Depth-first search function to traverse the graph and update values
     value = L_propa[node] if value < L_propa[node] else value
@@ -13,21 +14,23 @@ def dfs(graph, node, value, visited, L_propa):
             value, visited = dfs(graph, i, value, visited, L_propa)
     return value, visited
 
+
 def propagate(begin_idx, Ladj, L_propa):
     # Function to propagate values through the graph
     L_propa_copy = L_propa.copy()
     visited = [False] * len(Ladj)
-    
+
     # Depth traversal
     value, visited = dfs(Ladj, begin_idx, begin_idx + 1, visited, L_propa)
     L_propa[visited] = value
     return L_propa
 
+
 def clustering_basic(result_df, df1, df2):
     # Basic clustering function
     num_nodes = len(df1) + len(df2)
     Ladj = np.zeros(shape=(num_nodes, num_nodes))
-    
+
     # Construct a graph
     for _, row in result_df.iterrows():
         idx1, idx2 = row["index_df1"], row["index_df2"]
@@ -48,12 +51,15 @@ def clustering_basic(result_df, df1, df2):
     )
     return combined_df
 
+
 def run_clustering(result_df, df1, df2, clustering_function):
     # Run the clustering function and save the results to a CSV file
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
     combined_df = clustering_function(result_df, df1, df2)
     combined_df.to_csv("results/clustering_results.csv", index=None)
+    print("%.2f entities are delated" % (1 - len(combined_df) / (len(df1) + len(df2))))
+
 
 if __name__ == "__main__":
     # Read data and run clustering with the basic function

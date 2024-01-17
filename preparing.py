@@ -22,7 +22,9 @@ def prepare_data(file_name):
             for col in list_of_files[i]:
                 for j in range(len(identify_string)):
                     if (col[:len(identify_string[j])] == identify_string[j]):
-                        databases[i][j] = col[len(identify_string[j]):]
+                        # Lowercase all characters and eliminate special characters
+                        filtered_string = ''.join([char for char in col[len(identify_string[j]):].lower() if char.isalpha()])
+                        databases[i][j] = filtered_string
                         break
 
     # Filter the data based on specified criteria
