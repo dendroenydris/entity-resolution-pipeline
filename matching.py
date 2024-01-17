@@ -17,10 +17,6 @@ def jaccard_similarity(set1, set2):
 
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row):
-    # Print the values in 'paper title_df1' and 'paper title_df2'
-    # print("Paper title_df1:", row['paper title_df1'])
-    # print("Paper title_df2:", row['paper title_df2'])
-
     # Convert the values to sets and calculate Jaccard similarity
     set1 = set(row["paper title_df1"].split())
     set2 = set(row["paper title_df2"].split())

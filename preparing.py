@@ -1,7 +1,8 @@
+import pandas as pd
 databases = []
 columns = ["paper ID", "paper title", "author names", "publication venue", "year of publication"]
 
-def prepare(file_name):
+def prepare_data(file_name):
 
     # paper ID, paper title, author names, publication venue, and year of publication
     with open(file_name) as f:
@@ -42,4 +43,4 @@ def prepare(file_name):
 if __name__ == "__main__":
     # Process the function on our two data files !
     for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
-        prepare(data)
+        prepare_data(data)
