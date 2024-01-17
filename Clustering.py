@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from preparing import columns
 
 
 def dfs(graph, node, value, visited, L_propa):
@@ -57,13 +58,13 @@ def run_clustering(result_df, df1, df2, clustering_function):
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
     combined_df = clustering_function(result_df, df1, df2)
-    combined_df.to_csv("results/clustering_results.csv", index=None)
+    combined_df[columns].to_csv("results/clustering_results.csv", index=None)
     print("%.2f entities are delated" % (1 - len(combined_df) / (len(df1) + len(df2))))
 
 
 if __name__ == "__main__":
     # Read data and run clustering with the basic function
-    df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";;", engine="python")
-    df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";;", engine="python")
+    df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";", engine="python")
+    df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";", engine="python")
     result_df = pd.read_csv("results/MatchedEntities_YearJaccard_0.5.csv")
     run_clustering(result_df, df1, df2, clustering_basic)
