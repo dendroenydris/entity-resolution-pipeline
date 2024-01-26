@@ -1,0 +1,2401 @@
+
+#*An initial study of overheads of eddies.
+#@Amol Deshpande
+#t2004
+#cSIGMOD Record
+#index53e9a515b7602d9702e350a0
+#%53e9aa57b7602d97033c7c24
+
+#*South Eastern Subcommittee.
+#@Gene Raichelson
+#t1971
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9981db7602d970203cbec
+
+#*On energy management, load balancing and replication.
+#@Willis Lang, Jignesh M. Patel, Jeffrey F. Naughton
+#t2009
+#cSIGMOD Record
+#index53e9a4ceb7602d9702debbcc
+#%53e9b4e4b7602d970400b223
+#%53e9b33eb7602d9703e15d04
+#%53e9b38fb7602d9703e72260
+#%53e9af94b7602d97039df9ab
+#%53e9b35ab7602d9703e364dd
+#%53e9b9cdb7602d97045c29a0
+#%53e9aff5b7602d9703a4e532
+
+#*Computing Transitive Closures of Multilevel Relations.
+#@Bhavani M. Thuraisingham
+#t1990
+#cSIGMOD Record
+#index53e99a04b7602d970224e5f7
+#%53e9b79fb7602d9704345481
+#%53e9b775b7602d970431d13e
+#%53e9b1c2b7602d9703c50d8d
+#%53e99cc2b7602d970257756b
+
+#*Second workshop on very large digital libraries: in conjunction with the european conference on digital libraries Corfu, Greece, 2 october 2009.
+#@Paolo Manghi, Pasquale Pagano, Yannis E. Ioannidis
+#t2009
+#cSIGMOD Record
+#index53e99e45b7602d970270b589
+
+#*Editor's Notes.
+#@Thomas J. Cook
+#t1983
+#cSIGMOD Record
+#index53e99800b7602d970200b620
+
+#*Affiliation analysis of database publications.
+#@David Aumüller, Erhard Rahm
+#t2011
+#cSIGMOD Record
+#index53e9ab20b7602d97034a8f2b
+#%53e99d29b7602d97025e1547
+#%53e9afdab7602d9703a2b275
+#%53e9ac28b7602d97035e8bbc
+#%53e9b8dbb7602d97044bf2b3
+
+#*Engineering Federated Information Systems: Report of EFIS '99 Workshop.
+#@Stefan Conrad, Wilhelm Hasselbring, Uwe Hohenstein, Ralf-Detlef Kutsche, Mark Roantree, Gunter Saake, Fèlix Saltor
+#t1999
+#cSIGMOD Record
+#index53e9b275b7602d9703d174f6
+
+#*Information Finding in a Digital Library: The Stanford Perspective.
+#@Tak W. Yan, Hector Garcia-Molina
+#t1995
+#cSIGMOD Record
+#index53e9a5beb7602d9702eea180
+#%53e99b78b7602d9702421502
+#%53e99f03b7602d97027d1bef
+#%53e9a216b7602d9702b17593
+#%53e9b7e0b7602d970438df55
+#%53e9aaa2b7602d970341a4bd
+#%53e9bdc7b7602d9704a79075
+#%53e9bc79b7602d97048f6349
+#%53e9979bb7602d9701f66d45
+#%53e9b5f3b7602d97041469e4
+#%53e99f02b7602d97027cfa07
+#%53e9abb9b7602d9703567aca
+#%53e9ab5ab7602d97034f395d
+#%53e9a343b7602d9702c4f5e3
+#%53e9bd92b7602d9704a39044
+#%53e9b708b7602d97042a14f1
+#%53e9b95bb7602d97045473c8
+#%53e99ea7b7602d97027701a1
+#%53e9b2d7b7602d9703d88dd7
+
+#*What is a Data Base (Tutorial from ACM 1972).
+#@John K. Lyon
+#t1973
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9ad33b7602d9703713f2b
+
+#*Editor's Notes.
+#@Jennifer Widom
+#t1995
+#cSIGMOD Record
+#index53e99800b7602d970200b618
+
+#*Report on the 5th international workshop on the design and management of data warehouses (DMDW'03).
+#@Hans-Joachim Lenz, Panos Vassiliadis, Manfred A. Jeusfeld, Martin Staudt
+#t2003
+#cSIGMOD Record
+#index53e9a718b7602d970304d814
+
+#*Standards.
+#@Milt Bryce
+#t1982
+#cSIGMOD Record
+#index53e99792b7602d9701f544b5
+
+#*Editor's Notes.
+#@Ling Liu
+#t2002
+#cSIGMOD Record
+#index53e99800b7602d970200b603
+
+#*SIGFIDET Bibliography: Second Spasm.
+#@Edgar H. Sibley
+#t1974
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e99b1bb7602d97023ae495
+
+#*Nested intervals tree encoding in SQL.
+#@Vadim Tropashko
+#t2005
+#cSIGMOD Record
+#index53e999bbb7602d970220380a
+#%53e9ad82b7602d9703778581
+
+#*XML database support for distributed execution of data-intensive scientific workflows.
+#@Shannon Hastings, Matheus Ribeiro, Stephen Langella, Scott Oster, Ümit V. Çatalyürek, Tony Pan, Kun Huang, Renato Ferreira, Joel H. Saltz, Tahsin M. Kurç
+#t2005
+#cSIGMOD Record
+#index53e9b556b7602d970408bc2d
+#%53e9be43b7602d9704afe857
+#%53e9a981b7602d97032dc13e
+#%53e9b349b7602d9703e1ea59
+#%53e9ba22b7602d97046295a7
+#%53e9b355b7602d9703e2e31f
+#%53e9a994b7602d97032ef57c
+#%53e99c99b7602d970254c052
+
+#*Database Map.
+#@Etelle Grinoch
+#t1974
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9979bb7602d9701f66943
+
+#*Report from the NSF Workshop on Workflow and Process Automation in Information Systems.
+#@Amit P. Sheth, Dimitrios Georgakopoulos, Stef Joosten, Marek Rusinkiewicz, Walt Scacchi, Jack C. Wileden, Alexander L. Wolf
+#t1996
+#cSIGMOD Record
+#index53e99e6ab7602d970272e079
+
+#*Why Sort-Merge Gives the Best Implementation of the Natural Join.
+#@T. H. Merrett
+#t1983
+#cSIGMOD Record
+#index53e9a09fb7602d9702986055
+
+#*TODS Perceptions and Misconceptions.
+#@Richard T. Snodgrass
+#t2002
+#cSIGMOD Record
+#index53e99ae6b7602d970236d5f2
+
+#*SIGMOD Regional Workshops.
+#@John L. Berg
+#t1981
+#cSIGMOD Record
+#index53e99821b7602d970204043b
+
+#*High diversity transforms multimedia information retrieval into a cross-cutting field: report on the 8th Workshop on Multimedia Information Retrieval.
+#@James Ze Wang, Nozha Boujemaa, Yixin Chen
+#t2007
+#cSIGMOD Record
+#index53e9a138b7602d9702a268db
+#%53e99f02b7602d97027cfa05
+#%53e9b5edb7602d970413b926
+#%53e9a2b2b7602d9702bb7b3e
+
+#*Peer-to-peer management of XML data: issues and research challenges.
+#@Georgia Koloniari, Evaggelia Pitoura
+#t2005
+#cSIGMOD Record
+#index53e9adc7b7602d97037ce3af
+#%53e9b30ab7602d9703dcf014
+#%53e99b78b7602d970241f5f5
+#%53e9ab69b7602d970350990d
+#%53e9b9fab7602d97045f47aa
+#%53e9a1c3b7602d9702abd73c
+#%53e9ad12b7602d97036f2399
+#%53e9b72cb7602d97042c2e27
+#%53e9aa67b7602d97033dedea
+#%53e9be27b7602d9704ae17a3
+#%53e9b9fbb7602d97045f637d
+#%53e9a03bb7602d970291dfc8
+#%53e9b8ccb7602d97044aba70
+#%53e9a839b7602d97031824c6
+#%53e99bc0b7602d970246a87a
+#%53e9a7ddb7602d970311a229
+#%53e99818b7602d97020344ea
+#%53e99ba2b7602d9702448f2a
+#%53e9bb79b7602d97047ba758
+#%53e99976b7602d97021b87f6
+#%53e9b2f0b7602d9703daee71
+#%53e9b0c2b7602d9703b3562f
+#%53e99d28b7602d97025df472
+#%53e9b0c7b7602d9703b3dbb9
+#%53e9b7f5b7602d97043a684e
+#%53e998a2b7602d97020d8f5e
+#%53e9ae36b7602d970384cf38
+#%53e9ae0bb7602d9703816f7c
+
+#*Report on IFIP TC-2 Conference ``A Technical In-Depth Evaluation of the DDL'', 1975.
+#@Robert W. Taylor
+#t1975
+#cFDT - Bulletin of ACM SIGMOD
+#index53e9b53cb7602d9704075199
+
+#*Raghu Ramakrishnan speaks out on deductive databases, what lies beyond scalability, how he burned through $20M briskly, why we should reach out to policymakers, and more.
+#@Marianne Winslett
+#t2006
+#cSIGMOD Record
+#index53e9ac39b7602d9703600d23
+
+#*Report on the 10th international workshop on web information and data management (WIDM).
+#@Chee-Yong Chan, Neoklis Polyzotis
+#t2009
+#cSIGMOD Record
+#index53e9bdb2b7602d9704a5d80b
+
+#*SQL/MED - A Status Report.
+#@Jim Melton, Jan-Eike Michels, Vanja Josifovski, Krishna G. Kulkarni, Peter M. Schwarz
+#t2002
+#cSIGMOD Record
+#index53e9b4d4b7602d9703ff2db2
+#%53e9a07ab7602d9702963797
+
+#*2003 SIGMOD Innovations Award Speech.
+#@Donald D. Chamberlin
+#t2003
+#cSIGMOD Record
+#index53e9b4a5b7602d9703fb2f20
+
+#*A tribute to Professor Hongjun Lu.
+#@Michael J. Carey, Jiawei Han
+#t2005
+#cSIGMOD Record
+#index53e9baa7b7602d97046d4a84
+
+#*Bringing Data Base Technology To The Programmer.
+#@William L. Honig
+#t1974
+#cFDT - Bulletin of ACM SIGMOD
+#index53e9b1eab7602d9703c802dc
+#%53e9a02db7602d9702912af1
+#%53e9b1c2b7602d9703c50d8d
+#%53e9a88db7602d97031dc0e3
+
+#*Jeffrey D. Ullman Speaks Out on the Future of Higher Education, Startups, Database Theory, and More.
+#@Marianne Winslett
+#t2001
+#cSIGMOD Record
+#index53e9aadfb7602d97034628ed
+
+#*Nulls in Relational Databases: Revisited.
+#@Raju Kocharekar
+#t1989
+#cSIGMOD Record
+#index53e9afc7b7602d9703a198fd
+#%53e9a194b7602d9702a84b69
+#%53e9985fb7602d970209aaa8
+#%53e9bab4b7602d97046e2a10
+
+#*Research issues for data communication in mobile ad-hoc network database systems.
+#@Leslie D. Fife, Le Gruenwald
+#t2003
+#cSIGMOD Record
+#index53e9a7b3b7602d97030eda57
+#%53e99e3fb7602d9702705ee5
+#%53e99785b7602d9701f42772
+#%53e9aec3b7602d97038e8359
+#%53e9b51bb7602d970404dc04
+#%53e9affab7602d9703a50fab
+#%53e9a423b7602d9702d3e896
+#%53e99bc0b7602d97024669fd
+#%53e9b891b7602d9704466fbd
+#%53e9ab90b7602d97035383c4
+#%53e9bc27b7602d970489238e
+#%53e9a5a1b7602d9702ecc165
+#%53e99ca0b7602d970254ef6e
+#%53e9b6fab7602d9704290dad
+#%53e9a2c8b7602d9702bd3b19
+
+#*CODASYL DDLC Data Base Administration Working Group (DBAWG).
+#@J. S. Knowles
+#t1976
+#cSIGMOD Record
+#index53e9b911b7602d97044f7a6e
+
+#*Chair's Message.
+#@Richard T. Snodgrass
+#t1998
+#cSIGMOD Record
+#index53e99809b7602d970201f8e3
+
+#*An approach to confidence based page ranking for user oriented Web search.
+#@Debajyoti Mukhopadhyay, Debasis Giri, Sanasam Ranbir Singh
+#t2003
+#cSIGMOD Record
+#index53e9a515b7602d9702e363b7
+#%53e9a9d3b7602d97033335eb
+#%53e99885b7602d97020c193f
+#%53e9b2b8b7602d9703d5ff7a
+#%53e9a5c5b7602d9702eee78b
+#%53e9a3f4b7602d9702d0c9b3
+#%53e9b81cb7602d97043d391a
+#%53e9b2c6b7602d9703d6ef87
+
+#*The Indiana Center for Database Systems at Purdue University.
+#@Mourad Ouzzani, Walid G. Aref, Elisa Bertino, Ann Christine Catlin, Christopher W. Clifton, Wing-Kai Hon, Ahmed K. Elmagarmid, Arif Ghafoor, Susanne E. Hambrusch, Sunil Prabhakar, Jeffrey Scott Vitter, Xiang Zhang
+#t2005
+#cSIGMOD Record
+#index53e9ac19b7602d97035dcf36
+#%53e9ad18b7602d97036f9f0a
+#%53e9ad3bb7602d970371dbb4
+#%53e9ab4fb7602d97034e5639
+#%53e9afb4b7602d9703a0575e
+#%53e99fa8b7602d970287c756
+#%53e9b403b7602d9703ef3275
+#%53e9b240b7602d9703cdda1b
+#%53e9ad47b7602d970372a104
+#%53e99b04b7602d970239433b
+#%53e99cc9b7602d970257be45
+#%53e99f7eb7602d970284ff7d
+#%53e9bb6cb7602d97047b00dc
+#%53e99b95b7602d970243e751
+#%53e9afcdb7602d9703a21cb7
+#%53e9abf6b7602d97035b5e0f
+#%53e99b77b7602d970241d164
+#%53e99da4b7602d97026607e2
+#%53e9a40eb7602d9702d2be71
+#%53e9aa1db7602d970338d98a
+#%53e9b6a2b7602d97042175e5
+#%53e9b0abb7602d9703b1ae51
+#%53e9a5a1b7602d9702ecb457
+#%53e9adaab7602d97037a6785
+#%53e9a987b7602d97032e0000
+
+#*Call for Papers: PODS 1983, IR 1983, NNP 1983.
+#t1982
+#cSIGMOD Record
+#index53e9bbe0b7602d9704834b80
+
+#*Supporting Display Generation for Complex Database Objects.
+#@Belinda B. Flynn, David Maier
+#t1992
+#cSIGMOD Record
+#index53e99aa5b7602d970231c81b
+#%53e9b5bcb7602d97041067f9
+#%53e99853b7602d9702089060
+#%53e99f20b7602d97027ed2c9
+
+#*A Comparison of Three User Interfaces to Relational Microcomputer Data Bases.
+#@Carl Medsker, Margaret Christensen, Il-Yeol Song
+#t1995
+#cSIGMOD Record
+#index53e9bd1eb7602d97049a89a1
+#%53e9b259b7602d9703cff348
+
+#*Object Query Standards.
+#@Andrew E. Wade
+#t1996
+#cSIGMOD Record
+#index53e9983db7602d9702063cf1
+
+#*A Status Report on the Activities of the CODASYL End User Facilities Commitee (EUFC).
+#@Henry C. Lefkovits
+#t1978
+#cSIGMOD Record
+#index53e9bdfdb7602d9704ab0435
+
+#*Formal Syntax and Semantics of a Reconstructed Relational Database System.
+#@Dan Jonsson
+#t1992
+#cSIGMOD Record
+#index53e9aebdb7602d97038e7f60
+#%53e9b33db7602d9703e0f7b7
+#%53e9b444b7602d9703f4205d
+#%53e9ae0bb7602d9703813f15
+
+#*Constraints for Semi-structured Data and XML.
+#@Peter Buneman, Wenfei Fan, Jérôme Siméon, Scott Weinstein
+#t2001
+#cSIGMOD Record
+#index53e9b991b7602d97045848ab
+
+#*New Books.
+#t1977
+#cSIGMOD Record
+#index53e997b2b7602d9701f9539a
+
+#*CR Classification System.
+#@Arthur R. Blum
+#t1977
+#cSIGMOD Record
+#index53e99809b7602d9702020027
+
+#*Database Principles Column - Introduction.
+#@Leonid Libkin
+#t1999
+#cSIGMOD Record
+#index53e99a26b7602d9702280826
+
+#*Report on DART '96: Databases: Active and Real-Time (Concepts meet Practice).
+#@Krithi Ramamritham, Nandit Soparkar
+#t1997
+#cSIGMOD Record
+#index53e9a743b7602d970307ad1e
+
+#*Report from the first workshop on scalable workflow enactment engines and technology (SWEET'12).
+#@Jan Hidders, Jacek Sroka, Paolo Missier
+#t2012
+#cSIGMOD Record
+#index53e9a042b7602d970292611c
+#%53e9b2b1b7602d9703d599b1
+#%53e9ae96b7602d97038b6397
+#%53e9a178b7602d9702a69733
+#%53e9b1afb7602d9703c3b8aa
+#%53e9afe9b7602d9703a40484
+#%53e9bd46b7602d97049d5c58
+
+#*A Multi-Agent System Infrastructure for Software Component Market-Place: An Ontological Perspective.
+#@Riza Cenk Erdur, Oguz Dikenelli
+#t2002
+#cSIGMOD Record
+#index53e9bd8cb7602d9704a359db
+#%53e9b09fb7602d9703b082bf
+#%53e9b6abb7602d970422749e
+
+#*Research in Multi-Organizational Processes and Semantic Information Brokering at the LSDIS Lab.
+#@Amit P. Sheth, John A. Miller, Krys Kochut, Ismailcem Budak Arpinar
+#t2001
+#cSIGMOD Record
+#index53e9b884b7602d97044555da
+#%53e9a981b7602d97032d8d83
+#%53e9ae7db7602d970389e5b6
+#%53e9a203b7602d9702b078ea
+#%53e9a689b7602d9702fbead6
+
+#*Implementation of Data Abstraction in the Relational Database System Ingres.
+#@James Ong, Dennis Fogg, Michael Stonebraker
+#t1984
+#cSIGMOD Record
+#index53e999e7b7602d970222b30e
+#%53e9a18db7602d9702a7e244
+#%53e9aabdb7602d970343d54f
+#%53e9ad2cb7602d970370d46a
+
+#*Report on the Second IEEE Metadata Conference (Metadata '97).
+#@Ron Musick, Christopher Miller 0002
+#t1998
+#cSIGMOD Record
+#index53e9b7cdb7602d970437bfc2
+
+#*On the Criteria for Selecting the Site of the Annual SIGMOD Conference.
+#@Randy H. Katz
+#t1981
+#cSIGMOD Record
+#index53e9bc2db7602d970489b9a9
+
+#*Bibliography on Database Security.
+#@Günther Pernul, Gottfried Luef
+#t1992
+#cSIGMOD Record
+#index53e99a0ab7602d9702259213
+
+#*Introducing an Annotated Bibliography on Temporal and Evolution Aspects in the World Wide Web.
+#@Fabio Grandi
+#t2004
+#cSIGMOD Record
+#index53e9aa48b7602d97033b72fe
+
+#*Full Self-Government Bylaws of the Special Interest Group on Management of Data (SIGMOD) of the ACM.
+#t1975
+#cFDT - Bulletin of ACM SIGMOD
+#index53e9a42bb7602d9702d49014
+
+#*Horizontal Decomposition to Improve a Non-BCNF Scheme.
+#@Antonio L. Furtado
+#t1981
+#cSIGMOD Record
+#index53e9b28fb7602d9703d32e18
+#%53e9ba94b7602d97046ba2b3
+#%53e99931b7602d970216cfcc
+#%53e9ab20b7602d97034a854e
+
+#*Multiplex, Fusionplex, and Autoplex - Three Generations of Information Integration.
+#@Amihai Motro, Jacob Berlin, Philipp Anokhin
+#t2004
+#cSIGMOD Record
+#index53e9ba85b7602d97046a99f2
+#%53e9bd50b7602d97049e10fb
+#%53e9ab6fb7602d9703511a24
+#%53e99da4b7602d970265eb75
+#%53e9b4d4b7602d9703ff2ce5
+#%53e9a9beb7602d970331c113
+#%53e999cab7602d970220f707
+#%53e9bacfb7602d97046fc4fa
+#%53e99931b7602d97021700d9
+#%53e9a824b7602d97031696e7
+#%53e9986eb7602d97020a5ad4
+
+#*Change at ONR, and Many Funding Announcements Elsewhere.
+#@Marianne Winslett
+#t1993
+#cSIGMOD Record
+#index53e99953b7602d97021927fb
+
+#*Report on the First "XQuery Implementation, Experience, and Perspectives" Workshop (XIME-P).
+#@Ioana Manolescu, Yannis Papakonstantinou
+#t2004
+#cSIGMOD Record
+#index53e9b152b7602d9703bd3739
+
+#*Integrating Dynamically-Fetched External Information into a DBMS for Semistructured Data.
+#@Jason McHugh, Jennifer Widom
+#t1997
+#cSIGMOD Record
+#index53e9b414b7602d9703f0bd27
+
+#*Announcements.
+#t1972
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9978ab7602d9701f47f80
+
+#*WWW-UDK: A Web-based Environmental Meta-Information System.
+#@Ralf Kramer, Ralf Nikolai, Arne Koschel, Claudia Rolker, Peter C. Lockemann, Andree Keitel, Rudolf Legat, Konrad Zirm
+#t1997
+#cSIGMOD Record
+#index53e9a2ebb7602d9702bf3118
+#%53e9b7eeb7602d97043a0e20
+#%53e9aa48b7602d97033b798b
+#%53e999ffb7602d970224d46c
+#%53e9a051b7602d97029390ed
+
+#*Skteches.
+#@Max E. Ellis, Gene Raichelson
+#t1969
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e99792b7602d9701f54bb7
+
+#*From semantic integration to semantics management: case studies and a way forward.
+#@Arnon Rosenthal, Leonard J. Seligman, Scott Renner
+#t2004
+#cSIGMOD Record
+#index53e9b98ab7602d970457d0e7
+#%53e99f42b7602d97028147ba
+#%53e9a101b7602d97029ea45f
+#%53e9a186b7602d9702a7a665
+
+#*First SIGFIDET Meeting, SJCC '69 / Second SIGFIDET Meeting, ACM '69.
+#t1969
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9a611b7602d9702f43a35
+
+#*Chair's Message.
+#@M. Tamer Özsu
+#t2001
+#cSIGMOD Record
+#index53e99809b7602d970201f952
+
+#*On the equivalence of PLSI and projected clustering.
+#@Charu C. Aggarwal
+#t2012
+#cSIGMOD Record
+#index53e9bb93b7602d97047daf48
+#%53e99cc2b7602d9702578f47
+#%53e99b3cb7602d97023dd893
+#%53e9b483b7602d9703f881ef
+#%53e9ab97b7602d97035441f3
+#%53e9983db7602d9702065035
+#%53e9ae6fb7602d970388a3d5
+#%53e9a698b7602d9702fcb6b7
+#%53e9a99cb7602d97032f7484
+#%53e99845b7602d9702072659
+
+#*Review of SIGFIDET meeting at FJCC/71.
+#t1972
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9be03b7602d9704ab6c34
+
+#*Optimizing index scans on flash memory SSDs.
+#@Eun-Mi Lee, Sang-Won Lee, Sangwon Park
+#t2011
+#cSIGMOD Record
+#index53e9af7bb7602d97039c1536
+#%53e99cd1b7602d97025855e5
+#%53e9bb44b7602d9704783269
+#%53e9abbeb7602d970356e9e5
+#%53e9a3cdb7602d9702ce0590
+
+#*VideoAnywhere: A System for Searching and Managing Distributed Video Assets.
+#@Amit P. Sheth, Clemens Bertram, Kshitij Shah
+#t1999
+#cSIGMOD Record
+#index53e9b701b7602d970429aca2
+
+#*Quality of Service in Multimedia Digital Libraries.
+#@Elisa Bertino, Ahmed K. Elmagarmid, Mohand-Said Hacid
+#t2001
+#cSIGMOD Record
+#index53e99d7ab7602d97026369c3
+
+#*Reminiscences an Influential Papers.
+#@Kenneth A. Ross, Minos N. Garofalakis, Jeffrey F. Naughton
+#t2003
+#cSIGMOD Record
+#index53e99b04b7602d97023955a6
+
+#*National Bureau of Standards Information Management Directions Workshop 5
+#t1988
+#cSIGMOD Record
+#index53e9a272b7602d9702b7bf20
+
+#*Database Research at Arizona State University.
+#@Susan Darling Urban, Suzanne W. Dietrich, Forouzan Golshani
+#t1996
+#cSIGMOD Record
+#index53e9b938b7602d97045251fa
+#%53e9a8aab7602d97031f74db
+#%53e9af53b7602d97039916d9
+#%53e9a555b7602d9702e7ce9c
+#%53e9aca1b7602d970367a84b
+#%53e9b0fbb7602d9703b74f4b
+#%53e9ae63b7602d970387e416
+#%53e9bcadb7602d9704929d22
+#%53e99a3cb7602d9702298a71
+
+#*Report on the First International Workshop on Mining Graphs and Complex Structures (MGCS'07).
+#@Lawrence B. Holder, Xifeng Yan
+#t2008
+#cSIGMOD Record
+#index53e99bcdb7602d970247a1cb
+
+#*Composition and inversion of schema mappings.
+#@Marcelo Arenas, Jorge Pérez 0001, Juan L. Reutter, Cristian Riveros
+#t2009
+#cSIGMOD Record
+#index53e9aa87b7602d9703400b42
+#%53e9a96db7602d97032c5531
+#%53e9ab73b7602d97035173c8
+#%53e9a208b7602d9702b0aae2
+#%53e9a6dfb7602d97030162b3
+#%53e9ab89b7602d9703535e2f
+#%53e999cab7602d970220f707
+#%53e9b746b7602d97042df7fb
+#%53e99931b7602d97021700d9
+#%53e9b3fcb7602d9703eea614
+#%53e9a2ceb7602d9702bd676f
+#%53e9ad12b7602d97036f4864
+#%53e9a2bab7602d9702bc601a
+#%53e99ef4b7602d97027c0021
+#%53e9ae3cb7602d9703855157
+#%53e9b910b7602d97044f4337
+#%53e9b10fb7602d9703b8d510
+#%53e9a091b7602d970297bdf1
+#%53e9ac62b7602d97036346d9
+#%53e9b9f5b7602d97045f3e9b
+#%53e9ace1b7602d97036bd969
+#%53e9af67b7602d97039a7125
+#%53e9b999b7602d970458a8b5
+#%53e99fd6b7602d97028afcfa
+#%53e9b2e6b7602d9703d9fbff
+#%53e9a440b7602d9702d5bb95
+#%53e99fd6b7602d97028afcfa
+#%53e9b35ab7602d9703e362ed
+#%53e9b076b7602d9703adb127
+
+#*Incomplete Information in Object-Oriented Databases.
+#@Roberto Zicari
+#t1990
+#cSIGMOD Record
+#index53e9bce8b7602d970496c35b
+#%53e99e69b7602d970272c2b7
+#%53e9a194b7602d9702a84b69
+#%53e9bbc8b7602d9704816fa3
+#%53e9a9d3b7602d9703333fe9
+#%53e9b7c7b7602d97043747e2
+#%53e9ab6fb7602d970350df83
+#%53e99858b7602d9702092cdb
+#%53e9ab73b7602d9703512a94
+#%53e9a19bb7602d9702a909fb
+#%53e9b8dab7602d97044bc04f
+#%53e9a381b7602d9702c8ecee
+#%53e9b57cb7602d97040ba8e0
+#%53e9a620b7602d9702f4f681
+#%53e9a3e1b7602d9702cf3934
+
+#*The ORCHESTRA Collaborative Data Sharing System.
+#@Zachary G. Ives, Todd J. Green, Grigoris Karvounarakis, Nicholas E. Taylor, Val Tannen, Partha Pratim Talukdar, Marie Jacob, Fernando Pereira
+#t2008
+#cSIGMOD Record
+#index53e9a6dfb7602d9703015373
+#%53e9a6d1b7602d97030089ba
+#%53e9ab73b7602d97035173c8
+#%53e9b954b7602d97045433c1
+#%53e9ad12b7602d97036f31cb
+#%53e99abdb7602d9702338b0a
+#%53e9ab89b7602d9703535e2f
+#%53e9aab0b7602d970342d58b
+#%53e99931b7602d97021700d9
+#%53e9a1c3b7602d9702abdc4a
+#%53e9b50bb7602d970403ff07
+#%53e99afdb7602d9702389969
+#%53e9be64b7602d9704b224bb
+#%53e9abbfb7602d97035710ff
+#%53e9998bb7602d97021cb6f0
+#%53e9b867b7602d9704431cf2
+#%53e9ae10b7602d970381b29c
+#%53e99b21b7602d97023b6796
+#%53e9b4b4b7602d9703fccc99
+#%53e9ace9b7602d97036c80bb
+#%53e9b082b7602d9703aeb3c1
+#%53e99e0cb7602d97026d0c57
+#%53e99a35b7602d9702296a52
+#%53e99bd5b7602d970247fbb1
+#%53e9ae0bb7602d9703816f7c
+
+#*SQLJ Part 0, Now Known as SQL/OLB (Object-Language Bindings).
+#@Andrew Eisenberg, Jim Melton
+#t1998
+#cSIGMOD Record
+#index53e9a1fab7602d9702afd7f8
+
+#*Guest editors' introduction to the special section on scientific workflows.
+#@Bertram Ludäscher, Carole A. Goble
+#t2005
+#cSIGMOD Record
+#index53e9b0e6b7602d9703b63aff
+
+#*A Consensus Glossary of Temporal Database Concepts.
+#@Christian S. Jensen, James Clifford, Ramez Elmasri, Shashi K. Gadia, Patrick J. Hayes, Sushil Jajodia
+#t1994
+#cSIGMOD Record
+#index53e9a114b7602d9702a04c1f
+
+#*Materialized Views and Data Warehouses.
+#@Nick Roussopoulos
+#t1998
+#cSIGMOD Record
+#index53e9b017b7602d9703a7115b
+
+#*Pictures from SIGMOD Conference 1991.
+#@Frederick N. Springsteel
+#t1992
+#cSIGMOD Record
+#index53e9aea3b7602d97038c46d1
+
+#*Algebraic Change Propagation for Semijoin and Outerjoin Queries.
+#@Timothy Griffin, Bharat Kumar
+#t1998
+#cSIGMOD Record
+#index53e9ad42b7602d9703722d03
+
+#*Report on the 3rd Web Dynamics Workshop, at WWW'2004.
+#@Mark Levene, Alexandra Poulovassilis
+#t2004
+#cSIGMOD Record
+#index53e99938b7602d9702178a2d
+#%53e997bab7602d9701fa2515
+
+#*Opportunities in Information Management and Assurance.
+#@Xiaolei Qian
+#t1997
+#cSIGMOD Record
+#index53e9b4b4b7602d9703fc8743
+
+#*Semantic B2B Integration: Issues in Ontology-based Applications.
+#@Zhan Cui, Dean M. Jones, Paul O'Brien
+#t2002
+#cSIGMOD Record
+#index53e99915b7602d9702153324
+#%53e9b4b4b7602d9703fcb0ac
+#%53e9bc6eb7602d97048ecf63
+#%53e9b857b7602d970441bb9f
+
+#*XQuery layers.
+#@Daniele Braga, Alessandro Campi, Stefano Ceri, Paola Spoletini
+#t2007
+#cSIGMOD Record
+#index53e997bab7602d9701fa0b10
+#%53e9a5b7b7602d9702ee4574
+#%53e9a524b7602d9702e45178
+#%53e9af06b7602d970393a0af
+#%53e9af53b7602d9703995a78
+#%53e9b4e4b7602d970400bc74
+#%53e9a5beb7602d9702ee4f7d
+
+#*Chair's Message.
+#@M. Tamer Özsu
+#t2002
+#cSIGMOD Record
+#index53e99809b7602d970201f8e7
+
+#*Transaction-oriented Recovery Concepts for Distributed Data Base Systems (Abstract).
+#@Bernd Walter
+#t1982
+#cSIGMOD Record
+#index53e99f86b7602d9702857e18
+
+#*Evolution and Change in Data Management - Issues and Directions.
+#@John F. Roddick, Lina Al-Jadir, Leopoldo E. Bertossi, Marlon Dumas, Florida Estrella, Heidi Gregersen, Kathleen Hornsby, Jens Lufter, Federica Mandreoli, Tomi Männistö, Enric Mayol, Lex Wedemeijer
+#t2000
+#cSIGMOD Record
+#index53e9a9f0b7602d9703359b92
+
+#*Semiring-annotated data: queries and provenance?
+#@Grigoris Karvounarakis, Todd J. Green
+#t2012
+#cSIGMOD Record
+#index53e9a051b7602d970293607d
+#%53e9a96db7602d97032c5531
+#%53e9aee5b7602d9703913d35
+#%53e9ad92b7602d970378e217
+#%53e9a440b7602d9702d5c1c0
+#%53e9ba28b7602d9704634070
+#%53e9abe4b7602d970359e0c3
+#%53e9b945b7602d9704531d17
+#%53e9b2b8b7602d9703d60c9e
+#%53e9abbfb7602d97035710ff
+#%53e9998bb7602d97021cb6f0
+#%53e99a35b7602d9702296a52
+#%53e9ab55b7602d97034ec106
+#%53e9ac12b7602d97035d3754
+#%53e9abc9b7602d970357e055
+#%53e99b2cb7602d97023c6422
+#%53e99838b7602d9702062aa9
+#%53e9bdb9b7602d9704a6758b
+#%53e997c6b7602d9701fb767c
+#%53e9a57cb7602d9702ea69bd
+#%53e9a202b7602d9702b02bfa
+#%53e99de2b7602d97026a5473
+#%53e9ae5cb7602d9703877889
+
+#*On Global Multidatabase Query Optimization.
+#@Hongjun Lu, Beng Chin Ooi, Cheng Hian Goh
+#t1992
+#cSIGMOD Record
+#index53e9ae11b7602d970381fc67
+#%53e9b7eeb7602d97043a0e20
+#%53e9aa48b7602d97033b798b
+#%53e9ab9eb7602d97035482a3
+#%53e99c91b7602d9702541d10
+#%53e9be80b7602d9704b416d6
+
+#*Interview: C. Mohan Speaks Out.
+#@Marianne Winslett, C. Mohan
+#t2004
+#cSIGMOD Record
+#index53e9a906b7602d970325609c
+
+#*Database Research Group at Monash University.
+#t1986
+#cSIGMOD Record
+#index53e9b954b7602d970453f36f
+
+#*Robust key establishment in sensor networks.
+#@Yongge Wang
+#t2004
+#cSIGMOD Record
+#index53e9a833b7602d970317d4fd
+#%53e99b30b7602d97023cba3b
+#%53e9be1ab7602d9704ad2032
+#%53e9b572b7602d97040afdf3
+#%53e9ad1fb7602d9703702546
+#%53e9b8efb7602d97044d5156
+
+#*Workshop Report: The First International Workshop on Active and Real-Time Database Systems (ARTDB-95).
+#@Mikael Berndtsson, Jörgen Hansson
+#t1996
+#cSIGMOD Record
+#index53e99eb5b7602d970277f14a
+#%53e9a00ab7602d97028ee0f9
+#%53e9a2fab7602d9702c056ec
+
+#*Meeting Announcements.
+#t1976
+#cSIGMOD Record
+#index53e997b2b7602d9701f8f806
+
+#*Editor's Notes.
+#@Ling Liu
+#t2001
+#cSIGMOD Record
+#index53e99800b7602d970200b603
+
+#*Enhancing Availability in Distributed Real-Time Databases.
+#@Kwei-Jay Lin, Ming-Ju Lin
+#t1988
+#cSIGMOD Record
+#index53e9bdd5b7602d9704a86213
+#%53e9ac6ab7602d970363e4da
+#%53e9a479b7602d9702d98292
+#%53e9b2d7b7602d9703d88dd7
+#%53e9b2e5b7602d9703d9a2d0
+
+#*Opportunities from the US Department of Defense and NSF.
+#@Marianne Winslett
+#t1992
+#cSIGMOD Record
+#index53e9a06db7602d9702953a59
+
+#*Tova Milo speaks out.
+#@Marianne Winslett
+#t2010
+#cSIGMOD Record
+#index53e99ae7b7602d970237237e
+
+#*Correction and Announcements.
+#t1974
+#cFDT - Bulletin of ACM SIGMOD
+#index53e997e9b7602d9701fe3180
+
+#*Lore: A Database Management System for Semistructured Data.
+#@Jason McHugh, Serge Abiteboul, Roy Goldman, Dallan Quass, Jennifer Widom
+#t1997
+#cSIGMOD Record
+#index53e9b57cb7602d97040be00a
+
+#*On the Issue of Valid Time(s) in Temporal Databases.
+#@Stavros Kokkotos, Efstathios V. Ioannidis, Themis Panayiotopoulos, Constantine D. Spyropoulos
+#t1995
+#cSIGMOD Record
+#index53e9afb9b7602d9703a05ea6
+#%53e997bdb7602d9701faa20a
+#%53e9bb2fb7602d970476d0c5
+#%53e9af7bb7602d97039be7c8
+#%53e9a018b7602d97028fab4f
+
+#*Power efficient data gathering and aggregation in wireless sensor networks.
+#@Hüseyin Özgür Tan, Ibrahim Korpeoglu
+#t2003
+#cSIGMOD Record
+#index53e9a6c3b7602d9702ff5623
+#%53e9b61bb7602d9704175973
+#%53e9bd9fb7602d9704a4c3ad
+#%53e9b2c6b7602d9703d6da9e
+#%53e9a38fb7602d9702ca030b
+#%53e9a0cab7602d97029b2b85
+#%53e99d73b7602d970262b052
+#%53e998b8b7602d97020f421b
+
+#*Database Systems: Achievements and Opportunities - The "Lagunita" Report of the NSF Invitational Workshop on the Future of Database System Research held in Palo Alto, California, February 22-23, 1990.
+#@Abraham Silberschatz, Michael Stonebraker, Jeffrey D. Ullman
+#t1990
+#cSIGMOD Record
+#index53e9b0f4b7602d9703b6d4be
+
+#*Integrating databases and workflow systems.
+#@Srinath Shankar, Ameet Kini, David J. DeWitt, Jeffrey F. Naughton
+#t2005
+#cSIGMOD Record
+#index53e9a8ffb7602d9703251ea7
+#%53e9a58cb7602d9702eb6a96
+#%53e9ad98b7602d9703793e75
+#%53e99acab7602d970234cea5
+#%53e997f1b7602d9701feeb54
+#%53e9b5b6b7602d97040fc4ed
+#%53e9a981b7602d97032dc13e
+#%53e9b089b7602d9703af06a7
+#%53e9ad1fb7602d97036ffa51
+#%53e9b1a3b7602d9703c2eee9
+#%53e9b195b7602d9703c1efc6
+
+#*Yahiko Kambayashi (February 15, 1943 - February 6, 2004) - A tribute and personal memoirs.
+#@Yoshifumi Masunaga, Katsumi Tanaka
+#t2004
+#cSIGMOD Record
+#index53e9a4a3b7602d9702dc6cee
+
+#*Current Research on Real-Time Databases.
+#@Özgür Ulusoy
+#t1992
+#cSIGMOD Record
+#index53e9a09fb7602d97029889e9
+#%53e99b21b7602d97023b5344
+#%53e9bdd5b7602d9704a86213
+#%53e9aa09b7602d97033731a6
+#%53e9b29cb7602d9703d41f44
+#%53e9b81cb7602d97043d2b2a
+#%53e9ae9db7602d97038c1daf
+#%53e9a66eb7602d9702fa2f66
+#%53e9ab73b7602d9703517c2c
+#%53e9aa16b7602d9703386cf8
+#%53e9a3edb7602d9702d04ac6
+#%53e99cfdb7602d97025b17bd
+#%53e9a5fdb7602d9702f2d1ca
+#%53e9a25cb7602d9702b60cc5
+#%53e99e93b7602d9702757080
+#%53e9a839b7602d970317fd49
+
+#*Rights of TODS Readers, Authors and Reviewers.
+#@Richard T. Snodgrass
+#t2002
+#cSIGMOD Record
+#index53e9b61bb7602d97041747ee
+
+#*The New Middleware.
+#@Rich Finkelstein
+#t1995
+#cSIGMOD Record
+#index53e99853b7602d97020885ae
+
+#*A system for energy-efficient data management.
+#@Yi-Cheng Tu, Xiaorui Wang, Bo Zeng, Zichen Xu
+#t2014
+#cSIGMOD Record
+#index53e9a9c4b7602d9703326471
+#%53e9ab55b7602d97034ea6e3
+#%53e99fafb7602d97028890fc
+#%53e9b0eeb7602d9703b6c747
+#%53e9b976b7602d970456798a
+#%53e9ab55b7602d97034ea6e3
+#%53e99f94b7602d9702866bf1
+#%53e9ab55b7602d97034ea6e3
+#%53e9b221b7602d9703cbd31c
+#%53e9a44fb7602d9702d6d9c2
+#%53e9ab55b7602d97034ea6e3
+#%53e9afcdb7602d9703a219b1
+#%53e9b2aab7602d9703d51c04
+#%53e9ab55b7602d97034ea6e3
+#%53e9b6abb7602d9704227f74
+#%53e9ab55b7602d97034ea6e3
+
+#*Data Management for Earth System Science.
+#@James Frew, Jeff Dozier
+#t1997
+#cSIGMOD Record
+#index53e9b33db7602d9703e13425
+#%53e9b74fb7602d97042ec421
+#%53e9bbe0b7602d97048302ae
+
+#*The OASIS Multidatabase Prototype.
+#@Mark Roantree, John Murphy, Wilhelm Hasselbring
+#t1999
+#cSIGMOD Record
+#index53e99ae6b7602d970236b9ef
+
+#*How NOT to review a paper: the tools and techniques of the adversarial reviewer.
+#@Graham Cormode
+#t2008
+#cSIGMOD Record
+#index53e9b0d1b7602d9703b4e4a2
+#%53e9b601b7602d9704157751
+#%53e9ad2db7602d97037108eb
+#%53e99b43b7602d97023e2dd1
+#%53e99853b7602d970208971c
+
+#*Clustering Validity Checking Methods: Part II.
+#@Maria Halkidi, Yannis Batistakis, Michalis Vazirgiannis
+#t2002
+#cSIGMOD Record
+#index53e99a8cb7602d97022fffcc
+#%53e99af7b7602d9702385523
+#%53e9bbadb7602d97047fa33e
+#%53e9b6b8b7602d970423c16a
+#%53e999c3b7602d9702208212
+#%53e9a9ebb7602d970334e7be
+#%53e9b7b4b7602d970435e968
+
+#*Data management research at NEC labs.
+#t2011
+#cSIGMOD Record
+#index53e9b39db7602d9703e7f178
+#%53e9a25cb7602d9702b60499
+#%53e9b10fb7602d9703b8d82b
+#%53e9b1d7b7602d9703c6955c
+#%53e9b036b7602d9703a94014
+#%53e9a194b7602d9702a87fd2
+#%53e9be27b7602d9704ae0ba4
+#%53e998fcb7602d9702138f03
+#%53e9a88cb7602d97031d7d3d
+
+#*Report on the second international workshop on cloud intelligence (Cloud-I 2013).
+#@Jérôme Darmont, Torben Bach Pedersen
+#t2014
+#cSIGMOD Record
+#index53e9adaab7602d97037ac934
+#%53e9b5dab7602d9704126126
+#%53e9ab55b7602d97034ea6e3
+
+#*Report of the international workshop on business intelligence and the web: BEWEB 2011.
+#@Jose-Norberto Mazón, Irene Garrigós, Florian Daniel, Malú Castellanos
+#t2012
+#cSIGMOD Record
+#index53e9b9cdb7602d97045c7714
+#%53e9b556b7602d970408de33
+
+#*Data-based research at IIT Bombay.
+#@Soumen Chakrabarti, Ganesh Ramakrishnan, Krithi Ramamritham, Sunita Sarawagi, S. Sudarshan 0001
+#t2013
+#cSIGMOD Record
+#index53e9b008b7602d9703a60fd2
+#%53e99905b7602d970214452e
+#%53e9bcefb7602d9704974e27
+#%53e9a7c0b7602d97030fc0dc
+#%53e9a658b7602d9702f8b9ae
+#%53e9b50bb7602d970403ff07
+#%53e9af68b7602d97039ad0e4
+#%53e9ab90b7602d970353bb0e
+#%53e9bd24b7602d97049b2809
+#%53e99db1b7602d970266fe6c
+#%53e9bac9b7602d97046f9452
+#%53e9ad68b7602d97037530fa
+#%53e9bb1cb7602d9704759e6f
+#%53e9acf0b7602d97036d0ac7
+#%53e9bc61b7602d97048db4b0
+#%53e9a501b7602d9702e2382a
+#%53e9a202b7602d9702b00c48
+#%53e99d36b7602d97025e9159
+#%53e9bc4eb7602d97048c6892
+#%53e9b991b7602d9704584981
+#%53e9b2b8b7602d9703d650d0
+#%53e9b3f5b7602d9703ee30b8
+#%53e9a41db7602d9702d396fe
+#%53e9a76db7602d97030a56db
+#%53e99d44b7602d97025f9b0c
+#%53e9aaecb7602d97034710db
+#%53e9b6a7b7602d9704223d12
+#%53e9a488b7602d9702da797c
+#%53e9bca6b7602d9704925887
+#%53e99960b7602d97021a23db
+#%53e9ab3eb7602d97034cc4cf
+#%53e9a2a5b7602d9702bb00bc
+#%53e99967b7602d97021a6320
+#%53e9b115b7602d9703b91778
+#%53e9b895b7602d97044696a4
+
+#*An Event/Trigger Mechanism to Enforce Complex Consistency Constraints in Design Databases.
+#@Klaus R. Dittrich, Angelika M. Kotz, Jutta A. Mülle
+#t1986
+#cSIGMOD Record
+#index53e9bdfdb7602d9704ab29fe
+#%53e9990cb7602d9702146229
+#%53e9ace1b7602d97036bcd0d
+#%53e9ba85b7602d97046aace6
+#%53e9aab7b7602d9703435b11
+#%53e9ace8b7602d97036c3af1
+
+#*Editor's Notes.
+#@Ling Liu
+#t2004
+#cSIGMOD Record
+#index53e99800b7602d970200b601
+
+#*Phoenix Project: Fault-Tolerant Applications.
+#@Roger S. Barga, David B. Lomet
+#t2002
+#cSIGMOD Record
+#index53e9aed1b7602d97038fac02
+#%53e9b587b7602d97040c828b
+#%53e9a690b7602d9702fc24e3
+#%53e9a255b7602d9702b5e1ff
+#%53e9a14db7602d9702a40f47
+
+#*A Note on the Relational Calculus.
+#@C. J. Date
+#t1989
+#cSIGMOD Record
+#index53e999d9b7602d9702221658
+
+#*Editor's Notes.
+#@Daniel O'Connell
+#t1972
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e99800b7602d970200b61f
+
+#*Database Research Acitivities at The University of Vienna.
+#@A. Min Tjoa, G. Vinek
+#t1992
+#cSIGMOD Record
+#index53e9a051b7602d9702935f18
+
+#*Implementing Deletion in B+-Trees.
+#@Jan Jannink
+#t1995
+#cSIGMOD Record
+#index53e9a905b7602d9703253c45
+#%53e9a7ddb7602d970311c4bd
+#%53e9b3c8b7602d9703eb56a5
+#%53e9b321b7602d9703ded28e
+#%53e997f4b7602d9701ff7484
+#%53e9abb9b7602d9703568485
+#%53e9b6c4b7602d9704251c90
+#%53e9b179b7602d9703c01162
+#%53e9aa73b7602d97033e8f79
+#%53e9ad4eb7602d9703731507
+#%53e9b587b7602d97040c828b
+#%53e99a2bb7602d9702285b97
+
+#*On the Academic Interview Circuit: An End-to-End Discussion.
+#@Ugur Çetintemel
+#t2001
+#cSIGMOD Record
+#index53e99a0ab7602d970225bdc5
+
+#*Chairman's Message.
+#@Kendall R. Wright
+#t1971
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e99809b7602d970201f953
+
+#*Cardinality estimation for the optimization of queries on ontologies.
+#@E. Patrick Shironoshita, Michael T. Ryan, Mansur R. Kabuka
+#t2007
+#cSIGMOD Record
+#index53e9a31eb7602d9702c265d6
+#%53e9b6eeb7602d97042836b1
+#%53e99b16b7602d97023a7500
+#%53e9bbcfb7602d970481f2b4
+#%53e9a374b7602d9702c81cf6
+#%53e9abbfb7602d97035713f9
+#%53e9a6aeb7602d9702fe424c
+#%53e9a4ddb7602d9702e00108
+#%53e99e72b7602d97027391ce
+#%53e9bd46b7602d97049d7865
+
+#*A TSQL2 Tutorial.
+#@Richard T. Snodgrass, Ilsoo Ahn, Gad Ariav, Don S. Batory, James Clifford, Curtis E. Dyreson, Ramez Elmasri, Fabio Grandi, Christian S. Jensen, Wolfgang Käfer, Nick Kline, Krishna G. Kulkarni, T. Y. Cliff Leung, Nikos A. Lorentzos, John F. Roddick, Arie Segev, Michael D. Soo, Suryanarayana M. Sripada
+#t1994
+#cSIGMOD Record
+#index53e997f1b7602d9701ff4779
+
+#*Issues in Mechanical Engineering Design Management.
+#@Dave Hislop, Zoé Lacroix, Gerald Moeller
+#t2004
+#cSIGMOD Record
+#index53e9bcd2b7602d9704956f2b
+#%53e9a1f3b7602d9702af2037
+#%53e99a91b7602d9702305fb4
+#%53e9ac12b7602d97035d3e24
+
+#*Deadlock Detection is Cheap.
+#@Rakesh Agrawal, Michael J. Carey, David J. DeWitt
+#t1983
+#cSIGMOD Record
+#index53e99a04b7602d97022506c9
+#%53e9a23fb7602d9702b472e0
+#%53e9bba7b7602d97047f368d
+
+#*Role-Based Security, Object Oriented Databases & Separation of Duty.
+#@Matunda Nyanchama, Sylvia L. Osborn
+#t1993
+#cSIGMOD Record
+#index53e99d81b7602d970263f4db
+
+#*Ontologies: A Silver Bullet for Knowledge Management and Electronic Commerce - Book Review.
+#@Antonio Badia
+#t2002
+#cSIGMOD Record
+#index53e99c91b7602d97025452d2
+
+#*The Streetwalker File.
+#@Harold P. Sieglaff
+#t1973
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9984fb7602d9702084a2b
+
+#*MPEG-7 and Multimedia Database Systems.
+#@Harald Kosch
+#t2002
+#cSIGMOD Record
+#index53e9bb08b7602d9704743dab
+#%53e99a62b7602d97022cd177
+#%53e9b246b7602d9703ce4922
+#%53e9a66db7602d9702f9bf83
+#%53e9afc6b7602d9703a14707
+#%53e9bd11b7602d970499c03a
+#%53e9b873b7602d970444208e
+#%53e9a051b7602d9702936b27
+#%53e9a5f6b7602d9702f232bc
+#%53e9b181b7602d9703c0d030
+#%53e9b4ceb7602d9703fed657
+
+#*Report on the First VLDB Workshop on Management of Uncertain Data (MUD).
+#@Ander de Keijzer, Maurice van Keulen, Alex Dekhtyar
+#t2007
+#cSIGMOD Record
+#index53e9b6d6b7602d97042661b3
+
+#*A Note on Minimal Covers.
+#@John Atkins
+#t1988
+#cSIGMOD Record
+#index53e9ab37b7602d97034c3dcd
+
+#*What Will Be - Book Review.
+#@Paul W. P. J. Grefen
+#t2002
+#cSIGMOD Record
+#index53e9b2d2b7602d9703d831da
+
+#*Options in Physical Database Design.
+#@Goetz Graefe
+#t1993
+#cSIGMOD Record
+#index53e9ae1cb7602d970382c16a
+#%53e9b797b7602d970433fd2a
+#%53e9a335b7602d9702c3f01c
+#%53e9a464b7602d9702d8183b
+
+#*Reminiscences on Influential Papers.
+#@Kenneth A. Ross, Johannes Gehrke, Jun Rao
+#t2003
+#cSIGMOD Record
+#index53e99b0ab7602d970239c219
+
+#*Orthogonal Weighted Linear L1 and Linfty Approximation and Applications.
+#@Michael E. Houle, Hiroshi Imai, Keiko Imai, Jean-Marc Robert, Peter Yamamoto
+#t1993
+#cDiscrete Applied Mathematics
+#index53e9a440b7602d9702d5f93f
+
+#*Research Areas Related to Practical Problems in Automated Database Design.
+#@David S. Reiner
+#t1991
+#cSIGMOD Record
+#index53e99b6ab7602d970240d512
+
+#*Report on the first IEEE international workshop on networking meets databases (NetDB'05).
+#@Cyrus Shahabi, Ramesh Govindan, Karl Aberer
+#t2005
+#cSIGMOD Record
+#index53e9b2e6b7602d9703d9f235
+
+#*A Method for Concurrency Control in Distributed DBMSs: Permission Test Method.
+#@Ugur Halici, Asuman Dogac
+#t1987
+#cSIGMOD Record
+#index53e9b71db7602d97042b5dec
+#%53e9ab00b7602d9703484bd6
+#%53e9ac6ab7602d970363e4da
+#%53e9a464b7602d9702d805f7
+
+#*Unpacking The Semantics of Source and Usage To Perform Semantic Reconciliation In Large-Scale Information Systems.
+#@Kenneth P. Smith, Leo Obrst
+#t1999
+#cSIGMOD Record
+#index53e9ac38b7602d97035fd442
+
+#*Report on First International Workshop on Real-Time Database Systems.
+#@Azer Bestavros, Kwei-Jay Lin, Sang Hyuk Son
+#t1996
+#cSIGMOD Record
+#index53e9ba9bb7602d97046c560f
+
+#*Data Manipulation in Heterogeneous Databases.
+#@Abhirup Chatterjee, Arie Segev
+#t1991
+#cSIGMOD Record
+#index53e9ab9eb7602d97035482a3
+#%53e9a5a1b7602d9702ece065
+#%53e997b2b7602d9701f914bd
+#%53e9a885b7602d97031d5367
+
+#*Trade Press News.
+#@Rafael Alonso
+#t1994
+#cSIGMOD Record
+#index53e99853b7602d970208a66f
+
+#*Temporal Databases - Status and Research Directions.
+#@Richard T. Snodgrass
+#t1990
+#cSIGMOD Record
+#index53e9b1d0b7602d9703c5f35d
+#%53e99a0ab7602d970225972a
+#%53e9b4f5b7602d97040226ab
+#%53e9a4c0b7602d9702de37d6
+#%53e9b1b6b7602d9703c42c5f
+#%53e9acfdb7602d97036d9a3f
+#%53e9bac9b7602d97046f4d9e
+
+#*Reminiscences on Influential Papers.
+#@Kenneth A. Ross, Flip Korn, Renée J. Miller, Kaladhar Voruganti
+#t2002
+#cSIGMOD Record
+#index53e99b0ab7602d970239c211
+
+#*Bringing Order to Query Optimization.
+#@Giedrius Slivinskas, Christian S. Jensen, Richard T. Snodgrass
+#t2002
+#cSIGMOD Record
+#index53e9aaa9b7602d97034211e0
+#%53e9bd18b7602d97049a474d
+#%53e9ad26b7602d970370a912
+#%53e99f8db7602d970286561e
+#%53e9b11db7602d9703b996bc
+#%53e9a07ab7602d9702964f0c
+#%53e99893b7602d97020ccf66
+#%53e9af87b7602d97039cbd08
+#%53e99d9db7602d9702657890
+
+#*An Overview of GOOD.
+#@Jan Paredaens, Jan Van den Bussche, Marc Andries, Marc Gemis, Marc Gyssens, Inge Thyssens, Dirk Van Gucht, Vijay M. Sarathy, Lawrence V. Saxton
+#t1992
+#cSIGMOD Record
+#index53e99a4eb7602d97022b2a07
+#%53e99e7fb7602d9702742479
+#%53e99e7fb7602d9702742479
+
+#*Statement of Interests if SIGFIDET and SIGBDP.
+#@Richard H. Canning
+#t1972
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9bb93b7602d97047d9329
+
+#*Information Management Directions: The Inegration Challenge.
+#@Elizabeth N. Fong, Alan H. Goldfine
+#t1989
+#cSIGMOD Record
+#index53e9bbeab7602d970483f34b
+
+#*Data profiling revisited.
+#@Felix Naumann
+#t2013
+#cSIGMOD Record
+#index53e99813b7602d9702029067
+#%53e99b9bb7602d9702444ee8
+#%53e9abb2b7602d970355e0e1
+#%53e9bd87b7602d9704a29cac
+#%53e9bb01b7602d97047372f8
+#%53e9b532b7602d970406bcaa
+#%53e9bacfb7602d97046fc4fa
+#%53e9acbdb7602d970369d43d
+#%53e9bc15b7602d970487b297
+#%53e997abb7602d9701f85a28
+#%53e9af2db7602d970396a36d
+#%53e9ad98b7602d9703794311
+#%53e9abc4b7602d970357832f
+#%53e99a04b7602d9702250b0b
+#%53e99e30b7602d97026f1bc0
+#%53e9a812b7602d9703155423
+#%53e9b6afb7602d970422f729
+#%53e99813b7602d970202b76c
+#%53e99a04b7602d970224f57d
+#%53e9a15bb7602d9702a4d0c8
+#%53e9ae43b7602d970385b814
+#%53e9a254b7602d9702b59791
+#%53e9b3a3b7602d9703e87185
+#%53e99bb9b7602d970245d593
+#%53e99a04b7602d970224f9cb
+
+#*Availability Notices.
+#t1972
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e997a6b7602d9701f7f807
+
+#*Metadata Standards for Data Warehousing: Open Information Model vs. Common Warehouse Metamodel.
+#@Thomas Vetterli, Anca Vaduva, Martin Staudt
+#t2000
+#cSIGMOD Record
+#index53e9a4f3b7602d9702e17725
+
+#*Report on the Second International Workshop on Data Management on Modern Hardware (DaMoN'06).
+#@Anastassia Ailamaki, Peter A. Boncz, Stefan Manegold
+#t2006
+#cSIGMOD Record
+#index53e9b9a0b7602d9704591959
+
+#*Correction.
+#@Satish M. Thatte
+#t1989
+#cSIGMOD Record
+#index53e9978ab7602d9701f45baa
+
+#*Databases and Transaction Processing: An Application-Oriented Approach - Book Review.
+#@Alfons Kemper
+#t2002
+#cSIGMOD Record
+#index53e9b867b7602d97044345c3
+
+#*Stefano Ceri speaks out on many-book researchers and one-startup researchers, web modeling, the vanishing US-Europe research gap, the semantic web services train, and more.
+#@Marianne Winslett
+#t2007
+#cSIGMOD Record
+#index53e99c20b7602d97024cec8c
+
+#*A brief survey of automatic methods for author name disambiguation.
+#@Anderson A. Ferreira, Marcos André Gonçalves, Alberto H. F. Laender
+#t2012
+#cSIGMOD Record
+#index53e9bdcdb7602d9704a7a656
+#%53e99a04b7602d970224f45a
+#%53e9b930b7602d970451a19a
+#%53e99daab7602d9702665d95
+#%53e997b2b7602d9701f91207
+#%53e99ffcb7602d97028dfb4a
+#%53e9983db7602d9702065035
+#%53e9b457b7602d9703f54cf4
+#%53e9b8f5b7602d97044da6d1
+#%53e9bbc8b7602d97048151f7
+#%53e9a14cb7602d9702a3bf90
+#%53e9b0c7b7602d9703b3c862
+#%53e9ab9eb7602d970354a97e
+#%53e9a547b7602d9702e69fa5
+#%53e9a310b7602d9702c1bbf4
+#%53e9a657b7602d9702f86ef3
+#%53e99f7fb7602d9702856a05
+#%53e9b024b7602d9703a8159c
+#%53e99a57b7602d97022bde57
+#%53e99e8cb7602d9702751325
+#%53e99dbfb7602d970267f065
+#%53e9b326b7602d9703df7bbe
+#%53e9b5c8b7602d97041165ac
+#%53e9ab37b7602d97034c49c6
+#%53e99c67b7602d9702516b37
+#%53e9af0db7602d9703947330
+#%53e9b159b7602d9703bddc88
+#%53e9aeb2b7602d97038d90a7
+#%53e9ae76b7602d970389542e
+#%53e9ae11b7602d9703820c92
+#%53e9b9dab7602d97045d5eb7
+#%53e99d36b7602d97025ea1ce
+#%53e9b9dab7602d97045d202e
+
+#*Turmoil at NASA, and Numerous Funding Announcements.
+#@Xiaolei Qian
+#t1995
+#cSIGMOD Record
+#index53e9b6c4b7602d970424fff3
+
+#*Towards a Richer Web Object Model.
+#@Frank Manola
+#t1998
+#cSIGMOD Record
+#index53e9afeeb7602d9703a411ba
+
+#*Extending the Transaction Model to Capture more Meaning.
+#@Marek Rusinkiewicz, Ahmed K. Elmagarmid, Yungho Leu, Witold Litwin
+#t1990
+#cSIGMOD Record
+#index53e9ab2bb7602d97034b554c
+#%53e9b240b7602d9703cdc481
+#%53e9af46b7602d9703984cf7
+
+#*Report in ISDO '00: The CAiSE*00 Workshop on Infrastructures for Dynamic Business-to-Business Service Outsourcinga.
+#@Heiko Ludwig, Paul W. P. J. Grefen
+#t2000
+#cSIGMOD Record
+#index53e9a051b7602d9702935a51
+
+#*Constrained algorithmic IP design for system-on-chip.
+#@Philippe Coussy, Emmanuel Casseau, Pierre Bomel, Adel Baganne, Eric Martin 0001
+#t2007
+#cIntegration
+#index53e9b3c8b7602d9703eb56bd
+#%53e997f9b7602d97020021f6
+#%53e9a2c0b7602d9702bc7cda
+#%53e99ea7b7602d9702772198
+#%53e9b9c1b7602d97045b7a6c
+#%53e9a9b7b7602d9703317315
+#%53e9b403b7602d9703ef2c55
+#%53e9b3efb7602d9703edff0a
+
+#*Developing scientific workflows from heterogeneous services.
+#@Aphrodite Tsalgatidou, George Athanasopoulos, Michael Pantazoglou, Cesare Pautasso, Thomas Heinis, Roy Grønmo, Hjørdis Hoff, Arne-Jørgen Berre, M. Glittum, Simela Topouzidou
+#t2006
+#cSIGMOD Record
+#index53e9b86db7602d970443c760
+#%53e99e71b7602d9702735022
+#%53e9b4ceb7602d9703fed64b
+#%53e9b0e6b7602d9703b63aff
+#%53e9b594b7602d97040dae9a
+
+#*Progress on HPCC and NII.
+#@Marianne Winslett
+#t1994
+#cSIGMOD Record
+#index53e9aed1b7602d97038f859e
+
+#*Derivability, redundancy and consistency of relations stored in large data banks.
+#@E. F. Codd
+#t2009
+#cSIGMOD Record
+#index53e99f78b7602d970284eba7
+
+#*Toward Autonomic Computing with DB2 Universal Database.
+#@Sam Lightstone, Guy M. Lohman, Daniel C. Zilio
+#t2002
+#cSIGMOD Record
+#index53e9a25cb7602d9702b61fef
+#%53e9a102b7602d97029ed794
+#%53e9ad81b7602d9703774a89
+#%53e99be3b7602d970248d80f
+#%53e9b11db7602d9703b996bc
+#%53e99a8cb7602d9702303d32
+#%53e9b2b8b7602d9703d5fb39
+#%53e9bb72b7602d97047b56c0
+#%53e9afbab7602d9703a0a1aa
+#%53e9b7e0b7602d970438f277
+#%53e9afbab7602d9703a088c4
+
+#*Report on the 7th EDBT Summer School: XML and Databases.
+#@Riccardo Torlone, Paolo Atzeni
+#t2004
+#cSIGMOD Record
+#index53e9bd98b7602d9704a459d7
+
+#*The GenAlg Project.
+#@Joachim Hammer, Markus Schneider 0001
+#t2004
+#cSIGMOD Record
+#index53e99854b7602d970208eaa9
+
+#*Replicated Data Management in Distributed Database Systems.
+#@Sang Hyuk Son
+#t1988
+#cSIGMOD Record
+#index53e9a11bb7602d9702a0bee9
+#%53e9bc9eb7602d9704920369
+#%53e99b78b7602d9702421502
+#%53e9b5fbb7602d9704150d11
+#%53e9ae29b7602d970383c8b5
+#%53e9b823b7602d97043dca4f
+#%53e99984b7602d97021c2ff5
+#%53e9b077b7602d9703adeb04
+#%53e9b2d7b7602d9703d88dd7
+#%53e9b2e5b7602d9703d9a2d0
+
+#*Mobile Databases: a Selection of Open Issues and Research Directions.
+#@Guy Bernard, Jalel Ben-Othman, Luc Bouganim, Gérôme Canals, Sophie Chabridon, Bruno Defude, Jean Ferrié, Stéphane Gançarski, Rachid Guerraoui, Pascal Molli, Philippe Pucheral, Claudia Roncancio, Patricia Serrano-Alvarado, Patrick Valduriez
+#t2004
+#cSIGMOD Record
+#index53e9aabdb7602d970343b0bc
+#%53e9a433b7602d9702d503e6
+#%53e9a1c3b7602d9702abd5cf
+#%53e9b483b7602d9703f8a35d
+#%53e99ebdb7602d9702785246
+#%53e9b582b7602d97040c5c86
+#%53e9979fb7602d9701f7042b
+#%53e9be5db7602d9704b1d7e8
+#%53e9b098b7602d9703b00038
+#%53e9abfeb7602d97035c1ff3
+#%53e9998bb7602d97021d0c9d
+#%53e9abaab7602d97035586ee
+#%53e9ab9eb7602d9703549194
+#%53e99c84b7602d970253749e
+#%53e997aeb7602d9701f8aec4
+#%53e99f78b7602d970284e318
+#%53e9abdab7602d9703592e01
+#%53e9ab89b7602d970353276d
+#%53e9b9a0b7602d9704592970
+#%53e99b94b7602d9702439f10
+#%53e9adaab7602d97037a8db4
+
+#*Simulation data as data streams.
+#@Ghaleb Abdulla, Terence Critchlow, William Arrighi
+#t2004
+#cSIGMOD Record
+#index53e9b4efb7602d970401a8a0
+#%53e9b0eeb7602d9703b6ab6e
+#%53e9b2e5b7602d9703d9ac61
+#%53e9b607b7602d970415da68
+#%53e99d28b7602d97025ddc26
+#%53e9a735b7602d970306c035
+
+#*Impressions of the 1970 ACM-SIGFIDET Workshop.
+#@E. F. Codd
+#t1971
+#cFDT - Bulletin of ACM SIGFIDET
+#index53e9ab55b7602d97034e84a9
+
+#*A Logic-Programming/Object-Oriented Cocktail.
+#@François Bancilhon
+#t1986
+#cSIGMOD Record
+#index53e99bf7b7602d97024a1216
+#%53e9ab6fb7602d970350df82
+#%53e9a327b7602d9702c32d5c
+
+#*In-context peer-to-peer information filtering on the Web.
+#@Aris M. Ouksel
+#t2003
+#cSIGMOD Record
+#index53e9b0fbb7602d9703b753f1
+#%53e9b3bcb7602d9703ea2715
+#%53e99aa6b7602d970231fe03
+#%53e9b37bb7602d9703e5e6de
+#%53e9ac33b7602d97035f9c66
+#%53e9aaf3b7602d9703474b73
+#%53e9b2fab7602d9703dbcc85
+#%53e9a089b7602d970296f70d
+#%53e9a9f7b7602d9703361cf9
+#%53e9ae0bb7602d9703816f7c
+
+#*Towards a database body of knowledge: a study from Spain.
+#@Coral Calero, Mario Piattini, Francisco Ruiz
+#t2003
+#cSIGMOD Record
+#index53e9a5cdb7602d9702ef7927
+#%53e9b179b7602d9703c01162
+#%53e9a4b2b7602d9702dd2845
+#%53e9be35b7602d9704af0429
+#%53e99c29b7602d97024d6839
+#%53e99845b7602d9702073c2e
+
+#*Report on the ninth conference on Software Engineering and Databases (JISBD 2004).
+#@Juan Hernández, Ernesto Pimentel, José Ambrosio Toval Álvarez
+#t2005
+#cSIGMOD Record
+#index53e9a0dfb7602d97029c8285
+
+#*The Sloan Digital Sky Survey and beyond.
+#@Alexander S. Szalay
+#t2008
+#cSIGMOD Record
+#index53e9bdceb7602d9704a7f69a
+#%53e9a246b7602d9702b4b534
+#%53e9a6fdb7602d9703034206
+#%53e99827b7602d970204a4fc
+#%53e9bb93b7602d97047db7c9
+
+#*Scaleability and immortality.
+#@Gordon Bell
+#t2008
+#cSIGMOD Record
+#index53e9981db7602d9702037667
+#%53e9b929b7602d970451564f
+#%53e9b5f3b7602d97041455bf
+#%53e9979bb7602d9701f65fd9
+#%53e99827b7602d970204a4fc
+
+#*A snapshot of public web services.
+#@Jianchun Fan, Subbarao Kambhampati
+#t2005
+#cSIGMOD Record
+#index53e9bb37b7602d9704777fee
+#%53e9979eb7602d9701f6dacf
+#%53e9b9edb7602d97045e624e
+#%53e99aecb7602d9702373cec
+
+#*Report on the 9th International Workshop on Data Base Programming Languages.
+#@Georg Lausen, Dan Suciu
+#t2004
+#cSIGMOD Record
+#index53e9a651b7602d9702f831d8
+
+#*Research and Practice in Federated Information Systems, Report of the EFIS '2000 International Workshop.
+#@Wilhelm Hasselbring, Willem-Jan van den Heuvel, Geert-Jan Houben, Ralf-Detlef Kutsche, Bodo Rieger, Mark Roantree, Kazimierz Subieta
+#t2000
+#cSIGMOD Record
+#index53e99fc3b7602d970289e46b
+
+#*Elisa Bertino speaks out: how she accrued 301 coauthors, revitalized a department, cut her commute to three minutes, enhanced our trust in shared data, and more.
+#@Marianne Winslett
+#t2010
+#cSIGMOD Record
+#index53e9aeaab7602d97038cd015
+
+#*The SIGMOD 2010 programming contest a distributed query engine.
+#@Clément Genzmer, Volker Hudlet, Hyunjung Park, Daniel Schall 0002, Pierre Senellart
+#t2010
+#cSIGMOD Record
+#index53e999adb7602d97021efb56
+
+#*Nulls, three-valued logic, and ambiguity in SQL: critiquing date's critique.
+#@Claude Rubinson
+#t2007
+#cSIGMOD Record
+#index53e9a455b7602d9702d71992
+#%53e9ba9bb7602d97046c84e2
+#%53e9a4b2b7602d9702dd2845
+#%53e99b6ab7602d970240f864
+
+#*Jennifer Widom speaks out: on luck, what constitutes success, when to get out of an area, the importance of choosing the right husband, outlandish vacations, how hard it is to be an assistant professor, and more.
+#@Marianne Winslett
+#t2006
+#cSIGMOD Record
+#index53e9a52cb7602d9702e504e7
+
+#*The Clio Project: Managing Heterogeneity.
+#@Renée J. Miller, Mauricio A. Hernández, Laura M. Haas, Ling-Ling Yan, C. T. Howard Ho, Ronald Fagin, Lucian Popa
+#t2001
+#cSIGMOD Record
+#index53e9b59bb7602d97040e14f1
+
+#*Performing Jobs without Decompression in a Compressed Database System.
+#@S. J. O'Connell, N. Winterbottom
+#t2003
+#cSIGMOD Record
+#index53e9ad76b7602d9703764548
+#%53e9bd70b7602d9704a12046
+#%53e99813b7602d970202963c
+#%53e9b587b7602d97040c828b
+#%53e9b35ab7602d9703e3683b
+
+#*Modern Client-Server DBMS Architectures.
+#@Nick Roussopoulos, Alex Delis
+#t1991
+#cSIGMOD Record
+#index53e9af26b7602d97039608d3
+
+#*Upcoming Database Conferences/Workshops.
+#@Fèlix Saltor
+#t1988
+#cSIGMOD Record
+#index53e99af7b7602d9702381aa1
+
+#*Report on data-intensive software management and mining.
+#@Seung-won Hwang
+#t2011
+#cSIGMOD Record
+#index53e9a645b7602d9702f7686f
+#%53e99c8bb7602d970253d74c
+#%53e9b130b7602d9703bb00ea
+#%53e9a885b7602d97031d06e9
+
+#*BP-Mon: query-based monitoring of BPEL business processes.
+#@Catriel Beeri, Anat Eyal, Tova Milo, Alon Pilberg
+#t2008
+#cSIGMOD Record
+#index53e99d2fb7602d97025e68a2
+#%53e9b326b7602d9703df65c7
+#%53e99a2bb7602d9702284e4b
+#%53e9abebb7602d97035a8926
+#%53e9b9d3b7602d97045ca041
+#%53e9a554b7602d9702e78ba8
+#%53e9af26b7602d9703962ff3
+
+#*Data Mining: Practical Machine Learning Tools and Techniques - Book Review.
+#@James Geller
+#t2002
+#cSIGMOD Record
+#index53e9abc5b7602d9703578d03
+
+#*Comments on Optimality of B-Trees.
+#@Jürgen Klonk
+#t1983
+#cSIGMOD Record
+#index53e9a194b7602d9702a856dd
+#%53e9b968b7602d9704555f12
+
+#*Errors in 'Process Synchronization in Database Systems'.
+#@Philip A. Bernstein, Marco A. Casanova, Nathan Goodman
+#t1981
+#cSIGMOD Record
+#index53e9a171b7602d9702a65b3a
+#%53e9ad1fb7602d9703701a1f
+#%53e9b8f6b7602d97044dd408
+#%53e9a96cb7602d97032c2d95
+#%53e99f78b7602d970284cf80
+
+#*Summary of the Final Report of the NSF Workshop on Scientific Database Management.
+#@James C. French, Anita K. Jones, John L. Pfaltz
+#t1990
+#cSIGMOD Record
+#index53e9b35ab7602d9703e38333
+
+#*Search result diversification.
+#@Marina Drosou, Evaggelia Pitoura
+#t2010
+#cSIGMOD Record
+#index53e99821b7602d970204096e
+#%53e9a073b7602d9702959591
+#%53e9b180b7602d9703c068be
+#%53e99c04b7602d97024adbd0
+#%53e9b81cb7602d97043d0941
+#%53e9b844b7602d9704403331
+#%53e9b724b7602d97042b91d3
+#%53e99e71b7602d9702738042
+#%53e9bb93b7602d97047d801d
+#%53e9a1c3b7602d9702abc477
+#%53e99c1ab7602d97024c9caf
+#%53e99885b7602d97020c13d7
+#%53e9b884b7602d9704453b35
+#%53e99ad1b7602d9702353c0e
+#%53e9abcfb7602d9703586c3e
+#%53e9ab20b7602d97034a5a8a
+#%53e9aacab7602d970344cd55
+
+#*Infosphere Project: System Support for Information Flow Applications.
+#@Calton Pu, Karsten Schwan, Jonathan Walpole
+#t2001
+#cSIGMOD Record
+#index53e9b97cb7602d970456a2b5
+
+#*Cost Estimation of User-Defined Methods in Object-Relational Database Systems.
+#@Jihad Boulos, Kinji Ono
+#t1999
+#cSIGMOD Record
+#index53e99e05b7602d97026cb93f
+
+#*Reminiscences on Influential Papers.
+#@Kenneth A. Ross, Amr El Abbadi, Theodore Johnson, Richard T. Snodgrass
+#t2002
+#cSIGMOD Record
+#index53e99b0ab7602d970239c211
+
+#*Semantic Optimization: What are Disjunctive Residues Useful for?
+#@Wolfgang L. J. Kowarschick
+#t1992
+#cSIGMOD Record
+#index53e9a1eeb7602d9702af1c6f
+#%53e998c7b7602d97020feaa5
+#%53e9b0bcb7602d9703b30d6f
+#%53e9bdd4b7602d9704a813dc
+#%53e9bc7fb7602d97048fd265
+#%53e9a88cb7602d97031d7eef
+#%53e9bb23b7602d970475fd83
+
+#*Multigranularity Locking in Multiple Job Classes Transaction Processing System.
+#@Shan-hoi Ng, Sheung-lun Hung
+#t1995
+#cSIGMOD Record
+#index53e99b26b7602d97023bfae5
+#%53e9af75b7602d97039ba999
+#%53e9ab00b7602d9703484bd6
+#%53e9ac6ab7602d970363e4da
+#%53e9983db7602d970206972f
+#%53e99c59b7602d970250887d
+#%53e9a034b7602d9702917f61
+
+#*Kanata: Adaptation and Evolution in Data Sharing Systems.
+#@Periklis Andritsos, Ariel Fuxman, Anastasios Kementsietsidis, Renée J. Miller, Yannis Velegrakis
+#t2004
+#cSIGMOD Record
+#index53e9be5db7602d9704b1f543
+#%53e9ad68b7602d97037528fa
+#%53e9a246b7602d9702b5085d
+#%53e9ae43b7602d970385cbdb
+#%53e9ab89b7602d9703535e2f
+#%53e9a914b7602d9703264c16
+#%53e9b4d4b7602d9703ff2ce5
+#%53e99931b7602d97021700d9
+#%53e9a609b7602d9702f35f7e
+#%53e9ba22b7602d9704628685
+#%53e9a48eb7602d9702daf1eb
+#%53e9a40eb7602d9702d26751
+#%53e99f18b7602d97027e30cd
+#%53e99ef4b7602d97027c0021
+#%53e9af46b7602d970398382f
+#%53e9ac62b7602d97036346d9
+#%53e9ae0bb7602d9703816f7c
+
+#*Accommodating Imprecision in Database Systems: Issues and Solutions.
+#@Amihai Motro
+#t1990
+#cSIGMOD Record
+#index53e9b04eb7602d9703ab364d
+#%53e9a96cb7602d97032c53c4
+#%53e9a1c3b7602d9702abdc3d
+#%53e9ba45b7602d9704659bc8
+#%53e9aadfb7602d970345fb7c
+#%53e9a995b7602d97032f1528
+#%53e9ba94b7602d97046ba2b3
+
+#*Editor's Notes.
+#@Thomas J. Cook
+#t1982
+#cSIGMOD Record
+#index53e99800b7602d970200b60b
+
+#*The Claremont report on database research.
+#@Rakesh Agrawal, Anastasia Ailamaki, Philip A. Bernstein, Eric A. Brewer, Michael J. Carey, Surajit Chaudhuri, AnHai Doan, Daniela Florescu, Michael J. Franklin, Hector Garcia-Molina, Johannes Gehrke, Le Gruenwald, Laura M. Haas, Alon Y. Halevy, Joseph M. Hellerstein, Yannis E. Ioannidis, Henry F. Korth, Donald Kossmann, Samuel Madden, Roger Magoulas, Beng Chin Ooi, Tim O'Reilly, Raghu Ramakrishnan, Sunita Sarawagi, Michael Stonebraker, Alexander S. Szalay, Gerhard Weikum
+#t2008
+#cSIGMOD Record
+#index53e9b360b7602d9703e40d94
+
+#*A Note on the Strategy Space of Multiway Join Query Optimization Problem in Parallel Systems.
+#@Kian-Lee Tan, Hongjun Lu
+#t1991
+#cSIGMOD Record
+#index53e9bd7bb7602d9704a1b1b0
+
+#*Real-Time Database Systems: Issues and Approaches, Guest Editor's Introduction.
+#@Sang Hyuk Son
+#t1988
+#cSIGMOD Record
+#index53e9ba84b7602d97046a5819
+
+#*VLDB Workshop on Technologies in E-Services (TES).
+#@Fabio Casati, Umeshwar Dayal, Ming-Chien Shan
+#t2000
+#cSIGMOD Record
+#index53e9ba0bb7602d970460d669
+
+#*Response to the March 1994 ODMG-93 Commentary Written by Dr. Won Kim of UniSQL, Inc.
+#@Object Database Management Group
+#t1994
+#cSIGMOD Record
+#index53e9ae2eb7602d9703843c89
+
+#*Not just correct, but correct and fast: a look at one of Jim Gray's contributions to database system performance.
+#@David J. DeWitt, Charles Levine
+#t2008
+#cSIGMOD Record
+#index53e9a627b7602d9702f5272d
+
+#*Third-Generation Database System Manifesto - The Committee for Advanced DBMS Function.
+#@Michael Stonebraker, Lawrence A. Rowe, Bruce G. Lindsay 0001, Jim Gray, Michael J. Carey, Michael L. Brodie, Philip A. Bernstein, David Beech
+#t1990
+#cSIGMOD Record
+#index53e99ea0b7602d970276750c
+
+#*Semantic Heterogeneity in Distributed Geographic Databases.
+#@Michael F. Worboys, S. Misbah Deen
+#t1991
+#cSIGMOD Record
+#index53e9b6a7b7602d970422439d
+#%53e9ab89b7602d970353704e
+#%53e9b7eeb7602d97043a0e20
+#%53e9adbdb7602d97037be8f3
+#%53e9ae5cb7602d9703878c30
+#%53e9a1e1b7602d9702adc59c
+
+#*New Proposal for a Common Command Language in Information Systems.
+#@Yves Vander Auwera, Luc Bernard
+#t1982
+#cSIGMOD Record
+#index53e9aad2b7602d970345145a
+#%53e9b430b7602d9703f29976
+
+#*Mining System Audit Data: Opportunities and Challenges.
+#@Wenke Lee, Wei Fan
+#t2001
+#cSIGMOD Record
+#index53e9bbcfb7602d970481e590
+#%53e9a2ddb7602d9702be9704
+#%53e9b59ab7602d97040de64d
+#%53e9a76db7602d97030a53cb
+#%53e999d2b7602d9702217013
+#%53e997b5b7602d9701f9ba9a
+#%53e9987db7602d97020b8d3e
+
+#*Logic in databases: report on the LID 2008 workshop.
+#@Andrea Calì, Laks V. S. Lakshmanan, Davide Martinenghi
+#t2009
+#cSIGMOD Record
+#index53e9ba9bb7602d97046c5f53
+#%53e9b6fab7602d970428ec94
+#%53e9a246b7602d9702b5085d
+#%53e9ab89b7602d9703535e2f
+#%53e9abb2b7602d97035618eb
+#%53e9b326b7602d9703df7c74
+#%53e9ba22b7602d9704628685
+#%53e9a682b7602d9702fb51ac
+#%53e9a727b7602d970305b0cc
+#%53e9a6adb7602d9702fdfb10
+#%53e9b615b7602d970416e207
+#%53e9a94bb7602d970329d6d8
+#%53e9bd18b7602d97049a2bed
+#%53e9a42bb7602d9702d45229
+#%53e9a2f4b7602d9702c005b9
+#%53e9bb2fb7602d970476a415
+#%53e9bba1b7602d97047ec0e6
+#%53e9ad4eb7602d97037336a5
+#%53e99ad0b7602d9702352898
+#%53e9b867b7602d9704431cf2
+#%53e99edfb7602d97027a8b78
+#%53e9b8b4b7602d97044909a9
+
+#*GESTALT: An Expressive Database Programming System.
+#@Michael L. Heytens, Rishiyur S. Nikhil
+#t1989
+#cSIGMOD Record
+#index53e9ba28b7602d970463401a
+#%53e9a82cb7602d9703174914
+#%53e9a72eb7602d9703065dff
+#%53e9a439b7602d9702d531eb
+#%53e9ad26b7602d97037074f6
+
+#*Overview of the Special Section on Temporal Database Infrastructure.
+#@Richard T. Snodgrass
+#t1994
+#cSIGMOD Record
+#index53e9af12b7602d9703948ee5
+
+#*SQL Multimedia and Application Packages (SQL/MM).
+#@Jim Melton, Andrew Eisenberg
+#t2001
+#cSIGMOD Record
+#index53e9bd11b7602d970499c03a
+#%53e9a07ab7602d9702963797
+
+#*NSF Workshop on Industrial/Academic Cooperation in Database Systems.
+#@Michael J. Carey, Leonard J. Seligman
+#t1999
+#cSIGMOD Record
+#index53e99f57b7602d97028287a6
+
+#*Condition Handling in SQL Persistent Stored Modules.
+#@Jeff Richey
+#t1995
+#cSIGMOD Record
+#index53e9b4d9b7602d9703ffe516
+
+#*On six degrees of separation in DBLP-DB and more.
+#@Ergin Elmacioglu, Dongwon Lee
+#t2005
+#cSIGMOD Record
+#index53e99de1b7602d97026a13d8
+#%53e9afdab7602d9703a2b275
+#%53e997b5b7602d9701f96d88
+
+#*Call for Papers: SIGMETRICS 1985
+#t1984
+#cSIGMOD Record
+#index53e9ac28b7602d97035ed529
+
+#*Announements and Calls for Papers: IFIP WG8.4 90, Cooperating Knowledge Based Systems 90, JCIT-5, JACM, ICDT 90, BNCOD-8, InfoJapan 90
+#t1989
+#cSIGMOD Record
+#index53e99ef4b7602d97027c1029
+
+#*Minimum 3-geodetically connected graphs.
+#@Martina Bosíková
+#t2003
+#cDiscrete Applied Mathematics
+#index53e9b11db7602d9703b9e77f
+
+#*Database-assisted Spectrum Access in Dynamic Networks: A Distributed Learning Solution.
+#@Yuhua Xu, Jinlong Wang, Yitao Xu, Qihui Wu, Alagan Anpalagan
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39446
+
+#*Exploring EEG for Object Detection and Retrieval.
+#@Eva Mohedano, Amaia Salvador, Sergi Porta, Xavier Giró i Nieto, Graham Healy, Kevin McGuinness, Noel E. O'Connor, Alan F. Smeaton
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39447
+
+#*Attendee-Sourcing: Exploring The Design Space of Community-Informed Conference Scheduling.
+#@Anant P. Bhardwaj, Juho Kim, Steven Dow, David R. Karger, Sam Madden, Rob Miller, Haoqi Zhang
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39444
+
+#*Adapting Graph Application Performance via Alternate Data Structure Representation.
+#@Amlan Kusum, Iulian Neamtiu, Rajiv Gupta
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39445
+
+#*Combining k-Induction with Continuously-Refined Invariants.
+#@Dirk Beyer 0001, Matthias Dangl, Philipp Wendler
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39442
+
+#*Guaranteeing Positive Secrecy Capacity with Finite-Rate Feedback using Artificial Noise.
+#@Shuiyin Liu, Yi Hong, Emanuele Viterbo
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39443
+
+#*Jamming Bandits.
+#@SaiDhiraj Amuru, Cem Tekin, Mihaela van der Schaar, R. Michael Buehrer
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39440
+
+#*Domain-Size Pooling in Local Descriptors: DSP-SIFT.
+#@Jingming Dong, Stefano Soatto
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39441
+
+#*Dependability Tests Selection Based on the Concept of Layered Networks.
+#@Andrey A. Shchurov, Radek Marik
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3944c
+
+#*A New DoF Upper Bound and Its Achievability for $K$-User MIMO Y Channels.
+#@Kangqi Liu, Meixia Tao
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3944a
+
+#*MultiGain: A controller synthesis tool for MDPs with multiple mean-payoff objectives.
+#@Tomás Brázdil, Krishnendu Chatterjee, Vojtech Forejt, Antonín Kucera
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3944b
+
+#*Generalized Spatial Modulation in Indoor Wireless Visible Light Communication.
+#@S. P. Alaka, T. Lakshmi Narasimhan, A. Chockalingam
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39448
+
+#*Evolutionary Poisson Games for Controlling Large Population Behaviors.
+#@Yezekael Hayel, Quanyan Zhu
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39449
+
+#*The Forwarding Diameter of Graphs.
+#@Wenceslas Fernandez de la Vega, Mohamed El Haddad, Daniel Barraez, Oscar Ordaz
+#t1998
+#cDiscrete Applied Mathematics
+#index53e9b5bcb7602d9704101617
+
+#*3-D Statistical Channel Model for Millimeter-Wave Outdoor Mobile Broadband Communications.
+#@Mathew K. Samimi, Theodore S. Rappaport
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39416
+
+#*Wave-Style Token Machines and Quantum Lambda Calculi.
+#@Ugo Dal Lago, Margherita Zorzi
+#t2015
+#cLINEARITY
+#index53e9a396b7602d9702ca4da3
+
+#*Efficient Blind Compressed Sensing Using Sparsifying Transforms with Convergence Guarantees and Application to MRI.
+#@Saiprasad Ravishankar, Yoram Bresler
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39414
+
+#*Scalable Kernel Methods via Doubly Stochastic Gradients.
+#@Bo Dai, Bo Xie 0002, Niao He, Yingyu Liang, Anant Raj, Maria-Florina Balcan, Le Song
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39415
+
+#*Dynamic Bandwidth-Efficient BCube Topologies for Virtualized Data Center Networks.
+#@Vahid Asghari, Reza Farrahi Moghaddam, Fereydoun Farrahi Moghaddam, Mohamed Cheriet
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39412
+
+#*Spatial Sensing and Cognitive Radio Communication in the Presence of A $K$-User Interference Primary Network.
+#@Ardalan Alizadeh, Hamid-Reza Bahrami, Mehdi Maleki, Shivakumar Sastry
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39413
+
+#*Optimizing a Certified Proof Checker for a Large-Scale Computer-Generated Proof.
+#@Luís Cruz-Filipe, Peter Schneider-Kamp
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39410
+
+#*Measuring the Generalized Friendship Paradox in Networks with Quality-dependent Connectivity.
+#@Naghmeh Momeni, Michael G. Rabbat
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39411
+
+#*Generalized Dantzig Selector: Application to the k-support norm.
+#@Soumyadeep Chatterjee, Sheng Chen, Arindam Banerjee
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3941e
+
+#*Algorithms that satisfy a stopping criterion, probably.
+#@Uri M. Ascher, Farbod Roosta-Khorasani
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3941f
+
+#*Estimating Performance of Pipelined Spoken Language Translation Systems.
+#@Manny Rayner, David M. Carter, Patti Price, Bertil Lyberg
+#t1994
+#cCoRR
+#index53e9bd45b7602d97049d22fb
+
+#*Modeling and Predicting Popularity Dynamics of Microblogs using Self-Excited Hawkes Processes.
+#@Peng Bao, Huawei Shen, Xiaolong Jin, Xueqi Cheng
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3941d
+
+#*Six Constructions of Difference Families.
+#@Cunsheng Ding, Chik How Tan, Yin Tan
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3941a
+
+#*Robust Reconstruction of Complex Networks from Sparse Data.
+#@Xiao Han, Zhesi Shen, Wen-Xu Wang, Zengru Di
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3941b
+
+#*Virus Detection in Multiplexed Nanowire Arrays using Hidden Semi-Markov models.
+#@Shalini Ghosh, Patrick Lincoln, Christian Petersen, Alfonso Valdes
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39418
+
+#*Towards designing artificial universes for artificial agents under interaction closure.
+#@Martin Biehl, Christoph Salge, Daniel Polani
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39419
+
+#*Simpler, Linear-Time Transitive Orientation via Lexicographic Breadth-First Search.
+#@Marc Tedder
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39406
+
+#*Achieving Secrecy Capacity of the Wiretap Channel and Broadcast Channel with a Confidential Component.
+#@Talha Cihad Gulcu, Alexander Barg
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39407
+
+#*Simultaneous Feature Learning and Hash Coding with Deep Neural Networks.
+#@Hanjiang Lai, Yan Pan, Ye Liu, Shuicheng Yan
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39404
+
+#*Variability Abstractions: Trading Precision for Speed in Family-Based Analyses (Extended Version).
+#@Aleksandar S. Dimovski, Claus Brabrand, Andrzej Wasowski
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39405
+
+#*Femtocell Association in Two-Tier Cellular Networks: Complexity and Efficient Algorithms.
+#@Zoubeir Mlika, Mathew Goonewardena, Wessam Ajib, Halima Elbiaze
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39402
+
+#*GUI system for Elders/Patients in Intensive Care.
+#@Jagdish Lal Raheja, Dhiraj, D. Gopinath, Ankit Chaudhary
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39403
+
+#*Convex Cauchy Schwarz Independent Component Analysis for Blind Source Separation.
+#@Zaid Albataineh, Fathi M. Salem
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39400
+
+#*Liftings and stresses for planar periodic frameworks.
+#@Ciprian S. Borcea, Ileana Streinu
+#t2015
+#cCoRR
+#index5550413445ce0a409eb39401
+
+#*Stochastic Shortest Paths and Risk Measures.
+#@Axel Parmentier, Frédéric Meunier
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3940e
+
+#*Three-coloring graphs with no induced seven-vertex path II : using a triangle.
+#@Maria Chudnovsky, Peter Maceli, Mingxian Zhong
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3940f
+
+#*Efficient Approximation Algorithms for Computing \emph{k} Disjoint Restricted Shortest Paths.
+#@Longkun Guo, Kewen Liao, Hong Shen, Peng Li
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3940c
+
+#*Accurate Impedance Calculation for Underground and Submarine Power Cables using MoM-SO and a Multilayer Ground Model.
+#@Utkarsh R. Patel, Piero Triverio
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3940d
+
+#*Order Reduction of the Radiative Heat Transfer Model for the Simulation of Plasma Arcs.
+#@Lorenzo Fagiano, Rudolf Gati
+#t2015
+#cCoRR
+#index5550413445ce0a409eb3940a
+
+#*Constant Factor Approximation for Balanced Cut in the PIE model.
+#@Konstantin Makarychev, Yury Makarychev, Aravindan Vijayaraghavan
+#t2014
+#cCoRR
+#index5550413445ce0a409eb3940b
+
+#*Question Answering with Subgraph Embeddings.
+#@Antoine Bordes, Sumit Chopra, Jason Weston
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39408
+
+#*Parrondo games with spatial dependence, III.
+#@Stewart N. Ethier, Jiyeon Lee
+#t2014
+#cCoRR
+#index5550413445ce0a409eb39409
