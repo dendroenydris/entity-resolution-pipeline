@@ -2,7 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 import time
-import re
+
 
 # Define a Jaccard similarity function
 def jaccard_similarity(set1, set2):
@@ -18,7 +18,7 @@ def jaccard_similarity(set1, set2):
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row):
     # Convert the values to sets and calculate Jaccard similarity
-    L = ["paper title"]
+    L = ["paper title", "publication venue"]
     value = 0
     for char in L:
         set1 = set(row[char + "_df1"].split())
@@ -59,83 +59,12 @@ def create_jaccard_baseline(df1, df2, similarity_threshold):
     execution_time = end_time - start_time
     return merged_df, execution_time
 
-# Function to find ngrams in a given text
-def find_ngrams(text: str, number: int=3) -> set:
-    if not text:
-        return set()
 
-    words = [f'  {x} ' for x in re.split(r'\W+', text.lower()) if x.strip()]
-
-    ngrams = set()
-
-    for word in words:
-        for x in range(0, len(word) - number + 1):
-            ngrams.add(word[x:x+number])
-
-    return ngrams
-
-# Function to calculate trigram similarity
-def trigram_similarity(text1, text2):
-    ngrams1 = find_ngrams(text1)
-    ngrams2 = find_ngrams(text2)
-
-    num_unique = len(ngrams1 | ngrams2)
-    num_equal = len(ngrams1 & ngrams2)
-
-    return float(num_equal) / float(num_unique)
-
-# Function to calculate combined similarity (modify weights as needed)
-def calculate_combined_similarity(row):
-    title_set1 = set(row["paper title_df1"].split())
-    title_set2 = set(row["paper title_df2"].split())
-    jaccard_similarity_title = jaccard_similarity(title_set1, title_set2)
-
-    author_names_df1 = row["author names_df1"]
-    author_names_df2 = row["author names_df2"]
-
-    if pd.isna(author_names_df1) or pd.isna(author_names_df2):
-        combined_similarity = jaccard_similarity_title
-    else:
-        trigram_similarity_author = trigram_similarity(author_names_df1, author_names_df2)
-        combined_similarity = 0.7 * jaccard_similarity_title + 0.3 * trigram_similarity_author
-
-    return combined_similarity
-
-#
-def create_combined_baseline(df1, df2, similarity_threshold):
-    start_time = time.time()
-    # Add a common key to perform a cross join product
-    df1["key"] = 1
-    df2["key"] = 1
-    # Perform a Cartesian product (cross join) on the common key
-    merged_df = pd.merge(df1, df2, on="key", suffixes=("_df1", "_df2"))
-    # Calculate combined similarity for each pair in the DataFrame
-    merged_df["combined_similarity"] = merged_df.apply(
-        calculate_combined_similarity, axis=1
-    )
-    # Keep rows where combined similarity is above the threshold
-    merged_df = merged_df[merged_df["combined_similarity"] > similarity_threshold]
-    # Drop the common key
-    merged_df.drop("key", axis=1, inplace=True)
-
-    # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
-    merged_df["ID"] = (
-        merged_df["paper ID_df1"]
-        + merged_df["paper ID_df2"]
-        + merged_df["paper title_df1"]
-        + merged_df["paper title_df2"]
-    )
-
-    # Construct the new file name with the variable
-    file_name = f"results/Combined_baseline_{similarity_threshold}.csv"
-    # Write matched pairs to a new CSV file
-    merged_df.to_csv(file_name, index=False)
-    end_time = time.time()
-    execution_time = end_time - start_time
-    return merged_df, execution_time
+def create_cosine_baseline(df1, df2, similarity_threshold):
+    return 1, 2  # Should return the merged_df and execution time, like in jaccard
 
 
-def create_YearComparison(df1, df2, similarity_threshold, matching_method):
+def create_YearComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Create a common key for the Cartesian product
@@ -163,18 +92,13 @@ def create_YearComparison(df1, df2, similarity_threshold, matching_method):
     # Drop rows with NaN values in text columns
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
 
-    # Calculate similarity based on the specified matching method
-    if matching_method == "Jaccard":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_jaccard_similarity, axis=1
-        )
-    elif matching_method == "Combined":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_combined_similarity, axis=1
-        )
+    # Calculate Jaccard similarity for each pair in the DataFrame
+    result_df["jaccard_similarity"] = result_df.apply(
+        calculate_jaccard_similarity, axis=1
+    )
 
-    # Keep rows where similarity is above the threshold
-    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    # Keep rows where Jaccard similarity is above the threshold
+    result_df = result_df[result_df["jaccard_similarity"] > similarity_threshold]
 
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     result_df["ID"] = (
@@ -193,8 +117,9 @@ def create_YearComparison(df1, df2, similarity_threshold, matching_method):
 
     return result_df, execution_time
 
+
 # Function to run a blocking and matching method
-def create_TwoYearComparison(df1, df2, similarity_threshold, matching_method):
+def create_TwoYearComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Create a common key for the Cartesian product
@@ -219,18 +144,13 @@ def create_TwoYearComparison(df1, df2, similarity_threshold, matching_method):
     # Drop rows with NaN values in text columns
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
 
-    # Calculate similarity based on the specified matching method
-    if matching_method == "Jaccard":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_jaccard_similarity, axis=1
-        )
-    elif matching_method == "Combined":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_combined_similarity, axis=1
-        )
+    # Calculate Jaccard similarity for each pair in the DataFrame
+    result_df["jaccard_similarity"] = result_df.apply(
+        calculate_jaccard_similarity, axis=1
+    )
 
-    # Keep rows where similarity is above the threshold
-    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    # Keep rows where Jaccard similarity is above the threshold
+    result_df = result_df[result_df["jaccard_similarity"] > similarity_threshold]
 
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     result_df["ID"] = (
@@ -250,8 +170,9 @@ def create_TwoYearComparison(df1, df2, similarity_threshold, matching_method):
 
     return result_df, execution_time
 
+
 # Function for blocking by first letter of title
-def create_FirstLetterComparison(df1, df2, similarity_threshold, matching_method):
+def create_FirstLetterComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Drop rows with NaN values in text columns
@@ -276,18 +197,13 @@ def create_FirstLetterComparison(df1, df2, similarity_threshold, matching_method
     # Drop rows with NaN values in text columns
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
 
-    # Calculate similarity based on the specified matching method
-    if matching_method == "Jaccard":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_jaccard_similarity, axis=1
-        )
-    elif matching_method == "Combined":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_combined_similarity, axis=1
-        )
+    # Calculate Jaccard similarity for each pair in the DataFrame
+    result_df["jaccard_similarity"] = result_df.apply(
+        calculate_jaccard_similarity, axis=1
+    )
 
-    # Keep rows where similarity is above the threshold
-    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    # Keep rows where Jaccard similarity is above the threshold
+    result_df = result_df[result_df["jaccard_similarity"] > similarity_threshold]
 
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     result_df["ID"] = (
@@ -306,7 +222,7 @@ def create_FirstLetterComparison(df1, df2, similarity_threshold, matching_method
     return result_df, execution_time
 
 
-def create_numAuthorsComparison(df1, df2, similarity_threshold, matching_method):
+def create_numAuthorsComparison(df1, df2, similarity_threshold):
     start_time = time.time()
 
     # Drop rows with NaN values in author names columns
@@ -346,18 +262,13 @@ def create_numAuthorsComparison(df1, df2, similarity_threshold, matching_method)
     # Drop rows with NaN values in text columns
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
 
-    # Calculate similarity based on the specified matching method
-    if matching_method == "Jaccard":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_jaccard_similarity, axis=1
-        )
-    elif matching_method == "Combined":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_combined_similarity, axis=1
-        )
+    # Calculate Jaccard similarity for each pair in the DataFrame
+    result_df["jaccard_similarity"] = result_df.apply(
+        calculate_jaccard_similarity, axis=1
+    )
 
-    # Keep rows where similarity is above the threshold
-    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    # Keep rows where Jaccard similarity is above the threshold
+    result_df = result_df[result_df["jaccard_similarity"] > similarity_threshold]
 
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     result_df["ID"] = (
@@ -422,7 +333,7 @@ def run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods
             # Dynamically call the blocking method function
             blocking_function = globals()[f"create_{blocking_method}Comparison"]
             blocking_df, blocking_execution_time = blocking_function(
-                df1, df2, similarity_threshold, baseline_config["method"]
+                df1, df2, similarity_threshold
             )
 
             # Calculate confusion matrix
@@ -434,12 +345,10 @@ def run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods
             results_list.append(
                 {
                     "Baseline Method": baseline_config["method"],
-                    "Baseline Execution Time": baseline_execution_time,
                     "Similarity Threshold": similarity_threshold,
                     "Blocking Method": blocking_method,
-                    "Blocking Execution Time": blocking_execution_time,
-                    "Pairs In Baseline": len(baseline_df),
-                    "Pairs In Blocking": len(blocking_df),
+                    "Execution Time": blocking_execution_time,
+                    "Pairs Count": len(blocking_df),
                     "TP": tp,
                     "FN": fn,
                     "FP": fp,
@@ -459,8 +368,8 @@ def run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods
 def calculate_baseline(df1, df2, baseline_config):
     if baseline_config["method"] == "Jaccard":
         return create_jaccard_baseline(df1, df2, baseline_config["threshold"])
-    elif baseline_config["method"] == "Combined":
-        return create_combined_baseline(df1, df2, baseline_config["threshold"])
+    elif baseline_config["method"] == "Cosine":
+        return create_cosine_baseline(df1, df2, baseline_config["threshold"])
     # Add more baseline methods as needed
 
 
@@ -474,13 +383,13 @@ if __name__ == "__main__":
     baseline_configurations = [
         {"method": "Jaccard", "threshold": 0.7},
         {"method": "Jaccard", "threshold": 0.5},
-        {"method": "Combined", "threshold": 0.5}
+        # {"method": "Cosine", "threshold": 0.5},  # comment to be removed when Cosine baseline is written.
         # Add more baseline configurations as needed
     ]
 
     # Define blocking methods
-    blocking_methods = ["Year", "TwoYear", "FirstLetter", "numAuthors"]
-    # blocking_methods = ["Year"]
+    # blocking_methods = ["Year", "TwoYear", "FirstLetter", "numAuthors"]
+    blocking_methods = ["Year"]
 
     # Run all blocking methods for each baseline and record results
     run_all_blocking_methods(df1, df2, baseline_configurations, blocking_methods)
