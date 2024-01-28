@@ -39,7 +39,7 @@ pip install .
 # Entity Resolution Pipelining
 
 We are implementing an Entity Resolution Pipelining on two datasets of citation networks, by ACM and DBLP. Here's an outline of the files and folders structure for the project:
-
+```
 📁 project
   |
   ├─ 📁 LocalERP
@@ -62,6 +62,7 @@ We are implementing an Entity Resolution Pipelining on two datasets of citation 
   ├─ 📄 requirements.txt
   ├─ 📄 setup.txt
   ├─ 📄 README.md
+```
 
 ## LocalERP
 
