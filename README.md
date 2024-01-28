@@ -54,27 +54,27 @@ The project starts with two large dataset files:
 
 Below is the structure of the project:
 
-- ?“ **project**
-  - ?“ **LocalERP**: Contains Python scripts for the entity resolution pipeline.
-    - ?“„ `__init__.py`
-    - ?“„ `clustering.py`
-    - ?“„ `main.py`
-    - ?“„ `matching.py`
-    - ?“„ `preparing.py`
-    - ?“„ `testMatching.pt`
-    - ?“„ `utils.py`
-  - ?“ **PySpark**: Utilizes Apache Spark for comparison.
-    - ?“„ `DPREP.py`
-  - ?“ **data**: Stores datasets and instruction files.
-    - ?“„ `DIA_2023_Exercise.pdf`
-    - ?“„ `citation-acm-v8_1995_2004.csv`
-    - ?“„ `dblp_1995_2004.csv`
-    - ?“„ `test.txt`
-    - ?“„ `test_1995_2004.csv`
-  - ?“„ `.gitignore`
-  - ?“„ `requirements.txt`
-  - ?“„ `setup.txt`
-  - ?“„ `README.md`
+- ğŸ“ **project**
+  - ğŸ“ **LocalERP**: Contains Python scripts for the entity resolution pipeline.
+    - ğŸ“„ `__init__.py`
+    - ğŸ“„ `clustering.py`
+    - ğŸ“„ `main.py`
+    - ğŸ“„ `matching.py`
+    - ğŸ“„ `preparing.py`
+    - ğŸ“„ `testMatching.pt`
+    - ğŸ“„ `utils.py`
+  - ğŸ“ **PySpark**: Utilizes Apache Spark for comparison.
+    - ğŸ“„ `DPREP.py`
+  - ğŸ“ **data**: Stores datasets and instruction files.
+    - ğŸ“„ `DIA_2023_Exercise.pdf`
+    - ğŸ“„ `citation-acm-v8_1995_2004.csv`
+    - ğŸ“„ `dblp_1995_2004.csv`
+    - ğŸ“„ `test.txt`
+    - ğŸ“„ `test_1995_2004.csv`
+  - ğŸ“„ `.gitignore`
+  - ğŸ“„ `requirements.txt`
+  - ğŸ“„ `setup.txt`
+  - ğŸ“„ `README.md`
 
 ## LocalERP Folder
 
