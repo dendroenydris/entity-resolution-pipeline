@@ -42,7 +42,15 @@ pip install .
 
 
 ## Project Structure Overview
-The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets. Below is the structure of the project:
+The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
+
+### Data Source
+The project starts with two large dataset files:
+- [DBLP-Citation-network V8]
+- [ACM-Citation-network V8]
+(Can be found here - https://www.aminer.org/citation)
+ 
+Below is the structure of the project:
 
 - 📁 **project**
   - 📁 **LocalERP**: Contains Python scripts for the entity resolution pipeline.
@@ -67,10 +75,10 @@ The project involves implementing an Entity Resolution Pipelining on citation ne
   - 📄 `README.md`
 
 
-## LocalERP Details
+## LocalERP Folder
 The LocalERP folder contains scripts for the entity resolution pipeline with specific configurations:
 
-- **Preparing Data**: Run `preparing.py` to clean the data.
+- **Preparing Data**: Run `preparing.py` to clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues).
 - **Running Pipeline**: Execute `main.py` with ER configurations.
 - **Configuration Options**:
   - `BLOCKING_METHODS`: Methods to reduce comparison space ["Year", "TwoYear", "numAuthors", "FirstLetter"].
@@ -85,11 +93,11 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 **Results**:
 - The results are saved in `clustering_results.csv` within the "results" folder.
 
-## PySpark Comparison
+## PySpark Folder
 The PySpark folder contains `DPREP.py` to compare the results with the Apache Spark framework.
 
-## Data Folder Contents
-The data folder includes the primary datasets and additional samples:
+## Data Folder 
+The data folder includes the prepared and cleaned datasets and additional samples:
 
 - `citation-acm-v8_1995_2004.csv`: ACM citation network dataset.
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
