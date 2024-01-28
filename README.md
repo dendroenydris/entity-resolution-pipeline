@@ -45,7 +45,7 @@ The project involves implementing an Entity Resolution Pipelining on citation ne
 
 ### Data Source
 
-The project starts with two large dataset files:
+The project starts with two large dataset text files you need to download:
 
 - [DBLP-Citation-network V8]
 - [ACM-Citation-network V8]
@@ -80,7 +80,7 @@ Below is the structure of the project:
 
 The LocalERP folder contains scripts for the entity resolution pipeline with specific configurations:
 
-- **Preparing Data**: Run `preparing.py` to clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues).
+- **Preparing Data**: Run `preparing.py` to clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues) to csv files and into `data` folder.
 - **Running Pipeline**: Execute `main.py` with ER configurations.
 - **Configuration Options**:
   - `BLOCKING_METHODS`: Methods to reduce comparison space ["Year", "TwoYear", "numAuthors", "FirstLetter"].
@@ -95,11 +95,11 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 
 **Results**:
 
-- The results are saved in `clustering_results.csv` within the "results" folder.
+- The steps above will produce the results. They are saved in `clustering_results.csv` within the "results" folder.
 
 ## PySpark Folder
 
-The PySpark folder contains `DPREP.py` to compare the results with the Apache Spark framework.
+The PySpark folder contains `DPREP.py` to compare our ER results with the Apache Spark framework.
 
 ## Data Folder
 
@@ -108,6 +108,7 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `citation-acm-v8_1995_2004.csv`: ACM citation network dataset.
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
 - `DIA_2023_Exercise.pdf`: Project instruction file.
+
 
 **Note**: Check `requirements.txt` for compatibility before running the code.
 
