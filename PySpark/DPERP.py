@@ -3,7 +3,7 @@ from pyspark.sql.functions import udf, hash, col
 from pyspark.sql.types import StringType
 from itertools import combinations
 from sklearn.metrics import precision_score, recall_score, f1_score
-from matching import calculate_confusion_matrix
+from LocalERP.matching import calculate_confusion_matrix
 import pandas as pd
 from graphframes import GraphFrame
 
@@ -13,12 +13,12 @@ spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
 
 # Read the datasets from two databases
 df1 = (
-    spark.read.option("delimiter", ";")
+    spark.read.option("delimiter", ",")
     .option("header", True)
     .csv("data/citation-acm-v8_1995_2004.csv")
 )
 df2 = (
-    spark.read.option("delimiter", ";")
+    spark.read.option("delimiter", ",")
     .option("header", True)
     .csv("data/dblp_1995_2004.csv")
 )

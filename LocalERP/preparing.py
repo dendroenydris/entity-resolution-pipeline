@@ -1,7 +1,6 @@
 import pandas as pd
 
-databases = []
-columns = [
+DATABSE_COLUMNS = [
     "paper ID",
     "paper title",
     "author names",
@@ -11,6 +10,7 @@ columns = [
 
 
 def prepare_data(file_name):
+    databases = []
     # paper ID, paper title, author names, publication venue, and year of publication
     with open(file_name) as f:
         # Split the file into a list of entries
@@ -46,6 +46,7 @@ def prepare_data(file_name):
                         # Lowercase all characters and eliminate special characters
                         databases[i][j] = filtered_string
                         break
+
     # Filter the data based on specified criteria
     databases = [data for data in databases if (data[-1] != "") and (data[0] != "")]
     databases = [
@@ -57,23 +58,11 @@ def prepare_data(file_name):
             and (("SIGMOD".lower() in data[-2]) or ("VLDB".lower() in data[-2]))
         )
     ]
-
+    database = pd.DataFrame(databases, columns=DATABSE_COLUMNS)
+    # Assuming in the same databse if the ids are the same, then the papers are the same, delete the duplicate ids.
+    database = database.drop_duplicates(subset=["paper ID"])
     # Write the filtered data to a CSV file
-    with open(file_name[:-4] + "_1995_2004.csv", "w") as f:
-        f.write(
-            "paper ID;paper title;author names;publication venue;year of publication\n"
-        )
-        # Assuming in the same databse if the ids are the same, then the papers are the same, delete the duplicate ids.
-        Lidx = []
-        for cols in databases:
-            line = ""
-            if cols[0] in Lidx:
-                continue
-            else:
-                Lidx.append(cols[0])
-            for col in cols:
-                line = line + col + ";"
-            f.write(line[:-1] + "\n")
+    database.to_csv(file_name[:-4] + "_1995_2004.csv", index=False)
 
 
 if __name__ == "__main__":

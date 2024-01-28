@@ -33,3 +33,6 @@ results/
 test.py
 *.pyc
 __pycache__
+inbox
+DIA.egg-info
+build

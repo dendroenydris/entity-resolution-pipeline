@@ -1948,6 +1948,28 @@
 #%53e9ac62b7602d97036346d9
 #%53e9ae0bb7602d9703816f7c
 
+#*Kanata: Adaptation and Evolution in Data Sharing Systems.
+#@Periklis Andritsos, Ariel Fuxman, Anastasios Kementsietsidis, Renée J. Miller, Yannis Velegrakis
+#t2004
+#cSIGMOD Record
+#index53e9be5db7602d9704b1f543
+#%53e9ad68b7602d97037528fa
+#%53e9a246b7602d9702b5085d
+#%53e9ae43b7602d970385cbdb
+#%53e9ab89b7602d9703535e2f
+#%53e9a914b7602d9703264c16
+#%53e9b4d4b7602d9703ff2ce5
+#%53e99931b7602d97021700d9
+#%53e9a609b7602d9702f35f7e
+#%53e9ba22b7602d9704628685
+#%53e9a48eb7602d9702daf1eb
+#%53e9a40eb7602d9702d26751
+#%53e99f18b7602d97027e30cd
+#%53e99ef4b7602d97027c0021
+#%53e9af46b7602d970398382f
+#%53e9ac62b7602d97036346d9
+#%53e9ae0bb7602d9703816f7c
+
 #*Accommodating Imprecision in Database Systems: Issues and Solutions.
 #@Amihai Motro
 #t1990
