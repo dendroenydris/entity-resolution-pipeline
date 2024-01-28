@@ -38,55 +38,66 @@ pip install .
 
 # Entity Resolution Pipelining
 
-We are implementing an Entity Resolution Pipelining on two datasets of citation networks, by ACM and DBLP. Here's an outline of the files and folders structure for the project:
-```
-📁 project
-  |
-  ├─ 📁 LocalERP
-  |    |    ├─ 📄 __init__.py
-  |    |    ├─ 📄 clustering.py
-  |    |    ├─ 📄 main.py
-  |    |    ├─ 📄 matching.py
-  |    |    ├─ 📄 preparing.py
-  |    |    ├─ 📄 testMatching.pt
-  |    |    └─ 📄 utils.py
-  ├─ 📁 PySpark
-  |    |    └─ 📄 DPREP.py
-  ├─ 📁 data
-  |    |    ├─ 📄 DIA_2023_Exercise.pdf
-  |    |    ├─ 📄 citation-acm-v8_1995_2004.csv
-  |    |    ├─ 📄 dblp_1995_2004.csv
-  |    |    ├─ 📄 test.txt
-  |    |    └─ 📄 test_1995_2004.csv
-  ├─ 📄 .gitignore
-  ├─ 📄 requirements.txt
-  ├─ 📄 setup.txt
-  ├─ 📄 README.md
-```
+---
 
-## LocalERP
 
-In the LocalERP folder, we have the code for implementing the entity resolution pipelining. We need to first run preparing.py in order to prepare and clean the data. Then, we run main.py with preferred ER configurations. Options are:
-- BLOCKING_METHODS = {"Year", "TwoYear", "numAuthors", "FirstLetter"}
-- MATCHING_METHODS = {"Jaccard", "Combined"}
-- "threshold": number between 0-1
+## Project Structure Overview
+The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets. Below is the structure of the project:
 
-Our choice, based on analyzing different approaches was:
-- blocking method: "FirstLetter"
-- matching method: "Combined"
-- threshold: 0.5
+- 📁 **project**
+  - 📁 **LocalERP**: Contains Python scripts for the entity resolution pipeline.
+    - 📄 `__init__.py`
+    - 📄 `clustering.py`
+    - 📄 `main.py`
+    - 📄 `matching.py`
+    - 📄 `preparing.py`
+    - 📄 `testMatching.pt`
+    - 📄 `utils.py`
+  - 📁 **PySpark**: Utilizes Apache Spark for comparison.
+    - 📄 `DPREP.py`
+  - 📁 **data**: Stores datasets and instruction files.
+    - 📄 `DIA_2023_Exercise.pdf`
+    - 📄 `citation-acm-v8_1995_2004.csv`
+    - 📄 `dblp_1995_2004.csv`
+    - 📄 `test.txt`
+    - 📄 `test_1995_2004.csv`
+  - 📄 `.gitignore`
+  - 📄 `requirements.txt`
+  - 📄 `setup.txt`
+  - 📄 `README.md`
 
-The output will show up in the "results" folder in a file called "clustering_results.csv"
 
-## PySpark
+## LocalERP Details
+The LocalERP folder contains scripts for the entity resolution pipeline with specific configurations:
 
-In the PySpark folder, we check and compare our own results with Apache Spark framework, with the file DPREP.py.
+- **Preparing Data**: Run `preparing.py` to clean the data.
+- **Running Pipeline**: Execute `main.py` with ER configurations.
+- **Configuration Options**:
+  - `BLOCKING_METHODS`: Methods to reduce comparison space ["Year", "TwoYear", "numAuthors", "FirstLetter"].
+  - `MATCHING_METHODS`: Algorithms for record comparison ["Jaccard", "Combined"].
+  - `threshold`: A value between 0-1 for decision making.
 
-## Data
+**Selected Configuration**:
+- Blocking method: `FirstLetter`
+- Matching method: `Combined`
+- Threshold: `0.5`
 
-In the data folder, we can find the two datasets we work with, "citation-acm-v8_1995_2004.csv" and "dblp_1995_2004.csv", among other datasets we used which are samples of those datasets, to avoid long computation and complexity. You can also find "DIA_2023_Exercise.pdf" which is the instructions file for this project.
+**Results**:
+- The results are saved in `clustering_results.csv` within the "results" folder.
 
-Check requirements.txt before running the code in order to verify compatibility.
+## PySpark Comparison
+The PySpark folder contains `DPREP.py` to compare the results with the Apache Spark framework.
+
+## Data Folder Contents
+The data folder includes the primary datasets and additional samples:
+
+- `citation-acm-v8_1995_2004.csv`: ACM citation network dataset.
+- `dblp_1995_2004.csv`: DBLP citation network dataset.
+- `DIA_2023_Exercise.pdf`: Project instruction file.
+
+**Note**: Check `requirements.txt` for compatibility before running the code.
+
+---
 
 
 
