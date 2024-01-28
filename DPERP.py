@@ -5,6 +5,8 @@ from itertools import combinations
 from sklearn.metrics import precision_score, recall_score, f1_score
 from matching import calculate_confusion_matrix
 import pandas as pd
+from graphframes import GraphFrame
+
 
 # Create a SparkSession in local mode
 spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
@@ -21,13 +23,13 @@ df2 = (
     .csv("data/dblp_1995_2004.csv")
 )
 
-# Blocking:
+# -----------------------Blocking---------------------------------
 # Assign entries to buckets based on blocking keys (e.g., hash-based blocking by year ranges)
 df1 = df1.withColumn("bucket", hash(df1["year of publication"]) % 10)
 df2 = df2.withColumn("bucket", hash(df2["year of publication"]) % 10)
 
 
-# Matching:
+# -----------------------Matching---------------------------------
 # Define similarity function and apply it to all pairs of entities in each bucket
 def similarity_function(entity1, entity2):
     # Implement your similarity calculation logic here
@@ -64,18 +66,9 @@ for bucket_id in range(10):
     )
     matched_pairs.extend(pairs.filter(pairs.similarity_score > 0.8).collect())
 
-matched_df = spark.createDataFrame(matched_pairs).toPandas()
+matched_df = spark.createDataFrame(matched_pairs)
 
-matched_df["ID"] = (
-    matched_df["paper ID_df1"]
-    + matched_df["paper ID_df2"]
-    + matched_df["paper title_df1"]
-    + matched_df["paper title_df2"]
-)
-
-# Write matched pairs to CSV file
-matched_df.to_csv("Matched Entities.csv", index=False)
-
+# -----------------------baseline---------------------------------
 # Calculate match quality metrics:
 # Rename columns for df1
 df1_columns = [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
@@ -92,25 +85,54 @@ baseline_pairs = baseline_pairs.withColumn(
         baseline_pairs["paper title_df1"], baseline_pairs["paper title_df2"]
     ),
 )
-baseline_matches = baseline_pairs.filter(
-    baseline_pairs.similarity_score > 0.8
-).toPandas()
-baseline_matches["ID"] = (
-    baseline_matches["paper ID_df1"]
-    + baseline_matches["paper ID_df2"]
-    + baseline_matches["paper title_df1"]
-    + baseline_matches["paper title_df2"]
+baseline_matches = baseline_pairs.filter(baseline_pairs.similarity_score > 0.8)
+
+# ---------------------Matching Results------------------------------
+matched_df_pd = matched_df.toPandas()
+matched_df_pd["ID"] = matched_df_pd["paper ID_df1"] + matched_df_pd["paper ID_df2"]
+
+# Write matched pairs to CSV file
+matched_df_pd.to_csv("Matched Entities.csv", index=False)
+
+baseline_matches_pd = baseline_matches.toPandas()
+baseline_matches_pd["ID"] = (
+    baseline_matches_pd["paper ID_df1"] + baseline_matches_pd["paper ID_df2"]
 )
+baseline_matches_pd.to_csv("baseline_matches.csv", index=False)
 
-baseline_matches.to_csv("baseline_matches.csv", index=False)
 
-# ----------------------------------------------------------------
-baseline_matches = pd.read_csv("baseline_matches.csv", sep=",")
-matched_pairs = pd.read_csv("Matched Entities.csv", sep=",")
+baseline_matches_pd = pd.read_csv("baseline_matches.csv", sep=",")
+matched_pairs_pd = pd.read_csv("Matched Entities.csv", sep=",")
 tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
-    baseline_matches, matched_pairs
+    baseline_matches_pd, matched_pairs_pd
 )
 
 print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
+# -----------------------Clustering---------------------------------
+
+
+# Read matched pairs CSV into a PySpark DataFrame
+matched_df = spark.read.option("header", True).csv("Matched Entities.csv")
+# Create vertices DataFrame
+vertices = df1.union(df2)
+vertices = vertices.withColumnRenamed("paper ID", "id")
+# Create edges DataFrame
+edges = matched_df.select("paper ID_df1", "paper ID_df2")
+edges = edges.withColumnRenamed("paper ID_df1", "src")
+edges = edges.withColumnRenamed("paper ID_df2", "dst")
+
+# Create a GraphFrame
+graph = GraphFrame(vertices, edges)
+
+# Find connected components
+connected_components = graph.connectedComponents()
+
+# Add a new column in matched_df to store cluster IDs
+matched_df = matched_df.join(connected_components, on="id", how="left")
+
+# Write clustered pairs to CSV file
+matched_df.select("paper ID_df1", "paper ID_df2", "component").write.csv(
+    "Clustered Entities", header=True, mode="overwrite"
+)
