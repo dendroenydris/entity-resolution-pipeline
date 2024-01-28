@@ -665,7 +665,7 @@ paper ID;paper title;author names;publication venue;year of publication
 539087cb20f70186a0d594f7;acm multimedia 94 conference workshop on multimedia database management systems;bruce berra, kingsley nwosu, bhavani thuraisingham;acm sigmod record;1995
 539087cb20f70186a0d594f8;information systems research at rwth aachen;matthias jarke;acm sigmod record;1995
 539087cb20f70186a0d594f9;the database group at university of hagen;gunter schlageter, thomas berkel, eberhard heuel, silke mittrach, andreas scherer, wolfgang wilkes;acm sigmod record;1995
-539087cb20f70186a0d594fa;a comparison of three user interfaces to relational microcomputer data bases;carl medsker, margaret christensen, ilyeol song;acm sigmod record;1995
+539087cb20f70186a0d594fa;a Blocking of three user interfaces to relational microcomputer data bases;carl medsker, margaret christensen, ilyeol song;acm sigmod record;1995
 539087cb20f70186a0d594f4;the third manifesto;hugh darwen, c j date;acm sigmod record;1995
 539087cb20f70186a0d594ef;implementation aspects of an objectoriented dbms;asuman dogac, mehmet altinel, cetin ozkan, ilker durusoy;acm sigmod record;1995
 539087cf20f70186a0d5b1ec;selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems;yehoshua sagiv, e k blum;selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems;1995
@@ -882,7 +882,7 @@ paper ID;paper title;author names;publication venue;year of publication
 539087d920f70186a0d604f2;bess object storage manager architecture overview;alexandros biliris, euthimios panagos;acm sigmod record;1996
 539087d920f70186a0d604ec;much ado about sharednothing;michael g norman, thomas zurek, peter thanisch;acm sigmod record;1996
 539087d920f70186a0d604f3;middle east technical university software research and development center;asuman dogac;acm sigmod record;1996
-539087d920f70186a0d604eb;guidelines for presentation and comparison of indexing techniques;justin zobel, alistair moffat, kotagiri ramamohanarao;acm sigmod record;1996
+539087d920f70186a0d604eb;guidelines for presentation and Blocking of indexing techniques;justin zobel, alistair moffat, kotagiri ramamohanarao;acm sigmod record;1996
 539087d920f70186a0d604ea;domains, relations and religious wars;r camps;acm sigmod record;1996
 539087d920f70186a0d604f5;unisqls nextgeneration objectrelational database management system;albert dandrea, phil janus;acm sigmod record;1996
 539087d920f70186a0d604f4;olap, relational, and multidimensional database systems;george colliat;acm sigmod record;1996
@@ -1282,7 +1282,7 @@ paper ID;paper title;author names;publication venue;year of publication
 539087f320f70186a0d6f85b;integration of spatial join algorithms for processing multiple inputs;nikos mamoulis, dimitris papadias;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
 539087f320f70186a0d6f866;querying network directories;h v jagadish, laks v s lakshmanan, tova milo, divesh srivastava, dimitra vista;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
 539087f320f70186a0d6f863;update propagation protocols for replicated databates;yuri breitbart, raghavan komondoor, rajeev rastogi, s seshadri, avi silberschatz;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
-539087f320f70186a0d6f86f;a comparison of selectivity estimators for range queries on metric attributes;björn blohsfeld, dieter korus, bernhard seeger;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
+539087f320f70186a0d6f86f;a Blocking of selectivity estimators for range queries on metric attributes;björn blohsfeld, dieter korus, bernhard seeger;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
 539087f320f70186a0d6f86e;query optimization for selections using bitmaps;mingchuan wu;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
 539087f320f70186a0d6f868;optimization of constrained frequent set queries with 2variable constraints;laks v s lakshmanan, raymond ng, jiawei han, alex pang;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
 539087f320f70186a0d6f869;boatoptimistic decision tree construction;johannes gehrke, venkatesh ganti, raghu ramakrishnan, weiyin loh;sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data;1999
@@ -1774,7 +1774,7 @@ paper ID;paper title;author names;publication venue;year of publication
 5390882420f70186a0d890a5;characterizing memory requirements for queries over continuous data streams;arvind arasu, brian babcock, shivnath babu, jon mcalister, jennifer widom;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
 5390882420f70186a0d89094;algorithmics and applications of tree and graph searching;dennis shasha, jason t l wang, rosalba giugno;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
 5390882420f70186a0d890a9;labeling dynamic xml trees;edith cohen, haim kaplan, tova milo;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
-5390882420f70186a0d890a4;answering queries using views with arithmetic comparisons;foto afrati, chen li, prasenjit mitra;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
+5390882420f70186a0d890a4;answering queries using views with arithmetic Blockings;foto afrati, chen li, prasenjit mitra;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
 5390882420f70186a0d890ab;least expected cost query optimization what can we expect;francis chu, joseph halpern, johannes gehrke;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
 5390882420f70186a0d89091;models and issues in data stream systems;brian babcock, shivnath babu, mayur datar, rajeev motwani, jennifer widom;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
 5390882420f70186a0d890a6;data integration a theoretical perspective;maurizio lenzerini;proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems;2002
@@ -1868,7 +1868,7 @@ paper ID;paper title;author names;publication venue;year of publication
 5390882d20f70186a0d8dadf;acdn a content delivery network for applications;pradnya karbhari, michael rabinovich, zhen xiao, fred douglis;proceedings of the 2002 acm sigmod international conference on management of data;2002
 5390882d20f70186a0d8dae1;cougar the network is the database;wai fu fung, david sun, johannes gehrke;proceedings of the 2002 acm sigmod international conference on management of data;2002
 5390882d20f70186a0d8dae0;commix towards effective web information extraction, integration and query answering;tengjiao wang, shiwei tang, dongqing yang, jun gao, yuqing wu, jian pei;proceedings of the 2002 acm sigmod international conference on management of data;2002
-5390882d20f70186a0d8dad1;quadtree and rtree indexes in oracle spatial a comparison using gis data;ravi kanth v kothuri, siva ravada, daniel abugov;proceedings of the 2002 acm sigmod international conference on management of data;2002
+5390882d20f70186a0d8dad1;quadtree and rtree indexes in oracle spatial a Blocking using gis data;ravi kanth v kothuri, siva ravada, daniel abugov;proceedings of the 2002 acm sigmod international conference on management of data;2002
 5390882d20f70186a0d8dadd;visual coko a debugger for query optimizer development;daniel j abadi, mitch cherniack;proceedings of the 2002 acm sigmod international conference on management of data;2002
 5390882d20f70186a0d8dad9;learning table access cardinalities with leo;volker markl, guy lohman;proceedings of the 2002 acm sigmod international conference on management of data;2002
 5390882d20f70186a0d8dad3;the sdss skyserver public access to the sloan digital sky server data;alexander s szalay, jim gray, ani r thakar, peter z kunszt, tanu malik, jordan raddick, christopher stoughton, jan vandenberg;proceedings of the 2002 acm sigmod international conference on management of data;2002
@@ -2424,7 +2424,7 @@ paper ID;paper title;author names;publication venue;year of publication
 53908a9620f70186a0da4eec;vertical data migration in large nearline document archives based on markovchain predictions;achim kraiss, gerhard weikum;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
 53908a9620f70186a0da4eeb;ondemand data elevation in hierarchical multimedia storage servers;peter triantafillou, thomas papadakis;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
 53908a9620f70186a0da4ef0;facilitating multimedia database exploration through visual interfaces and perpetual query reformulations;wensyan li, k selçuk candan, kyoji hirata, yoshinori hara;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
-53908a9620f70186a0da4eef;evaluation of main memory join algorithms for joins with set comparison join predicates;sven helmer, guido moerkotte;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
+53908a9620f70186a0da4eef;evaluation of main memory join algorithms for joins with set Blocking join predicates;sven helmer, guido moerkotte;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
 53908a9620f70186a0da4ee5;algorithms for materialized view design in data warehousing environment;jian yang, kamalakar karlapalem, qing li;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
 53908a9620f70186a0da4eee;finding data in the neighborhood;andré eickler, alfons kemper, donald kossmann;vldb 97 proceedings of the 23rd international conference on very large data bases;1997
 53908a9620f70186a0da4eed;the network as a global database challenges of interoperability, proactivity, interactiveness, legacy;peter c lockemann, ulrike kölsch, arne koschel, ralf kramer, ralf nikolai, mechtild wallrath, hansdirk walter;vldb 97 proceedings of the 23rd international conference on very large data bases;1997

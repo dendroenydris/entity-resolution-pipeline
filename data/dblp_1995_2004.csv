@@ -13,7 +13,7 @@ paper ID;paper title;author names;publication venue;year of publication
 53e9a7b3b7602d97030eda57;research issues for data communication in mobile adhoc network database systems;leslie d fife, le gruenwald;sigmod record;2003
 53e99809b7602d970201f8e3;chairs message;richard t snodgrass;sigmod record;1998
 53e9a515b7602d9702e363b7;an approach to confidence based page ranking for user oriented web search;debajyoti mukhopadhyay, debasis giri, sanasam ranbir singh;sigmod record;2003
-53e9bd1eb7602d97049a89a1;a comparison of three user interfaces to relational microcomputer data bases;carl medsker, margaret christensen, ilyeol song;sigmod record;1995
+53e9bd1eb7602d97049a89a1;a Blocking of three user interfaces to relational microcomputer data bases;carl medsker, margaret christensen, ilyeol song;sigmod record;1995
 53e9983db7602d9702063cf1;object query standards;andrew e wade;sigmod record;1996
 53e9b991b7602d97045848ab;constraints for semistructured data and xml;peter buneman, wenfei fan, jérôme siméon, scott weinstein;sigmod record;2001
 53e99a26b7602d9702280826;database principles column  introduction;leonid libkin;sigmod record;1999
@@ -320,7 +320,7 @@ paper ID;paper title;author names;publication venue;year of publication
 53e9a27ab7602d9702b7fc2f;t2 a customizable parallel database for multidimensional data;chialin chang, anurag acharya, alan sussman, joel h saltz;sigmod record;1998
 53e9a317b7602d9702c230ca;careerenhancing services at sigmod online;alexandros labrinidis, alberto o mendelzon;sigmod record;2001
 53e9a263b7602d9702b67c26;report on the dagstuhl seminar data quality on the web;michael gertz, m tamer özsu, gunter saake, kaiuwe sattler;sigmod record;2004
-53e99e5bb7602d9702722274;guidelines for presentation and comparison of indexing techniques;justin zobel, alistair moffat, kotagiri ramamohanarao;sigmod record;1996
+53e99e5bb7602d9702722274;guidelines for presentation and Blocking of indexing techniques;justin zobel, alistair moffat, kotagiri ramamohanarao;sigmod record;1996
 53e99ea0b7602d9702766094;report on the semantic web workshop at www 2002;martin r frank, natalya fridman noy, steffen staab;sigmod record;2002
 53e9a7e3b7602d9703122916;foreword management of semistructured data;dan suciu;sigmod record;1997
 53e9a0d9b7602d97029c5404;semantic interoperability in information services experiencing with coopware;avigdor gal;sigmod record;1999
@@ -1465,7 +1465,7 @@ paper ID;paper title;author names;publication venue;year of publication
 53e998b8b7602d97020f14ec;joining interval data in relational databases;jost enderle, matthias hampel, thomas seidl;sigmod conference;2004
 53e99fddb7602d97028b9693;continually evaluating similaritybased pattern queries on a streaming time series;like gao, xiaoyang sean wang;sigmod conference;2002
 53e9a635b7602d9702f658cd;adaptive filters for continuous queries over distributed data streams;chris olston, jing jiang, jennifer widom;sigmod conference;2003
-53e9ba6ab7602d970468aa3b;quadtree and rtree indexes in oracle spatial a comparison using gis data;kothuri venkata ravi kanth, siva ravada, daniel abugov;sigmod conference;2002
+53e9ba6ab7602d970468aa3b;quadtree and rtree indexes in oracle spatial a Blocking using gis data;kothuri venkata ravi kanth, siva ravada, daniel abugov;sigmod conference;2002
 53e99d28b7602d97025ddb21;highdimensional index structures, database support for next decades applications tutorial;stefan berchtold, daniel a keim;sigmod conference;1998
 53e9bc96b7602d97049143e6;powerbookmarks a system for personalizable web information organization, sharing, and management;wensyan li, quoc vu, edward y chang, divyakant agrawal, kyoji hirata, sougata mukherjea, yileh wu, corey bufi, kevin chenchuan chang, yoshinori hara, reiko ito, yutaka kimura, kazuyuki shimazu, yukiyoshi saito;sigmod conference;1999
 53e99ed1b7602d970279a364;clustering objects on a spatial network;man lung yiu, nikos mamoulis;sigmod conference;2004
@@ -1516,7 +1516,7 @@ paper ID;paper title;author names;publication venue;year of publication
 53e9ab26b7602d97034b3403;principles of optimally placing data in tertiary storage libraries;stavros christodoulakis, peter triantafillou, fenia zioga;vldb;1997
 53e9a894b7602d97031e239d;a database system for realtime event aggregation in telecommunication;jerry baulier, stephen blott, henry f korth, abraham silberschatz;vldb;1998
 53e9b46fb7602d9703f6fc8e;the design and implementation of a sequence database system;praveen seshadri, miron livny, raghu ramakrishnan;vldb;1996
-53e9aebdb7602d97038e5402;evaluation of main memory join algorithms for joins with set comparison join predicates;sven helmer, guido moerkotte;vldb;1997
+53e9aebdb7602d97038e5402;evaluation of main memory join algorithms for joins with set Blocking join predicates;sven helmer, guido moerkotte;vldb;1997
 53e9a3c1b7602d9702cd5207;reducing the braking distance of an sql query engine;michael j carey, donald kossmann;vldb;1998
 53e9b6d6b7602d9704260a46;business process coordination state of the art, trends, and open issues;umeshwar dayal, meichun hsu, rivka ladin;vldb;2001
 53e9b1c2b7602d9703c52557;the query optimizer in tandems new serverware sql product;pedro celis;vldb;1996

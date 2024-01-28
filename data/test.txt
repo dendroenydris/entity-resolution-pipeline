@@ -365,7 +365,7 @@
 #%53e99853b7602d9702089060
 #%53e99f20b7602d97027ed2c9
 
-#*A Comparison of Three User Interfaces to Relational Microcomputer Data Bases.
+#*A Blocking of Three User Interfaces to Relational Microcomputer Data Bases.
 #@Carl Medsker, Margaret Christensen, Il-Yeol Song
 #t1995
 #cSIGMOD Record

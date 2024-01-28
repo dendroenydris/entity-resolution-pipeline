@@ -66,5 +66,5 @@ if __name__ == "__main__":
     # Read data and run clustering with the basic function
     df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=";", engine="python")
     df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=";", engine="python")
-    result_df = pd.read_csv("results/MatchedEntities_YearJaccard_0.5.csv")
+    result_df = pd.read_csv("results/MatchedEntities_LetterJaccard.csv")
     run_clustering(result_df, df1, df2, clustering_basic)

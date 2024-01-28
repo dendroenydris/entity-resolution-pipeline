@@ -110,9 +110,8 @@ tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
 print("Precision:", precision)
 print("Recall:", recall)
 print("F1-score:", f1)
+
 # -----------------------Clustering---------------------------------
-
-
 # Read matched pairs CSV into a PySpark DataFrame
 matched_df = spark.read.option("header", True).csv("Matched Entities.csv")
 # Create vertices DataFrame
@@ -129,10 +128,14 @@ graph = GraphFrame(vertices, edges)
 # Find connected components
 connected_components = graph.connectedComponents()
 
-# Add a new column in matched_df to store cluster IDs
-matched_df = matched_df.join(connected_components, on="id", how="left")
+# Select the first vertex in every connected component
+first_vertices_df = connected_components.groupBy("component").agg({"id": "min"})
 
-# Write clustered pairs to CSV file
-matched_df.select("paper ID_df1", "paper ID_df2", "component").write.csv(
-    "Clustered Entities", header=True, mode="overwrite"
-)
+# Rename the column to "first_vertex"
+first_vertices_df = first_vertices_df.withColumnRenamed("min(id)", "first_vertex")
+
+# Construct the DataFrame
+result_df = first_vertices_df.orderBy("component")
+
+# Write the DataFrame to a CSV file
+result_df.write.csv("First Vertices.csv", header=True, mode="overwrite")
