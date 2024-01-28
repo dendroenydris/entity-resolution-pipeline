@@ -5,13 +5,13 @@
 ### Installation
 
 ```shell
-cd pat-to-tis-project
+cd path-to-this-project
 pip install .
 ```
 
 ### Quick Introduction
 
-- part1 : `LocalERP.preparing.prepare_data("path_to_txt_filename")`
+- part1 : `LocalERP.preparing.prepare_data("path_to_txt_file")`
 - part2 :
   - Blocking: `LocalERP.blocking(df1,df2,blocking_method)`
     - Parameters:
@@ -26,7 +26,7 @@ pip install .
     - Parameters:
       - matched_entities(pandas.DataFrame)
       - df1,df2 (pandas.DataFrame) : input databases
-      - clustering_method (String) :{'basic}
+      - clustering_method (String) :{'basic'}
   - ER_pipline : `LocalERP.ER_pipline(df1,df2,ERconfiguration)`
     - Parameters:
       - df1,df2 (pandas.DataFrame) : input databases
