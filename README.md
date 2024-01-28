@@ -48,6 +48,7 @@ The project involves implementing an Entity Resolution Pipelining on citation ne
 The project starts with two large dataset files:
 - [DBLP-Citation-network V8]
 - [ACM-Citation-network V8]
+
 (Can be found here - https://www.aminer.org/citation)
  
 Below is the structure of the project:
