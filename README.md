@@ -35,7 +35,7 @@ pip install .
 
 ## Added by Nevo:
 
-```
+
 # Entity Resolution Pipelining
 
 We are implementing an Entity Resolution Pipelining on two datasets of citation networks, by ACM and DBLP. Here's an outline of the files and folders structure for the project:
@@ -86,7 +86,7 @@ In the PySpark folder, we check and compare our own results with Apache Spark fr
 In the data folder, we can find the two datasets we work with, "citation-acm-v8_1995_2004.csv" and "dblp_1995_2004.csv", among other datasets we used which are samples of those datasets, to avoid long computation and complexity. You can also find "DIA_2023_Exercise.pdf" which is the instructions file for this project.
 
 Check requirements.txt before running the code in order to verify compatibility.
-```
+
 
 
 ## Part 1 - Data Acquisition and Preparation !
