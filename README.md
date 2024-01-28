@@ -27,6 +27,10 @@ pip install .
       - matched_entities(pandas.DataFrame)
       - df1,df2 (pandas.DataFrame) : input databases
       - clustering_method (String) :{'basic}
+  - ER_pipline : `LocalERP.ER_pipline(df1,df2,ERconfiguration)`
+    - Parameters:
+      - df1,df2 (pandas.DataFrame) : input databases
+      - ERconfiguration : sample`{ "matching_method": "Jaccard", "blocking_method": "Year","clustering_method":"basic", "threshold": 0.7, "output_filename": "results/clustering_results.csv",}`
 - part 3 :
 
 ## Part 1 - Data Acquisition and Preparation !
