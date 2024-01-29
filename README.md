@@ -265,7 +265,7 @@ with similar titles and a similar number of authors.
 **Jaccard** and **First Letter** partitioning identifies matching articles
 with similar titles and the same first letter of the paper title.
 
-In the same way, the **Combined** similarity will yield results for the
+Likewise, the **Combined** similarity will yield results for the
 different blocking methods, with only difference being that it takes
 into account the number of authors in the comparison.
 
