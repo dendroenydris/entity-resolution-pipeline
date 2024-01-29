@@ -83,8 +83,8 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 - **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**: Execute `main.py` with ER configurations.
 - **Configuration Options**:
-  - `blocking_method`(String): Methods to reduce comparison space {"Year", "TwoYear", "numAuthors", "FirstLetter"}.
-  - `matching_method`(String): Algorithms for record comparison {"Jaccard", "Combined"}.
+  - `blocking_method`(String): Methods to reduce execution time {"Year", "TwoYear", "numAuthors", "FirstLetter"}.
+  - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
   - `clustering_method`(String): Altogirthm for clustering {"basic"}.
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
   - `output_filename`(String): path and file name of results to be saved.
