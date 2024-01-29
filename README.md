@@ -258,9 +258,8 @@ We use a graph from the package `Numpy` to organize related items into groups, a
 
 
 
-> *You can find the code for this part in the file named `clustring.py. `**
+> *You can find the code for this part in the file named `clustring.py.`*
 > 
-> **
 > 
 > *Also, CSV file with the union entities in the folder `results` under the name `clustering_results``*
 
