@@ -3,7 +3,7 @@
 ### :books: Table of Contents
 
 * [Abstract](#Abstract)
-* [Quick Overview and User Instructions](#Quick Overview and User Instruction)
+* [Quick Overview and User Instructions](#Quick-Overview-and-User-Instruction)
 * [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
 * [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
 * [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
