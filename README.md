@@ -93,7 +93,7 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 
 ERconfiguration:
 
-`{"matching_method": "Combined",
+```{"matching_method": "Combined",
 
 "blocking_method": "FirstLetter",
 
@@ -101,7 +101,7 @@ ERconfiguration:
 
 "threshold": 0.5, 
 
-"output_filename": "results/clustering_results.csv"}`
+"output_filename": "results/clustering_results.csv"}```
 
 
 **Results**:
