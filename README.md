@@ -196,7 +196,7 @@ We would like to apply an entity resolution pipeline to our two datasets above, 
 
 **<u>Prepare Data</u>**
 
-In continuing with the above, the script employs several techniques of **data** **cleaining**. Firstly, it converts all characters to lowercase, ensuring uniformity. 
+In continuing with the above, the script employs several techniques of **data** **cleaining**.It converts all characters to lowercase, ensuring uniformity. 
 Special characters are eliminated, leaving only alphanumeric characters, spaces, and commas. This process aids in standardizing and cleaning the textual data, making it easier to compare and analyze. 
 
 
