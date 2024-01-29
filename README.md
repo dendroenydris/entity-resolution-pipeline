@@ -179,10 +179,7 @@ We have created a dataset following:
 Using Python and spesficly Pandas DataFrame to covert the datasets from TXT to CSV. Our code iterate the text file with entries separated by double newlines, extracting the attribute above.
 It organizes the data into a list of lists, filters based on criteria-1995-2004 publication range and specific venues (SIGMOD or VLDB) and exports the cleaned dataframes to a local folder.
 
-
-
 > *You can find the code for this part in the file named `preparing.py`under the function called ``prepare_data.`*
-> 
 > 
 > *Also, CSV files are in your folder with suffix `__1995_2004.csv`*
 
@@ -199,14 +196,7 @@ We would like to apply an entity resolution pipeline to our two datasets above, 
 In continuing with the above, the script employs several techniques of **data** **cleaining**.It converts all characters to lowercase, ensuring uniformity. 
 Special characters are eliminated, leaving only alphanumeric characters, spaces, and commas. This process aids in standardizing and cleaning the textual data, making it easier to compare and analyze. 
 
-
-
-
-
 > *You can find the code for this part in the file named `preparing.py`under the function is called` prepare_data.*
-> 
-
-
 
 **<u>Blocking</u>**
 
@@ -219,13 +209,9 @@ We use blocking to reduce the number of comparisons. Instead of comparing every 
 3. **Num Authors :** Articals with the same number of autors would be in the same bucket.
 
 4. **First Letter :** Articals with the same first letter would be in the same bucket.
-   
-   
 
 > *You can find the code for this part in the file named `Matching.py`. 
 > Each function is called  `blocking_x`, where x is the respective blocking method.*
-
-
 
 **<u>Matching</u>**
 
@@ -240,8 +226,6 @@ we conduct with comparing the attrubte 'paper title '.
 
 **Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
 
-
-
 Respectively:
 **Jaccard** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. 
 
@@ -251,14 +235,10 @@ Respectively:
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
-
-
-> *-You can find the code for this part in the file named Matching.py. 
+> *You can find the code for this part in the file named Matching.py. 
 > Each function is called `calculate_x``, where x is the respective similarity method.*
 > 
 > *Also, CSV files of each simalrity function and blocking method are in your folder*
-
-
 
 Testing each combanition derive these  results :
 
@@ -266,9 +246,19 @@ Testing each combanition derive these  results :
 
 **<u>Clustering</u>**
 
-and so on
+As a last part of the pipeline, we chose to cluster the other matched entites followed the combination of **first letter** backet and the **Combbiend** similraty founction - this combantion gave us the best results (F1, Recall, Precision). 
 
-now we would like that
+
+
+We use a graph from the package `Numpy` to organize related items into groups, allegedly creating clusters of similar things. In our process `(clustering_basic)`, each item is represented as a point, and if two items are similar - listed in our final matching output , we draw a connection between them in the graph. Then, we use a method called depth-first search `(dfs)` to traverse these connections, updating values as we go.
+
+
+
+> *You can find the code for this part in the file named `clustring.py. `**
+> 
+> **
+> 
+> *Also, CSV file with the union entities in the folder `results` under the name `clustering_results``*
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
