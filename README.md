@@ -6,7 +6,24 @@
 
 ```shell
 cd path-to-this-project
-pip install .
+pip install -e .
+```
+
+### Sample to Run Exercise
+
+[part1/2](./sample.py)
+
+```python
+from LocalERP import part1, part2
+part1() # cleaned data stored in "data"
+part2() # results of all methods stored in "method_results.csv"
+```
+
+for part3
+
+```shell
+python -u PySpark/DPREP.py
+python -u PySpark/DPvsLocal.py
 ```
 
 ### Quick Introduction

@@ -64,9 +64,3 @@ def prepare_data(file_name):
     # Write the filtered data to a CSV file
     database.to_csv(file_name[:-4] + "_1995_2004.csv", index=False)
 
-
-if __name__ == "__main__":
-    # Process the function on our two data files !
-    # prepare_data("data/test.txt")
-    for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
-        prepare_data(data)

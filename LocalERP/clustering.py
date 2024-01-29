@@ -59,7 +59,7 @@ def run_clustering(result_df, df1, df2, clustering_method):
     df2["index"] = np.arange(len(df2)) + len(df1)
     combined_df = clustering_basic(result_df, df1, df2)
     combined_df[DATABSE_COLUMNS].to_csv("results/clustering_results.csv", index=None)
-    print("%.2f entities are delated" % (1 - len(combined_df) / (len(df1) + len(df2))))
+    print("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
 
 
 if __name__ == "__main__":
