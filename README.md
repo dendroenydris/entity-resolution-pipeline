@@ -179,9 +179,10 @@ We have created a dataset following:
 Using Python and spesficly Pandas DataFrame to covert the datasets from TXT to CSV. Our code iterate the text file with entries separated by double newlines, extracting the attribute above.
 It organizes the data into a list of lists, filters based on criteria-1995-2004 publication range and specific venues (SIGMOD or VLDB) and exports the cleaned dataframes to a local folder.
 
-*-You can find the code for this part in the file named `preparing.py`under the function is called` blocking_x,` where x is the respective blocking method.*
-
-*-You can see the matched CSVs file in your folder path with suffix `1995_2004.csv`*
+> *-You can find the code for this part in the file named `preparing.py`under the function is called` blocking_x,` where x is the respective blocking method.*
+> 
+> 
+> Also  CSVs file in your folder path with suffix `1995_2004.csv`*
 
 ---
 
@@ -207,7 +208,8 @@ We use blocking to reduce the number of comparisons. Instead of comparing every 
 
 4. **First Letter :** Articals with the same first letter would be in the same bucket.
 
-> -You can find the code for this part in the file named `Matching.py`. Each function is called  `blocking_x`, where x isthe respective blocking method.
+> -You can find the code for this part in the file named `Matching.py`. 
+> Each function is called  `blocking_x`, where x is the respective blocking method.
 
 **<u>Matching</u>**
 
@@ -235,10 +237,10 @@ As well, the **Combined** would add also the name of the Authors to the above ou
 
 
 
-> *-You can find the code for this part in the file named Matching.py.
+> *-You can find the code for this part in the file named Matching.py. 
 > Each function is called `calculate_x``, where x is the respective similarity method.*
-
-> *-You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder*
+> 
+> Also you can see, CSV file of each simalrity function and blocking method within the reasult folder
 
 
 
