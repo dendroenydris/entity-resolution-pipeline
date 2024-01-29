@@ -274,6 +274,7 @@ functions named `calculate_x`, where x is the respective similarity method.
 CSV files for each similarity function and blocking method will be exported
 > to a local `results` folder.
 
+
 Testing different combinations yields the results shown below:
 
 ![Matching Results](https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png)
@@ -281,11 +282,11 @@ Testing different combinations yields the results shown below:
 ## Clustering
 
 In the final part of the pipeline, we chose to cluster the matched entities
-based on the combination of the **'First Letter'** bucket and the **Combined**
+based on the combination of the **'First Letter'** blocking and the **Combined**
 similarity function, for two main reasons:
 
-1. Combined similarity function has seemed to give more reliable results
-of matched entities, while inspecting the data closely.
+1. The Combined similarity function has proven to yield more reliable results
+for matched entities upon close inspection of the data.
 2. First Letter has seemed to outperform all the other methods, both in 
 execution time reduction and in other measures, such as Precision, Recall
 and F1 Score.
