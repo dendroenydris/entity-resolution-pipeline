@@ -39,7 +39,7 @@ pip install .
 
 ---
 
-## Project Structure Overview
+## Quick Project Overview
 
 The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
 
@@ -61,7 +61,7 @@ Below is the structure of the project:
     - 📄 `main.py`
     - 📄 `matching.py`
     - 📄 `preparing.py`
-    - 📄 `testMatching.pt`
+    - 📄 `testMatching.py`
     - 📄 `utils.py`
   - 📁 **PySpark**: Utilizes Apache Spark for comparison.
     - 📄 `DPREP.py`
@@ -80,22 +80,27 @@ Below is the structure of the project:
 
 The LocalERP folder contains scripts for the entity resolution pipeline with specific configurations:
 
-- **Preparing Data**: Run `preparing.py` to clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues) to csv files and into `data` folder.
+- **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**: Execute `main.py` with ER configurations.
 - **Configuration Options**:
-  - `BLOCKING_METHODS`: Methods to reduce comparison space ["Year", "TwoYear", "numAuthors", "FirstLetter"].
-  - `MATCHING_METHODS`: Algorithms for record comparison ["Jaccard", "Combined"].
-  - `threshold`: A value between 0-1 for decision making.
+  - `blocking_method`(String): Methods to reduce comparison space {"Year", "TwoYear", "numAuthors", "FirstLetter"}.
+  - `matching_method`(String): Algorithms for record comparison {"Jaccard", "Combined"}.
+  - `clustering_method`(String): Altogirthm for clustering {"basic"}.
+  - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
+  - `output_filename`(String): path and file name of results to be saved.
 
 **Selected Configuration**:
 
-- Blocking method: `FirstLetter`
-- Matching method: `Combined`
-- Threshold: `0.5`
+ERconfiguration:
+{"matching_method": "Combined",
+ "blocking_method": "FirstLetter",
+ "clustering_method":"basic", 
+ "threshold": 0.5, 
+ "output_filename": "results/clustering_results.csv"}
 
 **Results**:
 
-- The steps above will produce the results. They are saved in `clustering_results.csv` within the "results" folder.
+- The steps above will produce the results. They are saved accordingly to your `output_filename` configuration. In our default case it will be saved as `clustering_results.csv` within the `results` folder.
 
 ## PySpark Folder
 
