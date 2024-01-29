@@ -1,9 +1,9 @@
-### Entity Resolution of Publication Data
+## Entity Resolution of Publication Data
 
 ### :books: Table of Contents
 
 * [Abstract](#Abstract)
-* [How To Run The Code](#User-Instuctions)
+* [Quick Overview and User Instructions](#Quick Overview and User Instruction)
 * [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
 * [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
 * [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
@@ -14,7 +14,7 @@ in this project we were ex
 
 **Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
 
-### User Instuctions
+### Quick Overview and User Instruction
 
 <details>
 <summary>
@@ -73,7 +73,6 @@ python -u PySpark/DPvsLocal.py
 
 ## Added by Nevo:
 
-# Entity Resolution Pipelining
 
 ---
 
@@ -154,6 +153,8 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `citation-acm-v8_1995_2004.csv`: ACM citation network dataset.
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
 - `DIA_2023_Exercise.pdf`: Project instruction file.
+
+
 
 **Note**: Check `requirements.txt` for compatibility before running the code.
 
