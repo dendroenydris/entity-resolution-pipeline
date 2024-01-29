@@ -206,8 +206,8 @@ special characters, retaining only alphanumeric characters, spaces, and commas.
 This process standardizes and cleans the textual data for easier comparison
 and analysis.
 
-The code for this part is available in the file named `preparing.py` under
-the function called `prepare_data`.
+> The code for this part is available in the file named `preparing.py` under
+> the function called `prepare_data`.
 
 ## Blocking
 
@@ -223,7 +223,7 @@ partitioning strategies. In each 'bucket', we run the comparisons
 
 4. **First Letter :** Articles with the same first letter of title would be in the same bucket.
 
-> The code for blocking is in the file named `Matching.py`, with functions
+> The code for blocking is in the file named `matching.py`, with functions
 > named `blocking_x`, where x is the respective blocking method.
 
 ## Matching
@@ -252,6 +252,7 @@ names are missing for either paper, the function defaults to using
 only the Jaccard similarity of titles.
 
 For the blocking methods mentioned above:
+
 **Jaccard** similarity function with **Year** bucket identifies matching
 articles with similar titles published in the same year.
 
