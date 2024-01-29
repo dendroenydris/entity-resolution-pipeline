@@ -4,7 +4,7 @@
 
 * [Abstract](#Abstract)
 * [How To Run The Code](#User-Instuctions)
-* [Data Acquisition and Preparation (Part 1)](#Data-Acquisition-and-Preparation-(Part 1))
+* [Data Acquisition and Preparation (Part 1)](#Data-Acquisition-and-Preparation-(Part-1))
 * [Entity Resolution Pipeline (Part 2)](#Entity-Resolution-Pipeline-(Part 2))
 * [Data-Parallel Entity Resolution Pipeline(Part 3)](Data-Parallel-Entity-Resolution-Pipeline-(Part 3))
 
