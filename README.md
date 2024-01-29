@@ -1,20 +1,18 @@
 ### Entity Resolution of Publication Data
 
-### Table of content:
+### ? Table of Contents
 
-[Abstract](Abstract)
+* [Abstract](Abstract)
 
-[How To Run The Code](User Instuctions)
+* [How To Run The Code](#User Instuctions)
 
-[Data Acquisition and Preparation (Part 1)](#Data Acquisition and Preparation (Part 1))
+* [Data Acquisition and Preparation (Part 1)](#Data Acquisition and Preparation (Part 1))
 
-[Entity Resolution Pipeline (Part 2)](Entity Resolution Pipeline (Part 2))
+* [Entity Resolution Pipeline (Part 2)](#Entity Resolution Pipeline (Part 2))
 
-[Data-Parallel Entity Resolution Pipeline(Part 3)](Data-Parallel Entity Resolution Pipeline(Part 3))
+* [Data-Parallel Entity Resolution Pipeline(Part 3)](Data-Parallel Entity Resolution Pipeline(Part 3))
 
-
-
-### Abstract
+### ? Abstract
 
 in this project we were ex
 
@@ -167,7 +165,6 @@ The data folder includes the prepared and cleaned datasets and additional sample
 
 </detailes>
 
-
 ---
 
 ### Data Acquisition and Preparation (Part 1)
@@ -229,8 +226,6 @@ we conduct with comparing the attrubte 'paper title '.
 
 **Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
 
-
-
 Respectively:
 
 **Jaccard** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. 
@@ -241,14 +236,10 @@ Respectively:
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
-
-
 *-You can find the code for this part in the file named Matching.py.
 Each function is called `calculate_x``, where x is the respective similarity method.*
 
 *-You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder*
-
-
 
 Testing each combanition derive thoi:
 
