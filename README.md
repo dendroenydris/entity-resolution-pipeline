@@ -2,11 +2,11 @@
 
 ### ? Table of Contents
 
-* [Abstract](Abstract)
+* [Abstract](#Abstract)
 
-* [How To Run The Code](#User Instuctions)
+* [How To Run The Code](#User-Instuctions)
 
-* [Data Acquisition and Preparation (Part 1)](#Data Acquisition and Preparation (Part 1))
+* [Data Acquisition and Preparation (Part 1)](#Data-Acquisition-and-Preparation-(Part 1))
 
 * [Entity Resolution Pipeline (Part 2)](#Entity Resolution Pipeline (Part 2))
 
