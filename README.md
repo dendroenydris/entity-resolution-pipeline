@@ -91,17 +91,15 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 
 **Selected Configuration**:
 
-ERconfiguration:
+ERconfiguration: 
+```
+{"matching_method": "Combined",
+ "blocking_method": "FirstLetter",
+ "clustering_method":"basic", 
+ "threshold": 0.5, 
+ "output_filename": "results/clustering_results.csv"}
 
-```{"matching_method": "Combined",
-
-"blocking_method": "FirstLetter",
-
-"clustering_method":"basic", 
-
-"threshold": 0.5, 
-
-"output_filename": "results/clustering_results.csv"}```
+```
 
 
 **Results**:
