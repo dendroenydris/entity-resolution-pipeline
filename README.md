@@ -88,31 +88,31 @@ The project starts with two large dataset text files you need to download:
 - [DBLP-Citation-network V8]
 - [ACM-Citation-network V8]
 
-(Can be found here - https://www.aminer.org/citation)
+(Can be found [here](https://www.aminer.org/citation))
 
 Below is the structure of the project:
 
-- ? **project**
-  - ? **LocalERP**: Contains Python scripts for the entity resolution pipeline.
-    - ? `__init__.py`
-    - ? `clustering.py`
-    - ? `main.py`
-    - ? `matching.py`
-    - ? `preparing.py`
-    - ? `testMatching.py`
-    - ? `utils.py`
-  - ? **PySpark**: Utilizes Apache Spark for comparison.
-    - ? `DPREP.py`
-  - ? **data**: Stores datasets and instruction files.
-    - ? `DIA_2023_Exercise.pdf`
-    - ? `citation-acm-v8_1995_2004.csv`
-    - ? `dblp_1995_2004.csv`
-    - ? `test.txt`
-    - ? `test_1995_2004.csv`
-  - ? `.gitignore`
-  - ? `requirements.txt`
-  - ? `setup.txt`
-  - ? `README.md`
+- 📁 **project**
+  - 📁 **LocalERP**: Contains Python scripts for the entity resolution pipeline.
+    - 📄 `__init__.py`
+    - 📄 `clustering.py`
+    - 📄 `main.py`
+    - 📄 `matching.py`
+    - 📄 `preparing.py`
+    - 📄 `testMatching.py`
+    - 📄 `utils.py`
+  - 📁 **PySpark**: Utilizes Apache Spark for comparison.
+    - 📄 `DPREP.py`
+  - 📁 **data**: Stores datasets and instruction files.
+    - 📄 `DIA_2023_Exercise.pdf`
+    - 📄 `citation-acm-v8_1995_2004.csv`
+    - 📄 `dblp_1995_2004.csv`
+    - 📄 `test.txt`
+    - 📄 `test_1995_2004.csv`
+  - 📄 `.gitignore`
+  - 📄 `requirements.txt`
+  - 📄 `setup.txt`
+  - 📄 `README.md`
 
 ## LocalERP Folder
 
@@ -159,109 +159,146 @@ The data folder includes the prepared and cleaned datasets and additional sample
 
 </details>
 
-</detailes>
+</details>
 
 ---
 
 ### Data Acquisition and Preparation (Part 1)
 
-In this part we obtain the research publication datasets. The datasets are in text format. Click here to expand!
-As a prerequ?isite for **Entity Resolution and model training**
+In this section, we acquire datasets related to research publications. These
+datasets, available in text format, can be reached by
+[clicking here](https://www.aminer.org/citation).
 
-We have created a dataset following:
+As a prerequisite for Entity Resolution and Model Training, we have
+generated a dataset containing the following attributes:
 
-> - paper ID, paper title, author names, publication venue, year of publication
+
+> - Paper ID, paper title, author names, publication venue, year of publication
 > 
-> - publications published between 1995 to 2004
+> - Publications published between 1995 and 2004
 > 
-> - VLDB and SIGMOD venues.
+> - Publications from VLDB and SIGMOD venues
 
-Using Python and spesficly Pandas DataFrame to covert the datasets from TXT to CSV. Our code iterate the text file with entries separated by double newlines, extracting the attribute above.
-It organizes the data into a list of lists, filters based on criteria-1995-2004 publication range and specific venues (SIGMOD or VLDB) and exports the cleaned dataframes to a local folder.
+We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code
+iterates through the text file, extracting entries separated by double newlines
+and filtering based on the specified criteria. The resulting cleaned dataframes
+are exported to the local `data` folder.
 
-> *You can find the code for this part in the file named `preparing.py`under the function called ``prepare_data.`*
-> 
-> *Also, CSV files are in your folder with suffix `__1995_2004.csv`*
-
----
+> The code for this section can be found in the file named `preparing.py` under 
+> the function called `prepare_data`. Additionally, the resulting CSV files are
+> available in the local `data` folder with the suffix `__1995_2004.csv`.
 
 ### Entity Resolution Pipeline (Part 2)
 
-We would like to apply an entity resolution pipeline to our two datasets above, following this scheme
+We aim to apply an entity resolution pipeline to the aforementioned datasets,
+following the scheme depicted below:
 
-<img title="" src="https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="560" data-align="left">
+![Entity Resolution Pipeline](https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png)
 
-Image Source: Prof. Matthias Boehm, Data Integration and Analysis Course, TU Berlin.
+_Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis Course, TU Berlin._
 
+## Prepare Data
 
+Continuing from the previous section, we employ various data cleaning techniques.
+It converts all characters to lowercase, ensures uniformity, and eliminates
+special characters, retaining only alphanumeric characters, spaces, and commas.
+This process standardizes and cleans the textual data for easier comparison
+and analysis.
 
-**<u>Prepare Data</u>**
+The code for this part is available in the file named `preparing.py` under
+the function called `prepare_data`.
 
-In continuing with the above, the script employs several techniques of **data** **cleaining**.It converts all characters to lowercase, ensuring uniformity. 
-Special characters are eliminated, leaving only alphanumeric characters, spaces, and commas. This process aids in standardizing and cleaning the textual data, making it easier to compare and analyze. 
+## Blocking
 
-> *You can find the code for this part in the file named `preparing.py`under the function is called` prepare_data.*
+Blocking is employed to reduce the number of comparisons by using effective
+partitioning strategies. In each 'bucket', we run the comparisons
+(see section below). Our blocking is achieved through partitioning based on attributes:
 
-**<u>Blocking</u>**
+1. **Year :** Articles that were published in the same year would be in the same bucket.
 
-We use blocking to reduce the number of comparisons. Instead of comparing every possible pair, we devise effective partitioning strategies. In each partition, we perform the various comparisons (see section below). Our blocking is achieved through partitioning based on attributes:
+2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket.
 
-1. **Year :** Articals that were published in the same year would be in the same bucket.
+3. **Num Authors :** Articles with a similar number of authors (up to 2 difference) would be in the same bucket.
 
-2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket..
+4. **First Letter :** Articles with the same first letter of title would be in the same bucket.
 
-3. **Num Authors :** Articals with the same number of autors would be in the same bucket.
+> The code for blocking is in the file named `Matching.py`, with functions
+> named `blocking_x`, where x is the respective blocking method.
 
-4. **First Letter :** Articals with the same first letter would be in the same bucket.
+## Matching
 
-> *You can find the code for this part in the file named `Matching.py`. 
-> Each function is called  `blocking_x`, where x is the respective blocking method.*
+Before discussing comparison methods, some terms related to our pipeline are
+introduced:
 
-**<u>Matching</u>**
+- Baseline - We establish a baseline by comparing every pair between datasets, given a certain
+similarity function applied. This is our 'ground truth'.
+- Prediction - Our model prediction is generated by comparing each pair within a bucket, given the
+same similarity function applied to the respective baseline.
 
-Before presenting the comparison methods, let's introduce a few terms related to our piple line:
+**Jaccard -** The Jaccard similarity function is employed to measure the
+extent to which two sets share common elements. It does so by calculating
+the ratio of the shared elements to the total elements in both sets.
+Thresholds of 0.5 and 0.7 are used in the comparison of the 'paper title'
+attribute.
 
-- Baseline - We establish a baseline by comparing each pair beetwen the datasets.
+**Combined -** This function calculates a combined similarity score
+between two papers based on their titles and author names. It utilizes
+Jaccard similarity for title comparison and, if available, trigram
+similarity for author name comparison. The final combined similarity
+score is a weighted sum of title and author name similarities, with
+70% weight assigned to the title and 30% to the author names. If author
+names are missing for either paper, the function defaults to using
+only the Jaccard similarity of titles.
 
-- Prediction - Our model prediction is generated by comparing each pair within the bucket.
+For the blocking methods mentioned above:
+**Jaccard** similarity function with **Year** bucket identifies matching
+articles with similar titles published in the same year.
 
-**Jaccard -** We used the famous similarity function - Jaccard, which checks how much two sets share common elements by looking at the ratio of what they have in common to everything they have combined. We used 0.5 and 0.7 thresholds
-we conduct with comparing the attrubte 'paper title '.
+**Jaccard** and **Two-year** bucket identifies matching articles
+with similar titles published in the same year or in the adjacent year.
 
-**Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
+**Jaccard** and **Num Authors** bucket identifies matching articles
+with similar titles and a similar number of authors.
 
-Respectively:
-**Jaccard** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. 
+**Jaccard** and **First Letter** bucket identifies matching articles
+with similar titles and the same first letter of the paper title.
 
-**Jaccard** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year
- **Jaccard** and **Num Authors** bucket would yield all The matching articles are those with identical titles and Have the same number of authors.
- **Jaccard** and **First** **Letter** bucket would yeild all The matching articles are those with identical titles and have the same first letter.
+In the same way, the **Combined** similarity will yield results for the
+different blocking methods, with only difference being that it takes
+into account the number of authors in the comparison.
 
-As well, the **Combined** would add also the name of the Authors to the above output
+> The code for this part is available in the file named `matching.py`, with
+functions named `calculate_x`, where x is the respective similarity method.
+CSV files for each similarity function and blocking method will be exported
+> to a local `results` folder.
 
-> *You can find the code for this part in the file named Matching.py. 
-> Each function is called `calculate_x``, where x is the respective similarity method.*
-> 
-> *Also, CSV files of each simalrity function and blocking method are in your folder*
+Testing different combinations yields the results shown below:
 
-Testing each combanition derive these  results :
+![Matching Results](https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png)
 
-<img title="" src="https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="715">
+## Clustering
 
-**<u>Clustering</u>**
+In the final part of the pipeline, we chose to cluster the matched entities
+based on the combination of the **'First Letter'** bucket and the **Combined**
+similarity function, for two main reasons:
 
-As a last part of the pipeline, we chose to cluster the other matched entites followed the combination of **first letter** backet and the **Combbiend** similraty founction - this combantion gave us the best results (F1, Recall, Precision). 
+1. Combined similarity function has seemed to give more reliable results
+of matched entities, while inspecting the data closely.
+2. First Letter has seemed to outperform all the other methods, both in 
+execution time reduction and in other measures, such as Precision, Recall
+and F1 Score.
 
+We use the Numpy package to create a graph, organizing related items
+into clusters of similar entities in our clustering process
+(clustering_basic). Each item is represented as a point in the graph.
+Connections between similar items, as identified in our matching output,
+are drawn in the graph. We then employ depth-first search (DFS) to
+traverse these connections, updating values as we explore and
+contributing to the organization of clusters in the final results.
 
-
-We use a graph from the package `Numpy` to organize related items into groups, allegedly creating clusters of similar things. In our process `(clustering_basic)`, each item is represented as a point, and if two items are similar - listed in our final matching output , we draw a connection between them in the graph. Then, we use a method called depth-first search `(dfs)` to traverse these connections, updating values as we go.
-
-
-
-> *You can find the code for this part in the file named `clustring.py.`*
-> 
-> 
-> *Also, CSV file with the union entities in the folder `results` under the name `clustering_results``*
+The code for clustering is available in the file named `clustering.py`,
+and the resulting CSV file is located in the `results` folder under
+the name `clustering_results`.
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
