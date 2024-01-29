@@ -104,7 +104,7 @@ ERconfiguration:
 
 **Results**:
 
-- The steps above will produce the results. They are saved accordingly to your `output_filename` configuration. In our default case it will be saved as `clustering_results.csv` within the `results` folder.
+- The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results.csv` within the `results` folder.
 
 ## PySpark Folder
 
