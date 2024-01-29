@@ -191,6 +191,10 @@ We would like to apply an entity resolution pipeline to our two datasets above, 
 
 <img title="" src="https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="560" data-align="left">
 
+Image Source: Prof. Matthias Boehm, Data Integration and Analysis Course, TU Berlin.
+
+
+
 **<u>Prepare Data</u>**
 
 In continuing with the above, the script employs several techniques of **data** **cleaining**.It converts all characters to lowercase, ensuring uniformity. 
