@@ -253,16 +253,16 @@ only the Jaccard similarity of titles.
 
 For the blocking methods mentioned above:
 
-**Jaccard** similarity function with **Year** bucket identifies matching
+**Jaccard** similarity function with **Year** partitioning identifies matching
 articles with similar titles published in the same year.
 
-**Jaccard** and **Two-year** bucket identifies matching articles
+**Jaccard** and **Two-year** partitioning identifies matching articles
 with similar titles published in the same year or in the adjacent year.
 
-**Jaccard** and **Num Authors** bucket identifies matching articles
+**Jaccard** and **Num Authors** partitioning identifies matching articles
 with similar titles and a similar number of authors.
 
-**Jaccard** and **First Letter** bucket identifies matching articles
+**Jaccard** and **First Letter** partitioning identifies matching articles
 with similar titles and the same first letter of the paper title.
 
 In the same way, the **Combined** similarity will yield results for the
