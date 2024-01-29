@@ -1,6 +1,35 @@
-# DIA project
+---
 
-## User Instuctions
+DIA Project
+
+### Table of content:
+
+[Abstract](Abstract)
+
+[How To Run The Code](User Instuctions)
+
+[Data Acquisition and Preparation (Part 1)](#Data Acquisition and Preparation (Part 1))
+
+[Entity Resolution Pipeline (Part 2)](Entity Resolution Pipeline (Part 2))
+
+[Data-Parallel Entity Resolution Pipeline(Part 3)](Data-Parallel Entity Resolution Pipeline(Part 3))
+
+
+
+### Abstract
+
+in this project we were ex
+
+**Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
+
+### User Instuctions
+
+<details>
+<summary>
+Click here to expand!
+</summary>
+
+</summary>
 
 ### Installation
 
@@ -71,27 +100,27 @@ The project starts with two large dataset text files you need to download:
 
 Below is the structure of the project:
 
-- 📁 **project**
-  - 📁 **LocalERP**: Contains Python scripts for the entity resolution pipeline.
-    - 📄 `__init__.py`
-    - 📄 `clustering.py`
-    - 📄 `main.py`
-    - 📄 `matching.py`
-    - 📄 `preparing.py`
-    - 📄 `testMatching.py`
-    - 📄 `utils.py`
-  - 📁 **PySpark**: Utilizes Apache Spark for comparison.
-    - 📄 `DPREP.py`
-  - 📁 **data**: Stores datasets and instruction files.
-    - 📄 `DIA_2023_Exercise.pdf`
-    - 📄 `citation-acm-v8_1995_2004.csv`
-    - 📄 `dblp_1995_2004.csv`
-    - 📄 `test.txt`
-    - 📄 `test_1995_2004.csv`
-  - 📄 `.gitignore`
-  - 📄 `requirements.txt`
-  - 📄 `setup.txt`
-  - 📄 `README.md`
+- ? **project**
+  - ? **LocalERP**: Contains Python scripts for the entity resolution pipeline.
+    - ? `__init__.py`
+    - ? `clustering.py`
+    - ? `main.py`
+    - ? `matching.py`
+    - ? `preparing.py`
+    - ? `testMatching.py`
+    - ? `utils.py`
+  - ? **PySpark**: Utilizes Apache Spark for comparison.
+    - ? `DPREP.py`
+  - ? **data**: Stores datasets and instruction files.
+    - ? `DIA_2023_Exercise.pdf`
+    - ? `citation-acm-v8_1995_2004.csv`
+    - ? `dblp_1995_2004.csv`
+    - ? `test.txt`
+    - ? `test_1995_2004.csv`
+  - ? `.gitignore`
+  - ? `requirements.txt`
+  - ? `setup.txt`
+  - ? `README.md`
 
 ## LocalERP Folder
 
@@ -109,15 +138,14 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 **Selected Configuration**:
 
 ERconfiguration: 
+
 ```
 {"matching_method": "Combined",
  "blocking_method": "FirstLetter",
  "clustering_method":"basic", 
  "threshold": 0.5, 
  "output_filename": "results/clustering_results.csv"}
-
 ```
-
 
 **Results**:
 
@@ -135,27 +163,17 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
 - `DIA_2023_Exercise.pdf`: Project instruction file.
 
-
 **Note**: Check `requirements.txt` for compatibility before running the code.
+
+</detailes>
+
 
 ---
 
-## DIA Project - ofir's version
+### Data Acquisition and Preparation (Part 1)
 
-### Table of content:
-
-Part 1 - Data Acquisition and Preparation
-
-Part 2 - Entity Resolution Pipeline
-
-Part 3 - Data-Parallel Entity Resolution Pipeline
-
-How To Run The Code
-
-### Part 1 - Data Acquisition and Preparation !
-
-In this part we obtain the research publication datasets. The datasets are in text format. 
-As a prerequisite for **Entity Resolution and model trainin**
+In this part we obtain the research publication datasets. The datasets are in text format. Click here to expand!
+As a prerequ?isite for **Entity Resolution and model training**
 
 We have created a dataset following:
 
@@ -165,22 +183,24 @@ We have created a dataset following:
 > 
 > - VLDB and SIGMOD venues.
 
-Using Python, we achived resullts of two CSV fills, which would be used as a future datasets
+Using Python and spesficly Pandas DataFrame to covert the datasets from TXT to CSV. Our code iterate the text file with entries separated by double newlines, extracting the attribute above.
+It organizes the data into a list of lists, filters based on criteria-1995-2004 publication range and specific venues (SIGMOD or VLDB) and exports the cleaned dataframes to a local folder.
 
-<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right"> 
+*-You can find the code for this part in the file named `preparing.py`under the function is called` blocking_x,` where x is the respective blocking method.*
 
-### Part 2 - Entity Resolution Pipeline
+*-You can see the matched CSVs file in your folder path with suffix `1995_2004.csv`*
 
-We would like to apply entity resoltuon pipeline on our 2 data datasets above.
-following this scheme:
+---
 
-![](/Users/ofirtopchy/Library/Application%20Support/marktext/images/2024-01-28-22-24-08-image.png)
+### Entity Resolution Pipeline (Part 2)
 
-**Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
+We would like to apply an entity resolution pipeline to our two datasets above, following this scheme
+
+<img title="" src="https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="560" data-align="left">
 
 **<u>Prepare Data</u>**
 
-in the part
+AsIn the data cleaning process, the script employs several techniques. Firstly, it converts all characters to lowercase, ensuring uniformity. Special characters are eliminated, leaving only alphanumeric characters, spaces, and commas. This process aids in standardizing and cleaning the textual data, making it easier to compare and analyze. The script then filters out entries with empty paper IDs or publication years. Additionally, it ensures that the publication year falls within the specified range (1995-2004) and that the publication venue includes either "SIGMOD" or "VLDB." The resulting cleaned dataset provides a structured and consistent representation of the relevant information, suitable for further analysis or exploration.t
 
 **<u>Blocking</u>**
 
@@ -194,7 +214,7 @@ We use blocking to reduce the number of comparisons. Instead of comparing every 
 
 4. **First Letter :** Articals with the same first letter would be in the same bucket.
 
-You can find the code for this part in the file named *`Matching.py.`* Each function is called `*blocking_x,` where x isthe respective blocking method.
+-You can find the code for this part in the file named `Matching.py`. Each function is called  `blocking_x`, where x isthe respective blocking method.
 
 **<u>Matching</u>**
 
@@ -209,23 +229,35 @@ we conduct with comparing the attrubte 'paper title '.
 
 **Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
 
-If so:
 
-**Jaccard??** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. **Jaccard??** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year **Jaccard??** and **Num Authors** bucket would yield all The matching articles are those with identical titles and Have the same number of authors. **Jaccard** and **First** **Letter** bucket would yeild all The matching articles are those with identical titles and have the same first letter.
+
+Respectively:
+
+**Jaccard** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. 
+
+**Jaccard** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year
+ **Jaccard** and **Num Authors** bucket would yield all The matching articles are those with identical titles and Have the same number of authors.
+ **Jaccard** and **First** **Letter** bucket would yeild all The matching articles are those with identical titles and have the same first letter.
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
-*You can find the code for this part in the file named Matching.py.
-Each function is called `*?calculate_x``, where x is the respective similarity method.
 
-*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
 
-Graph
+*-You can find the code for this part in the file named Matching.py.
+Each function is called `calculate_x``, where x is the respective similarity method.*
 
-![](/Users/ofirtopchy/Library/Application%20Support/marktext/images/2024-01-28-22-21-15-image.png)
+*-You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder*
 
-**<u>clustering</u>**
+
+
+Testing each combanition derive thoi:
+
+<img title="" src="https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="705">
+
+**<u>Clustering</u>**
 
 and so on
 
 now we would like that
+
+## Data-Parallel Entity ResolutionPipeline(Part 3)
