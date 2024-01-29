@@ -207,7 +207,7 @@ We use blocking to reduce the number of comparisons. Instead of comparing every 
 
 4. **First Letter :** Articals with the same first letter would be in the same bucket.
 
--You can find the code for this part in the file named `Matching.py`. Each function is called  `blocking_x`, where x isthe respective blocking method.
+> -You can find the code for this part in the file named `Matching.py`. Each function is called  `blocking_x`, where x isthe respective blocking method.
 
 **<u>Matching</u>**
 
@@ -222,8 +222,9 @@ we conduct with comparing the attrubte 'paper title '.
 
 **Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
 
-Respectively:
 
+
+Respectively:
 **Jaccard** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. 
 
 **Jaccard** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year
@@ -234,14 +235,16 @@ As well, the **Combined** would add also the name of the Authors to the above ou
 
 
 
-*-You can find the code for this part in the file named Matching.py.
-Each function is called `calculate_x``, where x is the respective similarity method.*
+> *-You can find the code for this part in the file named Matching.py.
+> Each function is called `calculate_x``, where x is the respective similarity method.*
 
-*-You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder*
+> *-You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder*
 
-Testing each combanition derive thoi:
 
-<img title="" src="https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="705">
+
+Testing each combanition derive these  results :
+
+<img title="" src="https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="715">
 
 **<u>Clustering</u>**
 
