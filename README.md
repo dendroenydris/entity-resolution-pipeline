@@ -270,6 +270,6 @@ and so on
 
 now we would like that
 
-## Data Parallel Entity ResolutionPipeline (Part 3)
+## Data Parallel Entity Resolution Pipe line (Part 3)
 
 kakii
