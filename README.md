@@ -1,6 +1,4 @@
----
-
-DIA Project
+### Entity Resolution of Publication Data
 
 ### Table of content:
 
@@ -165,6 +163,8 @@ The data folder includes the prepared and cleaned datasets and additional sample
 
 **Note**: Check `requirements.txt` for compatibility before running the code.
 
+</details>
+
 </detailes>
 
 
@@ -261,3 +261,5 @@ and so on
 now we would like that
 
 ## Data-Parallel Entity ResolutionPipeline(Part 3)
+
+kakii
