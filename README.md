@@ -8,7 +8,7 @@
 * [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
 * [Data-Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
 
-### Abstract
+### :test_tube: Abstract
 
 in this project we were ex
 
