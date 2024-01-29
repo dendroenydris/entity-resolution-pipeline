@@ -232,6 +232,8 @@ Respectively:
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
+
+
 *-You can find the code for this part in the file named Matching.py.
 Each function is called `calculate_x``, where x is the respective similarity method.*
 
