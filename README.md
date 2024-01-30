@@ -13,7 +13,7 @@ In this project, we explore the development of data engineering and ML pipelines
 
 The initial phase involves acquiring the datasets and transforming them from TXT to CSV format. Subsequently, we proceed to create a local entity resolution pipeline designed to merge related entities.
 
-In the final stage, we were hands-on PySparkf ramework to implement our pipeline . We also evaluate the scalability of the module through comprehensive testing.
+In the final stage, we were hands-on PySpark framework to implement our local pipeline . We also evaluate the scalability of the module through comprehensive testing.
 
 ### Quick Overview and User Instruction
 
