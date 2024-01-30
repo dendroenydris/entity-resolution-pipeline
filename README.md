@@ -1,4 +1,4 @@
-# DIA project
+# DIA project - Entity Resolution Pipelining
 
 ## User Instuctions
 
@@ -26,7 +26,7 @@ python -u PySpark/DPREP.py
 python -u PySpark/DPvsLocal.py
 ```
 
-### Quick Introduction
+### Quick Introduction To basic Functions
 
 - part1 : `LocalERP.preparing.prepare_data("path_to_txt_file")`
 - part2 :
@@ -51,10 +51,6 @@ python -u PySpark/DPvsLocal.py
 - part 3 :
 
 ## Added by Nevo:
-
-# Entity Resolution Pipelining
-
----
 
 ## Quick Project Overview
 
@@ -108,16 +104,15 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 
 **Selected Configuration**:
 
-ERconfiguration: 
-```
-{"matching_method": "Combined",
+ERconfiguration:
+
+```python
+ERconfiguration={"matching_method": "Combined",
  "blocking_method": "FirstLetter",
- "clustering_method":"basic", 
- "threshold": 0.5, 
+ "clustering_method":"basic",
+ "threshold": 0.5,
  "output_filename": "results/clustering_results.csv"}
-
 ```
-
 
 **Results**:
 
@@ -135,7 +130,6 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
 - `DIA_2023_Exercise.pdf`: Project instruction file.
 
-
 **Note**: Check `requirements.txt` for compatibility before running the code.
 
 ---
@@ -152,22 +146,22 @@ Part 3 - Data-Parallel Entity Resolution Pipeline
 
 How To Run The Code
 
-### Part 1 - Data Acquisition and Preparation !
+### Part 1 - Data Acquisition and Preparation
 
-In this part we obtain the research publication datasets. The datasets are in text format. 
+In this part we obtain the research publication datasets. The datasets are in text format.
 As a prerequisite for **Entity Resolution and model trainin**
 
 We have created a dataset following:
 
 > - paper ID, paper title, author names, publication venue, year of publication
-> 
+>
 > - publications published between 1995 to 2004
-> 
+>
 > - VLDB and SIGMOD venues.
 
 Using Python, we achived resullts of two CSV fills, which would be used as a future datasets
 
-<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right"> 
+<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right">
 
 ### Part 2 - Entity Resolution Pipeline
 
@@ -194,7 +188,7 @@ We use blocking to reduce the number of comparisons. Instead of comparing every 
 
 4. **First Letter :** Articals with the same first letter would be in the same bucket.
 
-You can find the code for this part in the file named *`Matching.py.`* Each function is called `*blocking_x,` where x isthe respective blocking method.
+You can find the code for this part in the file named _`Matching.py.`_ Each function is called `*blocking_x,` where x is the respective blocking method.
 
 **<u>Matching</u>**
 
@@ -215,10 +209,10 @@ If so:
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
-*You can find the code for this part in the file named Matching.py.
-Each function is called `*?calculate_x``, where x is the respective similarity method.
+_You can find the code for this part in the file named Matching.py.
+Each function is called `_?calculate_x``, where x is the respective similarity method.
 
-*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
+\*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
 
 Graph
 

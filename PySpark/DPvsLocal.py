@@ -1,7 +1,7 @@
 from LocalERP import test
 import pandas as pd 
 df_dp=pd.read_csv("results/Clustering Results_pyspark.csv")["id"]
-df_local=pd.read_csv("results/clustering_results.csv")["paper ID"]
+df_local=pd.read_csv("results/pySpark+matching-results.csv")["id"]
 
 # Convert Series to sets for easy set operations
 set_df_dp = set(df_dp)
@@ -16,7 +16,6 @@ unique_in_df_local = set_df_local.difference(set_df_dp)
 # Print the number of data points in each DataFrame
 print(f"Number of data points in df_dp: {len(df_dp)}")
 print(f"Number of data points in df_local: {len(df_local)}")
-
 
 # Print the results
 print(f"Number of differences: {len(differences)}")

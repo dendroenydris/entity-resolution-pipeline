@@ -7,7 +7,6 @@ from LocalERP.matching import calculate_confusion_matrix
 import pandas as pd
 from pyspark.sql.window import Window
 from graphframes import GraphFrame
-
 from LocalERP.utils import jaccard_similarity, trigram_similarity
 
 
@@ -29,6 +28,9 @@ def calculate_combined_similarity(title1, title2, author_names_df1, author_names
     return combined_similarity
 
 
+process_udf = udf(calculate_combined_similarity, StringType())
+
+
 def FirstLetterBlocking(df1, df2):
     df1 = df1.withColumn("bucket", substring(col("paper title"), 1, 1))
     df2 = df2.withColumn("bucket", substring(col("paper title"), 1, 1))
@@ -36,8 +38,6 @@ def FirstLetterBlocking(df1, df2):
 
 
 # Assuming similarity_udf is defined elsewhere in your code
-
-
 def FirstLetterMatching(df1, df2, threshold):
     matched_pairs = None
 
@@ -58,7 +58,6 @@ def FirstLetterMatching(df1, df2, threshold):
         bucket_df2 = bucket_df2.select(df2_columns)
 
         # Perform cross join
-        process_udf = udf(calculate_combined_similarity, StringType())
         pairs = bucket_df1.crossJoin(bucket_df2)
         pairs = pairs.withColumn(
             "similarity_score",
@@ -82,22 +81,15 @@ def FirstLetterMatching(df1, df2, threshold):
 
 
 def create_baseline(df1, df2):
-    df1_columns = [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
-    t_df1 = df1.select(df1_columns)
+    t_df1 = df1.select([col(col_name).alias(col_name + "_df1") for col_name in df1.columns])
+    t_df2 = df2.select([col(col_name).alias(col_name + "_df2") for col_name in df2.columns])
 
-    # Rename columns for df2
-    df2_columns = [col(col_name).alias(col_name + "_df2") for col_name in df2.columns]
-    t_df2 = df2.select(df2_columns)
+    baseline_pairs = t_df1.crossJoin(t_df2).withColumn(
+        "similarity_score", process_udf(col("paper title_df1"), col("paper title_df2"),
+                                        col("author names_df1"), col("author names_df2"))
+    ).filter(col("similarity_score") > 0.8)
 
-    baseline_pairs = t_df1.crossJoin(t_df2)
-    baseline_pairs = baseline_pairs.withColumn(
-        "similarity_score",
-        similarity_udf(
-            baseline_pairs["paper title_df1"], baseline_pairs["paper title_df2"]
-        ),
-    )
-    pairs = baseline_pairs.filter(baseline_pairs.similarity_score > 0.8)
-    return pairs
+    return baseline_pairs
 
 
 def calculate_confusion_score(matched_df, baseline_matches):
@@ -125,7 +117,7 @@ def calculate_confusion_score(matched_df, baseline_matches):
     print("F1-score:", f1)
 
 
-def clustering(df1, df2, matched_df):
+def clustering(df1, df2, matched_df,filename="results/Clustering Results_pyspark.csv"):
     df = df1.union(df2)
     vertices = df.withColumnRenamed("paper ID", "id")
     vertices = vertices.select("id")
@@ -150,7 +142,7 @@ def clustering(df1, df2, matched_df):
     # Construct the DataFrame
     first_vertices_df = first_vertices_df.orderBy("component")
     first_vertices_df.toPandas().to_csv(
-        "results/Clustering Results_pyspark.csv", index="false"
+        filename, index="false"
     )
 
 

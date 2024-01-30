@@ -42,7 +42,7 @@ def run_all_blocking_matching_methods(
     for threshold in thresholds:
         for matching_method in matching_methods:
             start_time = time()
-            baseline_df, baseline_execution_time = calculate_baseline(
+            baseline_df = calculate_baseline(
                 df1, df2, {"method": matching_method, "threshold": threshold}
             )
             end_time = time()
@@ -125,6 +125,7 @@ def part1():
     for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
         prepare_data(data)
 
+
 def part2(thresholds=[0.5, 0.7]):
     # import database
     df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=",", engine="python")
@@ -135,4 +136,3 @@ def part2(thresholds=[0.5, 0.7]):
     run_all_blocking_matching_methods(
         df1, df2, thresholds, MATCHING_METHODS, BLOCKING_METHODS
     )
-
