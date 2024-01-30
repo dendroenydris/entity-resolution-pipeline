@@ -1,6 +1,13 @@
-# DIA project - Entity Resolution Pipelining
+# DIA project
 
-## User Instuctions
+### Quick Overview and User Instruction
+
+<details>
+<summary>
+Click here to expand!
+</summary>
+
+</summary>
 
 ### Installation
 
@@ -52,6 +59,10 @@ python -u PySpark/DPvsLocal.py
 
 ## Added by Nevo:
 
+# Entity Resolution Pipelining
+
+---
+
 ## Quick Project Overview
 
 The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
@@ -63,7 +74,7 @@ The project starts with two large dataset text files you need to download:
 - [DBLP-Citation-network V8]
 - [ACM-Citation-network V8]
 
-(Can be found here - https://www.aminer.org/citation)
+(Can be found [here](https://www.aminer.org/citation))
 
 Below is the structure of the project:
 
@@ -104,10 +115,9 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 
 **Selected Configuration**:
 
-ERconfiguration:
-
-```python
-ERconfiguration={"matching_method": "Combined",
+ERconfiguration: 
+```
+{"matching_method": "Combined",
  "blocking_method": "FirstLetter",
  "clustering_method":"basic",
  "threshold": 0.5,
@@ -130,6 +140,7 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `dblp_1995_2004.csv`: DBLP citation network dataset.
 - `DIA_2023_Exercise.pdf`: Project instruction file.
 
+
 **Note**: Check `requirements.txt` for compatibility before running the code.
 
 ---
@@ -146,73 +157,94 @@ Part 3 - Data-Parallel Entity Resolution Pipeline
 
 How To Run The Code
 
-### Part 1 - Data Acquisition and Preparation
+### Part 1 - Data Acquisition and Preparation !
 
-In this part we obtain the research publication datasets. The datasets are in text format.
+In this part we obtain the research publication datasets. The datasets are in text format. 
 As a prerequisite for **Entity Resolution and model trainin**
 
 We have created a dataset following:
 
 > - paper ID, paper title, author names, publication venue, year of publication
->
+> 
 > - publications published between 1995 to 2004
->
+> 
 > - VLDB and SIGMOD venues.
 
 Using Python, we achived resullts of two CSV fills, which would be used as a future datasets
 
-<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right">
+<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right"> 
 
 ### Part 2 - Entity Resolution Pipeline
 
-We would like to apply entity resoltuon pipeline on our 2 data datasets above.
-following this scheme:
+We aim to apply an entity resolution pipeline to the aforementioned datasets,
+following the scheme depicted below:
 
-![](/Users/ofirtopchy/Library/Application%20Support/marktext/images/2024-01-28-22-24-08-image.png)
+![Entity Resolution Pipeline](https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png)
 
-**Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
+_Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis Course, TU Berlin._
 
-**<u>Prepare Data</u>**
+## Prepare Data
 
-in the part
+Continuing from the previous section, we employ various data cleaning techniques.
+It converts all characters to lowercase, ensures uniformity, and eliminates
+special characters, retaining only alphanumeric characters, spaces, and commas.
+This process standardizes and cleans the textual data for easier comparison
+and analysis.
 
-**<u>Blocking</u>**
+> The code for this part is available in the file named `preparing.py` under
+> the function called `prepare_data`.
 
-We use blocking to reduce the number of comparisons. Instead of comparing every possible pair, we devise effective partitioning strategies. In each partition, we perform the various comparisons (see section below). Our blocking is achieved through partitioning based on attributes:
+## Blocking
 
-1. **Year :** Articals that were published in the same year would be in the same bucket.
+Blocking is employed to reduce the number of comparisons by using effective
+partitioning strategies. In each 'bucket', we run the comparisons
+(see section below). Our blocking is achieved through partitioning based on attributes:
 
-2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket..
+1. **Year :** Articles that were published in the same year would be in the same bucket.
 
-3. **Num Authors :** Articals with the same number of autors would be in the same bucket.
+2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket.
 
-4. **First Letter :** Articals with the same first letter would be in the same bucket.
+3. **Num Authors :** Articles with a similar number of authors (up to 2 difference) would be in the same bucket.
 
-You can find the code for this part in the file named _`Matching.py.`_ Each function is called `*blocking_x,` where x is the respective blocking method.
+4. **First Letter :** Articles with the same first letter of title would be in the same bucket.
 
-**<u>Matching</u>**
+You can find the code for this part in the file named *`Matching.py.`* Each function is called `*blocking_x,` where x isthe respective blocking method.
 
-Before presenting the comparison methods, let's introduce a few terms related to our piple line:
+## Matching
 
-- Baseline - We establish a baseline by comparing each pair beetwen the datasets.
+Before discussing comparison methods, some terms related to our pipeline are
+introduced:
 
-- Prediction - Our model prediction is generated by comparing each pair within the bucket.
+- Baseline - We establish a baseline by comparing every pair between datasets, given a certain
+similarity function applied. This is our 'ground truth'.
+- Prediction - Our model prediction is generated by comparing each pair within a bucket, given the
+same similarity function applied to the respective baseline.
 
-**Jaccard -** We used the famous similarity function - Jaccard, which checks how much two sets share common elements by looking at the ratio of what they have in common to everything they have combined. We used 0.5 and 0.7 thresholds
-we conduct with comparing the attrubte 'paper title '.
+**Jaccard -** The Jaccard similarity function is employed to measure the
+extent to which two sets share common elements. It does so by calculating
+the ratio of the shared elements to the total elements in both sets.
+Thresholds of 0.5 and 0.7 are used in the comparison of the 'paper title'
+attribute.
 
-**Combined -** This function computes a combined similarity score between two papers based on their titles and author names. It employs Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight given to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
+**Combined -** This function calculates a combined similarity score
+between two papers based on their titles and author names. It utilizes
+Jaccard similarity for title comparison and, if available, trigram
+similarity for author name comparison. The final combined similarity
+score is a weighted sum of title and author name similarities, with
+70% weight assigned to the title and 30% to the author names. If author
+names are missing for either paper, the function defaults to using
+only the Jaccard similarity of titles.
 
-If so:
+For the blocking methods mentioned above:
 
 **Jaccard??** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. **Jaccard??** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year **Jaccard??** and **Num Authors** bucket would yield all The matching articles are those with identical titles and Have the same number of authors. **Jaccard** and **First** **Letter** bucket would yeild all The matching articles are those with identical titles and have the same first letter.
 
 As well, the **Combined** would add also the name of the Authors to the above output
 
-_You can find the code for this part in the file named Matching.py.
-Each function is called `_?calculate_x``, where x is the respective similarity method.
+*You can find the code for this part in the file named Matching.py.
+Each function is called `*?calculate_x``, where x is the respective similarity method.
 
-\*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
+*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
 
 Graph
 
