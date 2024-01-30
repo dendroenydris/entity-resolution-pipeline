@@ -9,8 +9,11 @@
 * [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
 
 ### :test_tube: Abstract
+In this project, we explore the development of data engineering and ML pipelines, with a specific emphasis on constructing an Entity Resolution (ER) pipeline for deduplicating research publication datasets.
 
-in this project we were ex
+The initial phase involves acquiring the datasets and transforming them from TXT to CSV format. Subsequently, we proceed to create a local entity resolution pipeline designed to merge related entities.
+
+In the final stage, we were hands-on PySparkf ramework to implement our pipeline . We also evaluate the scalability of the module through comprehensive testing.
 
 **Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
 
