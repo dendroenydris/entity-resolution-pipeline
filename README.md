@@ -300,9 +300,9 @@ are drawn in the graph. We then employ depth-first search (DFS) to
 traverse these connections, updating values as we explore and
 contributing to the organization of clusters in the final results.
 
-The code for clustering is available in the file named `clustering.py`,
-and the resulting CSV file is located in the `results` folder under
-the name `clustering_results`.
+>The code for clustering is available in the file named `clustering.py`,
+and the resulting CSV will be exported to a local `results` folder under
+>the name `clustering_results`.
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
