@@ -15,8 +15,6 @@ The initial phase involves acquiring the datasets and transforming them from TXT
 
 In the final stage, we were hands-on PySparkf ramework to implement our pipeline . We also evaluate the scalability of the module through comprehensive testing.
 
-**Motivation:** Our pipeline compares two datasets to group together related papers based on information like paper ID, title, author names, and publication venue. This process ensures we have a clean and accurate dataset, making it easier to study scholarly publications effectively.
-
 ### Quick Overview and User Instruction
 
 <details>
