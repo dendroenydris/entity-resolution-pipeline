@@ -1,4 +1,19 @@
-# DIA project
+## Entity Resolution of Publication Data
+
+### :books: Table of Contents
+
+* [Abstract](#Abstract)
+* [Quick Overview and User Instructions](#Quick-Overview-and-User-Instruction)
+* [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
+* [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
+* [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
+
+### :test_tube: Abstract
+In this project, we explore the development of data engineering and ML pipelines, with a specific emphasis on constructing an Entity Resolution (ER) pipeline for deduplicating research publication datasets.
+
+The initial phase involves acquiring the datasets and transforming them from TXT to CSV format. Subsequently, we proceed to create a local entity resolution pipeline designed to merge related entities.
+
+In the final stage, we were hands-on PySpark framework to implement our local pipeline . We also evaluate the scalability of the module through comprehensive testing.
 
 ### Quick Overview and User Instruction
 
@@ -33,7 +48,7 @@ python -u PySpark/DPREP.py
 python -u PySpark/DPvsLocal.py
 ```
 
-### Quick Introduction To basic Functions
+### Quick Introduction
 
 - part1 : `LocalERP.preparing.prepare_data("path_to_txt_file")`
 - part2 :
@@ -59,7 +74,6 @@ python -u PySpark/DPvsLocal.py
 
 ## Added by Nevo:
 
-# Entity Resolution Pipelining
 
 ---
 
@@ -116,11 +130,12 @@ The LocalERP folder contains scripts for the entity resolution pipeline with spe
 **Selected Configuration**:
 
 ERconfiguration: 
+
 ```
 {"matching_method": "Combined",
  "blocking_method": "FirstLetter",
- "clustering_method":"basic",
- "threshold": 0.5,
+ "clustering_method":"basic", 
+ "threshold": 0.5, 
  "output_filename": "results/clustering_results.csv"}
 ```
 
@@ -141,40 +156,41 @@ The data folder includes the prepared and cleaned datasets and additional sample
 - `DIA_2023_Exercise.pdf`: Project instruction file.
 
 
+
 **Note**: Check `requirements.txt` for compatibility before running the code.
+
+</details>
+
+</details>
 
 ---
 
-## DIA Project - ofir's version
+### Data Acquisition and Preparation (Part 1)
 
-### Table of content:
+In this section, we acquire datasets related to research publications. These
+datasets, available in text format, can be reached by
+[clicking here](https://www.aminer.org/citation).
 
-Part 1 - Data Acquisition and Preparation
+As a prerequisite for Entity Resolution and Model Training, we have
+generated a dataset containing the following attributes:
 
-Part 2 - Entity Resolution Pipeline
 
-Part 3 - Data-Parallel Entity Resolution Pipeline
-
-How To Run The Code
-
-### Part 1 - Data Acquisition and Preparation !
-
-In this part we obtain the research publication datasets. The datasets are in text format. 
-As a prerequisite for **Entity Resolution and model trainin**
-
-We have created a dataset following:
-
-> - paper ID, paper title, author names, publication venue, year of publication
+> - Paper ID, paper title, author names, publication venue, year of publication
 > 
-> - publications published between 1995 to 2004
+> - Publications published between 1995 and 2004
 > 
-> - VLDB and SIGMOD venues.
+> - Publications from VLDB and SIGMOD venues
 
-Using Python, we achived resullts of two CSV fills, which would be used as a future datasets
+We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code
+iterates through the text file, extracting entries separated by double newlines
+and filtering based on the specified criteria. The resulting cleaned dataframes
+are exported to the local `data` folder.
 
-<img title="" src="https://media.istockphoto.com/id/97980384/photo/mans-hand-squeezing-half-of-lemon.jpg?s=612x612&w=0&k=20&c=fOwBJdxYux4EpCxA5L3zldTuNcJcdKGQuj9JpQTFM6g=" alt="Mans Hand Squeezing Half Of Lemon Stock Photo  Download Image Now  Lemon   Fruit, Squeezing, Crushed  iStock" width="113" data-align="right"> 
+> The code for this section can be found in the file named `preparing.py` under 
+> the function called `prepare_data`. Additionally, the resulting CSV files are
+> available in the local `data` folder with the suffix `__1995_2004.csv`.
 
-### Part 2 - Entity Resolution Pipeline
+### Entity Resolution Pipeline (Part 2)
 
 We aim to apply an entity resolution pipeline to the aforementioned datasets,
 following the scheme depicted below:
@@ -208,7 +224,8 @@ partitioning strategies. In each 'bucket', we run the comparisons
 
 4. **First Letter :** Articles with the same first letter of title would be in the same bucket.
 
-You can find the code for this part in the file named *`Matching.py.`* Each function is called `*blocking_x,` where x isthe respective blocking method.
+> The code for blocking is in the file named `matching.py`, with functions
+> named `blocking_x`, where x is the respective blocking method.
 
 ## Matching
 
@@ -237,21 +254,56 @@ only the Jaccard similarity of titles.
 
 For the blocking methods mentioned above:
 
-**Jaccard??** similarity function with **Year** bucket would yield all The matching articles are those with identical titles and were published in the same year. **Jaccard??** and **Two year** bucket would yield all The matching articles are those with identical titles and were published in the same year or in the adjacent year **Jaccard??** and **Num Authors** bucket would yield all The matching articles are those with identical titles and Have the same number of authors. **Jaccard** and **First** **Letter** bucket would yeild all The matching articles are those with identical titles and have the same first letter.
+**Jaccard** similarity function with **Year** partitioning identifies matching
+articles with similar titles published in the same year.
 
-As well, the **Combined** would add also the name of the Authors to the above output
+**Jaccard** and **Two-year** partitioning identifies matching articles
+with similar titles published in the same year or in the adjacent year.
 
-*You can find the code for this part in the file named Matching.py.
-Each function is called `*?calculate_x``, where x is the respective similarity method.
+**Jaccard** and **Num Authors** partitioning identifies matching articles
+with similar titles and a similar number of authors.
 
-*You can see the matched entites in CSV file of each simalrity function and blocking method within the reasult folder
+**Jaccard** and **First Letter** partitioning identifies matching articles
+with similar titles and the same first letter of the paper title.
 
-Graph
+Likewise, the **Combined** similarity will yield results for the
+different blocking methods, with only difference being that it takes
+into account the number of authors in the comparison.
 
-![](/Users/ofirtopchy/Library/Application%20Support/marktext/images/2024-01-28-22-21-15-image.png)
+> The code for this part is available in the file named `matching.py`, with
+functions named `calculate_x`, where x is the respective similarity method.
+CSV files for each similarity function and blocking method will be exported
+> to a local `results` folder.
 
-**<u>clustering</u>**
 
-and so on
+Testing different combinations yields the results shown below:
 
-now we would like that
+![Matching Results](https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png)
+
+## Clustering
+
+In the final part of the pipeline, we chose to cluster the matched entities
+based on the combination of the **'First Letter'** blocking and the **Combined**
+similarity function, for two main reasons:
+
+1. The Combined similarity function has proven to yield more reliable results
+for matched entities upon close inspection of the data.
+2. First Letter has seemed to outperform all the other methods, both in 
+execution time reduction and in other measures, such as Precision, Recall
+and F1 Score.
+
+We use the Numpy package to create a graph, organizing related items
+into clusters of similar entities in our clustering process
+(clustering_basic). Each item is represented as a point in the graph.
+Connections between similar items, as identified in our matching output,
+are drawn in the graph. We then employ depth-first search (DFS) to
+traverse these connections, updating values as we explore and
+contributing to the organization of clusters in the final results.
+
+>The code for clustering is available in the file named `clustering.py`,
+and the resulting CSV will be exported to a local `results` folder under
+>the name `clustering_results`.
+
+## Data Parallel Entity Resolution Pipeline (Part 3)
+
+kakii
