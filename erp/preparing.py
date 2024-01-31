@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 DATABSE_COLUMNS = [
     "paper ID",
     "paper title",
@@ -7,6 +8,7 @@ DATABSE_COLUMNS = [
     "publication venue",
     "year of publication",
 ]
+DATABASES_LOCATIONS=["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
 
 
 def prepare_data(file_name):

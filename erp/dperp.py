@@ -1,13 +1,11 @@
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import udf, hash, col, substring
+from pyspark.sql.functions import udf, hash, col, substring, monotonically_increasing_id
 from pyspark.sql.types import StringType
-from itertools import combinations
-from LocalERP.matching import calculate_confusion_matrix
+from erp.matching import calculate_confusion_matrix
 import pandas as pd
-from pyspark.sql.window import Window
 from graphframes import GraphFrame
-from LocalERP.utils import jaccard_similarity, trigram_similarity
+from erp.utils import jaccard_similarity, trigram_similarity
 
 
 def calculate_combined_similarity(title1, title2, author_names_df1, author_names_df2):
@@ -81,32 +79,51 @@ def FirstLetterMatching(df1, df2, threshold):
 
 
 def create_baseline(df1, df2):
-    t_df1 = df1.select([col(col_name).alias(col_name + "_df1") for col_name in df1.columns])
-    t_df2 = df2.select([col(col_name).alias(col_name + "_df2") for col_name in df2.columns])
+    t_df1 = df1.select(
+        [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
+    )
+    t_df2 = df2.select(
+        [col(col_name).alias(col_name + "_df2") for col_name in df2.columns]
+    )
 
-    baseline_pairs = t_df1.crossJoin(t_df2).withColumn(
-        "similarity_score", process_udf(col("paper title_df1"), col("paper title_df2"),
-                                        col("author names_df1"), col("author names_df2"))
-    ).filter(col("similarity_score") > 0.8)
+    baseline_pairs = (
+        t_df1.crossJoin(t_df2)
+        .withColumn(
+            "similarity_score",
+            process_udf(
+                col("paper title_df1"),
+                col("paper title_df2"),
+                col("author names_df1"),
+                col("author names_df2"),
+            ),
+        )
+        .filter(col("similarity_score") > 0.8)
+    )
 
     return baseline_pairs
 
 
-def calculate_confusion_score(matched_df, baseline_matches):
+def calculate_confusion_score(
+    matched_df,
+    baseline_matches,
+    filename_matched="DP_baseline_matches.csv",
+    filename_baseline="DP_baseline_matches.csv",
+):
     matched_df_pd = matched_df.toPandas()
     matched_df_pd["ID"] = matched_df_pd["paper ID_df1"] + matched_df_pd["paper ID_df2"]
 
     # Write matched pairs to CSV file
-    matched_df_pd.to_csv("Matched Entities.csv", index=False)
+    matched_df_pd.to_csv("results/" + filename_matched, index=False)
 
     baseline_matches_pd = baseline_matches.toPandas()
     baseline_matches_pd["ID"] = (
         baseline_matches_pd["paper ID_df1"] + baseline_matches_pd["paper ID_df2"]
     )
-    baseline_matches_pd.to_csv("baseline_matches.csv", index=False)
 
-    baseline_matches_pd = pd.read_csv("baseline_matches.csv", sep=",")
-    matched_pairs_pd = pd.read_csv("Matched Entities.csv", sep=",")
+    baseline_matches_pd.to_csv("results/" + filename_baseline, index=False)
+
+    baseline_matches_pd = pd.read_csv(filename_baseline, sep=",")
+    matched_pairs_pd = pd.read_csv(filename_matched, sep=",")
 
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
         baseline_matches_pd, matched_pairs_pd
@@ -117,59 +134,59 @@ def calculate_confusion_score(matched_df, baseline_matches):
     print("F1-score:", f1)
 
 
-def clustering(df1, df2, matched_df,filename="results/Clustering Results_pyspark.csv"):
+def clustering(df1, df2, matched_df, filename="Clustering Results_pyspark.csv"):
     df = df1.union(df2)
-    vertices = df.withColumnRenamed("paper ID", "id")
+    vertices = df.withColumnRenamed("index", "id")
     vertices = vertices.select("id")
     # Create edges DataFrame
-    edges = matched_df.select("paper ID_df1", "paper ID_df2")
-    edges = edges.withColumnRenamed("paper ID_df1", "src")
-    edges = edges.withColumnRenamed("paper ID_df2", "dst")
+    edges = matched_df.select("index_df1", "index_df2")
+    edges = edges.withColumnRenamed("index_df1", "src")
+    edges = edges.withColumnRenamed("index_df2", "dst")
 
     # Create a GraphFrame
     graph = GraphFrame(vertices, edges)
+    graph = GraphFrame(
+        vertices, edges.union(edges.selectExpr("dst as src", "src as dst"))
+    )
 
     # Find connected components
     connected_components = graph.connectedComponents()
     # print(connected_components.count(), vertices.count(), edges.count())
 
     # Select the first vertex in every connected component
-    first_vertices_df = connected_components.groupBy("component").agg({"id": "min"})
+    first_vertices_df = connected_components.groupBy("component").agg({"id": "max"})
 
     # Rename the column to "first_vertex"
-    first_vertices_df = first_vertices_df.withColumnRenamed("min(id)", "id")
+    first_vertices_df = first_vertices_df.withColumnRenamed("max(id)", "id")
 
     # Construct the DataFrame
     first_vertices_df = first_vertices_df.orderBy("component")
-    first_vertices_df.toPandas().to_csv(
-        filename, index="false"
-    )
+    first_vertices_df.toPandas().to_csv("results/" + filename, index="false")
+    print("finish clustering")
 
 
-if __name__ == "__main__":
-    # Create a SparkSession in local mode
+def DP_ER_pipline(filename1, filename2):
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
     sc.setCheckpointDir("inbox")
 
     spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
     # Read the datasets from two databases
-    df1 = (
-        spark.read.option("delimiter", ",")
-        .option("header", True)
-        .csv("data/citation-acm-v8_1995_2004.csv")
-    )
-    df2 = (
-        spark.read.option("delimiter", ",")
-        .option("header", True)
-        .csv("data/dblp_1995_2004.csv")
-    )
-
+    df1 = spark.read.option("delimiter", ",").option("header", True).csv(filename1)
+    df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
+    df1 = df1.withColumn("index", monotonically_increasing_id())
+    df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
     df1, df2 = FirstLetterBlocking(df1, df2)
     # df1.show(10)
-    matched_pairs = FirstLetterMatching(df1, df2, 0.5)
-    matched_pairs.show(10)
+    matched_pairs = FirstLetterMatching(df1, df2, 0.7)
+    matched_pairs.show(2)
     baseline_matches = create_baseline(df1, df2)
     calculate_confusion_score(matched_pairs, baseline_matches)
     clustering(df1, df2, matched_pairs)
     spark.stop()
+    return matched_pairs.count()
+
+
+if __name__ == "__main__":
+    # Create a SparkSession in local mode
+    DP_ER_pipline("data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv")

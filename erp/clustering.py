@@ -27,6 +27,64 @@ def propagate(begin_idx, Ladj, L_propa):
     return L_propa_copy
 
 
+def adjs(Ladj, Lsrc):
+    Ldst = []
+    for i in Lsrc:
+        Ldst += [index for index in range(len(Ladj)) if Ladj[i][index] == 1]
+    return Ldst
+
+
+def alladjs(Ladj, src):
+    Lsrc = {src}
+    Ldst = set(adjs(Ladj, Lsrc))
+    Lall = {src}.union(Ldst)
+    num = 1
+    while len(Lall) != num:
+        num = len(Lall)
+        Lsrc = Ldst
+        Ldst = set(adjs(Ladj, Lsrc))
+        Lall.union(Ldst)
+    return Lall
+
+
+def propagate_naive(begin_idx, Ladj, L_propa):
+    # Function to propagate values through the graph
+    L_propa_copy = L_propa.copy()
+    L_adjs = alladjs(Ladj, begin_idx)
+    if len(L_adjs) != 1:
+        print(L_adjs)
+        L_propa_copy[list(L_adjs)] = np.max(list(L_adjs)) + 1
+    return L_propa_copy
+
+
+def test_exist_path(Ladj, src, dest):
+    Lsrc = {src}
+    Ldst = set(adjs(Ladj, Lsrc))
+    Lall = {src}.union(Ldst)
+    num = 1
+    while len(Lall) != num:
+        num = len(Lall)
+        if dest in Ldst:
+            return True
+        Lsrc = Ldst
+        Ldst = set(adjs(Ladj, Lsrc))
+        Lall.union(Ldst)
+    return False
+
+
+def test_graph(Ladj, L_propa):
+    error = 0
+    for i in range(len(Ladj)):
+        value = L_propa[i] - 1
+        if value == i:
+            continue
+        try:
+            assert test_exist_path(Ladj, i, value)
+        except AssertionError:
+            error += 1
+    print(f"error number {error}")
+
+
 def clustering_basic(result_df, df1, df2):
     # Basic clustering function
     num_nodes = len(df1) + len(df2)
@@ -45,6 +103,7 @@ def clustering_basic(result_df, df1, df2):
         L_propa[begin_idx] = begin_idx + 1
         L_propa = propagate(begin_idx, Ladj, L_propa)
 
+    test_graph(Ladj, L_propa)
     # Extract data from the original database
     idx_list = np.unique(L_propa) - 1
     combined_df = pd.concat(
@@ -53,13 +112,16 @@ def clustering_basic(result_df, df1, df2):
     return combined_df
 
 
-def run_clustering(result_df, df1, df2, clustering_method):
+def run_clustering(result_df, df1, df2, clustering_method, filename="results/clustering_results.csv"):
     # Run the clustering function and save the results to a CSV file
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
     combined_df = clustering_basic(result_df, df1, df2)
-    combined_df[DATABSE_COLUMNS].to_csv("results/clustering_results.csv", index=None)
+    combined_df[DATABSE_COLUMNS + ["index"]].to_csv(
+        "results/clustering_results.csv", index=None
+    )
     print("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
+    return combined_df
 
 
 if __name__ == "__main__":

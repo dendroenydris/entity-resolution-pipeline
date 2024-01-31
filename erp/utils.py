@@ -1,5 +1,14 @@
+import os
 import pandas as pd
 import re
+
+bestF1ERconfiguration = {
+    "threshold": 0.7,
+    "matching_method": "Combined",
+    "blocking_method": "FirstLetter",
+    "clustering_method": "basic",
+    "output_filename": "results/clustering_results.csv",
+}
 
 
 def create_cartesian_product(df1, df2):
@@ -19,6 +28,7 @@ def jaccard_similarity(set1, set2):
         return 0.0  # to handle the case when both sets are empty
 
     return intersection_size / union_size
+
 
 # Function to find ngrams in a given text
 def find_ngrams(text: str, number: int = 3) -> set:
@@ -47,9 +57,28 @@ def trigram_similarity(text1, text2):
     return float(num_equal) / float(num_unique)
 
 
-def save_result(result_df,filename):
-    result_df.to_csv("results/" + filename, index=False)
-    
-    
+def test_and_create_folder(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print(f"Folder '{folder_path}' created successfully.")
+    else:
+        print(f"Folder '{folder_path}' already exists.")
+
+
+def save_result(result_df, filename):
+    folder_path = "results/"
+    test_and_create_folder(folder_path)
+    result_df.to_csv(folder_path + filename, index=False)
+
+
+
+
+
+def save_data(df, filename):
+    folder_path = "data/"
+    test_and_create_folder(folder_path)
+    df.to_csv(folder_path + filename, index=False)
+
+
 def test():
     print("hello world")

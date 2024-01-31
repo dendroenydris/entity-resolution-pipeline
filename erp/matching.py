@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pandas as pd
 from LocalERP.utils import (
@@ -7,7 +8,7 @@ from LocalERP.utils import (
     trigram_similarity,
 )
 
-BLOCKING_METHODS = {"Year", "TwoYear", "numAuthors", "FirstLetter"}
+BLOCKING_METHODS = {"Year", "TwoYear", "numAuthors", "FirstLetter", "authorLastName","commonAuthors"}
 MATCHING_METHODS = {"Jaccard", "Combined"}
 
 
@@ -65,6 +66,35 @@ def matching(blocking_results, similarity_threshold, matching_method):
     # Keep rows where similarity is above the threshold
     result_df = result_df[result_df["similarity_score"] > similarity_threshold]
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
+    return result_df
+
+
+def authorLastName(df):
+    last_names_column = []
+    for author_names_list in [str(names).split(", ") for names in df["author names"]]:
+        if len(author_names_list) == 0:
+            last_names_column.append(set())
+        else:
+            last_names_column.append(
+                {name.split(" ")[-1] for name in author_names_list if len(name) > 0}
+            )
+    return last_names_column
+
+
+def create_authorLastNameBlocking(df1, df2):
+    df1["last name list"] = authorLastName(df1)
+    df2["last name list"] = authorLastName(df2)
+    result_df = create_cartesian_product(df1, df2)
+
+    def filter_function(l1, l2):
+        return (len(l1.intersection(l2)) != 0) or ((len(l1) == 0) and (len(l2) == 0))
+
+    result_df = result_df[
+        result_df.apply(
+            lambda x: filter_function(x["last name list_df1"], x["last name list_df2"]),
+            axis=1,
+        )
+    ]
     return result_df
 
 
@@ -128,28 +158,30 @@ def create_FirstLetterBlocking(df1, df2):
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
     return result_df
 
+def create_commonAuthorsBlocking(df1,df2):
+    result_df = create_cartesian_product(df1, df2)
+    result_df["common_authors"] = result_df.apply(
+        lambda row: set(str(row["author names_df1"]).split(", ")).intersection(
+            set(str(row["author names_df2"]).split(", "))
+        ),
+        axis=1
+    )
+    result_df = result_df[result_df["common_authors"].apply(lambda x:len(result_df["common_authors"])>0)]
+    return result_df
 
 def create_numAuthorsBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
 
-    # Filter rows based on co-authorship (common authors)
-    result_df["common_authors"] = result_df.apply(
-        lambda row: set(row["author names_df1"].split(", ")).intersection(
-            set(row["author names_df2"].split(", "))
-        ),
-        axis=1,
-    )
-    result_df = result_df[result_df["common_authors"].apply(len) > 0]
-
     # Filter pairs based on the difference in the number of authors
-    result_df["num_authors_df1"] = result_df["author names_df1"].apply(
-        lambda x: len(x.split(", "))
-    )
-    result_df["num_authors_df2"] = result_df["author names_df2"].apply(
-        lambda x: len(x.split(", "))
-    )
     result_df = result_df[
-        abs(result_df["num_authors_df1"] - result_df["num_authors_df2"]) <= 2
+        result_df.apply(
+            lambda x: abs(
+                len(str(x["author names_df1"]).split(", "))
+                - len(str(x["author names_df1"]).split(", "))
+            )
+            <= 2,
+            axis=1,
+        )
     ]
 
     # Optionally, reset the index
@@ -163,7 +195,7 @@ def create_numAuthorsBlocking(df1, df2):
 def calculate_confusion_matrix(baseline_df, blocked_df):
     baseline_df["ID"] = baseline_df["paper ID_df1"] + baseline_df["paper ID_df2"]
     blocked_df["ID"] = blocked_df["paper ID_df1"] + blocked_df["paper ID_df2"]
-    
+
     inner_join = pd.merge(baseline_df, blocked_df, how="inner", on=["ID"])
     inner_no_duplicates = inner_join.drop_duplicates(subset=["ID"])
 
@@ -196,3 +228,35 @@ def calculate_baseline(df1, df2, baseline_config):
     result_df = create_cartesian_product(df1, df2)
     result_df = matching(result_df, similarity_threshold, matching_method)
     return result_df
+
+def resultToString(
+    ERconfiguration,
+    baseline_execution_time,
+    blocking_execution_time,
+    matching_execution_time,
+    baseline_df,
+    matched_df,
+):
+    tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
+        baseline_df, matched_df
+    )
+    return {
+        "Blocking method": ERconfiguration["blocking_method"],
+        "Matching Method": ERconfiguration["matching_method"],
+        "Baseline Execution Time": round(baseline_execution_time / 60, 2),
+        "Blocking Execution Time": round(blocking_execution_time / 60, 2),
+        "Matching Execution Time": round(matching_execution_time / 60, 2),
+        "Execution Time": round(
+            matching_execution_time / 60 + blocking_execution_time / 60,
+            2,
+        ),
+        "Similarity Threshold": ERconfiguration["threshold"],
+        "Pairs In Baseline": len(baseline_df),
+        "Pairs In Blocking": len(matched_df),
+        "TP": tp,
+        "FN": fn,
+        "FP": fp,
+        "Precision": precision,
+        "Recall": recall,
+        "F1 Score": f1,
+    }
