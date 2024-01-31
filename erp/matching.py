@@ -191,10 +191,10 @@ def create_commonAndNumAuthorsBlocking(df1, df2):
 
     # Filter pairs based on the difference in the number of authors
     result_df["num_authors_df1"] = result_df["author names_df1"].apply(
-        lambda x: len(x.split(", "))
+        lambda x: len(str(x).split(", "))
     )
     result_df["num_authors_df2"] = result_df["author names_df2"].apply(
-        lambda x: len(x.split(", "))
+        lambda x: len(str(x).split(", "))
     )
     result_df = result_df[
         abs(result_df["num_authors_df1"] - result_df["num_authors_df2"]) <= 2
