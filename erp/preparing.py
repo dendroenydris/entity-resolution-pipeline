@@ -1,3 +1,4 @@
+import logging
 import pandas as pd
 
 
@@ -32,7 +33,7 @@ def prepare_data(file_name):
         # for i in range(len(list_of_papers)):
         for i in range(len(list_of_papers)):
             if i % 10000 == 0:
-                print("\b\r%.2f" % (i / len(list_of_papers) * 100), "%")
+                logging.info("\b\r%.2f" % (i / len(list_of_papers) * 100), "%")
 
             for col in list_of_papers[i]:
                 for j in range(len(identify_string)):

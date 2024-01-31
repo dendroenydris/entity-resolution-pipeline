@@ -1,3 +1,4 @@
+import logging
 import random
 from time import time
 import pandas as pd
@@ -6,6 +7,8 @@ from erp.matching import *
 from erp.clustering import clustering_basic, run_clustering
 from erp.preparing import prepare_data, DATABSE_COLUMNS, DATABASES_LOCATIONS
 from erp.utils import (
+    FILENAME_LOCAL_MATCHED_ENTITIES,
+    FILENAME_DP_MATCHED_ENTITIES,
     save_data,
     test_and_create_folder,
     create_cartesian_product,
@@ -29,6 +32,7 @@ def ER_pipline(
     ERconfiguration,
     baseline=False,
     matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
+    cluster=True,
 ):
     # import database
     df1 = pd.read_csv(dfilename1, sep=",", engine="python")
@@ -48,7 +52,9 @@ def ER_pipline(
     )
     end_time = time()
     matching_time = end_time - start_time
-    c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
+    c_df = []
+    if cluster:
+        c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
     end_time = time()
 
     if baseline:
@@ -81,69 +87,6 @@ if __name__ == "__main__":
     ER_pipline(
         "data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv", ERconfiguration
     )
-
-
-def run_all_blocking_matching_methods(
-    df1, df2, thresholds, matching_methods, blocking_methods, save=True
-):
-    # Create an empty DataFrame to store the results
-    results_list = []
-
-    for matching_method in matching_methods:
-        start_time = time()
-        baseline_df = calculate_baseline(
-            df1, df2, {"method": matching_method, "threshold": threshold}
-        )
-        end_time = time()
-        print("finished baseline: " + matching_method)
-        save_result(
-            baseline_df,
-            f"baseline_{matching_method}_{threshold}.csv",
-        )
-        baseline_execution_time = end_time - start_time
-        # Iterate through each blocking method
-        for blocking_method in blocking_methods:
-            # Dynamically call the blocking method function
-            for threshold in thresholds:
-                start_time = time()
-                blocking_df = blocking(df1, df2, blocking_method)
-                end_time = time()
-                blocking_execution_time = end_time - start_time
-                print("finished blocking method: " + blocking_method)
-
-                start_time = time()
-                matched_df = matching(blocking_df, threshold, matching_method)
-                end_time = time()
-                matching_execution_time = end_time - start_time
-                print("finished matching method: " + matching_method)
-                save_result(
-                    matched_df,
-                    "MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
-                )
-
-                # Append results to the list
-                results_list.append(
-                    resultToString(
-                        {
-                            "blocking_method": blocking_method,
-                            "matching_method": matching_method,
-                            "threshold": threshold,
-                        },
-                        baseline_execution_time,
-                        blocking_execution_time,
-                        matching_execution_time,
-                        baseline_df,
-                        matched_df,
-                    )
-                )
-                print(results_list[-1])
-        # Write results to a single CSV Ffile
-    if save:
-        save_result(
-            pd.DataFrame(results_list),
-            "method_results.csv",
-        )
-    return results_list
 
 
 def add_random_characters_to_string(str, number):
@@ -244,9 +187,11 @@ def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4
     results = []
 
     for d1, d2 in D:
-        result = ER_pipline(d1, d2, ERconfiguration, baseline=False)
+        result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = DP_ER_pipline(d1, d2, threshold=ERconfiguration["threshold"])
+        result2 = DP_ER_pipline(
+            d1, d2, threshold=ERconfiguration["threshold"], cluster=False
+        )
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, "scability_results.csv")
@@ -258,12 +203,12 @@ def naive_DPvsLocal(fdp, flocal):
     df_local = pd.read_csv(flocal)
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df_dp, df_local)
 
-    # Print the number of matched pairs in each DataFrame
-    print(f"Number of matched pairs in df_dp: {len(df_dp)}")
-    print(f"Number of matched pairs in df_local: {len(df_local)}")
+    # print the number of matched pairs in each DataFrame
+    logging.info(f"Number of matched pairs in df_dp: {len(df_dp)}")
+    logging.info(f"Number of matched pairs in df_local: {len(df_local)}")
 
-    # Print the results
-    print(f"Number of differences: {fn+fp}")
-    print(f"Number of shared elements: {tp}")
-    print(f"Number of elements in df_dp but not in df_local: {fn}")
-    print(f"Number of elements in df_local but not in df_dp: {fp}")
+    # print the results
+    logging.info(f"Number of differences: {fn+fp}")
+    logging.info(f"Number of shared elements: {tp}")
+    logging.info(f"Number of elements in df_dp but not in df_local: {fn}")
+    logging.info(f"Number of elements in df_local but not in df_dp: {fp}")

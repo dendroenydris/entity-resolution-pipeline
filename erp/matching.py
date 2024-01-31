@@ -1,8 +1,7 @@
-import os
-import numpy as np
+import logging
+from time import time
 import pandas as pd
 from erp.utils import (
-    FILENAME_LOCAL_MATCHED_ENTITIES,
     create_cartesian_product,
     jaccard_similarity,
     save_result,
@@ -284,3 +283,66 @@ def resultToString(
         "Recall" + suffix: recall,
         "F1 Score" + suffix: f1,
     }
+
+
+def run_all_blocking_matching_methods(
+    df1, df2, thresholds, matching_methods, blocking_methods, save=True
+):
+    # Create an empty DataFrame to store the results
+    results_list = []
+
+    for matching_method in matching_methods:
+        start_time = time()
+        baseline_df = calculate_baseline(
+            df1, df2, {"method": matching_method, "threshold": threshold}
+        )
+        end_time = time()
+        logging.info("finished baseline: " + matching_method)
+        save_result(
+            baseline_df,
+            f"baseline_{matching_method}_{threshold}.csv",
+        )
+        baseline_execution_time = end_time - start_time
+        # Iterate through each blocking method
+        for blocking_method in blocking_methods:
+            # Dynamically call the blocking method function
+            for threshold in thresholds:
+                start_time = time()
+                blocking_df = blocking(df1, df2, blocking_method)
+                end_time = time()
+                blocking_execution_time = end_time - start_time
+                logging.info("finished blocking method: " + blocking_method)
+
+                start_time = time()
+                matched_df = matching(blocking_df, threshold, matching_method)
+                end_time = time()
+                matching_execution_time = end_time - start_time
+                logging.info("finished matching method: " + matching_method)
+                save_result(
+                    matched_df,
+                    "MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
+                )
+
+                # Append results to the list
+                results_list.append(
+                    resultToString(
+                        {
+                            "blocking_method": blocking_method,
+                            "matching_method": matching_method,
+                            "threshold": threshold,
+                        },
+                        baseline_execution_time,
+                        blocking_execution_time,
+                        matching_execution_time,
+                        baseline_df,
+                        matched_df,
+                    )
+                )
+                logging.info(results_list[-1])
+        # Write results to a single CSV Ffile
+    if save:
+        save_result(
+            pd.DataFrame(results_list),
+            "method_results.csv",
+        )
+    return results_list

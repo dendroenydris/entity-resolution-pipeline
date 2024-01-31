@@ -1,3 +1,4 @@
+import logging
 import pandas as pd
 import numpy as np
 from erp.preparing import DATABSE_COLUMNS
@@ -52,7 +53,7 @@ def propagate_naive(begin_idx, Ladj, L_propa):
     L_propa_copy = L_propa.copy()
     L_adjs = alladjs(Ladj, begin_idx)
     if len(L_adjs) != 1:
-        print(L_adjs)
+        logging.info(L_adjs)
         L_propa_copy[list(L_adjs)] = np.max(list(L_adjs)) + 1
     return L_propa_copy
 
@@ -82,7 +83,7 @@ def test_graph(Ladj, L_propa):
             assert test_exist_path(Ladj, i, value)
         except AssertionError:
             error += 1
-    print(f"error number {error}")
+    logging.warning(f"error number {error}")
 
 
 def clustering_basic(result_df, df1, df2):
@@ -120,7 +121,7 @@ def run_clustering(result_df, df1, df2, clustering_method, filename="results/clu
     combined_df[DATABSE_COLUMNS + ["index"]].to_csv(
         "results/clustering_results.csv", index=None
     )
-    print("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
+    logging.info("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
     return combined_df
 
 

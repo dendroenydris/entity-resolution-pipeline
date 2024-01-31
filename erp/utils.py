@@ -1,3 +1,4 @@
+import logging
 import os
 import pandas as pd
 import re
@@ -64,9 +65,9 @@ def trigram_similarity(text1, text2):
 def test_and_create_folder(folder_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
-        print(f"Folder '{folder_path}' created successfully.")
+        logging.info(f"Folder '{folder_path}' created successfully.")
     else:
-        print(f"Folder '{folder_path}' already exists.")
+        logging.warning(f"Folder '{folder_path}' already exists.")
 
 
 def save_result(result_df, filename):
@@ -82,4 +83,6 @@ def save_data(df, filename):
 
 
 def test():
-    print("hello world")
+    logging.info("hello world")
+
+

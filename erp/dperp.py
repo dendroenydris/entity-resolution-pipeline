@@ -1,3 +1,4 @@
+import logging
 from time import time
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
@@ -136,9 +137,9 @@ def calculate_confusion_score(
         baseline_matches_pd, matched_pairs_pd
     )
 
-    print("Precision:", precision)
-    print("Recall:", recall)
-    print("F1-score:", f1)
+    logging.info("Precision:", precision)
+    logging.info("Recall:", recall)
+    logging.info("F1-score:", f1)
 
 
 def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
@@ -158,7 +159,7 @@ def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
 
     # Find connected components
     connected_components = graph.connectedComponents()
-    # print(connected_components.count(), vertices.count(), edges.count())
+    # logging.info(connected_components.count(), vertices.count(), edges.count())
 
     # Select the first vertex in every connected component
     first_vertices_df = connected_components.groupBy("component").agg({"id": "max"})
@@ -169,10 +170,10 @@ def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
     # Construct the DataFrame
     first_vertices_df = first_vertices_df.orderBy("component")
     first_vertices_df.toPandas().to_csv("results/" + filename, index="false")
-    print("finish clustering")
+    logging.info("finish clustering")
 
 
-def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, clustering=True):
+def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, cluster=True):
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
     sc.setCheckpointDir("inbox")
@@ -188,7 +189,7 @@ def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, clusterin
     matched_pairs = FirstLetterMatching(df1, df2, threshold)
     end_time = time()
     matching_time = end_time - start_time
-    if clustering:
+    if cluster:
         clustering(df1, df2, matched_pairs)
     end_time = time()
     matched_pairs.show(2)
