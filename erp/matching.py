@@ -8,7 +8,14 @@ from erp.utils import (
     trigram_similarity,
 )
 
-BLOCKING_METHODS = {"Year", "TwoYear", "numAuthors", "FirstLetter", "authorLastName","commonAuthors"}
+BLOCKING_METHODS = {
+    "Year",
+    "TwoYear",
+    "numAuthors",
+    "FirstLetter",
+    "authorLastName",
+    "commonAuthors",
+}
 MATCHING_METHODS = {"Jaccard", "Combined"}
 
 
@@ -158,16 +165,22 @@ def create_FirstLetterBlocking(df1, df2):
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
     return result_df
 
-def create_commonAuthorsBlocking(df1,df2):
+
+def create_commonAuthorsBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
     result_df["common_authors"] = result_df.apply(
         lambda row: set(str(row["author names_df1"]).split(", ")).intersection(
             set(str(row["author names_df2"]).split(", "))
         ),
-        axis=1
+        axis=1,
     )
-    result_df = result_df[result_df["common_authors"].apply(lambda x:len(result_df["common_authors"])>0)]
+    result_df = result_df[
+        result_df["common_authors"].apply(
+            lambda x: len(result_df["common_authors"]) > 0
+        )
+    ]
     return result_df
+
 
 def create_numAuthorsBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
@@ -229,6 +242,7 @@ def calculate_baseline(df1, df2, baseline_config):
     result_df = matching(result_df, similarity_threshold, matching_method)
     return result_df
 
+
 def resultToString(
     ERconfiguration,
     baseline_execution_time,
@@ -236,27 +250,29 @@ def resultToString(
     matching_execution_time,
     baseline_df,
     matched_df,
+    suffix="",
 ):
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
         baseline_df, matched_df
     )
     return {
-        "Blocking method": ERconfiguration["blocking_method"],
-        "Matching Method": ERconfiguration["matching_method"],
-        "Baseline Execution Time": round(baseline_execution_time / 60, 2),
-        "Blocking Execution Time": round(blocking_execution_time / 60, 2),
-        "Matching Execution Time": round(matching_execution_time / 60, 2),
-        "Execution Time": round(
+        "Blocking method" + suffix: ERconfiguration["blocking_method"],
+        "Matching Method" + suffix: ERconfiguration["matching_method"],
+        "Baseline Execution Time" + suffix: round(baseline_execution_time / 60, 2),
+        "Blocking Execution Time" + suffix: round(blocking_execution_time / 60, 2),
+        "Matching Execution Time" + suffix: round(matching_execution_time / 60, 2),
+        "Execution Time"
+        + suffix: round(
             matching_execution_time / 60 + blocking_execution_time / 60,
             2,
         ),
-        "Similarity Threshold": ERconfiguration["threshold"],
-        "Pairs In Baseline": len(baseline_df),
-        "Pairs In Blocking": len(matched_df),
-        "TP": tp,
-        "FN": fn,
-        "FP": fp,
-        "Precision": precision,
-        "Recall": recall,
-        "F1 Score": f1,
+        "Similarity Threshold" + suffix: ERconfiguration["threshold"],
+        "Pairs In Baseline" + suffix: len(baseline_df),
+        "Pairs In Blocking" + suffix: len(matched_df),
+        "TP" + suffix: tp,
+        "FN" + suffix: fn,
+        "FP" + suffix: fp,
+        "Precision" + suffix: precision,
+        "Recall" + suffix: recall,
+        "F1 Score" + suffix: f1,
     }

@@ -1,11 +1,12 @@
+from time import time
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import udf, hash, col, substring, monotonically_increasing_id
 from pyspark.sql.types import StringType
-from erp.matching import calculate_confusion_matrix
+from erp.matching import calculate_confusion_matrix, resultToString
 import pandas as pd
 from graphframes import GraphFrame
-from erp.utils import jaccard_similarity, trigram_similarity
+from erp.utils import jaccard_similarity, trigram_similarity, bestF1ERconfiguration
 
 
 def calculate_combined_similarity(title1, title2, author_names_df1, author_names_df2):
@@ -172,6 +173,7 @@ def DP_ER_pipline(filename1, filename2, baseline=False):
 
     spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
     # Read the datasets from two databases
+    start_time=time()
     df1 = spark.read.option("delimiter", ",").option("header", True).csv(filename1)
     df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
     df1 = df1.withColumn("index", monotonically_increasing_id())
@@ -179,12 +181,26 @@ def DP_ER_pipline(filename1, filename2, baseline=False):
     df1, df2 = FirstLetterBlocking(df1, df2)
     # df1.show(10)
     matched_pairs = FirstLetterMatching(df1, df2, 0.7)
+    clustering(df1, df2, matched_pairs)
+    end_time=time()
     matched_pairs.show(2)
+    
     if baseline:
         baseline_matches = create_baseline(df1, df2)
-        calculate_confusion_score(matched_pairs, baseline_matches)
-    clustering(df1, df2, matched_pairs)
-    out = {"dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4)}
+        return resultToString(
+            bestF1ERconfiguration,
+            -1,
+            -1,
+            -1,
+            baseline_matches,
+            matched_df=matched_pairs,
+            suffix="_dp",
+        )
+
+    out={
+        "dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4),
+        "dp excution time": round((end_time - start_time) / 60, 2),
+    }
     spark.stop()
     return out
 

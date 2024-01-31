@@ -12,6 +12,7 @@ from erp.utils import (
     bestF1ERconfiguration,
 )
 import string
+import matplotlib.pyplot as plt
 
 ERconfiguration = {
     "matching_method": "Jaccard",
@@ -31,11 +32,13 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
     df2["index"] = np.arange(len(df2)) + len(df1)
 
     similarity_threshold = ERconfiguration["threshold"]
+    start_time = time()
     result_df = blocking(df1, df2, ERconfiguration["blocking_method"])
     result_df = matching(
         result_df, similarity_threshold, ERconfiguration["matching_method"]
     )
     c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
+    end_time = time()
 
     if baseline:
         baseline_df = calculate_baseline(
@@ -48,9 +51,18 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
         )
 
         return resultToString(
-            ERconfiguration, -1, -1, -1, baseline_df, matched_df=result_df
+            ERconfiguration,
+            -1,
+            -1,
+            -1,
+            baseline_df,
+            matched_df=result_df,
+            suffix="_local",
         )
-    return {"local rate": round(len(c_df) / (len(df1) + len(df2)),4)}
+    return {
+        "local rate": round(len(c_df) / (len(df1) + len(df2)), 4),
+        "local excution time": round((end_time - start_time) / 60, 2),
+    }
 
 
 if __name__ == "__main__":
@@ -115,7 +127,6 @@ def run_all_blocking_matching_methods(
                         matched_df,
                     )
                 )
-
                 print(results_list[-1])
         # Write results to a single CSV Ffile
     if save:
@@ -164,13 +175,13 @@ def databaseWithMinimalChanges(filename, option="title", num=3):
     return database
 
 
-def create_databaseWithChanges(L_filename, num=3, cnum=4):
+def create_databaseWithChanges(L_filename, num=3, cnum=3):
     L_datanames = []
     for filename in L_filename:
         for i in range(num):
             option = DATABASE_CHANGES_CHOICE[i % len(DATABASE_CHANGES_CHOICE)]
             df = databaseWithMinimalChanges(filename, option, cnum)
-            new_filename = filename[5:-4] + str(i) + ".csv"
+            new_filename = filename[5:-4] + "_" + option[:4] + str(cnum) + ".csv"
             new_folder = filename[:-4]
             test_and_create_folder(new_folder)
             df.to_csv(new_folder + "/" + new_filename)
@@ -195,21 +206,39 @@ def part2(thresholds=[0.5, 0.7]):
     )
 
 
-def part3():
+def plot_scability_figures(results):
+    plt.figure(figsize=(8, 4), dpi=100)
+    plt.title("resulting execution time")
+    plt.bar(
+        results["d1-d2"],
+        results["dp excution time"],
+        label="dp excution time",
+        alpha=0.6,
+    )
+    plt.bar(
+        results["d1-d2"],
+        results["local excution time"],
+        label="local excution time",
+        alpha=0.6,
+    )
+    plt.xticks(fontsize=8)
+    plt.legend(loc="upper right")
+    plt.savefig("results/scability.png")
+
+
+def part3(ERconfiguration=bestF1ERconfiguration):
     L_filenames = create_databaseWithChanges(DATABASES_LOCATIONS, 3)
     D = [(d1, d2) for d1 in L_filenames[:4] for d2 in L_filenames[4:]]
     results = []
 
-    for d1, d2 in D:
-        result = ER_pipline(d1, d2, bestF1ERconfiguration, baseline=False)
-        result["d1"] = d1
-        result["d2"] = d2
+    for d1, d2 in D[:2]:
+        result = ER_pipline(d1, d2, ERconfiguration, baseline=False)
+        result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
         result2 = DP_ER_pipline(d1, d2)
-        results.append(result)
-        results.append(result2)
-
+        results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, "scability_results.csv")
+    plot_scability_figures(results)
 
 
 def naive_DPvsLocal():
