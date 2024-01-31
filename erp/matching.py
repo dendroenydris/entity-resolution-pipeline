@@ -16,6 +16,7 @@ BLOCKING_METHODS = {
     "authorLastName",
     "commonAuthors",
 }
+
 MATCHING_METHODS = {"Jaccard", "Combined"}
 
 
@@ -292,21 +293,21 @@ def run_all_blocking_matching_methods(
     results_list = []
 
     for matching_method in matching_methods:
-        start_time = time()
-        baseline_df = calculate_baseline(
-            df1, df2, {"method": matching_method, "threshold": threshold}
-        )
-        end_time = time()
-        logging.info("finished baseline: " + matching_method)
-        save_result(
-            baseline_df,
-            f"baseline_{matching_method}_{threshold}.csv",
-        )
-        baseline_execution_time = end_time - start_time
-        # Iterate through each blocking method
-        for blocking_method in blocking_methods:
-            # Dynamically call the blocking method function
-            for threshold in thresholds:
+        for threshold in thresholds:
+            start_time = time()
+            baseline_df = calculate_baseline(
+                df1, df2, {"method": matching_method, "threshold": threshold}
+            )
+            end_time = time()
+            logging.info("finished baseline: " + matching_method)
+            save_result(
+                baseline_df,
+                f"baseline_{matching_method}_{threshold}.csv",
+            )
+            baseline_execution_time = end_time - start_time
+            # Iterate through each blocking method
+            for blocking_method in blocking_methods:
+                # Dynamically call the blocking method function
                 start_time = time()
                 blocking_df = blocking(df1, df2, blocking_method)
                 end_time = time()
@@ -339,7 +340,7 @@ def run_all_blocking_matching_methods(
                     )
                 )
                 logging.info(results_list[-1])
-        # Write results to a single CSV Ffile
+            # Write results to a single CSV Ffile
     if save:
         save_result(
             pd.DataFrame(results_list),

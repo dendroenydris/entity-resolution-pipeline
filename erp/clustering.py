@@ -1,7 +1,7 @@
 import logging
 import pandas as pd
 import numpy as np
-from erp.preparing import DATABSE_COLUMNS
+from erp.utils import DATABSE_COLUMNS
 
 
 def dfs(graph, node, value, visited, L_propa):

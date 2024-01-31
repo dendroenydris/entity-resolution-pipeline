@@ -1,19 +1,22 @@
 import logging
 import random
 from time import time
+import numpy as np
 import pandas as pd
 from erp.dperp import DP_ER_pipline
 from erp.matching import *
 from erp.clustering import clustering_basic, run_clustering
-from erp.preparing import prepare_data, DATABSE_COLUMNS, DATABASES_LOCATIONS
+from erp.preparing import prepare_data
 from erp.utils import (
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
-    save_data,
     test_and_create_folder,
-    create_cartesian_product,
     bestF1ERconfiguration,
+    DATABSE_COLUMNS,
+    DATABASES_LOCATIONS,
 )
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
 import string
 import matplotlib.pyplot as plt
 

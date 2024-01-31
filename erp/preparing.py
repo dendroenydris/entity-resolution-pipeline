@@ -1,16 +1,7 @@
 import logging
 import pandas as pd
 
-
-DATABSE_COLUMNS = [
-    "paper ID",
-    "paper title",
-    "author names",
-    "publication venue",
-    "year of publication",
-]
-DATABASES_LOCATIONS=["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
-
+from erp.utils import DATABSE_COLUMNS
 
 def prepare_data(file_name):
     databases = []

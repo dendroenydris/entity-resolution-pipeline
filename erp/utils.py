@@ -3,6 +3,16 @@ import os
 import pandas as pd
 import re
 
+DATABSE_COLUMNS = [
+    "paper ID",
+    "paper title",
+    "author names",
+    "publication venue",
+    "year of publication",
+]
+DATABASES_LOCATIONS=["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
+
+
 bestF1ERconfiguration = {
     "threshold": 0.5,
     "matching_method": "Combined",
