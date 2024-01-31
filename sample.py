@@ -6,7 +6,9 @@
 # pip install -e .
 # ```
 ###################################################################################################
-from erp import part1, part2, part3
+from erp import part1, part2, part3, naive_DPvsLocal
+from erp.utils import FILENAME_DP_MATCHED_ENTITIES,FILENAME_LOCAL_MATCHED_ENTITIES
 part1() # cleaned data stored in "data"
 part2() # results of all methods stored in "method_results.csv"
 part3() # scability test
+naive_DPvsLocal(FILENAME_DP_MATCHED_ENTITIES,FILENAME_LOCAL_MATCHED_ENTITIES) # DP vs local

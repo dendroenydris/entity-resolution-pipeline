@@ -2,6 +2,7 @@ import os
 import numpy as np
 import pandas as pd
 from erp.utils import (
+    FILENAME_LOCAL_MATCHED_ENTITIES,
     create_cartesian_product,
     jaccard_similarity,
     save_result,
@@ -58,7 +59,12 @@ def blocking(df1, df2, blocking_method):
     return blocking_function(df1, df2)
 
 
-def matching(blocking_results, similarity_threshold, matching_method):
+def matching(
+    blocking_results,
+    similarity_threshold,
+    matching_method,
+    outputfile=None,
+):
     result_df = blocking_results.copy()
     # Calculate similarity based on the specified matching method
     if matching_method == "Jaccard":
@@ -72,6 +78,8 @@ def matching(blocking_results, similarity_threshold, matching_method):
 
     # Keep rows where similarity is above the threshold
     result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    if outputfile != None:
+        result_df.to_csv(outputfile, index=False)
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     return result_df
 

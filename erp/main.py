@@ -23,7 +23,13 @@ ERconfiguration = {
 }
 
 
-def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
+def ER_pipline(
+    dfilename1,
+    dfilename2,
+    ERconfiguration,
+    baseline=False,
+    matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
+):
     # import database
     df1 = pd.read_csv(dfilename1, sep=",", engine="python")
     df2 = pd.read_csv(dfilename2, sep=",", engine="python")
@@ -35,8 +41,13 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
     start_time = time()
     result_df = blocking(df1, df2, ERconfiguration["blocking_method"])
     result_df = matching(
-        result_df, similarity_threshold, ERconfiguration["matching_method"]
+        result_df,
+        similarity_threshold,
+        ERconfiguration["matching_method"],
+        outputfile=matched_output,
     )
+    end_time = time()
+    matching_time = end_time - start_time
     c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
     end_time = time()
 
@@ -62,6 +73,7 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
     return {
         "local rate": round(len(c_df) / (len(df1) + len(df2)), 4),
         "local excution time": round((end_time - start_time) / 60, 2),
+        "local excution time(matching+blocking)": round(matching_time / 60, 2),
     }
 
 
@@ -86,30 +98,27 @@ def run_all_blocking_matching_methods(
         print("finished baseline: " + matching_method)
         save_result(
             baseline_df,
-            f"baseline_{matching_method}_{similarity_threshold}.csv",
+            f"baseline_{matching_method}_{threshold}.csv",
         )
         baseline_execution_time = end_time - start_time
         # Iterate through each blocking method
         for blocking_method in blocking_methods:
-            similarity_threshold = threshold
             # Dynamically call the blocking method function
-            start_time = time()
-            blocking_df = blocking(df1, df2, blocking_method)
-            end_time = time()
-            blocking_execution_time = end_time - start_time
-            print("finished blocking method: " + blocking_method)
-
             for threshold in thresholds:
                 start_time = time()
-                matched_df = matching(
-                    blocking_df, similarity_threshold, matching_method
-                )
+                blocking_df = blocking(df1, df2, blocking_method)
+                end_time = time()
+                blocking_execution_time = end_time - start_time
+                print("finished blocking method: " + blocking_method)
+
+                start_time = time()
+                matched_df = matching(blocking_df, threshold, matching_method)
                 end_time = time()
                 matching_execution_time = end_time - start_time
                 print("finished matching method: " + matching_method)
                 save_result(
                     matched_df,
-                    "MatchedEntities_{blocking_method}{matching_method}_{similarity_threshold}.csv",
+                    "MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
                 )
 
                 # Append results to the list
@@ -118,7 +127,7 @@ def run_all_blocking_matching_methods(
                         {
                             "blocking_method": blocking_method,
                             "matching_method": matching_method,
-                            "threshold": similarity_threshold,
+                            "threshold": threshold,
                         },
                         baseline_execution_time,
                         blocking_execution_time,
@@ -189,6 +198,27 @@ def create_databaseWithChanges(L_filename, num=3, cnum=3):
     return L_datanames
 
 
+def plot_scability_figures(results):
+    results["d1-d2"] = [str(i) for i in results["d1-d2"]]
+    plt.figure(figsize=(10, 4), dpi=100)
+    plt.title("resulting execution time")
+    plt.bar(
+        results["d1-d2"],
+        results["dp excution time(matching+blocking)"],
+        label="dp excution time",
+        alpha=0.6,
+    )
+    plt.bar(
+        results["d1-d2"],
+        results["local excution time(matching+blocking)"],
+        label="local excution time",
+        alpha=0.6,
+    )
+    plt.xticks(fontsize=7)
+    plt.legend(loc="upper right")
+    plt.savefig("results/scability.png")
+
+
 def part1():
     for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
         prepare_data(data)
@@ -206,27 +236,6 @@ def part2(thresholds=[0.5, 0.7]):
     )
 
 
-def plot_scability_figures(results):
-    results["d1-d2"] = [str(i) for i in results["d1-d2"]]
-    plt.figure(figsize=(8, 4), dpi=100)
-    plt.title("resulting execution time")
-    plt.bar(
-        results["d1-d2"],
-        results["dp excution time"],
-        label="dp excution time",
-        alpha=0.6,
-    )
-    plt.bar(
-        results["d1-d2"],
-        results["local excution time"],
-        label="local excution time",
-        alpha=0.6,
-    )
-    plt.xticks(fontsize=8)
-    plt.legend(loc="upper right")
-    plt.savefig("results/scability.png")
-
-
 def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4):
     L_filenames = create_databaseWithChanges(
         DATABASES_LOCATIONS, num_duplicates, num_changes
@@ -237,34 +246,24 @@ def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4
     for d1, d2 in D:
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = DP_ER_pipline(d1, d2)
+        result2 = DP_ER_pipline(d1, d2, threshold=ERconfiguration["threshold"])
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, "scability_results.csv")
     plot_scability_figures(results)
 
 
-def naive_DPvsLocal():
-    df_dp = pd.read_csv("results/Clustering Results_pyspark.csv")["id"]
-    df_local = pd.read_csv("results/clustering_results.csv")["index"]
-    # df_local=pd.read_csv("results/pySpark+matching-results.csv")["id"]
+def naive_DPvsLocal(fdp, flocal):
+    df_dp = pd.read_csv(fdp)
+    df_local = pd.read_csv(flocal)
+    tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df_dp, df_local)
 
-    # Convert Series to sets for easy set operations
-    set_df_dp = set(df_dp)
-    set_df_local = set(df_local)
-
-    # Calculate differences, shared elements, and unique elements
-    differences = set_df_dp.symmetric_difference(set_df_local)
-    shared_elements = set_df_dp.intersection(set_df_local)
-    unique_in_df_dp = set_df_dp.difference(set_df_local)
-    unique_in_df_local = set_df_local.difference(set_df_dp)
-
-    # Print the number of data points in each DataFrame
-    print(f"Number of data points in df_dp: {len(df_dp)}")
-    print(f"Number of data points in df_local: {len(df_local)}")
+    # Print the number of matched pairs in each DataFrame
+    print(f"Number of matched pairs in df_dp: {len(df_dp)}")
+    print(f"Number of matched pairs in df_local: {len(df_local)}")
 
     # Print the results
-    print(f"Number of differences: {len(differences)}")
-    print(f"Number of shared elements: {len(shared_elements)}")
-    print(f"Number of elements in df_dp but not in df_local: {len(unique_in_df_dp)}")
-    print(f"Number of elements in df_local but not in df_dp: {len(unique_in_df_local)}")
+    print(f"Number of differences: {fn+fp}")
+    print(f"Number of shared elements: {tp}")
+    print(f"Number of elements in df_dp but not in df_local: {fn}")
+    print(f"Number of elements in df_local but not in df_dp: {fp}")

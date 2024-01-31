@@ -10,6 +10,10 @@ bestF1ERconfiguration = {
     "output_filename": "results/clustering_results.csv",
 }
 
+RESULTS_FOLDER = "results/"
+FILENAME_LOCAL_MATCHED_ENTITIES = RESULTS_FOLDER + "matched_entities_local.csv"
+FILENAME_DP_MATCHED_ENTITIES = RESULTS_FOLDER + "matched_entities_dp.csv"
+
 
 def create_cartesian_product(df1, df2):
     # Create a common key for the Cartesian product

@@ -6,7 +6,12 @@ from pyspark.sql.types import StringType
 from erp.matching import calculate_confusion_matrix, resultToString
 import pandas as pd
 from graphframes import GraphFrame
-from erp.utils import jaccard_similarity, trigram_similarity, bestF1ERconfiguration
+from erp.utils import (
+    FILENAME_DP_MATCHED_ENTITIES,
+    jaccard_similarity,
+    trigram_similarity,
+    bestF1ERconfiguration,
+)
 
 
 def calculate_combined_similarity(title1, title2, author_names_df1, author_names_df2):
@@ -76,6 +81,7 @@ def FirstLetterMatching(df1, df2, threshold):
             matched_pairs = pairs
         else:
             matched_pairs = matched_pairs.union(pairs)
+    matched_pairs.toPandas().to_csv(FILENAME_DP_MATCHED_ENTITIES, index=False)
     return matched_pairs
 
 
@@ -135,7 +141,7 @@ def calculate_confusion_score(
     print("F1-score:", f1)
 
 
-def clustering(df1, df2, matched_df, filename="Clustering Results_pyspark.csv"):
+def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
     df = df1.union(df2)
     vertices = df.withColumnRenamed("index", "id")
     vertices = vertices.select("id")
@@ -166,25 +172,27 @@ def clustering(df1, df2, matched_df, filename="Clustering Results_pyspark.csv"):
     print("finish clustering")
 
 
-def DP_ER_pipline(filename1, filename2, baseline=False):
+def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, clustering=True):
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
     sc.setCheckpointDir("inbox")
 
     spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
     # Read the datasets from two databases
-    start_time=time()
+    start_time = time()
     df1 = spark.read.option("delimiter", ",").option("header", True).csv(filename1)
     df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
     df1 = df1.withColumn("index", monotonically_increasing_id())
     df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
     df1, df2 = FirstLetterBlocking(df1, df2)
-    # df1.show(10)
-    matched_pairs = FirstLetterMatching(df1, df2, 0.7)
-    clustering(df1, df2, matched_pairs)
-    end_time=time()
+    matched_pairs = FirstLetterMatching(df1, df2, threshold)
+    end_time = time()
+    matching_time = end_time - start_time
+    if clustering:
+        clustering(df1, df2, matched_pairs)
+    end_time = time()
     matched_pairs.show(2)
-    
+
     if baseline:
         baseline_matches = create_baseline(df1, df2)
         return resultToString(
@@ -197,9 +205,10 @@ def DP_ER_pipline(filename1, filename2, baseline=False):
             suffix="_dp",
         )
 
-    out={
+    out = {
         "dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4),
         "dp excution time": round((end_time - start_time) / 60, 2),
+        "dp excution time(matching+blocking)": round(matching_time / 60, 2),
     }
     spark.stop()
     return out
