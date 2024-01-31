@@ -207,6 +207,7 @@ def part2(thresholds=[0.5, 0.7]):
 
 
 def plot_scability_figures(results):
+    results["d1-d2"] = [str(i) for i in results["d1-d2"]]
     plt.figure(figsize=(8, 4), dpi=100)
     plt.title("resulting execution time")
     plt.bar(
@@ -226,12 +227,14 @@ def plot_scability_figures(results):
     plt.savefig("results/scability.png")
 
 
-def part3(ERconfiguration=bestF1ERconfiguration):
-    L_filenames = create_databaseWithChanges(DATABASES_LOCATIONS, 3)
+def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4):
+    L_filenames = create_databaseWithChanges(
+        DATABASES_LOCATIONS, num_duplicates, num_changes
+    )
     D = [(d1, d2) for d1 in L_filenames[:4] for d2 in L_filenames[4:]]
     results = []
 
-    for d1, d2 in D[:2]:
+    for d1, d2 in D:
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
         result2 = DP_ER_pipline(d1, d2)
