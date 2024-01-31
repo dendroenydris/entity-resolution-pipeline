@@ -86,7 +86,7 @@ def run_all_blocking_matching_methods(
         print("finished baseline: " + matching_method)
         save_result(
             baseline_df,
-            "baseline_{matching_method}_{similarity_threshold}.csv",
+            f"baseline_{matching_method}_{similarity_threshold}.csv",
         )
         baseline_execution_time = end_time - start_time
         # Iterate through each blocking method
