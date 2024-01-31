@@ -35,7 +35,7 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
     result_df = matching(
         result_df, similarity_threshold, ERconfiguration["matching_method"]
     )
-    c_df=run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
+    c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
 
     if baseline:
         baseline_df = calculate_baseline(
@@ -50,7 +50,8 @@ def ER_pipline(dfilename1, dfilename2, ERconfiguration, baseline=True):
         return resultToString(
             ERconfiguration, -1, -1, -1, baseline_df, matched_df=result_df
         )
-    return {"local rate":len(c_df)/(len(df1)+len(df2))}
+    return {"local rate": round(len(c_df) / (len(df1) + len(df2)),4)}
+
 
 if __name__ == "__main__":
     ER_pipline(
@@ -133,7 +134,7 @@ def add_random_characters_to_string(str, number):
         random_char = random.choice(characters)
         new_string[random.randint(0, len(str) - 1)] = random_char
 
-    return ''.join(new_string)
+    return "".join(new_string)
 
 
 DATABASE_CHANGES_CHOICE = ["year", "author", "title"]
@@ -167,13 +168,13 @@ def create_databaseWithChanges(L_filename, num=3, cnum=4):
     L_datanames = []
     for filename in L_filename:
         for i in range(num):
-            option = DATABASE_CHANGES_CHOICE[i%len(DATABASE_CHANGES_CHOICE)]
+            option = DATABASE_CHANGES_CHOICE[i % len(DATABASE_CHANGES_CHOICE)]
             df = databaseWithMinimalChanges(filename, option, cnum)
             new_filename = filename[5:-4] + str(i) + ".csv"
             new_folder = filename[:-4]
             test_and_create_folder(new_folder)
-            df.to_csv(new_folder + "/"+ new_filename)
-            L_datanames.append(new_folder + "/"+ new_filename)
+            df.to_csv(new_folder + "/" + new_filename)
+            L_datanames.append(new_folder + "/" + new_filename)
     return L_datanames
 
 
@@ -203,18 +204,17 @@ def part3():
         result = ER_pipline(d1, d2, bestF1ERconfiguration, baseline=False)
         result["d1"] = d1
         result["d2"] = d2
-        result["v"] = "local"
         result2 = DP_ER_pipline(d1, d2)
-        result["DP rate"] = result2
         results.append(result)
+        results.append(result2)
 
     results = pd.DataFrame(results)
-    save_result(results, "scability_results")
+    save_result(results, "scability_results.csv")
 
 
 def naive_DPvsLocal():
-    df_dp=pd.read_csv("results/Clustering Results_pyspark.csv")["id"]
-    df_local=pd.read_csv("results/clustering_results.csv")["index"]
+    df_dp = pd.read_csv("results/Clustering Results_pyspark.csv")["id"]
+    df_local = pd.read_csv("results/clustering_results.csv")["index"]
     # df_local=pd.read_csv("results/pySpark+matching-results.csv")["id"]
 
     # Convert Series to sets for easy set operations

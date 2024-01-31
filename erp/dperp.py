@@ -145,9 +145,9 @@ def clustering(df1, df2, matched_df, filename="Clustering Results_pyspark.csv"):
 
     # Create a GraphFrame
     graph = GraphFrame(vertices, edges)
-    graph = GraphFrame(
-        vertices, edges.union(edges.selectExpr("dst as src", "src as dst"))
-    )
+    # graph = GraphFrame(
+    #     vertices, edges.union(edges.selectExpr("dst as src", "src as dst"))
+    # )
 
     # Find connected components
     connected_components = graph.connectedComponents()
@@ -165,7 +165,7 @@ def clustering(df1, df2, matched_df, filename="Clustering Results_pyspark.csv"):
     print("finish clustering")
 
 
-def DP_ER_pipline(filename1, filename2):
+def DP_ER_pipline(filename1, filename2, baseline=False):
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
     sc.setCheckpointDir("inbox")
@@ -180,12 +180,13 @@ def DP_ER_pipline(filename1, filename2):
     # df1.show(10)
     matched_pairs = FirstLetterMatching(df1, df2, 0.7)
     matched_pairs.show(2)
-    baseline_matches = create_baseline(df1, df2)
-    calculate_confusion_score(matched_pairs, baseline_matches)
+    if baseline:
+        baseline_matches = create_baseline(df1, df2)
+        calculate_confusion_score(matched_pairs, baseline_matches)
     clustering(df1, df2, matched_pairs)
-    num = matched_pairs.count()
+    out = {"dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4)}
     spark.stop()
-    return num
+    return out
 
 
 if __name__ == "__main__":

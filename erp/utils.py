@@ -3,7 +3,7 @@ import pandas as pd
 import re
 
 bestF1ERconfiguration = {
-    "threshold": 0.7,
+    "threshold": 0.5,
     "matching_method": "Combined",
     "blocking_method": "FirstLetter",
     "clustering_method": "basic",
