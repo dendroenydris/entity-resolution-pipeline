@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import pandas as pd
-from LocalERP.utils import (
+from erp.utils import (
     create_cartesian_product,
     jaccard_similarity,
     save_result,
