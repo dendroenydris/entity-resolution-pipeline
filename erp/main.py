@@ -170,7 +170,7 @@ def databaseWithMinimalChanges(filename, option="title", num=3):
             lambda x: add_random_characters_to_string(str(x[DATABSE_COLUMNS[1]]), num),
             axis=1,
         )
-    elif option == "Year":
+    elif option == "year":
         database[DATABSE_COLUMNS[-1]] += random.randint(-int(num / 2), -int(num / 2))
     return database
 
@@ -231,7 +231,7 @@ def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4
     L_filenames = create_databaseWithChanges(
         DATABASES_LOCATIONS, num_duplicates, num_changes
     )
-    D = [(d1, d2) for d1 in L_filenames[:4] for d2 in L_filenames[4:]]
+    D = [(d1, d2) for d1 in L_filenames[:3] for d2 in L_filenames[3:]]
     results = []
 
     for d1, d2 in D:
