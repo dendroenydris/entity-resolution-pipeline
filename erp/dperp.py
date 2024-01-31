@@ -183,8 +183,9 @@ def DP_ER_pipline(filename1, filename2):
     baseline_matches = create_baseline(df1, df2)
     calculate_confusion_score(matched_pairs, baseline_matches)
     clustering(df1, df2, matched_pairs)
+    num = matched_pairs.count()
     spark.stop()
-    return matched_pairs.count()
+    return num
 
 
 if __name__ == "__main__":

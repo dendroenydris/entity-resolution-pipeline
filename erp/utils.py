@@ -71,9 +71,6 @@ def save_result(result_df, filename):
     result_df.to_csv(folder_path + filename, index=False)
 
 
-
-
-
 def save_data(df, filename):
     folder_path = "data/"
     test_and_create_folder(folder_path)
