@@ -122,8 +122,8 @@ def calculate_confusion_score(
 
     baseline_matches_pd.to_csv("results/" + filename_baseline, index=False)
 
-    baseline_matches_pd = pd.read_csv(filename_baseline, sep=",")
-    matched_pairs_pd = pd.read_csv(filename_matched, sep=",")
+    baseline_matches_pd = pd.read_csv("results/" + filename_baseline, sep=",")
+    matched_pairs_pd = pd.read_csv("results/" + filename_matched, sep=",")
 
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
         baseline_matches_pd, matched_pairs_pd
