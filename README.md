@@ -41,6 +41,14 @@ Click here to expand!
 
 ### Installation
 
+The prerequisites in addition to the python package are
+
+> spark == 3.5.0
+> scala == 2.12.x
+> graphframes == 0.8.3-spark3.5-s_2.12
+
+graphframes can be installed by running `pyspark --packages graphframes:graphframes:0.8.3-spark3.5-s_2.12` and moving those jars to path-to-spark-home/libexec/jars
+
 ```shell
 cd path-to-this-project
 pip install -e .

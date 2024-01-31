@@ -5,6 +5,9 @@
 # cd path-to-this-project
 # pip install -e .
 # ```
+# spark == 3.5.0
+# scala == 2.12.18
+# graphframes == 0.8.3-spark3.5-s_2.12 `pyspark --packages graphframes:graphframes:0.8.3-spark3.5-s_2.12`
 ###################################################################################################
 import logging
 from erp import run_clustering, part1, part2, part3, naive_DPvsLocal

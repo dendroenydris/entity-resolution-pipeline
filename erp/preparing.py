@@ -9,10 +9,7 @@ def prepare_data(file_name):
     with open(file_name) as f:
         # Split the file into a list of entries
         list_of_papers = f.read().split("\n\n")
-
-        # Assuming in the same databse if the ids are the same, then the papers are the same, delete the duplicate ids.
-        Lidx = []
-
+        
         # Initialize a dataset with column length as requested schema, row length as number of entries
         databases = [["" for j in range(5)] for i in range(len(list_of_papers))]
 
