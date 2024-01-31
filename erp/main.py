@@ -11,7 +11,7 @@ from erp.utils import (
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
     test_and_create_folder,
-    bestF1ERconfiguration,
+    DefaultERconfiguration,
     DATABSE_COLUMNS,
     DATABASES_LOCATIONS,
 )
@@ -182,7 +182,7 @@ def part2(thresholds=[0.5, 0.7]):
     )
 
 
-def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4):
+def part3(ERconfiguration=DefaultERconfiguration, num_duplicates=3, num_changes=4):
     L_filenames = create_databaseWithChanges(
         DATABASES_LOCATIONS, num_duplicates, num_changes
     )
@@ -202,11 +202,11 @@ def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4
 
 
 def naive_DPvsLocal(fdp, flocal):
-    DP_ER_pipline(bestF1ERconfiguration, cluster=False)
+    DP_ER_pipline(DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], cluster=False)
     ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
-        ERconfiguration=bestF1ERconfiguration,
+        ERconfiguration=DefaultERconfiguration,
         cluster=False,
     )
     df_dp = pd.read_csv(fdp)

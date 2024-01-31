@@ -13,7 +13,7 @@ DATABSE_COLUMNS = [
 DATABASES_LOCATIONS=["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
 
 
-bestF1ERconfiguration = {
+DefaultERconfiguration = {
     "threshold": 0.5,
     "matching_method": "Combined",
     "blocking_method": "FirstLetter",

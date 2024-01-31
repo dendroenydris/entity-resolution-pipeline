@@ -11,7 +11,7 @@ from erp.utils import (
     FILENAME_DP_MATCHED_ENTITIES,
     jaccard_similarity,
     trigram_similarity,
-    bestF1ERconfiguration,
+    DefaultERconfiguration,
 )
 
 
@@ -197,7 +197,7 @@ def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, cluster=T
     if baseline:
         baseline_matches = create_baseline(df1, df2)
         return resultToString(
-            bestF1ERconfiguration,
+            DefaultERconfiguration,
             -1,
             -1,
             -1,
