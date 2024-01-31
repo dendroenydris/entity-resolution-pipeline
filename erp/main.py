@@ -84,14 +84,7 @@ def ER_pipline(
         "local excution time": round((end_time - start_time) / 60, 2),
         "local excution time(matching+blocking)": round(matching_time / 60, 2),
     }
-
-
-if __name__ == "__main__":
-    ER_pipline(
-        "data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv", ERconfiguration
-    )
-
-
+    
 def add_random_characters_to_string(str, number):
     characters = string.ascii_lowercase
     new_string = list(str)

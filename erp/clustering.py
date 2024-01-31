@@ -112,22 +112,15 @@ def clustering_basic(result_df, df1, df2):
     )
     return combined_df
 
-
+CLUSTERING_METHODS=["basic"]
 def run_clustering(result_df, df1, df2, clustering_method, filename="results/clustering_results.csv"):
     # Run the clustering function and save the results to a CSV file
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
-    combined_df = clustering_basic(result_df, df1, df2)
+    if clustering_method =="basic":
+        combined_df = clustering_basic(result_df, df1, df2)
     combined_df[DATABSE_COLUMNS + ["index"]].to_csv(
         "results/clustering_results.csv", index=None
     )
     logging.info("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
     return combined_df
-
-
-if __name__ == "__main__":
-    # Read data and run clustering with the basic function
-    df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=",", engine="python")
-    df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=",", engine="python")
-    result_df = pd.read_csv("results/MatchedEntities_LetterJaccard.csv")
-    run_clustering(result_df, df1, df2, clustering_basic)

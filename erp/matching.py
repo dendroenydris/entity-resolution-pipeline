@@ -7,7 +7,8 @@ from erp.utils import (
     save_result,
     trigram_similarity,
 )
-#change here if you would like to asses spesific combnation:
+
+# change here if you would like to asses spesific combnation:
 
 BLOCKING_METHODS = {
     "Year",
@@ -16,6 +17,7 @@ BLOCKING_METHODS = {
     "FirstLetter",
     "authorLastName",
     "commonAuthors",
+    "commonAndNumAuthors"
 }
 
 MATCHING_METHODS = {"Jaccard", "Combined"}
@@ -83,7 +85,6 @@ def calculate_combined_similarity(row: pd.ArrowDtype):
         )
 
     return combined_similarity
-
 
 
 def authorLastName(df):
@@ -176,6 +177,37 @@ def create_FirstLetterBlocking(df1, df2):
     return result_df
 
 
+def create_commonAndNumAuthorsBlocking(df1, df2):
+    result_df = create_cartesian_product(df1, df2)
+
+    # Filter rows based on co-authorship (common authors)
+    result_df["common_authors"] = result_df.apply(
+        lambda row: set(str(row["author names_df1"]).split(", ")).intersection(
+            set(str(row["author names_df2"]).split(", "))
+        ),
+        axis=1,
+    )
+    result_df = result_df[result_df["common_authors"].apply(len) > 0]
+
+    # Filter pairs based on the difference in the number of authors
+    result_df["num_authors_df1"] = result_df["author names_df1"].apply(
+        lambda x: len(x.split(", "))
+    )
+    result_df["num_authors_df2"] = result_df["author names_df2"].apply(
+        lambda x: len(x.split(", "))
+    )
+    result_df = result_df[
+        abs(result_df["num_authors_df1"] - result_df["num_authors_df2"]) <= 2
+    ]
+
+    # Optionally, reset the index
+    result_df = result_df.reset_index(drop=True)
+
+    # Drop rows with NaN values in text columns
+    result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
+    return result_df
+
+
 def create_commonAuthorsBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
     result_df["common_authors"] = result_df.apply(
@@ -186,7 +218,7 @@ def create_commonAuthorsBlocking(df1, df2):
     )
     result_df = result_df[
         result_df["common_authors"].apply(
-            lambda x: len(result_df["common_authors"]) > 0
+            lambda x: len(x["common_authors"]) > 0
         )
     ]
     return result_df

@@ -213,8 +213,3 @@ def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, cluster=T
     }
     spark.stop()
     return out
-
-
-if __name__ == "__main__":
-    # Create a SparkSession in local mode
-    DP_ER_pipline("data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv")
