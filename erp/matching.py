@@ -7,6 +7,7 @@ from erp.utils import (
     save_result,
     trigram_similarity,
 )
+#change here if you would like to asses spesific combnation:
 
 BLOCKING_METHODS = {
     "Year",
@@ -322,7 +323,7 @@ def run_all_blocking_matching_methods(
                 logging.info("finished matching method: " + matching_method)
                 save_result(
                     matched_df,
-                    "MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
+                    f"MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
                 )
 
                 # Append results to the list
