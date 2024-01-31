@@ -29,7 +29,6 @@ Temporary Items
 .apdisk
 data/citation-acm-v8.txt
 data/dblp.txt
-results/
 test.py
 *.pyc
 __pycache__
@@ -37,3 +36,6 @@ inbox
 DIA.egg-info
 build
 First Vertices.csv
+results/*baseline*.csv
+results/clustering*.csv
+results/*match*.csv

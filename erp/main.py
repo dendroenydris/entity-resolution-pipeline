@@ -202,6 +202,13 @@ def part3(ERconfiguration=bestF1ERconfiguration, num_duplicates=3, num_changes=4
 
 
 def naive_DPvsLocal(fdp, flocal):
+    DP_ER_pipline(bestF1ERconfiguration, cluster=False)
+    ER_pipline(
+        DATABASES_LOCATIONS[0],
+        DATABASES_LOCATIONS[1],
+        ERconfiguration=bestF1ERconfiguration,
+        cluster=False,
+    )
     df_dp = pd.read_csv(fdp)
     df_local = pd.read_csv(flocal)
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df_dp, df_local)

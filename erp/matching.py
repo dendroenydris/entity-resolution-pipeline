@@ -20,6 +20,36 @@ BLOCKING_METHODS = {
 MATCHING_METHODS = {"Jaccard", "Combined"}
 
 
+def blocking(df1, df2, blocking_method):
+    blocking_function = globals()[f"create_{blocking_method}Blocking"]
+    return blocking_function(df1, df2)
+
+
+def matching(
+    blocking_results,
+    similarity_threshold,
+    matching_method,
+    outputfile=None,
+):
+    result_df = blocking_results.copy()
+    # Calculate similarity based on the specified matching method
+    if matching_method == "Jaccard":
+        result_df["similarity_score"] = result_df.apply(
+            calculate_jaccard_similarity, axis=1
+        )
+    elif matching_method == "Combined":
+        result_df["similarity_score"] = result_df.apply(
+            calculate_combined_similarity, axis=1
+        )
+
+    # Keep rows where similarity is above the threshold
+    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
+    if outputfile != None:
+        result_df.to_csv(outputfile, index=False)
+    # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
+    return result_df
+
+
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row: pd.ArrowDtype):
     # Convert the values to sets and calculate Jaccard similarity
@@ -53,35 +83,6 @@ def calculate_combined_similarity(row: pd.ArrowDtype):
 
     return combined_similarity
 
-
-def blocking(df1, df2, blocking_method):
-    blocking_function = globals()[f"create_{blocking_method}Blocking"]
-    return blocking_function(df1, df2)
-
-
-def matching(
-    blocking_results,
-    similarity_threshold,
-    matching_method,
-    outputfile=None,
-):
-    result_df = blocking_results.copy()
-    # Calculate similarity based on the specified matching method
-    if matching_method == "Jaccard":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_jaccard_similarity, axis=1
-        )
-    elif matching_method == "Combined":
-        result_df["similarity_score"] = result_df.apply(
-            calculate_combined_similarity, axis=1
-        )
-
-    # Keep rows where similarity is above the threshold
-    result_df = result_df[result_df["similarity_score"] > similarity_threshold]
-    if outputfile != None:
-        result_df.to_csv(outputfile, index=False)
-    # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
-    return result_df
 
 
 def authorLastName(df):
