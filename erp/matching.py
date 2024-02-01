@@ -15,6 +15,7 @@ BLOCKING_METHODS = {
     "TwoYear",
     "numAuthors",
     "FirstLetter",
+    "LastLetter",
     "authorLastName",
     "commonAuthors",
     "commonAndNumAuthors"
@@ -167,6 +168,22 @@ def create_FirstLetterBlocking(df1, df2):
     # Filter rows based on the starting letter of the paper title
     result_df = result_df[
         result_df["paper title_df1"].str[0] == result_df["paper title_df2"].str[0]
+    ]
+
+    # Optionally, reset the index
+    result_df = result_df.reset_index(drop=True)
+
+    # Drop rows with NaN values in text columns
+    result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
+    return result_df
+
+# Function for blocking by last letter of title
+def create_FirstLetterBlocking(df1, df2):
+    result_df = create_cartesian_product(df1, df2)
+
+    # Filter rows based on the starting letter of the paper title
+    result_df = result_df[
+        result_df["paper title_df1"].str[-1] == result_df["paper title_df2"].str[-1]
     ]
 
     # Optionally, reset the index
