@@ -232,7 +232,7 @@ def create_numAuthorsBlocking(df1, df2):
         result_df.apply(
             lambda x: abs(
                 len(str(x["author names_df1"]).split(", "))
-                - len(str(x["author names_df1"]).split(", "))
+                - len(str(x["author names_df2"]).split(", "))
             )
             <= 2,
             axis=1,
