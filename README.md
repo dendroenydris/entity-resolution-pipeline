@@ -1,5 +1,8 @@
 # Entity Resolution of Publication Data
-
+<div align="center">
+<a href="https://github.com/Catoblepases/DIA">Github link</a>
+[![GitHub](https://fontawesome.com/icons/github?f=brands&s=solid)](https://github.com/Catoblepases/DIA)
+</div>
 ## :books: Table of Contents
 
 - [:books: Table of Contents](#books-table-of-contents)
@@ -75,7 +78,7 @@ The project starts with two large dataset text files you need to download:
 Below is the structure of the project:
 
 - 📁 **project**
-  
+
   - 📁 **erp**: Contains Python scripts for the entity resolution pipeline.
     - 📄 `__init__.py`
     - 📄 `clustering.py`
@@ -171,9 +174,9 @@ As a prerequisite for Entity Resolution and Model Training, we have
 generated a dataset containing the following attributes:
 
 > - Paper ID, paper title, author names, publication venue, year of publication
-> 
+>
 > - Publications published between 1995 and 2004
-> 
+>
 > - Publications from VLDB and SIGMOD venues
 
 We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code
@@ -330,7 +333,7 @@ DEFAULT_ER_CONFIGURATION = {
 }
 ```
 
-The results are quite the same for all the method we implemented. 
+The results are quite the same for all the method we implemented.
 
 |                                      | FirstLetterTitle | FirstOrLastLetterTitle |
 | ------------------------------------ | ---------------- | ---------------------- |
