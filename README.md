@@ -102,7 +102,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
   - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file")` the clustering result will be store in
   - DP Version: Run `DP_ER_pipline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file")`
 - **Configuration Options**:
-  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, "FirstOrLastLetter", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
+  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, "FirstOrLastLetterTitle", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
   - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
   - `clustering_method`(String): Altogirthm for clustering {"basic"}.
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
@@ -113,7 +113,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
 - Blocking: `erp.blocking(df1,df2,blocking_method)`
   - Parameters:
     - df1,df2 (pandas.DataFrame) : input databases
-    - blocking_method(str) : {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}
+    - blocking_method(str) : {“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}
 - Matching: `erp.matching(blocking_df,similarity_threshold, matching_method)`
   - Parameters:
     - blocking_df(pandas.DataFrame)
@@ -132,7 +132,7 @@ ERconfiguration:
 ```json
 {
   "matching_method": "Combined",
-  "blocking_method": "FirstLetter",
+  "blocking_method": "FirstLetterTitle",
   "clustering_method": "basic",
   "threshold": 0.5,
   "output_filename": "clustering_results_local.csv"

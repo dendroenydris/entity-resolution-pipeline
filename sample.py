@@ -17,7 +17,7 @@ from erp.utils import (
     FILENAME_DP_MATCHED_ENTITIES,
     FILENAME_LOCAL_MATCHED_ENTITIES,
     DATABASES_LOCATIONS,
-    DefaultERconfiguration,
+    DEFAULT_ER_CONFIGURATION,
 )
 from erp.dperp import DP_ER_pipline
 
@@ -26,8 +26,8 @@ part1()  # cleaned data stored in "data" as "data/citation-acm-v8_1995_2004.csv"
 part2()  # results of all methods stored in "results/method_results.csv"
 part3()  # scability test results stored in "results/scability_results.csv" and "results/scability.png"
 ER_pipline(
-    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], DefaultERconfiguration
+    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], DEFAULT_ER_CONFIGURATION
 )  # test the entire local pipline including clustering
 DP_ER_pipline(
-    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1],DefaultERconfiguration
+    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1],DEFAULT_ER_CONFIGURATION
 )  # test the entire parallel pipline including clustering

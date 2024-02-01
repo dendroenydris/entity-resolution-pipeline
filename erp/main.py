@@ -15,7 +15,7 @@ from erp.utils import (
     FILENAME_SCABILITY_TEST_RESULTS,
     RESULTS_FOLDER,
     test_and_create_folder,
-    DefaultERconfiguration,
+    DEFAULT_ER_CONFIGURATION,
     DATABSE_COLUMNS,
     DATABASES_LOCATIONS,
 )
@@ -202,7 +202,7 @@ def part2(thresholds=[0.5, 0.7]):
 
 
 def scability_test(
-    ERconfiguration=DefaultERconfiguration,
+    ERconfiguration=DEFAULT_ER_CONFIGURATION,
     num_duplicates=3,
     num_changes=4,
     output=FILENAME_SCABILITY_TEST_RESULTS,
@@ -216,7 +216,7 @@ def scability_test(
     for d1, d2 in D:
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = DP_ER_pipline(d1, d2, DefaultERconfiguration, cluster=False)
+        result2 = DP_ER_pipline(d1, d2, DEFAULT_ER_CONFIGURATION, cluster=False)
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, output)
@@ -230,11 +230,21 @@ def part3():
     )  # DP vs local results is printed in terminal
 
 
-def compareTwoDatabase(df1, df2, name_df1="df1", name_df2="df2", item_name="matched pairs"):
+def compareTwoDatabase(
+    df1, df2, name_df1="df1", name_df2="df2", item_name="matched pairs"
+):
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df1, df2)
     merged = pd.merge(df1, df2, how="outer", indicator=True)
     differences = merged[merged["_merge"] != "both"]
-    differences.to_csv(RESULTS_FOLDER + FILENAME_DP_LOCAL_DIFFERENCE)
+    differences.to_csv(
+        RESULTS_FOLDER
+        + FILENAME_DP_LOCAL_DIFFERENCE[:-4]
+        + "_"
+        + name_df1
+        + "_"
+        + name_df2
+        + ".csv"
+    )
 
     # print the number of {item_name} in each DataFrame
     logging.info(f"Number of {item_name} in {name_df1}: {len(df1)}")
@@ -251,14 +261,14 @@ def naive_DPvsLocal(fdp, flocal):
     DP_ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
-        DefaultERconfiguration,
+        DEFAULT_ER_CONFIGURATION,
         matched_output=fdp,
         cluster=False,
     )
     ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
-        ERconfiguration=DefaultERconfiguration,
+        ERconfiguration=DEFAULT_ER_CONFIGURATION,
         matched_output=flocal,
         cluster=False,
     )

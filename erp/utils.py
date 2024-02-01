@@ -13,10 +13,10 @@ DATABSE_COLUMNS = [
 DATABASES_LOCATIONS = ["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
 
 
-DefaultERconfiguration = {
-    "threshold": 0.5,
+DEFAULT_ER_CONFIGURATION = {
+    "threshold": 0.7,
     "matching_method": "Combined",
-    "blocking_method": "FirstLetter",
+    "blocking_method": "FirstLetterTitle",
     "clustering_method": "basic",
     "output_filename": "clustering_results_local.csv",
 }

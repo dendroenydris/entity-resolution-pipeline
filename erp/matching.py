@@ -16,9 +16,9 @@ from erp.utils import (
 BLOCKING_METHODS = {
     "Year",
     "TwoYear",
-    "FirstLetter",
-    "LastLetter",
-    "FirstOrLastLetter",
+    "FirstLetterTitle",
+    "LastLetterTitle",
+    "FirstOrLastLetterTitle",
     "numAuthors",
     "authorLastName",
     "commonAuthors",
@@ -166,7 +166,7 @@ def create_TwoYearBlocking(df1, df2):
 
 
 # Function for blocking by first letter of title
-def create_FirstLetterBlocking(df1, df2):
+def create_FirstLetterTitleBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
 
     # Filter rows based on the starting letter of the paper title
@@ -182,7 +182,7 @@ def create_FirstLetterBlocking(df1, df2):
     return result_df
 
 
-def create_FirstOrLastLetterBlocking(df1, df2):
+def create_FirstOrLastLetterTitleBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
 
     # Filter rows based on the starting letter of the paper title
@@ -202,7 +202,7 @@ def create_FirstOrLastLetterBlocking(df1, df2):
 
 
 # Function for blocking by last letter of title
-def create_LastLetterBlocking(df1, df2):
+def create_LastLetterTitleBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
 
     # Filter rows based on the starting letter of the paper title

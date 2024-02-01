@@ -26,7 +26,7 @@ from erp.utils import (
     jaccard_similarity,
     save_result,
     trigram_similarity,
-    DefaultERconfiguration,
+    DEFAULT_ER_CONFIGURATION,
 )
 
 
@@ -64,7 +64,7 @@ def DP_ER_pipline(
     if baseline:
         baseline_matches = create_baseline(df1, df2)
         return resultToString(
-            DefaultERconfiguration,
+            DEFAULT_ER_CONFIGURATION,
             -1,
             -1,
             -1,
@@ -127,7 +127,7 @@ def create_cross_product_pyspark(df1, df2):
     return pairs
 
 
-def create_FirstLetterBlocking(df1, df2):
+def create_FirstLetterTitleBlocking(df1, df2):
     df1 = df1.withColumn("bucket", substring(col("paper title"), 1, 1))
     df2 = df2.withColumn("bucket", substring(col("paper title"), 1, 1))
     pairs = create_cross_product_pyspark(df1, df2)
@@ -135,7 +135,7 @@ def create_FirstLetterBlocking(df1, df2):
     return pairs
 
 
-def create_FirstOrLastLetterBlocking(df1, df2):
+def create_FirstOrLastLetterTitleBlocking(df1, df2):
     df1 = df1.withColumn("bucket1", substring(col("paper title"), 1, 1))
     df1 = df1.withColumn("bucket2", substring(col("paper title"), -1, 1))
     df2 = df2.withColumn("bucket1", substring(col("paper title"), 1, 1))
@@ -152,7 +152,7 @@ def create_FirstOrLastLetterBlocking(df1, df2):
 # Assuming similarity_udf is defined elsewhere in your code
 def matching(
     pairs,
-    threshold=DefaultERconfiguration["threshold"],
+    threshold=DEFAULT_ER_CONFIGURATION["threshold"],
     output=FILENAME_DP_MATCHED_ENTITIES,
 ):
     pairs = pairs.withColumn(
@@ -170,7 +170,7 @@ def matching(
     return pairs
 
 
-def create_baseline(df1, df2, threshold=DefaultERconfiguration["threshold"]):
+def create_baseline(df1, df2, threshold=DEFAULT_ER_CONFIGURATION["threshold"]):
     t_df1 = df1.select(
         [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
     )
