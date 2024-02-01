@@ -216,9 +216,7 @@ def scability_test(
     for d1, d2 in D:
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = DP_ER_pipline(
-            d1, d2, DefaultERconfiguration, cluster=False
-        )
+        result2 = DP_ER_pipline(d1, d2, DefaultERconfiguration, cluster=False)
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, output)
@@ -230,6 +228,23 @@ def part3():
     naive_DPvsLocal(
         FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
     )  # DP vs local results is printed in terminal
+
+
+def compareTwoDatabase(df1, df2, name_df1="df1", name_df2="df2"):
+    tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df1, df2)
+    merged = pd.merge(df1, df2, how="outer", indicator=True)
+    differences = merged[merged["_merge"] != "both"]
+    differences.to_csv(RESULTS_FOLDER + FILENAME_DP_LOCAL_DIFFERENCE)
+
+    # print the number of matched pairs in each DataFrame
+    logging.info(f"Number of matched pairs in {name_df1}: {len(df1)}")
+    logging.info(f"Number of matched pairs in {name_df2}: {len(df2)}")
+
+    # print the results
+    logging.info(f"Number of differences: {fn+fp}")
+    logging.info(f"Number of shared elements: {tp}")
+    logging.info(f"Number of elements in {name_df1} but not in {name_df2}: {fn}")
+    logging.info(f"Number of elements in {name_df2} but not in {name_df1}: {fp}")
 
 
 def naive_DPvsLocal(fdp, flocal):
@@ -249,17 +264,3 @@ def naive_DPvsLocal(fdp, flocal):
     )
     df_dp = pd.read_csv(RESULTS_FOLDER + fdp)
     df_local = pd.read_csv(RESULTS_FOLDER + flocal)
-    tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df_dp, df_local)
-    merged = pd.merge(df_dp, df_local, how="outer", indicator=True)
-    differences = merged[merged["_merge"] != "both"]
-    differences.to_csv(RESULTS_FOLDER + FILENAME_DP_LOCAL_DIFFERENCE)
-
-    # print the number of matched pairs in each DataFrame
-    logging.info(f"Number of matched pairs in df_dp: {len(df_dp)}")
-    logging.info(f"Number of matched pairs in df_local: {len(df_local)}")
-
-    # print the results
-    logging.info(f"Number of differences: {fn+fp}")
-    logging.info(f"Number of shared elements: {tp}")
-    logging.info(f"Number of elements in df_dp but not in df_local: {fn}")
-    logging.info(f"Number of elements in df_local but not in df_dp: {fp}")
