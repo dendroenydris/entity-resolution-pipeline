@@ -1,10 +1,11 @@
 paper ID,paper title,author names,publication venue,year of publication,index
 5390972920f70186a0dfaca3,graph indexing a frequent structurebased approach,"xifeng yan, philip s yu, jiawei han",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,15
 5390972920f70186a0dfacb7,a formal analysis of information disclosure in data exchange,"gerome miklau, dan suciu",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,26
+5390972920f70186a0dfacb6,order preserving encryption for numeric data,"rakesh agrawal, jerry kiernan, ramakrishnan srikant, yirong xu",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,35
+5390972920f70186a0dfacca,estimating progress of execution for sql queries,"surajit chaudhuri, vivek narasayya, ravishankar ramamurthy",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,44
 5390972920f70186a0dface2,efficient development of data migration transformations,"paulo carreira, helena galhardas",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,62
 5390972920f70186a0dfacd7,soundcompass a practical querybyhumming system normalization of scalable and shiftable timeseries data and effective subsequence generation,"naoko kosugi, yasushi sakurai, masashi morimoto",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,75
-5390972920f70186a0dfacaf,implementing a scalable xml publishsubscribe system using relational database systems,"feng tian, berthold reinwald, hamid pirahesh, tobias mayr, jussi myllymaki",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,102
-5390972920f70186a0dfacf7,rethinking the conference reviewing process,"michael j franklin, jennifer widom, anastassia ailamaki, philip a bernstein, david dewitt, alon halevy, zachary ives, gerhard weikum",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,108
+5390972920f70186a0dfaccc,"highly available, faulttolerant, parallel dataflows","mehul a shah, joseph m hellerstein, eric brewer",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,78
 5390972920f70186a0dfacec,querying at internet scale,"brent chun, joseph m hellerstein, ryan huebsch, shawn r jeffery, boon thau loo, sam mardanbeigi, timothy roscoe, sean rhea, scott shenker, ion stoica",sigmod 04 proceedings of the 2004 acm sigmod international conference on management of data,2004,117
 5390972920f70186a0dfafa3,proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,"gautam das, bing liu, philip s yu",9th acm sigmod workshop on research issues in data mining and knowledge discovery 2004 colocated with sigmodpods 2004 conference,2004,118
 5390972920f70186a0dfafac,an associative classifier based on positive and negative rules,"marialuiza antonie, osmar r zaïane",proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,2004,119
@@ -17,6 +18,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390972920f70186a0dfafa9,discovering spatial patterns accurately with effective noise removal,"yu qian, kang zhang",proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,2004,126
 5390972920f70186a0dfafaa,diagonally subgraphs pattern mining,"moti cohen, ehud gudes",proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,2004,127
 5390972920f70186a0dfafa7,mining association rules with nonuniform privacy concerns,"yi xia, yirong yang, yun chi",proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,2004,128
+5390972920f70186a0dfafa4,mining complex matchings across web query interfaces,"bin he, kevin chenchuan chang, jiawei han",proceedings of the 9th acm sigmod workshop on research issues in data mining and knowledge discovery,2004,129
 5390975920f70186a0dfc97d,querying bilevel information,"sudarshan murthy, david maier, lois delcambre",proceedings of the 7th international workshop on the web and databases colocated with acm sigmodpods 2004,2004,130
 5390975920f70186a0dfc97e,visualizing and discovering web navigational patterns,"jiyang chen, lisheng sun, osmar r zaïane, randy goebel",proceedings of the 7th international workshop on the web and databases colocated with acm sigmodpods 2004,2004,131
 5390975920f70186a0dfc982,semantic multicast for contentbased stream dissemination,"olga papaemmanouil, uĝur çetintemel",proceedings of the 7th international workshop on the web and databases colocated with acm sigmodpods 2004,2004,132
@@ -99,13 +101,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f6920f70186a0e3a963,foundation matters,c j date,vldb 02 proceedings of the 28th international conference on very large data bases,2002,271
 53909f6920f70186a0e3a967,adaptable similarity search using nonrelevant information,"t v ashwin, rahul gupta, sugata ghosal",vldb 02 proceedings of the 28th international conference on very large data bases,2002,273
 53909f6920f70186a0e3a968,sideway value algebra for objectrelational databases,"g özsoyoǧlu, a alhamdani, i s altingövde, s a özel, ö ulusoy, z m özsoyoǧlu",vldb 02 proceedings of the 28th international conference on very large data bases,2002,274
-53909f6920f70186a0e3a964,"wireless graffiti data, data everywhere","tomasz imielinski, badri nath",vldb 02 proceedings of the 28th international conference on very large data bases,2002,275
 53909f6920f70186a0e3a969,database selection using actual physical and acquired logical collection resources in a massive domainspecific operational environment,"jack g conrad, xi s guo, peter jackson, monem meziou",vldb 02 proceedings of the 28th international conference on very large data bases,2002,276
 53909f6920f70186a0e3a973,generic database cost models for hierarchical memory systems,"stefan manegold, peter boncz, martin l kersten",vldb 02 proceedings of the 28th international conference on very large data bases,2002,277
 53909f6920f70186a0e3a972,plan selection based on query clustering,"antara ghosh, jignashu parikh, vibhuti s sengar, jayant r haritsa",vldb 02 proceedings of the 28th international conference on very large data bases,2002,278
 53909f6920f70186a0e3a961,proceedings of the 28th international conference on very large data bases,,vldb 02 proceedings of the 28th international conference on very large data bases,2002,279
 53909f6920f70186a0e3a96d,optimizing view queries in rolex to support navigable result trees,"p bohannon, s ganguly, h f korth, p p s narayan, p shenoy",vldb 02 proceedings of the 28th international conference on very large data bases,2002,280
+53909f6920f70186a0e3a970,watermarking relational databases,"rakesh agrawal, jerry kiernan",vldb 02 proceedings of the 28th international conference on very large data bases,2002,282
 53909f6920f70186a0e3a977,updates for structure indexes,"raghav kaushik, philip bohannon, jeffrey f naughton, pradeep shenoy",vldb 02 proceedings of the 28th international conference on very large data bases,2002,283
+53909f6920f70186a0e3a974,streaming queries over streaming data,"sirish chandrasekaran, michael j franklin",vldb 02 proceedings of the 28th international conference on very large data bases,2002,284
 53909f6920f70186a0e3a982,optimizing result prefetching in web search engines with segmented indices,"ronny lempel, shlomo moran",vldb 02 proceedings of the 28th international conference on very large data bases,2002,286
 53909f6920f70186a0e3a986,adaptive index structures,"yufei tao, dimitris papadias",vldb 02 proceedings of the 28th international conference on very large data bases,2002,287
 53909f6920f70186a0e3a983,ioconscious data preparation for largescale web search engines,"maxim lifantsev, tzicker chiueh",vldb 02 proceedings of the 28th international conference on very large data bases,2002,288
@@ -148,8 +151,10 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f6920f70186a0e3a9c2,database technologies for electronic commerce,"rakesh agrawal, ramakrishnan srikant, yirong xu",vldb 02 proceedings of the 28th international conference on very large data bases,2002,345
 53909f6920f70186a0e3a9c8,extending an ordbms the statemachine module,"wolfgang mahnke, christian mathis, hanspeter steiert",vldb 02 proceedings of the 28th international conference on very large data bases,2002,346
 53909f6920f70186a0e3a9c5,viator a tool family for graphical networking and data view creation,"stephan heymann, katja tham, axel kilian, gunnar wegner, peter rieger, dieter merkel, johann christoph freytag",vldb 02 proceedings of the 28th international conference on very large data bases,2002,347
+53909f6920f70186a0e3a9cf,atopss a publishsubscribe system supporting approximate matching,"haifeng liu, harno jacobsen",vldb 02 proceedings of the 28th international conference on very large data bases,2002,349
 53909f6920f70186a0e3a9c6,profiling and internet connectivity in automotive environments,"m cilia, p hasselmeyer, a p buchmann",vldb 02 proceedings of the 28th international conference on very large data bases,2002,356
 53909f6920f70186a0e3a996,coma a system for flexible combination of schema matching approaches,"honghai do, erhard rahm",vldb 02 proceedings of the 28th international conference on very large data bases,2002,359
+53909f6920f70186a0e3a9b1,a new passenger support system for public transport using mobile database access,"koichi goto, yahiko kambayashi",vldb 02 proceedings of the 28th international conference on very large data bases,2002,361
 53909f6920f70186a0e3a9a9,dtddirected publishing with attribute translation grammars,"michael benedikt, chee yong chan, wenfei fan, rajeev rastogi, shihui zheng, aoying zhou",vldb 02 proceedings of the 28th international conference on very large data bases,2002,362
 53909f6920f70186a0e3a9aa,a multiversion cache replacement and prefetching policy for hybrid data delivery environments,"andré seifert, marc h scholl",vldb 02 proceedings of the 28th international conference on very large data bases,2002,363
 53909f6920f70186a0e3a9a7,reverse nearest neighbor aggregates over data streams,"flip korn, s muthukrishnan, divesh srivastava",vldb 02 proceedings of the 28th international conference on very large data bases,2002,365
@@ -158,16 +163,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f6920f70186a0e3a990,a bandwidth model for internet search,axel uhl,vldb 02 proceedings of the 28th international conference on very large data bases,2002,371
 53909f6920f70186a0e3a96b,efficient algorithms for processing xpath queries,"georg gottlob, christoph koch, reinhard pichler",vldb 02 proceedings of the 28th international conference on very large data bases,2002,373
 53909f6920f70186a0e3a96c,incorporating xsl processing into database engines,guido moerkotte,vldb 02 proceedings of the 28th international conference on very large data bases,2002,377
+53909f6920f70186a0e3a971,parametric query optimization for linear and piecewise linear cost functions,"arvind hulgeri, s sudarshan",vldb 02 proceedings of the 28th international conference on very large data bases,2002,379
 53909f8c20f70186a0e3fe21,proceedings of the 29th international conference on very large data bases  volume 29,"johann christoph freytag, peter c lockemann, serge abiteboul, michael j carey, patricia g selinger, andreas heuer",vldb 03 proceedings of the 29th international conference on very large data bases  volume 29,2003,381
 53909f8c20f70186a0e3fe68,avoiding sorting and grouping in processing queries,"xiaoyu wang, mitch cherniack",vldb 03 proceedings of the 29th international conference on very large data bases  volume 29,2003,440
-53909f8c20f70186a0e3fe7f,who needs xml database,sophie cluet,vldb 03 proceedings of the 29th international conference on very large data bases  volume 29,2003,448
-53909f8c20f70186a0e3fe7d,the zerodelay data warehouse mobilizing heterogeneous database,eva kühn,vldb 03 proceedings of the 29th international conference on very large data bases  volume 29,2003,494
 53909f8c20f70186a0e4018b,proceedings of the thirtieth international conference on very large data bases  volume 30,"mario a nascimento, m tamer özsu, donald kossmann, renée j miller, josé a blakeley, k bernhard schiefer",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,505
 53909f8c20f70186a0e40191,practical suffix tree construction,"sandeep tata, richard a hankins, jignesh m patel",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,508
 53909f8c20f70186a0e40192,answering xpath queries over networks by sending minimal views,"keishi tajima, yoshiki fukui",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,510
 53909f8c20f70186a0e4019b,taming xpath queries by minimizing wildcard steps,"cheeyong chan, wenfei fan, yiming zeng",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,511
 53909f8c20f70186a0e4018f,compressing large boolean matrices using reordering techniques,"david johnson, shankar krishnan, jatin chhugani, subodh kumar, suresh venkatasubramanian",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,512
-53909f8c20f70186a0e4019c,the next framework for logical xquery optimization,"alin deutsch, yannis papakonstantinou, yu xu",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,513
 53909f8c20f70186a0e40196,secure xml publishing without information leakage in the presence of data inference,"xiaochun yang, chen li",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,514
 53909f8c20f70186a0e40193,a framework for using materialized xpath views in xml query processing,"andrey balmin, fatma özcan, kevin s beyer, roberta j cochrane, hamid pirahesh",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,518
 53909f8c20f70186a0e40197,limiting disclosure in hippocratic databases,"kristen lefevre, rakesh agrawal, vuk ercegovac, raghu ramakrishnan, yirong xu, david dewitt",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,520
@@ -176,6 +179,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f8c20f70186a0e401af,accurate and efficient crawling for relevant websites,"martin ester, hanspeter kriegel, matthias schubert",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,525
 53909f8c20f70186a0e401a3,xquery on sql hosts,"torsten grust, sherif sakr, jens teubner",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,526
 53909f8c20f70186a0e4019d,detecting change in data streams,"daniel kifer, shai bendavid, johannes gehrke",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,527
+53909f8c20f70186a0e401b4,networkaware query processing for streambased applications,"yanif ahmad, uğur çetintemel",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,528
 53909f8c20f70186a0e401b0,instancebased schema matching for web databases by domainspecific query probing,"jiying wang, jirong wen, fred lochovsky, weiying ma",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,531
 53909f8c20f70186a0e401b7,query languages and data models for database sequences and data streams,"yannei law, haixun wang, carlo zaniolo",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,532
 53909f8c20f70186a0e401c2,efficiencyquality tradeoffs for vector score aggregation,"pavan kumar c singitham, mahathi s mahabhashyam, prabhakar raghavan",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,534
@@ -230,6 +234,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f8c20f70186a0e401dd,lifting the burden of history from adaptive query processing,"amol deshpande, joseph m hellerstein",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,600
 53909f8c20f70186a0e4021c,an integration framework for sensor networks and data stream management systems,"daniel j abadi, wolfgang lindner, samuel madden, jörg schuler",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,602
 53909f8c20f70186a0e4021f,bilvideo video database management system,"özgür ulusoy, uğur güdükbay, mehmet emin dönderler, ediz saykol, cemil alper",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,603
+53909f8c20f70186a0e40215,green query optimization taming query optimization overheads through plan recycling,"parag sarda, jayant r haritsa",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,611
+53909f8c20f70186a0e40212,an automatic data grabber for large web sites,"valter crescenzi, giansalvatore mecca, paolo merialdo, paolo missier",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,612
 53909f8c20f70186a0e40216,progressive optimization in action,"vijayshankar raman, volker markl, david simmen, guy lohman, hamid pirahesh",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,614
 53909f8c20f70186a0e401f1,managing rfid data,"sudarshan s chawathe, venkat krishnamurthy, sridhar ramachandran, sanjay sarma",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,616
 53909f8c20f70186a0e4020b,semantic query optimization in an automataalgebra combined xquery engine over xml streams,"hong su, elke a rundensteiner, murali mani",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,618
@@ -240,6 +246,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f8c20f70186a0e40201,computing frequent itemsets inside oracle 10g,"wei li, ari mozes",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,630
 53909f8c20f70186a0e401d7,efficient indexing methods for probabilistic threshold queries over uncertain data,"reynold cheng, yuni xia, sunil prabhakar, rahul shah, jeffrey scott vitter",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,632
 53909f8c20f70186a0e401fe,architectures and algorithms for internetscale p2p data management,joseph m hellerstein,vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,635
+53909f8c20f70186a0e401d5,a framework for projected clustering of high dimensional data streams,"charu c aggarwal, jiawei han, jianyong wang, philip s yu",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,636
 53909f8c20f70186a0e401eb,high performance index build algorithms for intranet search engines,"marcus fontoura, engene shekita, jason y zien, sridhar rajagopalan, andreas neumann",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,639
 53909f8c20f70186a0e401f5,the bloomba personal content database,"raymie stata, patrick hunt, m g thiruvalluvan",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,643
 53909f8c20f70186a0e401f4,database challenges in the integration of biomedical data sets,"rakesh nagarajan, mushtaq ahmed, aditya phatak",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,645
@@ -250,9 +257,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53909f8c20f70186a0e401df,the case for precision sharing,"sailesh krishnamurthy, michael j franklin, joseph m hellerstein, garrett jacobson",vldb 04 proceedings of the thirtieth international conference on very large data bases  volume 30,2004,652
 53909fca20f70186a0e45a46,"peter chen speaks out on paths to fame, the roots of the er model in human language, the er model in software engineering, the need for er databases, and more",marianne winslett,acm sigmod record,2004,654
 558f3ce40cf222bc17bc250b,acm sigmod record,arie segev,acm sigmod record,1995,655
-539087cb20f70186a0d594f0,hodfa an architectural framework for homogenizing heterogeneous legacy databases,"kamalakar karlapalem, qing li, chungdak shum",acm sigmod record,1995,657
-539087cb20f70186a0d594f6,an annotated bibliography on active databases short version,"ulrike jaeger, johann christoph freytag",acm sigmod record,1995,662
-539087cb20f70186a0d594f9,the database group at university of hagen,"gunter schlageter, thomas berkel, eberhard heuel, silke mittrach, andreas scherer, wolfgang wilkes",acm sigmod record,1995,665
 539087cf20f70186a0d5b1ec,selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,"yehoshua sagiv, e k blum",selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,1995,669
 539087cf20f70186a0d5b1f6,handling infinite temporal data,"f kabanza, jm stévenne, p wolper",selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,1995,670
 539087cf20f70186a0d5b1f7,query size estimation by adaptive sampling,"richard j lipton, jeffrey f naughton",selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,1995,671
@@ -262,7 +266,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087cf20f70186a0d5b1ff,on the efficiency of transforming database logic programs,yatin p saraiya,selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,1995,675
 539087cf20f70186a0d5b201,on the expressive power of datalog tools and a case study,"phokion g kolaitis, moshe y vardi",selected papers of the 9th annual acm sigactsigmodsigart symposium on principles of database systems,1995,676
 558fe32f0cf23515427181af,acm sigmod record,jennifer widom,acm sigmod record,1995,683
-539087cf20f70186a0d5b539,an aspect of query optimization in multidatabase systems,"chiang lee, chiajung chen, hongjun lu",acm sigmod record,1995,690
 539087cf20f70186a0d5b53f,metu interoperable database system,"a dogac, c dengi, e kilic, g ozhan, f ozcan, s nural, c evrendilek, u halici, b arpinar, p koksal, n kesim, s mancuhan",acm sigmod record,1995,695
 539087cf20f70186a0d5b6d3,algebras for querying text regions extended abstract,"mariano p consens, tova milo",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,696
 539087cf20f70186a0d5b6d6,"sequences, datalog and transducers","giansalvatore mecca, anthony j bonner",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,697
@@ -276,6 +279,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087cf20f70186a0d5b6df,separability of polyhedra for optimal filtering of spatial and constraint data,"alexander brodsky, catherine lassez, jeanlouis lassez, michael j maher",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,705
 539087cf20f70186a0d5b6ee,safe locking policies for dynamic databases,"vinay k chaudhri, vassos hadzilacos",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,706
 539087cf20f70186a0d5b6eb,combinatorial games in database theory,phokion g kolaitis,pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,707
+539087cf20f70186a0d5b6f5,scheduling problems in parallel query optimization,"chandra chekuri, waqar hasan, rajeev motwani",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,708
 539087cf20f70186a0d5b6f8,on the complexity of boundedvariable queries extended abstract,moshe y vardi,pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,709
 539087cf20f70186a0d5b6fb,finite queries do not have effective syntax,"alexei p stolboushkin, michael a taitslin",pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,710
 539087cf20f70186a0d5b6fd,the reliability of queries extended abstract,michel de rougemont,pods 95 proceedings of the fourteenth acm sigactsigmodsigart symposium on principles of database systems,1995,711
@@ -319,6 +323,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087d420f70186a0d5df46,incremental maintenance of views with duplicates,"timothy griffin, leonid libkin",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,770
 539087d420f70186a0d5df45,view maintenance in a warehousing environment,"yue zhuge, héctor garcíamolina, joachim hammer, jennifer widom",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,771
 539087d420f70186a0d5df48,the spiffi scalable videoondemand system,"craig s freedman, david j dewitt",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,772
+539087d420f70186a0d5df49,fault tolerant design of multimedia servers,"steven berson, leana golubchik, richard r muntz",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,773
+539087d420f70186a0d5df4f,upsizing form file server to client server architectures,corporate the access team microsoft,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,774
 539087d420f70186a0d5df4d,join queries with external text sources execution and optimization techniques,"surajit chaudhuri, umeshwar dayal, tak w yan",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,775
 539087d420f70186a0d5df50,the lotus notes storage system,kenneth moore,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,777
 539087d420f70186a0d5df4c,copy detection mechanisms for digital documents,"sergey brin, james davis, héctor garcíamolina",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,778
@@ -329,14 +335,11 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087d420f70186a0d5df3e,balancing histogram optimality and practicality for query result size estimation,"yannis e ioannidis, viswanath poosala",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,790
 539087d420f70186a0d5df41,temporal conditions and integrity constraints in active database systems,"a prasad sistla, ouri wolfson",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,791
 539087d420f70186a0d5df60,enterprise objects framework a second generation objectrelational enabler,charly kleissner,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,793
-539087d420f70186a0d5df5f,use of a component architecture in integrating relational and nonrelational,robert atkinson,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,796
-539087d420f70186a0d5df65,objects and sql panel session strange relations,donald r deutsch,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,797
-539087d420f70186a0d5df66,an overview of the emerging thirdgeneration sql standard,"jim melton, nelson mendoca mattos",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,798
+539087d420f70186a0d5df63,orderofmagnitude advantage on tpcc through massive parallelism,charles levine,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,795
 539087d420f70186a0d5df67,"workflow automation applications, technology and research",amit sheth,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,800
-539087d420f70186a0d5df59,research and productsare they relevant to each other panel session,herb edelstein,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,802
+539087d420f70186a0d5df6a,datamineinteractive rule discovery system,"t imielinski, a virmani",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,804
 539087d420f70186a0d5df6b,the algres testbed of chimera an active objectoriented database system,"stefano ceri, piero fraternali, stefano paraboschi, giuseppe psaila",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,805
 539087d420f70186a0d5df6c,the naos system,"c collet, t coupaye",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,806
-539087d420f70186a0d5df56,things every update replication customer should know abstract,rob goldring,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,807
 539087d420f70186a0d5df6e,the reach active oodbms,"a p buchmann, a deutsch, j zimmermann, m higa",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,808
 539087d420f70186a0d5df6f,qbi query by icons,"antonio massari, stefano pavani, lorenzo saladini, panos k chrysanthis",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,810
 539087d420f70186a0d5df70,infoharness a system for search and retrieval of heterogeneous information,"leon shklar, amit sheth, vipul kashyap, satish thatte",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,811
@@ -346,20 +349,23 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087d420f70186a0d5df75,"information translation, mediation, and mosaicbased browsing in the tsimmis system","joachim hammer, héctor garcíamolina, kelly ireland, yannis papakonstantinou, jeffrey ullman, jennifer widom",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,817
 539087d420f70186a0d5df76,semint a system prototype for semantic integration in heterogeneous databases,"wensyan li, chris clifton",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,818
 539087d420f70186a0d5df7c,the ecrc multi database system,"willem jonker, heribert schütz",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,822
-539087d420f70186a0d5df64,indexing multimedia databases,christos faloutsos,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,823
 539087d420f70186a0d5df7b,using the calanda time series management system,"werner dreyer, angelika kotz dittrich, duri schmidt",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,824
 539087d420f70186a0d5df79,"pattern matching and pattern discovery in scientific, program, and document databases","jason t l wang, kaizhong zhang, dennis shasha",sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,825
 539087d420f70186a0d5df77,paradise a database system for gis applications,corporate the paradise team,sigmod 95 proceedings of the 1995 acm sigmod international conference on management of data,1995,826
 539087d920f70186a0d5ff43,proceedings of the 1996 acm sigmod international conference on management of data,jennifer widom,joint acm sigmod international conference on management of data and acm symposium on principles of database systems,1996,827
 539087d920f70186a0d5ff6f,"data mining using twodimensional optimized association rules scheme, algorithms, and visualization","takeshi fukuda, yasukiko morimoto, shinichi morishita, takeshi tokuyama",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,828
 539087d920f70186a0d5ff71,idea interactive data exploration and analysis,"peter g selfridge, divesh srivastava, lynn o wilson",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,829
+539087d920f70186a0d5ff77,a teradata contentbased multimedia object manager for massively parallel architectures,"w oconnell, i t ieong, d schrader, c watson, g au, a biliris, s choo, p colin, g linderman, e panagos, j wang, t walter",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,831
 539087d920f70186a0d5ff78,faulttolerant architectures for continuous media servers,"banu özden, rajeev rastogi, prashant shenoy, avi silberschatz",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,832
+539087d920f70186a0d5ff6d,mining quantitative association rules in large relational tables,"ramakrishnan srikant, rakesh agrawal",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,833
 539087d920f70186a0d5ff79,optimizing queries over multimedia repositories,"surajit chaudhuri, luis gravano",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,834
 539087d920f70186a0d5ff7c,two techniques for online index modification in shared nothing parallel databases,"kiran j achyutuni, edward omiecinski, shamkant b navathe",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,835
 539087d920f70186a0d5ff74,sql query optimization reordering for a general class of queries,"piyush goel, bala iyer",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,836
 539087d920f70186a0d5ff73,rapid bushy joinorder optimization with cartesian products,"bennet vance, david maier",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,837
 539087d920f70186a0d5ff7e,performance tradeoffs for clientserver query processing,"michael j franklin, björn thór jónsson, donald kossmann",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,838
+539087d920f70186a0d5ff81,hot mirroring a method of hiding parity update penalty and degradation during rebuilds for raid5,"kazuhiko mogi, masaru kitsuregawa",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,839
 539087d920f70186a0d5ff82,random io scheduling in online tertiary storage systems,"bruce k hillyer, avi silberschatz",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,840
+539087d920f70186a0d5ff84,providing better support for a class of decision support queries,"sudhir g rao, antonio badia, dirk van gucht",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,841
 539087d920f70186a0d5ff85,"a query language for multidimensional arrays design, implementation, and optimization techniques","leonid libkin, rona machlin, limsoon wong",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,842
 539087d920f70186a0d5ff86,a super scalar sort algorithm for risc processors,ramesh c agarwal,sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,843
 539087d920f70186a0d5ff80,the dangers of replication and a solution,"jim gray, pat helland, patrick oneil, dennis shasha",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,844
@@ -370,6 +376,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087d920f70186a0d5ff7a,birch an efficient data clustering method for very large databases,"tian zhang, raghu ramakrishnan, miron livny",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,850
 539087d920f70186a0d5ff8f,safe and efficient sharing of persistent objects in thor,"b liskov, a adya, m castro, s ghemawat, r gruber, u maheshwari, a c myers, m day, l shrira",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,851
 539087d920f70186a0d5ff93,goaloriented buffer management revisited,"kurt p brown, michael j carey, miron livny",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,852
+539087d920f70186a0d5ff8a,estimating alphanumeric selectivity in the presence of wildcards,"p krishnan, jeffrey scott vitter, bala iyer",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,853
 539087d920f70186a0d5ff94,multidimensional resource scheduling for parallel queries,"minos n garofalakis, yannis e ioannidis",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,854
 539087d920f70186a0d5ff89,bifocal sampling for skewresistant join size estimation,"sumit ganguly, phillip b gibbons, yossi matias, avi silberschatz",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,855
 539087d920f70186a0d5ff83,implementing data cubes efficiently,"venky harinarayan, anand rajaraman, jeffrey d ullman",sigmod 96 proceedings of the 1996 acm sigmod international conference on management of data,1996,856
@@ -421,6 +428,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087d920f70186a0d62064,in memoriam paris c kanellakis,richard hull,pods 96 proceedings of the fifteenth acm sigactsigmodsigart symposium on principles of database systems,1996,916
 558cfb4ee4b0b692772c9e49,acm sigmod record,michael franklin,acm sigmod record,1996,917
 539087dd20f70186a0d62b3d,information visualization,"tiziana catarci, isabel f cruz",acm sigmod record,1996,920
+539087dd20f70186a0d62b50,"tpcdthe challenges, issues and results",ramesh bhashyam,acm sigmod record,1996,928
 558cf1b8e4b00b95a766fdcb,acm sigmod record,michael franklin,acm sigmod record,1997,936
 539087dd20f70186a0d6349d,"mediator languagesa proposal for a standard report of an i3pob working group held at the university of maryland, april 12 and 13, 1996","peter buneman, louiqa raschid, jeffrey ullman",acm sigmod record,1997,940
 539087dd20f70186a0d63496,environmental information systems,oliver günther,acm sigmod record,1997,947
@@ -429,18 +437,13 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087dd20f70186a0d6448b,proceedings of the 1997 acm sigmod international conference on management of data,"joan m peckman, sudha ram, michael franklin",joint acm sigmod international conference on management of data and acm symposium on principles of database systems,1997,955
 539087dd20f70186a0d64495,concurrency and recovery in generalized search trees,"marcel kornacker, c mohan, joseph m hellerstein",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,956
 539087dd20f70186a0d64497,range queries in olap data cubes,"chingtien ho, rakesh agrawal, nimrod megiddo, ramakrishnan srikant",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,959
-539087dd20f70186a0d6449c,database buffer size investigation for oltp workloads,"thinfong tsuei, allan n packer, kengtai ko",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,960
-539087dd20f70186a0d644a0,the bucky objectrelational benchmark,"michael j carey, david j dewitt, jeffrey f naughton, mohammad asgarian, paul brown, johannes e gehrke, dhaval n shah",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,961
-539087dd20f70186a0d6449d,database performance in the real world tpcd and sap r3,"joachen doppelhammer, thomas höppler, alfons kemper, donald kossmann",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,962
 539087dd20f70186a0d6449a,maintenance of data cubes and summary tables in a warehouse,"inderpal singh mumick, dallan quass, barinderpal singh mumick",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,963
 539087dd20f70186a0d644a4,the strip rule system for efficiently maintaining derived data,"brad adelberg, hector garciamolina, jennifer widom",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,964
 539087dd20f70186a0d64493,highly concurrent cache consistency for indices in clientserver database systems,"markos zaharioudakis, michael j carey",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,965
 539087dd20f70186a0d6448d,fast parallel similarity search in multimedia databases,"stefan berchtold, christian böhm, bernhard braunmüller, daniel a keim, hanspeter kriegel",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,966
 539087dd20f70186a0d644aa,balancing push and pull for data broadcast,"swarup acharya, michael franklin, stanley zdonik",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,967
-539087dd20f70186a0d644b0,starts stanford proposal for internet metasearching,"luis gravano, chenchuan k chang, héctor garcíamolina, andreas paepcke",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,968
 539087dd20f70186a0d644b5,a framework for implementing hypothetical queries,"timothy griffin, richard hull",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,970
 539087dd20f70186a0d644b3,on saying enough already in sql,"michael j carey, donald kossmann",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,971
-539087dd20f70186a0d644ab,infosleuth agentbased semantic integration of information in open and dynamic environments,"r j bayardo, jr, w bohrer, r brice, a cichocki, j fowler, a helal, v kashyap, t ksiezyk, g martin, m nodine, m rashid, m rusinkiewicz, r shea, c unnikrishnan, a unruh, d woelk",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,972
 539087dd20f70186a0d644a8,online aggregation,"joseph m hellerstein, peter j haas, helen j wang",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,973
 539087dd20f70186a0d644c7,highperformance sorting on networks of workstations,"andrea c arpacidusseau, remzi h arpacidusseau, david e culler, joseph m hellerstein, david a patterson",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,974
 539087dd20f70186a0d644cf,scalable parallel data mining for association rules,"euihong han, george karypis, vipin kumar",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,975
@@ -459,13 +462,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087dd20f70186a0d644ef,secure transaction processing in firm realtime database systems,"binto george, jayant haritsa",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,990
 539087dd20f70186a0d644ee,association rules over interval data,"r j miller, y yang",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,991
 539087dd20f70186a0d644e2,waveindices indexing evolving databases,"narayanan shivakumar, héctor garcíamolina",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,992
-539087dd20f70186a0d644f5,"lessons from wall street case studies in configuration, tuning, and distribution",dennis shasha,sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,993
-539087dd20f70186a0d644f7,"objectrelational database systems tutorial principles, products and challenges","michael j carey, nelson m mattos, anil k nori",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,994
 539087dd20f70186a0d644f1,a unified framework for enforcing multiple access control policies,"sushil jajodia, pierangela samarati, v s subrahmanian, eliza bertino",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,995
 539087dd20f70186a0d644f3,revisiting commit processing in distributed database systems,"ramesh gupta, jayant haritsa, krithi ramamritham",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,996
-539087dd20f70186a0d644f9,databases on the web technologies for federation architectures and case studies,ralf kramer,sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,997
-539087dd20f70186a0d644fa,data warehousing and olap for decision support,"surajit chaudhuri, umeshwar dayal",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,998
-539087dd20f70186a0d644fb,query optimization at the crossroads,surajit chaudhuri,sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,999
 539087dd20f70186a0d644fe,picture programming project,"nita goyal, charles hoch, ravi krishnamurthy, brian meckler, michael suchow, moshe zloof",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1000
 539087dd20f70186a0d644fd,delaunay a database visualization system,"isabel f cruz, m averbuch, wendy t lucas, melissa radzyminski, kirby zhang",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1001
 539087dd20f70186a0d644ec,temporal aggregation in active database rules,"iakovos motakis, carlo zaniolo",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1003
@@ -484,6 +482,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087dd20f70186a0d64515,infomaster an information integration system,"michael r genesereth, arthur m keller, oliver m duschka",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1018
 539087dd20f70186a0d64517,the distributed information search component disco and the world wide web,"anthony tomasic, rémy amouroux, philippe bonnet, olga kapitskaia, hubert naacke, louiqa raschid",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1019
 539087dd20f70186a0d64510,templatebased wrappers in the tsimmis system,"joachim hammer, héctor garcíamolina, svetlozar nestorov, ramana yerneni, marcus breunig, vasilis vassalos",sigmod 97 proceedings of the 1997 acm sigmod international conference on management of data,1997,1020
+539087e120f70186a0d665fb,database systemsbreaking out of the box,"avi silberschatz, stan zdonik",acm sigmod record,1997,1023
 558cf1b2e4b0bb3102a0ca96,acm sigmod record,michael franklin,acm sigmod record,1997,1029
 539087e120f70186a0d668f6,proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,"alberto mendelzon, z meral özsoyoglu",joint acm sigmod international conference on management of data and acm symposium on principles of database systems,1997,1031
 539087e120f70186a0d668f8,multimedia support for databases,"banu özden, rajeev rastogi, avi silberschatz",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1032
@@ -494,6 +493,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e120f70186a0d668fe,complete geometrical query languages extended abstract,"marc gyssens, jan van den bussche, dirk van gucht",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1037
 539087e120f70186a0d668ff,on the decidability of semilinearity for semialgebraic sets and its implications for spatial databases extended abstract,"freddy dumortier, marc gyssens, luc vandeurzen, dirk van gucht",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1038
 539087e120f70186a0d668fd,managing semantic heterogeneity in databases a theoretical prospective,richard hull,pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1039
+539087e120f70186a0d66903,answering recursive queries using views,"oliver m duschka, michael r genesereth",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1040
 539087e120f70186a0d66905,regular path queries with constraints,"serge abiteboul, victor vianu",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1041
 539087e120f70186a0d66908,stochastic service guarantees for continuous data on multizone disks,"guido nerjes, peter muth, gerhard weikum",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1042
 539087e120f70186a0d66907,cut and paste,"paolo atzeni, giansalvatore mecca",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1043
@@ -513,6 +513,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e120f70186a0d6690b,olap and statistical databases similarities and differences,arie shoshani,pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1057
 539087e120f70186a0d6690a,replication and consistency being lazy helps sometimes,"yuri breitbart, henry f korth",pods 97 proceedings of the sixteenth acm sigactsigmodsigart symposium on principles of database systems,1997,1058
 558f39620cf2e66758051e14,acm sigmod record,michael franklin,acm sigmod record,1997,1059
+539087e720f70186a0d6840d,workshop on workflow management in scientific and engineering applicationsreport,"r mcclatchey, g vossen",acm sigmod record,1997,1066
 558f43100cf23ca8fdc46c5f,acm sigmod record,michael franklin,acm sigmod record,1998,1072
 539087e720f70186a0d69346,proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,"alberto mendelson, jan paredaens",special interest group on management of data sigmodprinciples of data base systems pods,1998,1088
 539087e720f70186a0d69347,fuzzy queries in multimedia database systems,ronald fagin,pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1089
@@ -521,6 +522,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e720f70186a0d6934a,logic based modeling and analysis of workflows,"hasan davulcu, michael kifer, c r ramakrishnan, i v ramakrishnan",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1092
 539087e720f70186a0d6934f,data base design principles for striping and placement of delaysensitive data on disks,"stavros christodoulakis, fenia a zioga",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1093
 539087e720f70186a0d69348,expressiveness of structured document query languages based on attribute grammars,"frank neven, jan van den bussche",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1094
+539087e720f70186a0d6934e,a cost model for similarity queries in metric spaces,"paolo ciaccia, marco patella, pavel zezula",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1095
 539087e720f70186a0d69350,throughputcompetitive admission control for continuous media databases,"minos n garofalakis, yannis e ioannidis, banu özden, avi silberschatz",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1096
 539087e720f70186a0d69351,querying spatial databases via topological invariants,"luc segoufin, victor vianu",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1097
 539087e720f70186a0d6934b,an overview of query optimization in relational systems,surajit chaudhuri,pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1098
@@ -530,6 +532,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e720f70186a0d69356,query containment for conjunctive queries with regular expressions,"daniela florescu, alon levy, dan suciu",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1102
 539087e720f70186a0d69357,on the decidability of query containment under constraints,"diego calvanese, giuseppe de giacomo, maurizio lenzerini",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1103
 539087e720f70186a0d69359,efficient searching with linear constraints,"pankaj k agarwal, lars arge, jeff erickson, paolo g franciosa, jeffry scott vitter",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1104
+539087e720f70186a0d6935a,relational transducers for electronic commerce,"serge abiteboul, victor vianu, brad fordham, yelena yesha",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1105
 539087e720f70186a0d69358,latent semantic indexing a probabilistic analysis,"christos h papadimitriou, hisao tamaki, prabhakar raghavan, santosh vempala",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1106
 539087e720f70186a0d6935d,on the complexity of the containment problem for conjunctive queries with builtin predicates,"phokion g kolaitis, david l martin, madhukar n thakur",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1107
 539087e720f70186a0d6935b,generalizing data to provide anonymity when disclosing information abstract,"pierangela samarati, latanya sweeney",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1108
@@ -540,6 +543,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e720f70186a0d69364,decidability and undecidability results for the termination problem of active database rules,"james bailey, guozhu dong, kotagiri ramamohanarao",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1113
 539087e720f70186a0d69365,dynamic assembly of views in data cubes,"john r smith, vittorio castelli, anant jhingran, chungsheng li",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1114
 539087e720f70186a0d69352,safe constraint queries,"michael benedikt, leonid libkin",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1115
+539087e720f70186a0d69363,complexity of answering queries using materialized views,"serge abiteboul, oliver m duschka",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1116
 539087e720f70186a0d6934c,a lower bound theorem for indexing schemes and its application to multidimensional range queries,"vasilis samoladas, daniel p miranker",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1117
 539087e720f70186a0d69362,complexity of nonrecursive logic programs with complex values,"sergei vorobyov, andrie voronkov",pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1118
 539087e720f70186a0d69360,data bases in digital libraries where computer science and information management meet,judith klavans,pods 98 proceedings of the seventeenth acm sigactsigmodsigart symposium on principles of database systems,1998,1119
@@ -579,14 +583,12 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e720f70186a0d69672,random sampling for histogram construction how much is enough,"surajit chaudhuri, rajeev motwani, vivek narasayya",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1156
 539087e720f70186a0d69675,memory management during run generation in external sorting,"peråke larson, goetz graefe",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1157
 539087e720f70186a0d69673,waveletbased histograms for selectivity estimation,"yossi matias, jeffrey scott vitter, min wang",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1160
-539087e720f70186a0d6967b,java and relational databases tutorial sqlj,"gray clossman, phil shaw, mark hapner, johannes klein, richard pledereder, brian becker",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1163
 539087e720f70186a0d6966b,bitmap index design and evaluation,"cheeyong chan, yannis e ioannidis",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1165
 539087e720f70186a0d69681,database systems management and oracle8,c gregory doherty,sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1167
 539087e720f70186a0d69683,data in your face push technology in perspective,"michael franklin, stan zdonik",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1170
 539087e720f70186a0d69686,a data mining application customer retention at the port of singapore authority psa,"kiansing ng, huan liu, hweebong kwah",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1171
 539087e720f70186a0d69688,"50,000 users on an oracle8 universal server database","tirthankar lahiri, ashok joshi, amit jasuja, sumanta chatterjee",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1174
 539087e720f70186a0d6967d,microsoft universal data access platform,"josé a blakeley, michael j pizzo",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1177
-539087e720f70186a0d6967a,sap r3 tutorial a database application system,"alfons kemper, donald kossmann, florian matthes",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1180
 539087e720f70186a0d69676,"replication, consistency, and practicality are these mutually exclusive","todd anderson, yuri breitbart, henry f korth, avishai wool",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1184
 539087e720f70186a0d69678,next generation database systems wont work without semantics panel,john mylopoulos,sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1185
 539087e720f70186a0d69690,free parallel data mining,"bin li, dennis shasha",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1186
@@ -601,10 +603,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087e720f70186a0d6969b,useroriented smartcache for the web what you seek is what you get,"zoé lacroix, arnaud sahuguet, raman chandrasekar",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1195
 539087e720f70186a0d6969f,supersql an extended sql for database publishing and presentation,motomichi toyama,sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1196
 539087e720f70186a0d696a0,the idea web lab,"stefano ceri, piero fraternali, stefano paraboschi",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1197
-539087e720f70186a0d69685,transactional publishsubscribe the proactive multicast of database changes abstract,arvola chan,sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1198
 539087e720f70186a0d696a1,dtls dataspot database exploration as easy as browsing the web,"shaul dar, gadi entin, shai geva, eran palmon",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1199
 539087e720f70186a0d696a2,a protein patent query system powered by kleisli,"jing chen, limsoon wong, louxin zhang",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1200
-539087e720f70186a0d69684,the pointcast network abstract,"satish ramakrishnan, vibha dayal",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1201
 539087e720f70186a0d6969e,multimediaminer a system prototype for multimedia data mining,"osmar r zaïane, jiawei han, zenian li, sonny h chee, jenny y chiang",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1202
 539087e720f70186a0d6969d,xmas an extensible mainmemory storage system for highperformance applications,"jang ho park, yong sik kwon, ki hong kim, sang ho lee, byoung dae park, sang kyun cha",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1203
 539087e720f70186a0d6969c,the multidimensional database system rasdaman,"p baumann, a dehmel, p furtado, r ritsch, n widmann",sigmod 98 proceedings of the 1998 acm sigmod international conference on management of data,1998,1204
@@ -633,6 +633,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087f320f70186a0d6f79f,querying aggregate data,"stéphane grumbach, maurizio rafanelli, leonardo tininini",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1247
 539087f320f70186a0d6f7a3,type inference for queries on semistructured data,"tova milo, dan suciu",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1248
 539087f320f70186a0d6f79c,inherent complexity of recursive queries,stavros cosmadakis,pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1249
+539087f320f70186a0d6f7a1,rewriting of regular expressions and regular path queries,"diego calvanese, giuseppe de giacomo, maurizio lenzerini, moshe y vardi",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1250
 539087f320f70186a0d6f7a2,query automata,"frank neven, thomas schwentick",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1251
 539087f320f70186a0d6f7a0,applications of linear algebra in information retrieval and hypertext analysis,"jon kleinberg, andrew tomkins",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1252
 539087f320f70186a0d6f7a9,correctness in general configurations of transactional components,"gustavo alonso, armin feßler, guy pardon, hansjörg schek",pods 99 proceedings of the eighteenth acm sigmodsigactsigart symposium on principles of database systems,1999,1253
@@ -671,17 +672,24 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087f320f70186a0d6f870,random sampling techniques for space efficient online computation of order statistics of large datasets,"gurmeet singh manku, sridhar rajagopalan, bruce g lindsay",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1291
 539087f320f70186a0d6f86c,multidimensional selectivity estimation using compressed histogram information,"juhong lee, deokhwan kim, chinwan chung",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1292
 539087f320f70186a0d6f860,fast algorithms for projected clustering,"charu c aggarwal, joel l wolf, philip s yu, cecilia procopiuc, jong soo park",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1293
-539087f320f70186a0d6f887,data management issues in electronic commerce,m tamer özsu,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1296
+539087f320f70186a0d6f877,mind your vocabulary query mapping across heterogeneous information sources,"chenchuan k chang, héctor garcíamolina",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1294
+539087f320f70186a0d6f87a,dynamat a dynamic view management system for data warehouses,"yannis kotidis, nick roussopoulos",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1295
 539087f320f70186a0d6f888,petabyte databases,dirk düllmann,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1297
 539087f320f70186a0d6f880,computing capabilities of mediators,"ramana yerneni, chen li, hector garciamolina, jeffrey ullman",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1298
 539087f320f70186a0d6f86d,an efficient bitmap encoding scheme for selection queries,"cheeyong chan, yannis e ioannidis",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1299
 539087f320f70186a0d6f865,a multimedia presentation algebra,"s adali, m l sapino, v s subrahmanian",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1302
+539087f320f70186a0d6f871,on random sampling over joins,"surajit chaudhuri, rajeev motwani, vivek narasayya",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1303
+539087f320f70186a0d6f873,ripple joins for online aggregation,"peter j haas, joseph m hellerstein",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1304
+539087f320f70186a0d6f883,automatic discovery of language models for text databases,"jamie callan, margaret connell, aiqun du",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1305
 539087f320f70186a0d6f88f,implementing the spirit of sql99,paul brown,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1306
 539087f320f70186a0d6f88d,"oo, whats happening to db2","m carey, d chamberlin, d doole, s rielau, n mattos, s narayanan, b vance, r swagerman",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1307
+539087f320f70186a0d6f872,join synopses for approximate query answering,"swarup acharya, phillip b gibbons, viswanath poosala, sridhar ramaswamy",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1308
 539087f320f70186a0d6f86b,approximate computation of multidimensional aggregates of sparse data using wavelets,"jeffrey scott vitter, min wang",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1309
+539087f320f70186a0d6f882,recordboundary discovery in web documents,"d w embley, y jiang, yk ng",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1310
 539087f320f70186a0d6f892,indexing mediumdimensionality data in oracle,"k v ravi kanth, siva ravada, jayant sharma, jay banerjee",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1312
 539087f320f70186a0d6f881,query rewriting for semistructured data,"yannis papakonstantinou, vasilis vassalos",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1313
 539087f320f70186a0d6f897,microsoft site server commerce ed talkslides available at the conference,bassel ojjeh,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1315
+539087f320f70186a0d6f898,ecommerce database issues and experience talkslides available at at the conference,anand rajaraman,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1316
 539087f320f70186a0d6f89a,versions and workspaces in microsoft repository,"thomas bergstraesser, philip a bernstein, shankar pal, david shutt",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1319
 539087f320f70186a0d6f89c,the need for distributed asynchronous transactions,"lyman do, prabhu ram, pamela drew",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1320
 539087f320f70186a0d6f85f,optics ordering points to identify the clustering structure,"mihael ankerst, markus m breunig, hanspeter kriegel, jörg sander",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1321
@@ -699,6 +707,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087f320f70186a0d6f964,tam a system for dynamic transactional activity management,"tong zhou, ling liu, calton pu",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1335
 539087f320f70186a0d6f963,serf odmgbased generic restructuring facility,"e a rundensteiner, k claypool, m li, l chen, z zhang, c natarajan, j jin, s de lima, s weiner",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1337
 539087f320f70186a0d6f95c,domino databases for moving objects tracking,"ouri wolfson, prasad sistla, bo xu, jutai zhou, sam chamberlain",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1338
+539087f320f70186a0d6f965,the aqua approximate query answering system,"swarup acharya, phillip b gibbons, viswanath poosala, sridhar ramaswamy",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1339
 539087f320f70186a0d6f96b,a usercentered interface for querying distributed multimedia databases,"isabel f cruz, kimberly m james",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1340
 539087f320f70186a0d6f879,bottomup computation of sparse and iceberg cube,"kevin beyer, raghu ramakrishnan",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1341
 539087f320f70186a0d6f96d,xmlbased information mediation with mix,"chaitan baru, amarnath gupta, bertram ludäscher, richard marciano, yannis papakonstantinou, pavel velikhov, vincent chu",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1342
@@ -706,14 +715,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087f320f70186a0d6f874,an adaptive query execution system for data integration,"zachary g ives, daniela florescu, marc friedman, alon levy, daniel s weld",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1344
 539087f320f70186a0d6f85c,selectivity estimation in spatial databases,"swarup acharya, viswanath poosala, sridhar ramaswamy",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1345
 539087f320f70186a0d6f884,a layered architecture for querying dynamic web content,"hasan davulcu, juliana freire, michael kifer, i v ramakrishnan",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1346
-539087f320f70186a0d6f886,"of crawlers, portals, mice, and men is there more to mining the web","minos n garofalakis, sridhar ramaswamy, rajeev rastogi, kyuseok shim",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1351
-539087f320f70186a0d6f885,"honey, i shrunk the database footprint, mobility, and beyond",praveen seshadri,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1352
+539087f320f70186a0d6f87c,walrus a similarity retrieval algorithm for image databases,"apostol natsev, rajeev rastogi, kyuseok shim",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1350
 539087f320f70186a0d6f87d,a new method for similarity indexing of market basket data,"charu c aggarwal, joel l wolf, philip s yu",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1354
 539087f320f70186a0d6f87e,efficient geometrybased similarity search of 3d spatial databases,daniel a keim,sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1355
 539087f320f70186a0d6f87b,shrinking the warehouse update window,"wilburt juan labio, ramana yerneni, hector garciamolina",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1356
 539087f320f70186a0d6f86a,selftuning histograms building histograms without looking at data,"ashraf aboulnaga, surajit chaudhuri",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1357
 539087f320f70186a0d6f96c,"world wide databaseintegrating the web, corba and databases","athman bouguettaya, boualem benatallah, lily hendra, james beard, kevin smith, mourad quzzani",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1358
 539087f320f70186a0d6f96a,the wasa2 objectoriented workflow management system,"gottfried vossen, mathias weske",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1359
+539087f320f70186a0d6f968,the active multisync controller of the cubetree storage organization,"nick roussopoulos, yannis kotidis, yannis sismanis",sigmod 99 proceedings of the 1999 acm sigmod international conference on management of data,1999,1360
 539087f320f70186a0d6fde8,safe locking policies for dynamic databases,"vinay k chaudhri, vassos hadzilacos",journal of computer and system sciences  fourteenth acm sigactsigmodsigart symposium on principles of database systems,1998,1361
 539087f320f70186a0d6fdeb,arity bounds in firstorder incremental evaluation and definition of polynomial time database queries,"guozhu dong, jianwen su",journal of computer and system sciences  fourteenth acm sigactsigmodsigart symposium on principles of database systems,1998,1362
 539087f320f70186a0d6fde9,algebras for querying text regions expressive power and optimization,"mariano p consens, tova milo",journal of computer and system sciences  fourteenth acm sigactsigmodsigart symposium on principles of database systems,1998,1363
@@ -729,7 +738,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 539087f320f70186a0d6fde5,"sequences, datalog, transducers","anthony bonner, giansalvatore mecca",journal of computer and system sciences  fourteenth acm sigactsigmodsigart symposium on principles of database systems,1998,1385
 558e0cb90cf2c779a6476c0b,acm sigmod record,won kim,acm sigmod record,1999,1386
 539087f320f70186a0d709fa,semantic interoperability in global information systems,"a m ouksel, a sheth",acm sigmod record,1999,1387
-539087f320f70186a0d70a1c,semantic video indexing approach and issues,arun hampapur,acm sigmod record,1999,1390
 558fe4a80cf2e9668dc4c9d6,acm sigmod record,michael franklin,acm sigmod record,1999,1414
 539087fe20f70186a0d75e26,on the content of materialized aggregate views,"stéphane grumbach, leonardo tininini",pods 00 proceedings of the nineteenth acm sigmodsigactsigart symposium on principles of database systems,2000,1415
 539087fe20f70186a0d75e23,typechecking for xml transformers,"tova milo, dan suciu, victor vianu",pods 00 proceedings of the nineteenth acm sigmodsigactsigart symposium on principles of database systems,2000,1416
@@ -771,7 +779,9 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390880220f70186a0d75ee8,synchronizing a database to improve freshness,"junghoo cho, hector garciamolina",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1452
 5390880220f70186a0d75ee0,finding generalized projected clusters in high dimensional spaces,"charu c aggarwal, philip s yu",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1453
 5390880220f70186a0d75eec,on wrapping query languages and efficient xml integration,"vassilis christophides, sophie cluet, jérǒme simèon",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1454
+5390880220f70186a0d75efe,mocha a selfextensible database middleware system for distributed data sources,"manuel rodríguezmartínez, nick roussopoulos",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1455
 5390880220f70186a0d75f02,lhrs a highavailability scalable distributed data structure using reed solomon codes,"witold litwin, thomas schwarz",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1457
+5390880220f70186a0d75efa,xtract a system for extracting document type descriptors from xml documents,"minos garofalakis, aristides gionis, rajeev rastogi, s seshadri, kyuseok shim",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1458
 5390880220f70186a0d75efd,spatial join selectivity using power laws,"christos faloutsos, bernhard seeger, agma traina, caetano traina, jr",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1459
 5390880220f70186a0d75f01,towards selftuning data placement in parallel database systems,"mong li lee, masaru kitsuregawa, beng chin ooi, kianlee tan, anirban mondal",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1460
 5390880220f70186a0d75eff,closest pair queries in spatial databases,"antonio corral, yannis manolopoulos, yannis theodoridis, michael vassilakopoulos",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1461
@@ -792,9 +802,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390880220f70186a0d75f27,expressing business rules,ronald g ross,sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1477
 5390880220f70186a0d75f12,on effective multidimensional indexing for strings,"h v jagadish, nick koudas, divesh srivastava",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1479
 5390880220f70186a0d75f0d,finding replicated web collections,"junghoo cho, narayanan shivakumar, hector garciamolina",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1480
-5390880220f70186a0d75f35,from browsing to interacting dbms support for responsive websites,raghu ramakrishnan,sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1481
 5390880220f70186a0d75f33,anatomy of a real ecommerce system,anant jhingran,sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1482
-5390880220f70186a0d75f38,application architecture panel session 2tier or 3tier what is dbmss role,anil k nori,sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1484
 5390880220f70186a0d75f37,index research panel session forest or trees,"joseph m hellerstein, hanspeter kriegel, david comet, christos falsutsos, raghu ramakrishnan, paul brown",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1486
 5390880220f70186a0d75f32,sqlem fast clustering in sql using the em algorithm,"carlos ordonez, paul cereghini",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1487
 5390880220f70186a0d75f30,internet traffic warehouse,"chungmin chen, munir cochinwala, claudio petrone, marc pucci, sunil samtani, patrizia santa",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1488
@@ -811,6 +819,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390880220f70186a0d75f14,efficient algorithms for mining outliers from large data sets,"sridhar ramaswamy, rajeev rastogi, kyuseok shim",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1503
 5390880220f70186a0d75f1e,approximating multidimensional aggregate range queries over real attributes,"dimitrios gunopulos, george kollios, vassilis j tsotras, carlotta domeniconi",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1505
 5390880220f70186a0d75f4f,homer a modelbased case tool for dataintensive web sites,"paolo merialdo, paolo atzeni, marco magnante, giansalvatore mecca, marco pecorone",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1506
+5390880220f70186a0d75f1f,making b trees cache conscious in main memory,"jun rao, kenneth a ross",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1507
 5390880220f70186a0d75f0e,webview materialization,"alexandros labrinidis, nick roussopoulos",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1509
 5390880220f70186a0d75f42,research issues in moving objects databases tutorial session,ouri wolfson,sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1511
 5390880220f70186a0d75f3a,of xml and databases panel session wheres the beef,"jennifer widom, adam bosworth, bruce lindsay, michael stonebraker, dan suciu, michael j carey",sigmod 00 proceedings of the 2000 acm sigmod international conference on management of data,2000,1512
@@ -831,18 +840,17 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390880220f70186a0d77f7c,timerdriven database triggers and alerters semantics and a challenge,"eric n hanson, lloyd x noronha",acm sigmod record,1999,1542
 5390880d20f70186a0d7b098,path constraints in semistructured databases,"peter buneman, wenfei fan, scott weinstein",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1550
 5390880d20f70186a0d7b09e,querying spatial databases via topological invariants,"luc segoufin, victor vianu",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1551
+5390880d20f70186a0d7b09b,relational transducers for electronic commerce,"serge abiteboul, victor vianu, brad fordham, yelena yesha",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1552
 5390880d20f70186a0d7b099,efficient searching with linear constraints,"pankaj k agarwal, lars arge, jeff erickson, paulo g franciosa, jeffrey scott vitter",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1553
 5390880d20f70186a0d7b09a,latent semantic indexing a probabilistic analysis,"christos h papadimitriou, prabhakar raghavan, hisao tamaki, santosh vempala",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1554
 5390880d20f70186a0d7b09f,conjunctivequery containment and constraint satisfaction,"phokion g kolaitis, moshe y vardi",journal of computer and system sciences  special issue on the seventeenth acm sigactsigmodsigart symposium on principles of database systems,2000,1555
-5390880d20f70186a0d7b5c0,report on isdo 00 the caise00 workshop on infrastructures for dynamic businesstobusiness service outsourcing,"heiko ludwig, paul grefen",acm sigmod record,2000,1556
 5390880d20f70186a0d7b5bd,workshop on performance and architecture of web servers,"krishna kant, prasant mohapatra",acm sigmod record,2000,1558
-5390880d20f70186a0d7b5ea,metadata standards for data warehousing open information model vs common warehouse metadata,"thomas vetterli, anca vaduva, martin staudt",acm sigmod record,2000,1561
 5390880d20f70186a0d7b5e9,the implementation and performance of compressed databases,"till westmann, donald kossmann, sven helmer, guido moerkotte",acm sigmod record,2000,1563
 558f43910cf254cfc0b1d415,acm sigmod record,michael franklin,acm sigmod record,2000,1567
+5390880d20f70186a0d7cd5f,report on the vldb workshop on technologies for eservices tes,"fabio casati, umesh dayal, mingchien shan",acm sigmod record,2000,1568
 5390880d20f70186a0d7cd60,research and practice in federated information systems,"w hasselbring, wj van den heuvel, g j houben, rd kutsche, b rieger, m roantree, k subieta",acm sigmod record,2000,1569
 558e13e70cf2af9ee80ea3ae,acm sigmod record,michael franklin,acm sigmod record,2000,1577
 5590d3bf0cf2ce4b6f3a03d0,acm sigmod record,michael franklin,acm sigmod record,2001,1578
-5390881220f70186a0d7dbfe,report on the fourth international conference on flexible query answering systems fqas 2000,"patrick bosc, amihai motro, gabriella pasi",acm sigmod record,2001,1585
 5390881220f70186a0d7e28c,proceedings of the twentieth acm sigmodsigactsigart symposium on principles of database systems,peter buneman,acm sigmod international conference on management of data,2001,1591
 5390881220f70186a0d7e294,multiobjective query optimization,"christos h papadimitriou, mihalis yannakakis",pods 01 proceedings of the twentieth acm sigmodsigactsigart symposium on principles of database systems,2001,1592
 5390881220f70186a0d7e298,the parameterized complexity of database queries,martin grohe,pods 01 proceedings of the twentieth acm sigmodsigactsigart symposium on principles of database systems,2001,1593
@@ -887,7 +895,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390881220f70186a0d7e2fc,prefer a system for the efficient execution of multiparametric ranked queries,"vagelis hristidis, nick koudas, yannis papakonstantinou",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1633
 5390881220f70186a0d7e2fe,query optimization in compressed database systems,"zhiyuan chen, johannes gehrke, flip korn",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1634
 5390881220f70186a0d7e30e,adaptive precision setting for cached approximate values,"chris olston, boon thau loo, jennifer widom",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1636
-5390881220f70186a0d7e2ef,filtering algorithms and implementation for very fast publishsubscribe systems,"françoise fabret, h arno jacobsen, françois llirbat, joăo pereira, kenneth a ross, dennis shasha",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1637
 5390881220f70186a0d7e320,communicationefficient distributed mining of association rules,"assaf schuster, ran wolff",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1639
 5390881220f70186a0d7e312,epsilon grid order an algorithm for the similarity join on massive highdimensional data,"christian böhm, bernhard braunmüller, florian krebs, hanspeter kriegel",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1640
 5390881220f70186a0d7e31f,selectivity estimation using probabilistic models,"lise getoor, benjamin taskar, daphne koller",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1641
@@ -918,15 +925,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390881220f70186a0d7e34f,spatial data management for computer aided design,"hanspeter kriegel, andreas müller, marco pötke, thomas seidl",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1670
 5390881220f70186a0d7e32e,experiences in mining aviation safety data,"zohreh nazeri, eric bloedorn, paul ostwald",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1671
 5390881220f70186a0d7e336,faststart quick fault recovery in oracle,"tirthankar lahiri, amit ganesh, ron weiss, ashok joshi",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1673
+5390881220f70186a0d7e33a,review a realtime virtual walkthrough system,"l shou, c h chionh, z huang, y ruan, kianlee tan",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1675
 5390881220f70186a0d7e32f,the nimble integration engine,"denise draper, alon y halevy, daniel s weld",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1676
 5390881220f70186a0d7e325,"storhouse metanoia  new applications for database, storage  data warehousing","felipe cariño, jr, pekka kostamaa, art kaufmann, john burgess",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1677
-5390881220f70186a0d7e368,time series similarity measures and time series indexing abstract only,"dimitrios gunopulos, gautam das",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1678
 5390881220f70186a0d7e33c,kweelt more than just yet another framework to query xml,arnaud sahuguet,sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1680
 5390881220f70186a0d7e32a,content integration for ebusiness,"michael stonebraker, joseph m hellerstein",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1681
 5390881220f70186a0d7e337,dissemination of dynamic data,"pavan deolasee, amol katkar, ankur panchbudhe, krithi ramamritham, prashant shenoy",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1682
 5390881220f70186a0d7e329,the network is the database data management for highly distributed systems,"julio c navas, michael wynblatt",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1683
 5390881220f70186a0d7e36a,semantic b2b integration,christoph bussler,sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1687
-5390881220f70186a0d7e362,online query processing a tutorial,"peter j haas, joseph m hellerstein",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1688
 5390881220f70186a0d7e361,application servers panel session bornagain tp monitors for the web,"c mohan, larry cable, matthieu devin, scott dietzen, pat helland, dan wolfson",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1689
 5390881220f70186a0d7e35b,xml data management panel session go native or spruce up relational systems,"peråke larson, dana florescu, goetz graefe, guido moerkotte, hamid pirahesh, harald schöning",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1690
 5390881220f70186a0d7e358,dyda data warehouse maintenance in fully concurrent environments,"jun chen, xin zhang, songting chen, andreas koeller, elke a rundensteiner",sigmod 01 proceedings of the 2001 acm sigmod international conference on management of data,2001,1691
@@ -943,6 +949,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390881220f70186a0d7f82f,an illustra technical white paper,john gaffney,acm sigmod record,1996,1720
 558fe5740cf235154271839a,acm sigmod record,jennifer widom,acm sigmod record,1996,1725
 5390881720f70186a0d7fbd2,on the effects of dimensionality reduction on high dimensional similarity search,charu c aggarwal,pods 01 proceedings of the twentieth acm sigmodsigactsigart symposium on principles of database systems,2001,1726
+5390881720f70186a0d7ff31,reminiscences in influential papers,richard snodgrass,acm sigmod record,1998,1727
+5390881820f70186a0d8110a,data management issues in electronic commerce guest editors introduction,asuman dogac,acm sigmod record,2002,1728
 5390881820f70186a0d81116,databases and transaction processing an applicationoriented approach,"philip m lewis, arthur bernstein, michael kifer",acm sigmod record,2002,1736
 5390881820f70186a0d81118,what will be,michael dertouzos,acm sigmod record,2002,1738
 5390881820f70186a0d81119,"avi silberschatz speaks out on academia versus industrial labs, startup fever, database phd quality, the future of data mining as a research area, ip issues, how he wouldnt change a thing, and more",marianne winslett,acm sigmod record,2002,1740
@@ -969,10 +977,12 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5390882420f70186a0d89096,containment and equivalence for an xpath fragment,"gerome miklau, dan suciu",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1769
 5390882420f70186a0d890a7,lossless regular views,"diego calvanese, giuseppe de giacomo, maurizio lenzerini, moshe y vardi",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1770
 5390882420f70186a0d890a8,on verifying consistency of xml specifications,"marcelo arenas, wenfei fan, leonid libkin",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1771
+5390882420f70186a0d890a5,characterizing memory requirements for queries over continuous data streams,"arvind arasu, brian babcock, shivnath babu, jon mcalister, jennifer widom",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1772
 5390882420f70186a0d89094,algorithmics and applications of tree and graph searching,"dennis shasha, jason t l wang, rosalba giugno",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1773
 5390882420f70186a0d890a9,labeling dynamic xml trees,"edith cohen, haim kaplan, tova milo",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1774
 5390882420f70186a0d890a4,answering queries using views with arithmetic comparisons,"foto afrati, chen li, prasenjit mitra",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1775
 5390882420f70186a0d890ab,least expected cost query optimization what can we expect,"francis chu, joseph halpern, johannes gehrke",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1776
+5390882420f70186a0d89091,models and issues in data stream systems,"brian babcock, shivnath babu, mayur datar, rajeev motwani, jennifer widom",proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1777
 5390882420f70186a0d890a6,data integration a theoretical perspective,maurizio lenzerini,proceedings of the twentyfirst acm sigmodsigactsigart symposium on principles of database systems,2002,1778
 5390882d20f70186a0d8dab0,skew handling techniques in sortmerge join,"wei li, dengfeng gao, richard thomas snodgrass",proceedings of the 2002 acm sigmod international conference on management of data,2002,1781
 5390882d20f70186a0d8daad,covering indexes for branching path queries,"raghav kaushik, philip bohannon, jeffrey f naughton, henry f korth",proceedings of the 2002 acm sigmod international conference on management of data,2002,1785
@@ -997,25 +1007,22 @@ paper ID,paper title,author names,publication venue,year of publication,index
 55911ee60cf232eb904fad58,acm sigmod record,,acm sigmod record,1995,1880
 5590de410cf2ce4b6f3a09cb,acm sigmod record,,acm sigmod record,2002,1881
 539089ab20f70186a0d96af9,"hector garciamolina speaks out regarding startups, how life is getting harder, delta papers, cs in mexico, life as a department chair, and more",marianne winslett,acm sigmod record,2002,1883
-539089ab20f70186a0d96af6,introduction to constraint databases,bart kuijpers,acm sigmod record,2002,1894
-539089ab20f70186a0d96af7,foundations of statistical natural language processing,gerhard weikum,acm sigmod record,2002,1895
 5590e2310cf237666fc298bf,acm sigmod record,,acm sigmod record,2001,1912
 5590dc620cf25001c36ef755,acm sigmod record,,acm sigmod record,2001,1913
-539089ab20f70186a0d97054,special issue on data mining for intrusion detection and threat analysis,daniel barbará,acm sigmod record,2001,1914
 539089ab20f70186a0d9705b,"transactional information systems theory, algorithms, and the practice of concurrency control and recovery",marc h scholl,acm sigmod record,2001,1916
-539089ab20f70186a0d9705c,information warfare and security,h v jagadish,acm sigmod record,2001,1917
 558d34280cf2ffbd8570b757,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1995,1930
 55911e720cf232eb904fad00,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1995,1931
 539089bb20f70186a0d98ad4,the vldb journal  the international journal on very large data bases  persistent object systems,,the vldb journal  the international journal on very large data bases,1995,1933
-539089bb20f70186a0d98adc,sleepers and workaholics caching strategies in mobile environments extended version,"daniel barbará, tomasz imieliński",the vldb journal  the international journal on very large data bases,1995,1941
 539089bb20f70186a0d98ad2,realmbased spatial data types the rose algebra,"ralf hartmut güting, markus schneider",the vldb journal  the international journal on very large data bases,1995,1947
 55911e940cf232eb904fad1e,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1995,1952
 558e0a380cf2c779a6476919,acm sigmod record,,acm sigmod record,2002,1953
 539089d320f70186a0d9c21d,"review of ontologies a silver bullet for knowledge management and electronic commerce by dieter fensel springerverlag, 2002",antonio badia,acm sigmod record,2002,1970
 539089d320f70186a0d9c21e,small worlds the dynamics of networks between order and randomness,"jie wu, duncan j watts",acm sigmod record,2002,1971
 5590dcf40cf2baaad9717581,acm sigmod record,,acm sigmod record,2003,1972
+53908a4020f70186a0d9d777,jim gray speaks out,marianne winslett,acm sigmod record,2003,1974
 53908a4020f70186a0d9d779,"report on the first international conference on ontologies, databases and applications of semantics odbase part of the federated conference on the move to meaningful internet systems 2002",karl aberer,acm sigmod record,2003,1982
 5590d8f90cf2ce4b6f3a06ce,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2002,1985
+53908a4020f70186a0d9d84f,views in a largescale xml repository,"vincent aguilera, sophie cluet, tova milo, pierangelo veltri, dan vodislav",the vldb journal  the international journal on very large data bases,2002,1990
 558c2f9f612c2ba45fe95b9a,editorial,"peter apers, stefano ceri, richard snodgrass",the vldb journal  the international journal on very large data bases,2002,1991
 53908a4020f70186a0d9e36b,proceedings of the 22th international conference on very large data bases,"t m vijayaraman, alejandro p buchmann, c mohan, nandlal l sarda",vldb 96 proceedings of the 22th international conference on very large data bases,1996,1992
 53908a4020f70186a0d9e36a,proceedings of the 21th international conference on very large data bases,"umeshwar dayal, peter m d gray, shojiro nishio",vldb 95 proceedings of the 21th international conference on very large data bases,1995,1993
@@ -1036,6 +1043,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908a7420f70186a0da453d,secure buffering in firm realtime database systems,"binto george, jayant r haritsa",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2056
 53908a7420f70186a0da452b,incremental maintenance for materialized views over semistructured data,"serge abiteboul, jason mchugh, michael rys, vasilis vassalos, janet l wiener",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2059
 53908a7420f70186a0da4487,dataguides enabling query formulation and optimization in semistructured databases,"roy goldman, jennifer widom",vldb 97 proceedings of the 23rd international conference on very large data bases,1997,2061
+53908a7420f70186a0da4544,diagjoin an opportunistic join algorithm for 1n relationships,"sven helmer, till westmann, guido moerkotte",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2064
 53908a7420f70186a0da448b,integrating sql databases with contentspecific search engines,"stefan deßloch, nelson mendonça mattos",vldb 97 proceedings of the 23rd international conference on very large data bases,1997,2076
 53908a7420f70186a0da45c3,bulkloading techniques for object databases and an application to relational data,"sihem ameryahia, sophie cluet, claude delobel",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2077
 53908a7420f70186a0da45c9,rainforest  a framework for fast decision tree construction of large datasets,"johannes gehrke, raghu ramakrishnan, venkatesh ganti",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2087
@@ -1048,6 +1056,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908a7420f70186a0da468e,histogrambased approximation of setvalued queryanswers,"yannis e ioannidis, viswanath poosala",vldb 99 proceedings of the 25th international conference on very large data bases,1999,2150
 53908a7420f70186a0da4683,similarity search in high dimensions via hashing,"aristides gionis, piotr indyk, rajeev motwani",vldb 99 proceedings of the 25th international conference on very large data bases,1999,2153
 53908a7420f70186a0da45cd,algorithms for mining distancebased outliers in large datasets,"edwin m knorr, raymond t ng",vldb 98 proceedings of the 24rd international conference on very large data bases,1998,2154
+53908a7420f70186a0da4673,explaining differences in multidimensional aggregates,sunita sarawagi,vldb 99 proceedings of the 25th international conference on very large data bases,1999,2169
 53908a9620f70186a0da471f,active views for electronic commerce,"serge abiteboul, bernd amann, sophie cluet, adi eyal, laurent mignet, tova milo",vldb 99 proceedings of the 25th international conference on very large data bases,1999,2173
 53908a9620f70186a0da4732,a database platform for bioinformatics,sandeepan banerjee,vldb 00 proceedings of the 26th international conference on very large data bases,2000,2178
 53908a9620f70186a0da4723,combining histograms and parametric curve fitting for feedbackdriven query resultsize estimation,"arnd christian könig, gerhard weikum",vldb 99 proceedings of the 25th international conference on very large data bases,1999,2181
@@ -1055,6 +1064,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908a9620f70186a0da4734,research directions in biodiversity informatics,john l schnase,vldb 00 proceedings of the 26th international conference on very large data bases,2000,2206
 53908a9620f70186a0da47ca,temporal integrity constraints with indeterminacy,"wes cowley, dimitris plexousakis",vldb 00 proceedings of the 26th international conference on very large data bases,2000,2214
 53908a9620f70186a0da473e,efficiently publishing relational data as xml documents,"jayavel shanmugasundaram, eugene j shekita, rimon barr, michael j carey, bruce g lindsay, hamid pirahesh, berthold reinwald",vldb 00 proceedings of the 26th international conference on very large data bases,2000,2218
+53908a9620f70186a0da47d0,multidimensional database allocation for parallel data warehouses,"thomas stöhr, holger märtens, erhard rahm",vldb 00 proceedings of the 26th international conference on very large data bases,2000,2225
 53908a9620f70186a0da47d5,hypothetical knowledge and counterfactual reasoning,joseph y halpern,vldb 00 proceedings of the 26th international conference on very large data bases,1998,2226
 53908a9620f70186a0da47d8,approximate query processing using wavelets,"kaushik chakrabarti, minos n garofalakis, rajeev rastogi, kyuseok shim",vldb 00 proceedings of the 26th international conference on very large data bases,2000,2233
 53908a9620f70186a0da4881,the bttree a branched and temporal access method,"linan jiang, betty salzberg, david b lomet, manuel barrena garcía",vldb 00 proceedings of the 26th international conference on very large data bases,2000,2254
@@ -1119,7 +1129,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908b4920f70186a0dbab16,efficient filtering of xml documents with xpath expressions,"cy chan, p felber, m garofalakis, r rastogi",the vldb journal  the international journal on very large data bases,2002,2510
 558d71540cf2e667580502e4,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2000,2514
 558f361d0cf222bc17bc1c33,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2000,2516
-53908b4920f70186a0dbabb5,declarative specification of web sites with s,"mary fern225ndez, daniela florescu, alon levy, dan suciu",the vldb journal  the international journal on very large data bases,2000,2522
 5590df830cf25001c36ef980,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2001,2525
 558d74990cf2c779a6476088,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1999,2526
 558e0a790cf2af9ee80e9eca,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1999,2527
@@ -1131,6 +1140,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 558f422a0cf2e0ca47150a97,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1997,2556
 558f3a860cf2c779a6478c2e,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1997,2559
 558f35da0cf222bc17bc1b94,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1998,2576
+53908b4920f70186a0dbabbc,exploiting early sorting and early partitioning for decision support query processing,"j claussen, a kemper, d kossmann, c wiesner",the vldb journal  the international journal on very large data bases,2000,2581
 558cf127e4b00b95a766fdb7,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2000,2587
 558f395a0cf2af9ee80ebf61,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1996,2588
 558f3bb10cf2af9ee80ec1cb,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1996,2593
@@ -1139,6 +1149,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908b4920f70186a0dbabed,sing the truth about ad hoc join costs,"laura m haas, michael j carey, miron livny, amit shukla",the vldb journal  the international journal on very large data bases,1997,2603
 558f38fd0cf2e66758051db8,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,1997,2608
 53908b4920f70186a0dbacb8,semantic and schematic similarities between database objects a contextbased approach,"vipul kashyap, amit sheth",the vldb journal  the international journal on very large data bases,1996,2610
+53908b4920f70186a0dbabee,erratuma database model for object dynamics,"m p papazoglou, b j kr228mer",the vldb journal  the international journal on very large data bases,1997,2611
 558f35df0cf2c779a6478675,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2001,2622
 558d15440cf2b0acc6504242,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2002,2623
 5590cb4f0cf237666fc28b36,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2001,2627
@@ -1186,10 +1197,11 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53908d6520f70186a0dd1a09,spectral bloom filters,"saar cohen, yossi matias",proceedings of the 2003 acm sigmod international conference on management of data,2003,2721
 53908d6520f70186a0dd1a1b,hardware acceleration for spatial selections and joins,"chengyu sun, divyakant agrawal, amr el abbadi",proceedings of the 2003 acm sigmod international conference on management of data,2003,2734
 53908d6520f70186a0dd1a2a,abstracts of invited industrial track presentations,zachary ives,proceedings of the 2003 acm sigmod international conference on management of data,2003,2740
+53908d6520f70186a0dd1a25,a framework for diagnosing changes in evolving data streams,charu c aggarwal,proceedings of the 2003 acm sigmod international conference on management of data,2003,2745
 53908d6520f70186a0dd1a23,evaluating probabilistic queries over imprecise data,"reynold cheng, dmitri v kalashnikov, sunil prabhakar",proceedings of the 2003 acm sigmod international conference on management of data,2003,2758
-53908d6520f70186a0dd1a37,stream the stanford stream data manager demonstration description,"arvind arasu, brian babcock, shivnath babu, mayur datar, keith ito, itaru nishizawa, justin rosenstein, jennifer widom",proceedings of the 2003 acm sigmod international conference on management of data,2003,2760
 53908d6520f70186a0dd1a46,the lowell report,"jim gray, hans schek, michael stonebraker, jeff ullman",proceedings of the 2003 acm sigmod international conference on management of data,2003,2763
 53908d6520f70186a0dd1a3a,telegraphcq continuous dataflow processing,"sirish chandrasekaran, owen cooper, amol deshpande, michael j franklin, joseph m hellerstein, wei hong, sailesh krishnamurthy, samuel r madden, fred reiss, mehul a shah",proceedings of the 2003 acm sigmod international conference on management of data,2003,2767
+53908d6520f70186a0dd1a32,griddb a relational interface for the grid,"david t liu, michael j franklin, devesh parekh",proceedings of the 2003 acm sigmod international conference on management of data,2003,2777
 53908d6520f70186a0dd1a08,extended wavelets for multiple measures,"antonios deligiannakis, nick roussopoulos",proceedings of the 2003 acm sigmod international conference on management of data,2003,2786
 53908e0020f70186a0dd49b8,"analyzing massive data streams past, present, and future",minos garofalakis,dmkd 03 proceedings of the 8th acm sigmod workshop on research issues in data mining and knowledge discovery,2003,2791
 53908e0020f70186a0dd49bb,processing frequent itemset discovery queries by division and set containment join operators,ralf rantzau,dmkd 03 proceedings of the 8th acm sigmod workshop on research issues in data mining and knowledge discovery,2003,2792
@@ -1213,14 +1225,15 @@ paper ID,paper title,author names,publication venue,year of publication,index
 5590d5f70cf2baaad9717163,acm sigmod record,,acm sigmod record,2003,2857
 5590e06a0cf25001c36efa1f,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2004,2869
 5590d1ba0cf2baaad9716ef8,acm sigmod record,,acm sigmod record,2004,2875
-5390962020f70186a0df3f50,report on the dagstuhl seminar,"michael gertz, m tamer özsu, gunter saake, kaiuwe sattler",acm sigmod record,2004,2886
+5390962020f70186a0df3f4f,sql2003 has been published,"andrew eisenberg, jim melton, krishna kulkarni, janeike michels, fred zemke",acm sigmod record,2004,2885
 558ce34c612c5d355d05268c,the vldb journal  the international journal on very large data bases,,the vldb journal  the international journal on very large data bases,2004,2896
 53e9983db7602d9702063cf1,object query standards,andrew e wade,sigmod record,1996,2917
 53e9a2ebb7602d9702bf3118,wwwudk a webbased environmental metainformation system,"ralf kramer, ralf nikolai, arne koschel, claudia rolker, peter c lockemann, andree keitel, rudolf legat, konrad zirm",sigmod record,1997,2928
+53e9ad42b7602d9703722d03,algebraic change propagation for semijoin and outerjoin queries,"timothy griffin, bharat kumar",sigmod record,1998,2937
+53e9b57cb7602d97040be00a,lore a database management system for semistructured data,"jason mchugh, serge abiteboul, roy goldman, dallan quass, jennifer widom",sigmod record,1997,2946
 53e9ac38b7602d97035fd442,unpacking the semantics of source and usage to perform semantic reconciliation in largescale information systems,"kenneth p smith, leo obrst",sigmod record,1999,2964
 53e9b4efb7602d970401a8a0,simulation data as data streams,"ghaleb abdulla, terence critchlow, william arrighi",sigmod record,2004,2977
-53e99fbcb7602d9702898c46,a survey of logical models for olap databases,"panos vassiliadis, timos k sellis",sigmod record,1999,3004
-53e9984fb7602d970208642b,the third manifesto,"hugh darwen, c j date",sigmod record,1995,3010
+53e9a651b7602d9702f831d8,report on the 9th international workshop on data base programming languages,"georg lausen, dan suciu",sigmod record,2004,2980
 53e9ab65b7602d97035023ec,automata theory for xml researchers,frank neven,sigmod record,2002,3019
 53e9adffb7602d9703809a8b,report on the web dynamics workshop at www 2002,"mark levene, alexandra poulovassilis",sigmod record,2002,3020
 53e9afacb7602d97039fb80e,a contextaware methodology for very small data base design,"cristiana bolchini, fabio a schreiber, letizia tanca",sigmod record,2004,3021
@@ -1233,6 +1246,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b500b7602d970402fdab,spotfire an information exploration environment,christopher ahlberg,sigmod record,1996,3028
 53e99813b7602d970202daba,dynamic information visualization,yannis e ioannidis,sigmod record,1996,3029
 53e9aa0fb7602d97033792a6,a brief survey of web data extraction tools,"alberto h f laender, berthier a ribeironeto, altigran soares da silva, juliana s teixeira",sigmod record,2002,3030
+53e9b47cb7602d9703f7f787,evaluating lockbased protocols for cooperation on xml documents,"sven helmer, carlchristian kanne, guido moerkotte",sigmod record,2004,3031
 53e9ad2cb7602d970370ccd1,political winds change direction again,xiaolei qian,sigmod record,1995,3032
 53e9b0b2b7602d9703b21cca,"olap, relational, and multidimensional database systems",george colliat,sigmod record,1996,3033
 53e99800b7602d970200b5fd,editors notes,michael j franklin,sigmod record,1997,3034
@@ -1315,13 +1329,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b565b7602d970409d6df,a pictorial query language for querying geographic databases using positional and olap operators,"elaheh pourabbas, maurizio rafanelli",sigmod record,2002,3173
 53e9a914b7602d9703263a5f,fundamentals of data warehouses 2nd revised and extended edition,vernon hoffner,sigmod record,2003,3175
 53e99d21b7602d97025d4bcd,an annotated bibliography of benchmarks for object databases,akmal b chaudhri,sigmod record,1995,3176
-53e9a049b7602d970292d69c,krdb 98 the 5th international workshop on knowledge representation meets databases,"alexander borgida, vinay k chaudhri, martin staudt",sigmod record,1998,3177
 53e9a57db7602d9702ea7df6,a general techniques for querying xml documents using a relational database system,"jayavel shanmugasundaram, eugene j shekita, jerry kiernan, rajasekar krishnamurthy, stratis viglas, jeffrey f naughton, igor tatarinov",sigmod record,2001,3178
 53e9b91eb7602d9704506aaf,introduction to constraint databases  book review,bart kuijpers,sigmod record,2002,3179
 53e99b21b7602d97023b7d64,on views and xml,serge abiteboul,sigmod record,1999,3180
 53e9b495b7602d9703f9b093,the design and performance evaluation of alternative xml storage strategies,"feng tian, david j dewitt, jianjun chen 0001, chun zhang",sigmod record,2002,3181
 53e99addb7602d9702363885,temporal database system implementations,michael h böhlen,sigmod record,1995,3182
+53e9b88ab7602d970445a56b,emergent semantics and the multimedia semantic web,"william i grosky, d v sreenath, farshad fotouhi",sigmod record,2002,3184
 53e9a0f3b7602d97029db9e5,moving up the food chain supporting ecommerce applications on databases,anant jhingran,sigmod record,2000,3185
+53e9b4bfb7602d9703fdb00f,hodfa an architectural framework for homogenizing heterogeneous legacy database,"kamalakar karlapalem, qing li, chungdak shum",sigmod record,1995,3186
 53e9984bb7602d970207a805,workflow history management,"pinar koksal, sena nural arpinar, asuman dogac",sigmod record,1998,3188
 53e9b30ab7602d9703dd0754,report on the first international workshop an efficient webbased information systems,"zoé lacroix, omar boucelma",sigmod record,2003,3189
 53e99aa6b7602d970231eaf7,interview with pat selinger,marianne winslett,sigmod record,2003,3190
@@ -1364,8 +1379,10 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a946b7602d970329b029,information sharing across private databases,"rakesh agrawal, alexandre v evfimievski, ramakrishnan srikant",sigmod conference,2003,3247
 53e9b4a5b7602d9703fb12e1,xl a platform for web services,"daniela florescu, andreas grünhagen, donald kossmann, steffen rost",sigmod conference,2002,3248
 53e9b565b7602d97040a13bb,towards knowledgebased digital libraries,"ling feng, manfred a jeusfeld, jeroen hoppenbrouwers",sigmod record,2001,3249
+53e99938b7602d9702179229,piers an efficient model for similarity search in dna sequence databases,"xia cao, shuai cheng li, beng chin ooi, anthony k h tung",sigmod record,2004,3251
 53e9abb2b7602d9703562b90,"domains, relations and religious wars",rafael camps,sigmod record,1996,3258
 53e99931b7602d97021720a2,intelligent access to heterogeneous information sources report on the 4th workshop on knowledge representation meets databases,"franz baader, manfred a jeusfeld, werner nutt",sigmod record,1997,3261
+53e99af2b7602d970237e0d4,the xml typechecking problem,dan suciu,sigmod record,2002,3263
 53e99d7ab7602d970263389b,a denotational semantics for continuous queries over streams and relations,"arvind arasu, jennifer widom",sigmod record,2004,3264
 53e9a67cb7602d9702fb0492,from the guest editors  special section on data management issues in mobile computing,"margaret h dunham, abdelsalam helal",sigmod record,1995,3265
 53e99aecb7602d9702373ecd,toward network data independence,joseph m hellerstein,sigmod record,2003,3267
@@ -1374,16 +1391,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a217b7602d9702b1d9d0,small worlds the dynamics of networks between order and randomness  book review,jie wu 0012,sigmod record,2002,3273
 53e9a6bcb7602d9702ff26e4,a readonly transaction anomaly under snapshot isolation,"alan fekete, elizabeth j oneil, patrick e oneil",sigmod record,2004,3275
 53e9a63eb7602d9702f6e8b9,the ecobase project database and web technologies for environmental information systems,"asterio k tanaka, patrick valduriez",sigmod record,2001,3279
+53e9984fb7602d9702087949,the middleware muddle,david ritter,sigmod record,1998,3281
 53e9ae5cb7602d970387a189,interviewing during a tight job market,"qiong luo, zachary g ives",sigmod record,2002,3283
 53e9b6bfb7602d970424472d,efficient snapshot differential algorithms for data warehousing,"wilburt labio, hector garciamolina",vldb,1996,3342
-53e99c19b7602d97024c3b5c,generalized search trees for database systems,"joseph m hellerstein, jeffrey f naughton, avi pfeffer",vldb,1995,3350
-53e9b72cb7602d97042c408e,capturing global transactions from multiple recovery log files in a partitioned database system,"chengfei liu, bruce g lindsay 0001, serge bourbonnais, elizabeth hamel, tuong c truong, jens stankiewitz",vldb,2003,3396
 53e9bd87b7602d9704a2b576,provision of market services for eco compliant electronic market places,"sena nural arpinar, asuman dogac",sigmod record,2000,3407
 53e9a9b7b7602d9703314db9,why i like working in academia,richard t snodgrass,sigmod record,2002,3410
 53e9aa95b7602d970340f609,report on the 2004 sigmod conference,"gerhard weikum, patrick valduriez",sigmod record,2004,3412
 53e9bd64b7602d9704a02153,a multiparadigm querying approach for a generic multimedia database management system,"jirong wen, qing li, weiying ma, hongjiang zhang",sigmod record,2003,3413
 53e99809b7602d970201f94d,chairs message,richard t snodgrass,sigmod record,1997,3414
-53e9a326b7602d9702c31476,highconcurrency locking in rtrees,"marcel kornacker, douglas banks",vldb,1995,3415
 53e9af47b7602d9703988998,dynamic load balancing in hierarchical parallel database systems,"luc bouganim, daniela florescu, patrick valduriez",vldb,1996,3416
 53e9b049b7602d9703aab656,maintenance of automatic summary tables,"wolfgang lehner, richard sidle, hamid pirahesh, roberta cochrane",sigmod conference,2000,3420
 53e9b5a2b7602d97040ea267,the data that you wont find in databases tutorial panel on data exchange formats,"peter buneman, david maier",sigmod conference,1995,3422
@@ -1392,6 +1407,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e99f11b7602d97027deea2,extracting structured data from web pages,"arvind arasu, hector garciamolina",sigmod conference,2003,3427
 53e9a91ab7602d970326be48,holistic udafs at streaming speeds,"graham cormode, theodore johnson, flip korn, s muthukrishnan, oliver spatscheck, divesh srivastava",sigmod conference,2004,3428
 53e99fd0b7602d97028aed9b,support for relaxed currency and consistency constraints in mtcache,"hongfei guo, peråke larson, raghu ramakrishnan, jonathan goldstein",sigmod conference,2004,3429
+53e9a789b7602d97030c3360,soundcompass a practical querybyhumming system,"naoko kosugi, yasushi sakurai, masashi morimoto",sigmod conference,2004,3430
 53e99a35b7602d97022963e6,lazy query evaluation for active xml,"serge abiteboul, omar benjelloun, bogdan cautis, ioana manolescu, tova milo, nicoleta preda",sigmod conference,2004,3433
 53e9b8ccb7602d97044aba70,dynamic xml documents with distribution and replication,"serge abiteboul, angela bonifati, gregory cobena, ioana manolescu, tova milo",sigmod conference,2003,3434
 53e9b550b7602d9704086a53,query optimization at the crossroads panel,surajit chaudhuri,sigmod conference,1997,3436
@@ -1446,6 +1462,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b929b7602d970451535e,avoiding ordering and grouping in query processing,"xiaoyu wang, mitch cherniack",vldb,2003,3502
 53e99a78b7602d97022e901f,nestream querying nested streams,"damianos chatziantoniou, achilleas anagnostopoulos",sigmod record,2004,3504
 53e9aeebb7602d9703917def,optimization of data stream processing,"janusz r getta, ehsan vossough",sigmod record,2004,3505
+53e9aa2cb7602d970339bf14,fintime  a financial time series benchmark,"kaippallimalil j jacob, dennis shasha",sigmod record,1999,3513
+53e99d58b7602d9702613e02,workshop report on experiences using object data management in the realworld,akmal b chaudhri,sigmod record,1998,3514
 53e9a52cb7602d9702e5083b,towards online analytical mining in large databases,jiawei han,sigmod record,1998,3516
 53e9a7c1b7602d9703101656,report on the 24th european colloquium on information retrieval research,"fabio crestani, mark girolami",sigmod record,2002,3518
 53e9b2dbb7602d9703d91bc7,edbt04 workshop on database technologies for handling xml information on the web,"marco mesiti, barbara catania, giovanna guerrini, akmal b chaudhri",sigmod record,2004,3520
@@ -1456,6 +1474,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a38fb7602d9702ca038a,changes to the acm tods editorial board,richard t snodgrass,sigmod record,2004,3532
 53e9b587b7602d97040c8e5d,information integration on the web a view from ai and databases report on iiweb03,"subbarao kambhampati, craig a knoblock",sigmod record,2003,3534
 53e997b5b7602d9701f96d88,journal relevance,richard t snodgrass,sigmod record,2003,3537
+53e9ac7bb7602d97036524b7,continuous queries over data streams,"shivnath babu, jennifer widom",sigmod record,2001,3538
 53e9a839b7602d970318585a,improving access to environmental data using context information,"anthony tomasic, eric simon",sigmod record,1997,3541
 53e99cd1b7602d9702583fd1,an annotated bibliography on realtime database systems,özgür ulusoy,sigmod record,1995,3545
 53e99f35b7602d9702805451,realtime database  similarity semantics and resource scheduling,"teiwei kuo, aloysius k mok",sigmod record,1996,3547
@@ -1466,9 +1485,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b88bb7602d970445ea97,design and management of data warehouses report on the dmdw99 workshop,"stella gatziu, manfred a jeusfeld, martin staudt, yannis vassiliou",sigmod record,1999,3554
 53e9a995b7602d97032f0f99,new standard for stored procedures in sql,andrew eisenberg,sigmod record,1996,3556
 53e9b87fb7602d97044516f7,understanding the semantics of sensor data,murali mani,sigmod record,2003,3557
-53e9a7eab7602d97031283f1,closing the key loophole in mls databases,"nenad jukic, svetlozar nestorov, susan v vrbsky",sigmod record,2003,3559
-53e99bc6b7602d970246db8f,generating spatiotemporal datasets on the www,"yannis theodoridis, mario a nascimento",sigmod record,2000,3564
-53e9ab42b7602d97034d4ff3,an active functionality service for ebusiness applications,"mariano cilia, alejandro p buchmann",sigmod record,2002,3567
 53e99e54b7602d97027185c1,"workshop on performance and architecture of web servers paws2000, held in conjection with sigmetrics2000","krishna kant, prasant mohapatra",sigmod record,2000,3571
 53e9abe4b7602d970359e217,the grid an application of the semantic web,"carole a goble, david de roure",sigmod record,2002,3572
 53e9b55eb7602d9704099d1f,transactional information systems  book review,marc h scholl,sigmod record,2001,3573
@@ -1478,7 +1494,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9aa73b7602d97033e79bb,incremental maintenance of recursive views using relational calculussql,"guozhu dong, jianwen su",sigmod record,2000,3577
 53e9be5db7602d9704b1c869,hierarchies and relative operators in the olap environment,"elaheh pourabbas, maurizio rafanelli",sigmod record,2000,3578
 53e99a1ab7602d970226c372,editors farewell notes,arie segev,sigmod record,1995,3585
-53e9b3c8b7602d9703eb6386,sigmod2000 program chairs message,jeffrey f naughton,sigmod record,2000,3592
 53e9ab00b7602d97034842b9,an early look at xquery,"jim melton, andrew eisenberg",sigmod record,2002,3597
 53e9b505b7602d970403963f,design and implementation of rmp  a virtual electronic market place,"susanne boll, wolfgang klas, bernard battaglin",sigmod record,1998,3598
 53e9b55eb7602d97040990b7,an extended entityrelationship model for geographic applications,"thanasis hadzilacos, nectaria tryfona",sigmod record,1997,3599
@@ -1492,6 +1507,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a487b7602d9702da2c2d,advances in realtime database systems research,azer bestavros,sigmod record,1996,3607
 53e9ac8fb7602d9703664b1b,report on the 1995 international workshop on temporal databases,"arie segev, christian s jensen, richard t snodgrass",sigmod record,1995,3608
 53e9ada5b7602d97037a5b84,xquery formal semantics state and challenges,peter fankhauser,sigmod record,2001,3609
+53e9b02fb7602d9703a89c6c,report on the nsf workshop on building an infrastructure for mobile and wireless systems,"birgitta königries, kia makki, s a m makki, charles e perkins, niki pissinou, peter l reiher, peter scheuermann, jari veijalainen, ouri wolfson",sigmod record,2002,3610
 53e9bb08b7602d970473fd12,"some remarks on variable independence, closure, and orthographic dimension in constraint databases",leonid libkin,sigmod record,1999,3611
 53e9b577b7602d97040b62bf,the ntier hub technology,"rainer a sommer, thomas r gulledge, david bailey",sigmod record,2002,3612
 53e9b2aab7602d9703d503ff,"the sensor spectrum technology, trends, and requirements","joseph m hellerstein, wei hong, samuel madden",sigmod record,2003,3613
@@ -1535,6 +1551,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e99eb5b7602d970277e6a0,distributed topn query processing with possibly uncooperative local systems,"clement t yu, george philip, weiyi meng",vldb,2003,3672
 53e9b3d4b7602d9703ebf408,estimating the output cardinality of partial preaggregation with a measure of clusteredness,"sven helmer, thomas neumann 0001, guido moerkotte",vldb,2003,3673
 53e9ba64b7602d970467fd48,ibms db2 universal database demonstrations at vldb98,"k bernhard schiefer, jim kleewein, karen brannon, guy m lohman, gene fuh",vldb,1998,3674
+53e9b93eb7602d9704527232,qstream deterministic querying of data streams,"sven schmidt, henrike berthold, wolfgang lehner",vldb,2004,3675
+53e9ab31b7602d97034bb265,generating calllevel interfaces for advanced database application programming,"udo nink, theo härder, norbert ritter",vldb,1999,3676
 53e9ba17b7602d970461fe2d,efficient incremental garbage collection for clientserver object database systems,"laurent amsaleg, michael j franklin, olivier gruber",vldb,1995,3677
 53e9a86ab7602d97031b90c7,a regressionbased temporal pattern mining scheme for data streams,"weiguang teng, mingsyan chen, philip s yu",vldb,2003,3679
 53e9adc7b7602d97037cc2f7,semantic compression and pattern extraction with fascicles,"h v jagadish, j madar, raymond t ng",vldb,1999,3680
@@ -1545,14 +1563,11 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9ae7db7602d9703898153,supporting statewide immunisation tracking using multiparadigm workflow technology,"amit p sheth, krys kochut, john a miller, devashish worah, souvik das, chenye lin, devanand palaniswami, john lynch, ivan shevchenko",vldb,1996,3692
 53e9a58cb7602d9702eb6a96,zoo  a desktop experiment management environment,"yannis e ioannidis, miron livny, shivani gupta, nagavamsi ponnekanti",vldb,1996,3693
 53e9a73cb7602d970307356c,integrating triggers and declarative constraints in sql database sytems,"roberta cochrane, hamid pirahesh, nelson mendonça mattos",vldb,1996,3695
-53e9ae17b7602d970382881d,optimal histograms with quality guarantees,"h v jagadish, nick koudas, s muthukrishnan, viswanath poosala, kenneth c sevcik, torsten suel",vldb,1998,3698
-53e9b289b7602d9703d2f078,local dimensionality reduction a new approach to indexing high dimensional spaces,"kaushik chakrabarti, sharad mehrotra",vldb,2000,3699
-53e9a0fcb7602d97029e9bbf,gorder an efficient method for knn join processing,"chenyi xia, hongjun lu, beng chin ooi, jin hu",vldb,2004,3700
+53e9b8f5b7602d97044d7b07,hardware acceleration in commercial databases a case study of spatial operations,"nagender bandi, chengyu sun, amr el abbadi, divyakant agrawal",vldb,2004,3697
 53e9a5cdb7602d9702efa3e1,walking through a very large virtual environment in realtime,"lidan shou, jason chionh, zhiyong huang, yixin ruan, kianlee tan",vldb,2001,3702
-53e9ac8fb7602d9703665d27,storage estimation for multidimensional aggregates in the presence of hierarchies,"amit shukla, prasad deshpande, jeffrey f naughton, karthikeyan ramasamy",vldb,1996,3704
+53e99832b7602d9702056c3d,projecting xml documents,"amélie marian, jérôme siméon",vldb,2003,3706
 53e9a554b7602d9702e78ba8,query processing for highvolume xml message brokering,"yanlei diao, michael j franklin",vldb,2003,3707
 53e99893b7602d97020cc657,high level indexing of userdefined types,"weidong chen, jyhherng chow, youchin fuh, jean grandbois, michelle jou, nelson mendonça mattos, brian t tran, yun wang",vldb,1999,3708
-53e9badfb7602d970470e622,xxl  a library approach to supporting efficient implementations of advanced database queries,"jochen van den bercken, björn blohsfeld, jenspeter dittrich, jürgen krämer, tobias schäfer, martin schneider 0006, bernhard seeger",vldb,2001,3709
 53e9aaf3b7602d9703473520,multipleview selfmaintenance in data warehousing environments,nam huyn,vldb,1997,3710
 53e9a797b7602d97030cf9a4,tabular placement of relational data on memsbased storage devices,"hailing yu, divyakant agrawal, amr el abbadi",vldb,2003,3712
 53e9a46ab7602d9702d85885,cirqul  complex information retrieval query language,vojkan mihajlovic,vldb phd workshop,2003,3713
@@ -1562,20 +1577,23 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e998f6b7602d97021316c6,opossum desktop schema management through customizable visualization,"eben m haber, yannis e ioannidis, miron livny",vldb,1995,3719
 53e9b861b7602d970442b37a,"wscatalognet an infrastructure for creating, peering, and querying ecatalog communities","karim baïna, boualem benatallah, hyeyoung paik, farouk toumani, christophe rey, agnieszka rutkowska, bryan harianto",vldb,2004,3720
 53e99940b7602d970217c6c8,database systems  breaking out of the box,"abraham silberschatz, stanley b zdonik",sigmod record,1997,3724
-53e99853b7602d970208a66f,trade press news,rafael alonso,sigmod record,1995,3725
 53e9abb2b7602d97035628a8,database research at columbia university,"shihfu chang, luis gravano, gail e kaiser, kenneth a ross, salvatore j stolfo",sigmod record,1998,3726
 53e99e78b7602d970273a42f,report on the 17th brazilian symposium on database systems sbbd 2002,"ana carolina salgado, nina edelweiss",sigmod record,2003,3727
 53e99a1ab7602d970226cc04,entityrelationship modeling revisited,antonio badia,sigmod record,2004,3728
 53e9bd11b7602d970499a504,"agents, turst, and information access on the semantic web","timothy w finin, anupam joshi",sigmod record,2002,3729
 53e9b355b7602d9703e325a1,"the active database central, er2000, vldb 2000, wise 2000, books, acm dl",,sigmod record,1999,3730
 53e9a952b7602d97032a4548,illustras web datablade module,john gaffney,sigmod record,1996,3731
+53e9ba64b7602d970467fcd7,research in database engineering at the university of namur,jeanluc hainaut,sigmod record,2003,3733
 53e9a636b7602d9702f66404,using quantitative information for efficient association rule generation,"bruno pôssas, wagner meira jr, márcio de carvalho, rodolfo f resende",sigmod record,2000,3734
+53e9ba05b7602d97046045ef,object database evolution using separation of concerns,"awais rashid, peter sawyer",sigmod record,2000,3735
 53e9a958b7602d97032aeb9e,"information visualization, guest editors foreword","tiziana catarci, isabel f cruz",sigmod record,1996,3736
 53e9bb72b7602d97047b3502,a mapping mechanism to support bitmap index and other auxiliary structures on tables stored as primary btrees,"eugene inseok chong, jagannathan srinivasan, souripriya das, chuck freiwald, aravind yalamanchi, mahesh jagannath, anhtuan tran, ramkumar krishnan, richard jiang",sigmod record,2003,3737
 53e9a689b7602d9702fb96f0,from ternary relationship to relational tables a case against common beliefs,rafael camps,sigmod record,2002,3738
 53e9a00ab7602d97028eb732,using unknowns to prevent discovery of association rules,"yücel saygin, vassilios s verykios, chris clifton",sigmod record,2001,3739
 53e9aa9cb7602d97034149ef,"integrating temporal, realtime, and active databases","krithi ramamritham, rajendran m sivasankaran, john a stankovic, donald f towsley, ming xiong",sigmod record,1996,3740
+53e9abf1b7602d97035b077b,special issue on data mining for intrusion detection and threat analysis  guest editors introduction,daniel barbará,sigmod record,2001,3741
 53e9ad63b7602d970374bbc7,a holistic paradigm for large scale schema matching,"bin he, kevin chenchuan chang",sigmod record,2004,3742
+53e9a0dfb7602d97029cc300,agentbased semantic interoperability in infosleuth,"jerry fowler, brad perry, marian h nodine, bruce bargmeyer",sigmod record,1999,3743
 53e9b7cdb7602d970437c915,applications of the java programming language to database management,"bradley f burton, v wiktor marek",sigmod record,1998,3744
 53e9b17ab7602d9703c03ddb,knowledge discovery in data warehouses,themistoklis palpanas,sigmod record,2000,3745
 53e9a8e2b7602d9703230aa8,new tpc benchmarks for decision support and web commerce,"meikel pöss, chris floyd",sigmod record,2000,3746
@@ -1586,6 +1604,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b5ceb7602d9704118c76,userdefined table operators enhancing extensibility for ordbms,"michael jaedicke, bernhard mitschang",vldb,1999,3752
 53e9bc21b7602d970488e2a5,scientific olap for the biotech domain,nam huyn,vldb,2001,3753
 53e9b4b4b7602d9703fccc99,discover keyword search in relational databases,"vagelis hristidis, yannis papakonstantinou",vldb,2002,3754
+53e9b01db7602d9703a79552,"nexusscout an advanced locationbased application on a distributed, open mediation platform","daniela nicklas, matthias großmann, thomas schwarz",vldb,2003,3755
 53e99d28b7602d97025db000,push technology personalization through event correlation,"asaf adi, david botzer, opher etzion, tali yatzkarhaham",vldb,2000,3756
 53e99d13b7602d97025c7750,"the network as a global database challenges of interoperability, proactivity, interactiveness, legacy","peter c lockemann, ulrike kölsch, arne koschel, ralf kramer, ralf nikolai, mechtild wallrath, hansdirk walter",vldb,1997,3757
 53e9b549b7602d970407d58b,efficient numerical error bounding for replicated network services,"haifeng yu, amin vahdat",vldb,2000,3758
@@ -1637,6 +1656,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a210b7602d9702b16118,lexequal multilexical matching operator in sql,"a kumaran, jayant r haritsa",sigmod conference,2004,3818
 53e9b145b7602d9703bcaa1e,xbase making your gigabyte disk queriable,"hongjun lu, guoren wang, ge yu, yubin bao, jianhua lv, yaxin yu",sigmod conference,2002,3819
 53e9a401b7602d9702d1ad80,dbcache middletier database caching for highly scalable ebusiness architectures,"christof bornhövd, mehmet altinel, sailesh krishnamurthy, c mohan, hamid pirahesh, berthold reinwald",sigmod conference,2003,3822
+53e9bb5ab7602d970479ab43,mpeg7 standard for multimedia databases,john r smith,sigmod conference,2001,3830
 53e9a39db7602d9702caa267,controlling data warehouses with knowledge networks,"elvira schaefer, jandirk becker, andreas boehmer, matthias jarke",vldb,2000,3838
 53e9b5c2b7602d970410f5a3,the history of histograms abridged,yannis e ioannidis,vldb,2003,3842
 53e9b8cdb7602d97044b07a0,data stream query processing a tutorial,"nick koudas, divesh srivastava",vldb,2003,3849
@@ -1645,18 +1665,13 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9aef1b7602d970391f6e0,italian electronic identity card  principle and architecture,mario gentili,vldb,2001,3857
 53e9a1b6b7602d9702aad52d,parallel algorithms for highdimensional similarity joins for data mining applications,"john c shafer, rakesh agrawal",vldb,1997,3858
 53e9b4c4b7602d9703fe19f2,the ndtree a dynamic indexing technique for multidimensional nonordered discrete data spaces,"gang qian, qiang zhu, qiang xue, sakti pramanik",vldb,2003,3861
-53e9a5a1b7602d9702ecb457,scheduling for shared window joins over data streams,"moustafa a hammad, michael j franklin, walid g aref, ahmed k elmagarmid",vldb,2003,3862
-53e9b911b7602d97044fa6aa,locking protocols for materialized aggregate join views,"gang luo, jeffrey f naughton, curt j ellmann, michael watzke",vldb,2003,3863
-53e99ab3b7602d97023308aa,highperformance extensible indexing,marcel kornacker,vldb,1999,3864
 53e99b63b7602d97024058ae,the case for enhanced abstract data types,"praveen seshadri, miron livny, raghu ramakrishnan",vldb,1997,3865
 53e9ba54b7602d970466d242,"panel future directions of database research  the vldb broadening strategy, part 1",hansjörg schek,vldb,2000,3866
 53e9b082b7602d9703aeb3c1,objectrank authoritybased keyword search in databases,"andrey balmin, vagelis hristidis, yannis papakonstantinou",vldb,2004,3867
 53e9a0a6b7602d970298f3c0,atlas a small but complete sql extension for data mining and data streams,"haixun wang, carlo zaniolo, chang luo",vldb,2003,3868
 53e9b109b7602d9703b89a8a,xcerpt and visxcerpt from patternbased to visual querying of xml and semistructured data,"sacha berger, françois bry, sebastian schaffert, christoph wieser",vldb,2003,3869
-53e9a8ccb7602d970321a81d,tribeca a stream database manager for network traffic analysis,mark sullivan,vldb,1996,3870
 53e9a855b7602d970319f23b,evaluating topk selection queries,"surajit chaudhuri, luis gravano",vldb,1999,3872
 53e9a774b7602d97030ab28a,a prototype contentbased retrieval system that uses virtual images to save space,"leonard brown, le gruenwald",vldb,2001,3873
-53e9af33b7602d970396e8cc,a formal perspective on the view selection problem,"rada chirkova, alon y halevy, dan suciu",vldb,2001,3874
 53e9a51cb7602d9702e3c359,tuple routing strategies for distributed eddies,"feng tian, david j dewitt",vldb,2003,3875
 53e9adcdb7602d97037d2bce,estimation of queryresult distribution and its application in paralleljoin load balancing,"viswanath poosala, yannis e ioannidis",vldb,1996,3876
 53e9988cb7602d97020c9678,on the discovery of interesting patterns in association rules,"sridhar ramaswamy, sameer mahajan, abraham silberschatz",vldb,1998,3877
@@ -1675,13 +1690,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e99a5cb7602d97022c411f,materialized views in oracle,"randall g bello, karl dias, alan downing, james j feenan jr, james l finnerty, william d norcott, harry sun, andrew witkowski, mohamed ziauddin",vldb,1998,3892
 53e9a689b7602d9702fbaa52,pivot and unpivot optimization and execution strategies in an rdbms,"conor cunningham, goetz graefe, césar a galindolegaria",vldb,2004,3893
 53e9b2d2b7602d9703d7fdf2,analysis of ndimensional quadtrees using the hausdorff fractal dimension,"christos faloutsos, volker gaede",vldb,1996,3894
-53e9a8ffb7602d970325106d,spirit sequential pattern mining with regular expression constraints,"minos n garofalakis, rajeev rastogi, kyuseok shim",vldb,1999,3895
-53e9a122b7602d9702a11fe0,a database model for object dynamics,"mike p papazoglou, bernd j krämer",vldb j,1997,3896
 53e998c0b7602d97020fc417,psoup a system for streaming queries over streaming data,"sirish chandrasekaran, michael j franklin",vldb j,2003,3897
 53e9a6edb7602d9703026291,a template model for multidimensional intertransactional association rules,"ling feng, jeffrey xu yu, hongjun lu, jiawei han",vldb j,2002,3898
-53e999aeb7602d97021f4833,fast image retrieval using colorspatial information,"beng chin ooi, kianlee tan, tatseng chua, wynne hsu",vldb j,1998,3899
-53e9a782b7602d97030be58c,the oodb pathmethod generator pmg using access weights and precomputed access relevance,"ashish mehta, james geller, yehoshua perl, erich j neuhold",vldb j,1998,3900
-53e9b009b7602d9703a64b96,efficient similarity search for market basket data,"alexandros nanopoulos, yannis manolopoulos",vldb j,2002,3901
 53e9b2d2b7602d9703d82ca4,evaluating holistic aggregators efficiently for very large datasets,"lixin fu, sanguthevar rajasekaran",vldb j,2004,3902
 53e9978eb7602d9701f52d65,title,,vldb j,1995,3903
 53e99be3b7602d970248c52b,a logical view of structured files,"serge abiteboul, sophie cluet, tova milo",vldb j,1998,3905
@@ -1700,6 +1710,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b1f2b7602d9703c88a4c,"of crawlers, portals, mice and men is there more to mining the web panel","minos n garofalakis, sridhar ramaswamy, rajeev rastogi, kyuseok shim",sigmod conference,1999,3920
 53e99c19b7602d97024c59ba,relaxed currency and consistency how to say good enough in sql,"hongfei guo, peråke larson, raghu ramakrishnan, jonathan goldstein",sigmod conference,2004,3921
 53e99dabb7602d97026695ad,roadrunner automatic data extraction from dataintensive web sites,"valter crescenzi, giansalvatore mecca, paolo merialdo",sigmod conference,2002,3922
+53e9a88cb7602d97031d8bbd,enterprise java platform data access,"seth j white, r g g cattell, sheldon j finkelstein",sigmod conference,1998,3925
 53e99940b7602d970217d9fa,orderofmagnitude advantage of tpcc though massive parallelism,charles levine,sigmod conference,1995,3931
 53e9af19b7602d9703951a47,partitioned garbage collection of large object store,"umesh maheshwari, barbara liskov",sigmod conference,1997,3933
 53e99a98b7602d9702311bb6,information assurance technology challenges,nicholas j multari,sigmod conference,2004,3934
@@ -1710,6 +1721,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b9a0b7602d9704590907,p2pdiet an extensible p2p service that unifies adhoc and continuous querying in superpeer networks,"stratos idreos, manolis koubarakis, christos tryfonopoulos",sigmod conference,2004,3939
 53e99db7b7602d970267466a,"objectrelational database systems principles, products, and challenges tutorial","michael j carey, nelson mendonça mattos, anil nori",sigmod conference,1997,3940
 53e9b061b7602d9703ac5f97,models for web services transactions,mark c little,sigmod conference,2004,3941
+53e9a5e8b7602d9702f10896,devise integrated querying and visual exploration of large datasets demo abstract,"miron livny, raghu ramakrishnan, kevin s beyer, guangshun chen, donko donjerkovic, shilpa lawande, jussi myllymaki, r kent wenger",sigmod conference,1997,3942
 53e9a396b7602d9702ca8ec1,midtier caching the timesten approach,timesten team,sigmod conference,2002,3943
 53e99e71b7602d9702736232,filtering algorithms and implementation for very fast publishsubscribe,"françoise fabret, hansarno jacobsen, françois llirbat, joão pereira, kenneth a ross, dennis shasha",sigmod conference,2001,3944
 53e9ba0bb7602d970460b494,improved query performance with variant indexes,"patrick e oneil, dallan quass",sigmod conference,1997,3945
@@ -1729,6 +1741,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9bb72b7602d97047b56c0,automated selection of materialized views and indexes in sql databases,"sanjay agrawal, surajit chaudhuri, vivek r narasayya",vldb,2000,3959
 53e9abebb7602d97035a8555,the semantic web semantics for data on the web,"stefan decker, vipul kashyap",vldb,2003,3960
 53e9b9edb7602d97045e6ff4,a space efficient persistent implementation of an index for dna sequences,gabriele witterstein,vldb phd workshop,2003,3961
+53e9a1b6b7602d9702aacec2,database architecture optimized for the new bottleneck memory access,"peter a boncz, stefan manegold, martin l kersten",vldb,1999,3968
 53e99fd6b7602d97028b5e0b,the complexity of fully materialized coalesced cubes,"yannis sismanis, nick roussopoulos",vldb,2004,3974
 53e9aa48b7602d97033b35e3,sensor data mining similarity search and pattern analysis,christos faloutsos,vldb,2002,3990
 53e9abfeb7602d97035bfb03,expiring data in a warehouse,"hector garciamolina, wilburt labio, jun yang 0001",vldb,1998,3991
@@ -1737,6 +1750,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b062b7602d9703acad8f,cords automatic generation of correlation statistics in db2,"ihab f ilyas, volker markl, peter j haas, paul g brown, ashraf aboulnaga",vldb,2004,3994
 53e9ba8ab7602d97046b10c1,gembase a geometric mediator for brain analysis with surface ensembles,"simone santini, amarnath gupta",vldb,2002,3995
 53e9bc6eb7602d97048e8877,information integration the momis project demonstration,"domenico beneventano, sonia bergamaschi, silvana castano, alberto corni, r guidetti, g malvezzi, michele melchiori, maurizio vincini",vldb,2000,3996
+53e9a178b7602d9702a6b83c,"data morphing an adaptive, cacheconscious storage technique","richard a hankins, jignesh m patel",vldb,2003,3997
 53e9a94cb7602d970329f351,integrating reliable memory in databases,"wee teck ng, peter m chen",vldb,1997,3998
 53e9b9e7b7602d97045e1a7d,controlling access to published data using cryptography,"gerome miklau, dan suciu",vldb,2003,3999
 53e9b321b7602d9703dede5b,improving adaptable similarity query processing by using approximations,"mihael ankerst, bernhard braunmüller, hanspeter kriegel, thomas seidl",vldb,1998,4000
@@ -1746,6 +1760,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b549b7602d970408058f,hierarchical prefix cubes for rangesum queries,"chee yong chan, yannis e ioannidis",vldb,1999,4004
 53e9b42fb7602d9703f268fa,accessing a relational database through an objectoriented database interface,"jack a orenstein, d n kamber",vldb,1995,4005
 53e9a051b7602d9702936b27,smooth  a distributed multimedia database system,"harald kosch, lászló böszörményi, alexander bachlechner, christian hanin, christian hofbauer, margit lang, carmen riedler, roland tusch",vldb,2001,4006
+53e9ba59b7602d97046755a4,ptime highly scalable oltp dbms for managing updateintensive stream workload,"sang kyun cha, changbin song",vldb,2004,4007
 53e9bbadb7602d97047f5a75,ghost fine granularity buffering of indexes,"cheng hian goh, beng chin ooi, d sim, kianlee tan",vldb,1999,4008
 53e9b4a1b7602d9703fabebc,datablitz a high performance mainmemory storage manager,"jerry baulier, philip bohannon, s gogate, s joshi, c gupta, a khivesera, henry f korth, peter mcilroy, j miller, p p s narayan, m nemeth, rajeev rastogi, abraham silberschatz, s sudarshan 0001",vldb,1998,4009
 53e9a3cdb7602d9702ce25d9,privacypreserving indexing of documents on the network,"mayank bawa, roberto j bayardo jr, rakesh agrawal",vldb,2003,4010
@@ -1756,6 +1771,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b917b7602d97044fbcd6,a casebased approach to information integration,"maurizio panti, luca spalazzi, alberto giretti",vldb,2000,4015
 53e998bfb7602d97020f5b39,serviceglobe distributing eservices across the internet,"markus keidl, stefan seltzsam, konrad stocker, alfons kemper",vldb,2002,4016
 53e9b8ccb7602d97044ac4e8,issues in network management in the next millennium,"michael l brodie, surajit chaudhuri",vldb,1999,4017
+53e99acab7602d970234c84c,web services industrial session,felipe cabrera,vldb,2003,4018
 53e9b532b7602d970406bcaa,potters wheel an interactive data cleaning system,"vijayshankar raman, joseph m hellerstein",vldb,2001,4019
 53e9a178b7602d9702a6c09d,processing sliding window multijoins in continuous queries over data streams,"lukasz golab, m tamer özsu",vldb,2003,4020
 53e9afc0b7602d9703a0f634,combined locking approach for scheduling hard realtime transactions in realtime databases,qiang wang,vldb phd workshop,2003,4021
@@ -1795,14 +1811,12 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9ad04b7602d97036e13e5,query processing techniques for arrays,"arunprasad p marathe, kenneth salem",vldb j,2002,4058
 53e99832b7602d970205616b,parametric query optimization,"yannis e ioannidis, raymond t ng, kyuseok shim, timos k sellis",vldb j,1997,4059
 53e9b8dab7602d97044bba1a,structured document storage and refined declarative and navigational access mechanisms in hyperstorm,"klemens böhm, karl aberer, erich j neuhold, xiaoya yang",vldb j,1997,4062
-53e99d21b7602d97025d7605,alphasort a cachesensitive parallel external sort,"chris nyberg, tom barclay, zarka cvetanovic, jim gray, david b lomet",vldb j,1995,4065
 53e99a52b7602d97022ba714,"adaptive, unsupervised stream mining","spiros papadimitriou, anthony brockwell, christos faloutsos",vldb j,2004,4067
 53e9a16ab7602d9702a5cda1,"advanced data processing in krisys modeling concepts, implementation techniques, and clientserver issues","stefan deßloch, theo härder, nelson mendonça mattos, bernhard mitschang, joachim thomas",vldb j,1998,4069
 53e9b58eb7602d97040d3ec2,timber a native xml database,"h v jagadish, shurug alkhalifa, adriane chapman, laks v s lakshmanan, andrew nierman, stelios paparizos, jignesh m patel, divesh srivastava, nuwee wiwatwattana, yuqing wu, cong yu",vldb j,2002,4072
 53e9b5ceb7602d9704119167,index nesting  an efficient approach to indexing in objectoriented databases,"beng chin ooi, jiawei han, hongjun lu, kianlee tan",vldb j,1996,4073
 53e9ae1cb7602d97038308cd,updating knowledge bases while maintaining their consistency,"ernest teniente, antoni olivé",vldb j,1995,4076
 53e9acfeb7602d97036deb3f,learning to match ontologies on the semantic web,"anhai doan, jayant madhavan, robin dhamankar, pedro domingos, alon y halevy",vldb j,2003,4079
-53e99d3eb7602d97025f5b71,learning response time for websources using query feedback and application in query optimization,"jeanrobert gruser, louiqa raschid, vladimir zadorozhny, tao zhan",vldb j,2000,4082
 53e99b36b7602d97023d37b1,parallel multisource view maintenance,"xin zhang 0002, lingli ding, elke a rundensteiner",vldb j,2004,4086
 53e9ab42b7602d97034d35ed,hyperfile a data and query model for documents,"chris clifton, hector garciamolina, david bloom",vldb j,1995,4087
 53e99ebdb7602d9702783702,conditional selectivity for statistics on query expressions,"nicolas bruno, surajit chaudhuri",sigmod conference,2004,4088
@@ -1817,10 +1831,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b2aab7602d9703d536d8,"proceedings of the 2001 acm sigmod international conference on management of data, santa barbara, ca, usa, may 2124, 2001",,sigmod conference,2001,4097
 53e9a238b7602d9702b3f840,clustering methods for large databases from the past to the future,"alexander hinneburg, daniel a keim",sigmod conference,1999,4098
 53e9b1afb7602d9703c3a7c2,a texquerybased xml fulltext search engine,"chavdar botev, jayavel shanmugasundaram, sihem ameryahia",sigmod conference,2004,4099
-53e99d80b7602d970263ad7d,approximate join processing over data streams,"abhinandan das, johannes gehrke, mirek riedewald",sigmod conference,2003,4100
 53e9a885b7602d97031d50ef,index research forest or trees panel abstract,joseph m hellerstein,sigmod conference,2000,4101
 53e99b6ab7602d970240f7ca,gigascope high performance network monitoring with an sql interface,"charles d cranor, yuan gao, theodore johnson, vladislav shkapenyuk, oliver spatscheck",sigmod conference,2002,4102
-53e9b5ceb7602d9704116fc0,qctrees an efficient summary structure for semantic olap,"laks v s lakshmanan, jian pei, yan zhao",sigmod conference,2003,4103
 53e9b693b7602d9704205c89,efficient and transparent application recovery in clientserver information systems,"david b lomet, gerhard weikum",sigmod conference,1998,4104
 53e99c36b7602d97024e419a,imap discovering complex mappings between database schemas,"robin dhamankar, yoonkyong lee, anhai doan, alon y halevy, pedro domingos",sigmod conference,2004,4105
 53e9a01fb7602d9702906577,things every update replication customer should know,rob golding,sigmod conference,1995,4106
@@ -1849,6 +1861,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e99d21b7602d97025d75ba,a configrable type hierarchy index for oodb,"thomas a mück, martin l polaschek",vldb j,1997,4149
 53e9a216b7602d9702b1b54d,ordered shared locks for realtime databases,"divyakant agrawal, amr el abbadi, richard jeffers, lijing lin",vldb j,1995,4150
 53e9a509b7602d9702e2d52c,computing complete answers to queries in the presence of limited access patterns,chen li,vldb j,2003,4151
+53e9b9dab7602d97045d2f86,tigukat a uniform behavioral objectbase management system,"m tamer özsu, randal j peters, duane szafron, boman irani, anna lipka, adriana muñoz",vldb j,1995,4152
 53e99796b7602d9701f5cf1f,guest editorial,"amr el abbadi, gunter schlageter, kyuyoung whang",vldb j,2001,4153
 53e9aa5cb7602d97033ce7e8,building knowledge base management systems,"john mylopoulos, vinay k chaudhri, dimitris plexousakis, adel shrufi, thodoros topaloglou",vldb j,1996,4154
 53e9ab2bb7602d97034b43d0,multidimensional data modeling for locationbased services,"christian s jensen, augustas kligys, torben bach pedersen, igor timko",vldb j,2004,4155
@@ -1887,17 +1900,24 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b86db7602d970443664e,objectglobe ubiquitous query processing on the internet,"reinhard braumandl, markus keidl, alfons kemper, donald kossmann, alexander kreutz, stefan seltzsam, konrad stocker",vldb j,2001,4193
 53e99931b7602d97021700d9,answering queries using views a survey,alon y halevy,vldb j,2001,4194
 53e99c3db7602d97024ede38,spatial indexing of highdimensional data based on relative approximation,"yasushi sakurai, masatoshi yoshikawa, shunsuke uemura, haruhiko kojima",vldb j,2002,4195
-53e9af61b7602d97039a3042,active rules for xml a new paradigm for eservices,"angela bonifati, stefano ceri, stefano paraboschi",vldb j,2001,4198
+53e99ae7b7602d97023704f9,tree pattern query minimization,"sihem ameryahia, sungran cho, laks v s lakshmanan, divesh srivastava",vldb j,2002,4196
+53e9b130b7602d9703baf9c8,"watermarking relational data framework, algorithms and analysis","rakesh agrawal, peter j haas, jerry kiernan",vldb j,2003,4197
 53e9ac28b7602d97035ea67a,unql a query language and algebra for semistructured data based on structural recursion,"peter buneman, mary f fernandez, dan suciu",vldb j,2000,4199
 53e9ad5db7602d9703740527,on periodic resource scheduling for continuousmedia databases,"minos n garofalakis, banu özden, abraham silberschatz",vldb j,1998,4200
 53e9b91eb7602d9704506f96,maintenance of implication integrity constraints under updates to constraints,"naci ishakbeyoglu, z meral özsoyoglu",vldb j,1998,4201
 53e9a7e3b7602d9703122672,managing multiple and distributed ontologies on the semantic web,"alexander maedche, boris motik, ljiljana stojanovic",vldb j,2003,4204
+53e9a91ab7602d970326b94e,aurora a new model and architecture for data stream management,"daniel j abadi, donald carney, ugur çetintemel, mitch cherniack, christian convey, sangdon lee, michael stonebraker, nesime tatbul, stanley b zdonik",vldb j,2003,4205
+53e9a62eb7602d9702f5ba5c,semantic heterogeneity resolution in federated databases by metadata implantation and stepwise evolution,"goksel aslan, dennis mcleod",vldb j,1999,4206
+53e9b2aab7602d9703d52b6b,heuristic and randomized optimization for the join ordering problem,"michael steinbrunn, guido moerkotte, alfons kemper",vldb j,1997,4207
 53e9b35ab7602d9703e3903b,dynamic plan migration for continuous queries over data streams,"yali zhu, elke a rundensteiner, george t heineman",sigmod conference,2004,4208
 53e9bc6db7602d97048e6f1b,xcache a semantic caching system for xml queries,"li chen, elke a rundensteiner, song wang",sigmod conference,2002,4209
+53e99cdfb7602d9702592a9f,xml in the middle xquery in the weblogic platform,michael j carey,sigmod conference,2004,4210
 53e99c4bb7602d97024f796c,shore combining the best features of oodbms and file systems,,sigmod conference,1995,4211
+53e9a3c8b7602d9702cdc284,xmdvtool visual interactive data exploration and trend discovery of highdimensional data sets,"elke a rundensteiner, matthew o ward, jing yang 0001, punit r doshi",sigmod conference,2002,4212
 53e9a146b7602d9702a3924a,tree logical classes for efficient evaluation of xquery,"stelios paparizos, yuqing wu, laks v s lakshmanan, h v jagadish",sigmod conference,2004,4214
 53e99daab7602d97026689be,aqrtoolkit an adaptive query routing middleware for distributed data intensive systems,"ling liu, calton pu, david buttler, wei han, henrique paques, wei tang",sigmod conference,2000,4215
 53e99785b7602d9701f414b8,datamime,"masum serazi, amal perera, qiang ding, vasiliy malakhov, imad rahal, fei pan, dongmei ren, weihua wu, william perrizo",sigmod conference,2004,4217
+53e9b0abb7602d9703b15178,farmer finding interesting rule groups in microarray datasets,"gao cong, anthony k h tung, xin xu, feng pan, jiong yang",sigmod conference,2004,4218
 53e9ae0bb7602d9703816f7c,mapping data in peertopeer systems semantics and algorithmic issues,"anastasios kementsietsidis, marcelo arenas, renée j miller",sigmod conference,2003,4221
 53e9ad81b7602d9703774a89,automating physical database design in a parallel database,"jun rao, chun zhang, nimrod megiddo, guy m lohman",sigmod conference,2002,4222
 53e9b4abb7602d9703fba31d,ordpaths insertfriendly xml node labels,"patrick e oneil, elizabeth j oneil, shankar pal, istvan cseri, gideon schaller, nigel westbury",sigmod conference,2004,4223
@@ -1915,6 +1935,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9bc32b7602d97048a175b,ipsofacto a visual correlation tool for aggregate network traffic data,"flip korn, s muthukrishnan, yunyue zhu",sigmod conference,2003,4237
 53e9b476b7602d9703f759ba,a close look at the ifo data model,magdy s hanna,sigmod record,1995,4239
 53e9b350b7602d9703e27cc0,semantic and pedagogic interoperability mechanisms in the ariadne educational repository,"eddy forte, florence haenni, ken warkentyne, erik duval, kris cardinaels, e vervaet, koen hendrikx, maria wentland forte, florence simillion",sigmod record,1999,4240
+53e9a5efb7602d9702f17e5d,database techniques for the worldwide web a survey,"daniela florescu, alon y levy, alberto o mendelzon",sigmod record,1998,4241
 53e9993fb7602d970217c102,3d geographic network displays,"kenneth c cox, stephen g eick, taosong he",sigmod record,1996,4242
 53e99afdb7602d970238b12c,sigmod 2001 industry sessions,"guy m lohman, césar a galindolegaria, michael j franklin, leonard j seligman",sigmod record,2001,4243
 53e9b8f6b7602d97044dd0d2,voodb a generic discreteevent random simulation model to evaluate the performances of oodbs,"jérôme darmont, michel schneider",vldb,1999,4244
@@ -1922,14 +1943,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b699b7602d970420d8f8,a system for keyword proximity search on xml databases,"andrey balmin, vagelis hristidis, nick koudas, yannis papakonstantinou, divesh srivastava, tianqiu wang",vldb,2003,4246
 53e9b775b7602d970431a797,intratransaction parallelism in the mapping of an object model to a relational multiprocessor system,"michael rys, moira c norrie, hansjörg schek",vldb,1996,4247
 53e9abf1b7602d97035ace6a,cost models do matter providing cost information for diverse data sources in a federated system,"mary tork roth, fatma ozcan, laura m haas",vldb,1999,4248
-53e9a02db7602d9702914e87,a fast index for semistructured data,"brian f cooper, neal sample, michael j franklin, gísli r hjaltason, moshe shadmon",vldb,2001,4253
-53e9bb1cb7602d9704756dee,supporting periodic authorizations and temporal reasoning in database access control,"elisa bertino, claudio bettini, elena ferrari, pierangela samarati",vldb,1996,4254
+53e99f42b7602d970281270d,dynamic update cube for rangesum queries,"seokju chun, chinwan chung, juhong lee, seoklyong lee",vldb,2001,4252
 53e99a35b7602d97022949a2,integrating and updating domain knowledge with data mining,carsten pohle,vldb phd workshop,2003,4256
 53e99c3db7602d97024eef8c,eos exactlyonce eservice middleware,"german shegalov, gerhard weikum, roger s barga, david b lomet",vldb,2002,4257
 53e99e5bb7602d97027206c5,"set containment joins the good, the bad and the ugly","karthikeyan ramasamy, jignesh m patel, jeffrey f naughton, raghav kaushik",vldb,2000,4258
 53e99d9eb7602d970265d441,a data warehousing architecture for enabling service provisioning process,yannis kotidis,vldb,2001,4259
 53e9a2b2b7602d9702bbaadb,building and customizing dataintensive web sites using weave,"khaled yagoub, daniela florescu, valérie issarny, patrick valduriez",vldb,2000,4260
 53e9acb5b7602d970368f878,database architecture for new hardware,anastassia ailamaki,vldb,2004,4261
+53e9a54eb7602d9702e74813,warlock a data allocation tool for parallel warehouses,"thomas stöhr, erhard rahm",vldb,2001,4262
 53e9bb37b7602d970477820f,managing data from highthroughput genomic processing a case study,"toby bloom, ted sharpe",vldb,2004,4263
 53e998cdb7602d9702105a86,starcubing computing iceberg cubes by topdown and bottomup integration,"dong xin, jiawei han, xiaolei li, benjamin w wah",vldb,2003,4264
 53e9aa5cb7602d97033c9f05,a database striptease or how to manage your personal databases,"martin l kersten, gerhard weikum, michael j franklin, daniel a keim, alejandro p buchmann, surajit chaudhuri",vldb,2003,4265
@@ -1945,7 +1966,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b037b7602d9703a96bc1,"oo, what have they done to db2","michael j carey, donald d chamberlin, srinivasa narayanan, bennet vance, doug doole, serge rielau, richard swagerman, nelson mendonça mattos",vldb,1999,4287
 53e9a603b7602d9702f34e01,the worlinfo assistant spatiotemporal information integration on the web,"josé luis ambite, craig a knoblock, mohammad r kolahdouzan, maria muslea, cyrus shahabi, snehal thakkar",vldb,2001,4288
 53e99d4cb7602d9702603dec,"the hbptree a modified hbtree supporting concurrency, recovery and node consolidation","georgios evangelidis, david b lomet, betty salzberg",vldb,1995,4289
-53e9a727b7602d970305ec74,storage and querying of ecommerce data,"rakesh agrawal, amit somani, yirong xu",vldb,2001,4292
 53e9ae17b7602d97038278be,a scalable algorithm for answering queries using views,"rachel pottinger, alon y levy",vldb,2000,4316
 53e9b295b7602d9703d3ac79,using referential integrity to easily define consistent subset replicas,brad hammond,vldb,1996,4317
 53e99afdb7602d9702389d65,querying shapes of histories,"rakesh agrawal, giuseppe psaila, edward l wimmers, mohamed zaït",vldb,1995,4318
@@ -1987,7 +2007,9 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a455b7602d9702d724e6,computing clusters of correlation connected objects,"christian böhm, karin kailing, peer kröger, arthur zimek",sigmod conference,2004,4354
 53e9a447b7602d9702d6286f,online reorganization of sparselypopulated btrees,"chendong zou, betty salzberg",sigmod conference,1996,4355
 53e9b50bb7602d970403c777,load management and high availability in the medusa distributed stream processing system,"magdalena balazinska, hari balakrishnan, michael stonebraker",sigmod conference,2004,4356
+53e99827b7602d9702048edf,tutorial data access,"josé a blakeley, anand deshpande",sigmod conference,2000,4357
 53e9b26eb7602d9703d0f439,databases on the web technologies for federation architectures and case studies tutorial,ralf kramer,sigmod conference,1997,4359
+53e99804b7602d9702018164,databases and visualization,daniel a keim,sigmod conference,1996,4360
 53e9aa0fb7602d9703378b34,hypertext databases and data mining,soumen chakrabarti,sigmod conference,1999,4361
 53e9b803b7602d97043b885a,a goaldriven autoconfiguration tool for the distributed workflow management system mentorlite,"michael gillmann, jeanine weißenfels, german shegalov, wolfgang wonner, gerhard weikum",sigmod conference,2000,4362
 53e99d0cb7602d97025bf967,"cosima  your smart, speaking esalesperson","werner kießling, stefan holland, stefan fischer 0003, thorsten ehm",sigmod conference,2001,4363
@@ -2008,9 +2030,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a81fb7602d97031636e3,winnowing local algorithms for document fingerprinting,"saul schleimer, daniel shawcross wilkerson, alexander aiken",sigmod conference,2003,4379
 53e9be21b7602d9704adc0bb,"proceedings of the 2000 acm sigmod international conference on management of data, may 1618, 2000, dallas, texas, usa",,sigmod conference,2000,4381
 53e9acfdb7602d97036d9a2b,query processing for sql updates,"césar a galindolegaria, stefano stefani, florian waas",sigmod conference,2004,4382
-53e9bc9db7602d970491bda2,dimensionality reduction for similarity searching in dynamic databases,"kothuri venkata ravi kanth, divyakant agrawal, ambuj k singh",sigmod conference,1998,4383
 53e9b451b7602d9703f4a5c1,cmvf a novel dimension reduction scheme for efficient indexing in a large image database,"jialie shen, anne h h ngu, john shepherd, du q huynh, quan z sheng",sigmod conference,2003,4384
-53e9b593b7602d97040d5b86,terraserver a spatial data warehouse,"tom barclay, donald r slutz, jim gray",sigmod conference,2000,4386
 53e9b5e6b7602d9704135d30,an aspect of query optimization in multidatabase systems extended abstract,"chiang lee, chiajung chen, hongjun lu",sigmod record,1995,4388
 53e99aa6b7602d970231e7c1,interview with david maier,marianne winslett,sigmod record,2002,4389
 53e9bacfb7602d97046fc002,using reasoning to guide annotation with gene ontology terms in goat,"michael bada, daniele turi, robin mcentire, robert stevens",sigmod record,2004,4390
@@ -2027,6 +2047,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b7e1b7602d9704391bbd,a new sqllike operator for mining association rules,"rosa meo, giuseppe psaila, stefano ceri",vldb,1996,4405
 53e9a797b7602d97030d29dd,dbmss on a modern processor where does time go,"anastassia ailamaki, david j dewitt, mark d hill, david a wood",vldb,1999,4407
 53e9b9dab7602d97045d1409,ndsql a multidimensional language for interoperability and olap,"frédéric gingras, laks v s lakshmanan",vldb,1998,4408
+53e99821b7602d970203ea94,statistics on views,"césar a galindolegaria, milind joshi, florian waas, mingchuan wu",vldb,2003,4409
 53e9be51b7602d9704b13004,"the grna a highly programmable infrastructure for prototyping, developing and deploying genomicscentric applications","amey v laud, sourav s bhowmick, pedro cruz, dadabhai t singh, george rajesh",vldb,2002,4411
 53e9b20cb7602d9703ca4d3d,balancing performance and data freshness in web database servers,"alexandros labrinidis, nick roussopoulos",vldb,2003,4413
 53e9bac1b7602d97046eef2b,incremental maintenance of externally materialized views,"martin staudt, matthias jarke",vldb,1996,4414
@@ -2047,18 +2068,17 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9ade9b7602d97037f5d25,remembrance of streams past overloadsensitive management of archived streams,"sirish chandrasekaran, michael j franklin",vldb,2004,4444
 53e9b833b7602d97043f27af,lowcost compensationbased query processing,"øystein grøvlen, sveinolaf hvasshovd, øystein torbjørnsen",vldb,1998,4452
 53e99bb9b7602d97024615d9,capturing and querying multiple aspects of semistructured data,"curtis e dyreson, michael h böhlen, christian s jensen",vldb,1999,4453
+53e998c0b7602d97020fb370,approximating aggregate queries about web pages via random walks,"ziv baryossef, alexander c berg, steve chien, jittat fakcharoenphol, dror weitz",vldb,2000,4454
 53e9b4e0b7602d9704004dd8,aggregatequery processing in data warehousing environments,"ashish gupta 0001, venky harinarayan, dallan quass",vldb,1995,4455
 53e99f20b7602d97027eb309,efficient xmltosql query translation where to add the intelligence,"rajasekar krishnamurthy, raghav kaushik, jeffrey f naughton",vldb,2004,4456
 53e9bc8eb7602d970490c761,using schema matching to simplify heterogeneous data translation,"tova milo, sagit zohar",vldb,1998,4457
-53e9ba64b7602d9704681352,a transducerbased xml query processor,"bertram ludäscher, pratik mukhopadhyay, yannis papakonstantinou",vldb,2002,4458
 53e9acaeb7602d970368e172,"improving business process quality through exception understanding, prediction, and prevention","daniela grigori, fabio casati, umeshwar dayal, mingchien shan",vldb,2001,4460
-53e9a937b7602d970328949c,review  digital library technology for locating and accessing scientific data,michael lesk,acm sigmod digital review,1999,4463
 53e9bb01b7602d9704739d63,review  a majority consensus approach to concurrency control for multiple copy databases,philip a bernstein,acm sigmod digital review,1999,4465
 53e9b648b7602d97041a5efe,"review  physical data independence, constraints, and optimization with universal plans",laura m haas,acm sigmod digital review,1999,4469
+53e9b9f4b7602d97045ed430,review  diagjoin an opportunistic join algorithm for 1n relationships,alfons kemper,acm sigmod digital review,1999,4470
 53e9b1b6b7602d9703c45035,review  ecommerce bargainhunting with an unbun model,anant jhingran,acm sigmod digital review,2000,4471
 53e9a374b7602d9702c82dd5,review  an approach to persistent programming,david maier,acm sigmod digital review,1999,4479
 53e9b3cdb7602d9703eb764a,review  physical database design for relational databases,surajit chaudhuri,acm sigmod digital review,2000,4480
-53e9ba0bb7602d970460b352,review  datawarehousing has more colours than just black  white,h v jagadish,acm sigmod digital review,1999,4487
 53e99960b7602d97021a1078,review  temporal data management systems a comparative view,richard t snodgrass,acm sigmod digital review,2000,4493
 53e9a64ab7602d9702f7839e,review  on modeling and verification of temporal constraints in production workflows,claudio bettini,acm sigmod digital review,2000,4494
 53e9a6bbb7602d9702feefc6,review  towards a logical reconstruction of relational database theory,marianne winslett,acm sigmod digital review,2001,4495
@@ -2103,7 +2123,6 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b3c7b7602d9703eb1c5b,review  querying multiple features of groups in relational databases,divesh srivastava,acm sigmod digital review,2000,4535
 53e9b48fb7602d9703f97a70,review  mining association rules between sets of items in large databases,philip s yu,acm sigmod digital review,1999,4536
 53e9b8e0b7602d97044c2436,"review  xml, java, and the future of the web",alberto o mendelzon,acm sigmod digital review,2000,4538
-53e9a18db7602d9702a7f012,review  automatic discovery of language models for text databases,laura m haas,acm sigmod digital review,2000,4539
 53e9a113b7602d9702a0185f,review  data management for xml research directions,james lee,acm sigmod digital review,2000,4541
 53e9b938b7602d9704525c59,review  recordboundary discovery in web documents,m tamer özsu,acm sigmod digital review,2000,4542
 53e9adbdb7602d97037bff54,review  role hierarchies and constraints for latticebased access controls,elisa bertino,acm sigmod digital review,2000,4543
@@ -2134,15 +2153,14 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9a423b7602d9702d3cbd3,review  description logics in data management,kenneth a ross,acm sigmod digital review,2000,4572
 53e9a388b7602d9702c99912,review  complexity of answering queries using materialized views,alon y levy,acm sigmod digital review,1999,4573
 53e9a67bb7602d9702fac2a0,review  eroc a toolkit for building neato query optimizers,divesh srivastava,acm sigmod digital review,2000,4575
+53e9a710b7602d9703044225,review  exact and approximate aggregation in constraint query,victor vianu,acm sigmod digital review,2000,4577
 53e99a3cb7602d970229dc30,"review  pm3 an orthogonal persistent systems programming language  design, implementation, performance",richard t snodgrass,acm sigmod digital review,1999,4578
 53e998b8b7602d97020eee1a,review  relational transducers for electronic commerce,anant jhingran,acm sigmod digital review,1999,4579
-53e9a508b7602d9702e27b35,review  the future of classic data administration objects  databases  case,greg pezda,acm sigmod digital review,2000,4580
 53e99e5bb7602d970271f2a1,review  contextbased prefetch for implementing objects on relations,michael j carey,acm sigmod digital review,2000,4582
 53e9bac1b7602d97046eec1e,review  aqua a fast decision support systems using approximate query answers,h v jagadish,acm sigmod digital review,1999,4583
 53e9ad3bb7602d970371c2c0,review  semantic compression and pattern extraction with fascicles,richard t snodgrass,acm sigmod digital review,2000,4584
 53e9b6d6b7602d9704266592,review  estimating alphanumeric selectivity in the presence of wildcards,divesh srivastava,acm sigmod digital review,2000,4585
 53e9bb01b7602d970473800e,review  fault tolerant design of multimedia servers,shahram ghandeharizadeh,acm sigmod digital review,2000,4589
-53e9b1a3b7602d9703c2f8d3,review  transient versioning for consistency and concurrency in clientserver systems,david b lomet,acm sigmod digital review,2000,4590
 53e99ad7b7602d970235758e,review  view indexing in relational databases,krithi ramamritham,acm sigmod digital review,2000,4591
 53e99b36b7602d97023d6d1b,privacypreserving data mining,"rakesh agrawal, ramakrishnan srikant",sigmod conference,2000,4592
 53e9a408b7602d9702d216ce,dnaminer a system prototype for mining dna sequences,"jiawei han, hasan m jamil, ying lu, liangyou chen, yaqin liao, jian pei",sigmod conference,2001,4593
@@ -2159,6 +2177,8 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b86db7602d970443a111,the xxl search engine ranked retrieval of xml data using indexes and ontologies,"anja theobald, gerhard weikum",sigmod conference,2002,4622
 53e9b81cb7602d97043cfb4d,access path support for referential integrity in sql2,"theo härder, joachim reinert",vldb j,1996,4627
 53e99d96b7602d970264fda3,data partitioning and load balancing in parallel disk systems,"peter scheuermann, gerhard weikum, peter zabback",vldb j,1998,4628
+53e9b47cb7602d9703f80aeb,view management in multimedia databases,"k selçuk candan, eric lemar, v s subrahmanian",vldb j,2000,4629
+53e9b746b7602d97042dfa51,declarative specification of web sites with strudel,"mary f fernández, daniela florescu, alon y levy, dan suciu",vldb j,2000,4630
 53e9ac95b7602d970366c00c,experiences with a logicbased knowledge discovery support environment,"fosca giannotti, giuseppe manco, dino pedreschi, franco turini",1999 acm sigmod workshop on research issues in data mining and knowledge discovery,1999,4638
 53e9ab55b7602d97034e87f3,reverse nearest neighbor queries for dynamic databases,"ioana stanoi, divyakant agrawal, amr el abbadi",acm sigmod workshop on research issues in data mining and knowledge discovery,2000,4640
 53e9aa2cb7602d970339cc3f,a priori versus a posteriori filtering of association rules,"bart goethals, jan van den bussche",1999 acm sigmod workshop on research issues in data mining and knowledge discovery,1999,4642
@@ -2185,10 +2205,12 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9b7c7b7602d9704374e05,toward a progress indicator for database queries,"gang luo, jeffrey f naughton, curt j ellmann, michael watzke",sigmod conference,2004,4671
 53e9bc00b7602d970486107c,a contentbased multimedia server for massively parallel architectures,"william oconnell, ion tim ieong, david schrader, c watson, grace au, alexandros biliris, s choo, p colin, g linderman, euthimios panagos, j wang, t walters",sigmod conference,1996,4672
 53e9a562b7602d9702e85567,the lyric language querying constraint objects,"alexander brodsky, yoram kornatzky",sigmod conference,1995,4673
+53e9b740b7602d97042dbd07,dbcache database caching for web application servers,"mehmet altinel, qiong luo, sailesh krishnamurthy, c mohan, hamid pirahesh, bruce g lindsay 0001, honguk woo, larry brown",sigmod conference,2002,4674
 53e99bdcb7602d970248525b,when one sample is not enough improving text database selection using shrinkage,"panagiotis g ipeirotis, luis gravano",sigmod conference,2004,4675
 53e9a69fb7602d9702fd1482,using the golden rule of sampling for query estimation,"yileh wu, divyakant agrawal, amr el abbadi",sigmod conference,2001,4676
 53e997b5b7602d9701f97892,keynote address,robert s epstein,sigmod conference,1995,4677
 53e9a4f3b7602d9702e15d07,tutorial ldap directory services  just another database application,"shridhar shukla, anand deshpande",sigmod conference,2000,4678
+53e99bfeb7602d97024a81ca,partial results for online query processing,"vijayshankar raman, joseph m hellerstein",sigmod conference,2002,4679
 53e9afbab7602d9703a07647,online maintenance of very large random samples,"chris jermaine, abhijit pol, subramanian arumugam",sigmod conference,2004,4680
 53e9bce1b7602d9704969b76,daytona and the fourthgeneration language cymbal,rick greer,sigmod conference,1999,4683
 53e9b2c6b7602d9703d6f1b0,wavelet synopses with error guarantees,"minos n garofalakis, phillip b gibbons",sigmod conference,2002,4687
@@ -2213,25 +2235,22 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9bc31b7602d970489d6c7,software as a service asp and asp aggregation,christoph bussler,sigmod conference,2002,4782
 53e9b2dbb7602d9703d9158f,clustering by pattern similarity in large data sets,"haixun wang, wei wang 0010, jiong yang, philip s yu",sigmod conference,2002,4783
 53e998e9b7602d9702127828,devise integrated querying and visualization of large datasets,"miron livny, raghu ramakrishnan, kevin s beyer, guangshun chen, donko donjerkovic, shilpa lawande, jussi myllymaki, r kent wenger",sigmod conference,1997,4785
-53e9b0a5b7602d9703b12652,going public opensource databases and database research,philippe bonnet,sigmod conference,2002,4796
-53e9ab9eb7602d970354a877,data management challenges in crm,george colliat,sigmod conference,2003,4797
 53e9a9ebb7602d9703351b74,xml data management go native or spruce up relational systems panel abstract,peråke larson,sigmod conference,2001,4814
 53e9b03db7602d9703a9bd57,flexpath flexible structure and fulltext querying for xml,"sihem ameryahia, laks v s lakshmanan, shashank pandit",sigmod conference,2004,4815
-53e9b911b7602d97044fad73,"data management lasting impact of the wild, wild, web",reed m meseck,sigmod conference,2001,4816
 53e9a1c3b7602d9702abdc4a,xrank ranked keyword search over xml documents,"lin guo, feng shao, chavdar botev, jayavel shanmugasundaram",sigmod conference,2003,4818
-53e99a92b7602d97023087e9,indexing multimedia databases tutorial,christos faloutsos,sigmod conference,1995,4819
 53e99cd8b7602d9702589aed,integrating symbolic images into a multimedia database system using classification and abstraction approaches,"aya soffer, hanan samet",vldb j,1998,4832
 53e9b682b7602d97041ed9ab,optimization of runtime management of data intensive websites,"daniela florescu, alon y levy, dan suciu, khaled yagoub",vldb,1999,4833
 53e9b755b7602d97042f6ecf,time series similarity measures and time series indexing,"dimitrios gunopulos, gautam das",sigmod conference,2001,4835
-53e9b03db7602d9703a9bd2e,effective use of blocklevel sampling in statistics estimation,"surajit chaudhuri, gautam das, utkarsh srivastava",sigmod conference,2004,4843
 53e99fc9b7602d97028a1a03,enterprise transaction processing on windows nt,greg hope,sigmod conference,1995,4849
 53e9b042b7602d9703aa139e,xseq an index infrastructure for tree pattern queries,"xiaofeng meng, yu jiang, yan chen, haixun wang",sigmod conference,2004,4854
 53e9a1fbb7602d9702afe063,besteffort cache synchronization with source cooperation,"chris olston, jennifer widom",sigmod conference,2002,4855
 53e99e1ab7602d97026dab55,computing pagerank in a distributed internet search engine system,"yuan wang, david j dewitt",vldb,2004,4872
 53e998fcb7602d97021399e4,dynamic load balancing for parallel association rule mining on heterogenous pc cluster systems,"masahisa tamura, masaru kitsuregawa",vldb,1999,4873
 53e9a80cb7602d970314e379,caprera an activity framework for transaction processing on widearea networks,"suresh kumar, engkee kwang, divyakant agrawal",vldb,1997,4874
+53e99bfeb7602d97024a7868,pesto  an integrated querybrowser for object databases,"michael j carey, laura m haas, vivekananda maganty, john h williams",vldb,1996,4876
 53e9a922b7602d9703273ece,mining deviants in a time series database,"h v jagadish, nick koudas, s muthukrishnan",vldb,1999,4884
 53e9a3edb7602d9702d05df7,a database index to large biological sequences,"ela hunt, malcolm p atkinson, robert w irving",vldb,2001,4887
+53e99ad0b7602d970234e489,who needs xml databases,sophie cluet,vldb,2003,4892
 53e9aa49b7602d97033b810e,continuous knearest neighbor queries for continuously moving points with updates,"glenn s iwerks, hanan samet, kenneth p smith",vldb,2003,4893
 53e9a8b7b7602d9703205ca8,focused crawling using context graphs,"michelangelo diligenti, frans coetzee, steve lawrence, c lee giles, marco gori",vldb,2000,4894
 53e9b260b7602d9703d01a49,a quantitative analysis and performance study for similaritysearch methods in highdimensional spaces,"roger weber, hansjörg schek, stephen blott",vldb,1998,4895
@@ -2252,6 +2271,7 @@ paper ID,paper title,author names,publication venue,year of publication,index
 53e9bb86b7602d97047cb68c,new programs at darpa and nsf,xiaolei qian,sigmod record,1996,4958
 53e997e9b7602d9701fe4525,book review column,karl aberer,sigmod record,2003,4961
 53e9aba4b7602d9703551b9e,data modelling versus ontology engineering,"peter spyns, robert meersman, mustafa jarrar",sigmod record,2002,4963
+53e9b8e1b7602d97044c3471,parallelism and its price a case study of nonstop sqlmp,"susanne englert, ray glasstone, waqar hasan",sigmod record,1995,4966
 53e9b572b7602d97040ab9f1,the microsoft database research group,"david b lomet, roger s barga, surajit chaudhuri, peråke larson, vivek r narasayya",sigmod record,1998,4978
 53e9a13fb7602d9702a2c882,"secure, reliable, transacted innovation in web services architecture",martin gudgin,sigmod conference,2004,4979
 53e9a75fb7602d970309b887,application of oodb and sgml techniques in text database an electronic dictionary system,jian zhang,sigmod record,1995,4989

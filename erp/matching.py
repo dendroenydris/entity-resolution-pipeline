@@ -16,9 +16,10 @@ from erp.utils import (
 BLOCKING_METHODS = {
     "Year",
     "TwoYear",
-    "numAuthors",
     "FirstLetter",
     "LastLetter",
+    "FirstOrLastLetter",
+    "numAuthors",
     "authorLastName",
     "commonAuthors",
     "commonAndNumAuthors",
@@ -52,7 +53,7 @@ def matching(
     # Keep rows where similarity is above the threshold
     result_df = result_df[result_df["similarity_score"] > similarity_threshold]
     if outputfile != None:
-        result_df.to_csv(outputfile, index=False)
+        save_result(result_df, outputfile)
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     return result_df
 
@@ -181,8 +182,27 @@ def create_FirstLetterBlocking(df1, df2):
     return result_df
 
 
+def create_FirstOrLastLetterBlocking(df1, df2):
+    result_df = create_cartesian_product(df1, df2)
+
+    # Filter rows based on the starting letter of the paper title
+    result_df = result_df[
+        (result_df["paper title_df1"].str[0] == result_df["paper title_df2"].str[0])
+        | (
+            result_df["paper title_df1"].str[-1] == result_df["paper title_df2"].str[-1]
+        )
+    ]
+
+    # Optionally, reset the index
+    result_df = result_df.reset_index(drop=True)
+
+    # Drop rows with NaN values in text columns
+    result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
+    return result_df
+
+
 # Function for blocking by last letter of title
-def create_FirstLetterBlocking(df1, df2):
+def create_LastLetterBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
 
     # Filter rows based on the starting letter of the paper title

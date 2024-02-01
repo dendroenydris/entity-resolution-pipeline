@@ -8,6 +8,7 @@ from erp.matching import *
 from erp.clustering import clustering_basic, clustering
 from erp.preparing import prepare_data
 from erp.utils import (
+    FILENAME_DP_LOCAL_DIFFERENCE,
     FILENAME_LOCAL_CLUSTERING,
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
@@ -216,7 +217,7 @@ def scability_test(
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
         result2 = DP_ER_pipline(
-            d1, d2, threshold=ERconfiguration["threshold"], cluster=False
+            d1, d2, DefaultERconfiguration, cluster=False
         )
         results.append({**result2, **result})
     results = pd.DataFrame(results)
@@ -235,7 +236,7 @@ def naive_DPvsLocal(fdp, flocal):
     DP_ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
-        threshold=DefaultERconfiguration["threshold"],
+        DefaultERconfiguration,
         matched_output=fdp,
         cluster=False,
     )
@@ -246,9 +247,12 @@ def naive_DPvsLocal(fdp, flocal):
         matched_output=flocal,
         cluster=False,
     )
-    df_dp = pd.read_csv(fdp)
-    df_local = pd.read_csv(flocal)
+    df_dp = pd.read_csv(RESULTS_FOLDER + fdp)
+    df_local = pd.read_csv(RESULTS_FOLDER + flocal)
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df_dp, df_local)
+    merged = pd.merge(df_dp, df_local, how="outer", indicator=True)
+    differences = merged[merged["_merge"] != "both"]
+    differences.to_csv(RESULTS_FOLDER + FILENAME_DP_LOCAL_DIFFERENCE)
 
     # print the number of matched pairs in each DataFrame
     logging.info(f"Number of matched pairs in df_dp: {len(df_dp)}")

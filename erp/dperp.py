@@ -1,10 +1,22 @@
 import logging
 from time import time
+import numpy as np
 from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import udf, hash, col, substring, monotonically_increasing_id
+from pyspark.sql.functions import (
+    udf,
+    hash,
+    col,
+    substring,
+    monotonically_increasing_id,
+    expr,
+)
 from pyspark.sql.types import StringType
-from erp.matching import calculate_confusion_matrix, resultToString
+from erp.matching import (
+    calculate_confusion_matrix,
+    resultToString,
+    calculate_combined_similarity,
+)
 import pandas as pd
 from graphframes import GraphFrame
 from erp.utils import (
@@ -21,8 +33,8 @@ from erp.utils import (
 def DP_ER_pipline(
     filename1,
     filename2,
+    ERconfiguration,
     baseline=False,
-    threshold=0.5,
     cluster=True,
     matched_output=FILENAME_DP_MATCHED_ENTITIES,
     cluster_output=FILENAME_DP_CLUSTERING,
@@ -38,8 +50,10 @@ def DP_ER_pipline(
     df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
     df1 = df1.withColumn("index", monotonically_increasing_id())
     df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
-    df1, df2 = FirstLetterBlocking(df1, df2)
-    matched_pairs = FirstLetterMatching(df1, df2, threshold, output=matched_output)
+    pairs = blocking(df1, df2, ERconfiguration["blocking_method"])
+    matched_pairs = matching(
+        pairs, ERconfiguration["threshold"], output=matched_output
+    )
     end_time = time()
     matching_time = end_time - start_time
     if cluster:
@@ -68,13 +82,18 @@ def DP_ER_pipline(
     return out
 
 
-def calculate_combined_similarity(title1, title2, author_names_df1, author_names_df2):
+def isNoneOrEmpty(str):
+    return (str == None) or (str == "")
+
+
+def calculate_combined_similarity_dp(
+    title1, title2, author_names_df1, author_names_df2
+):
     title_set1 = set(title1.split())
     title_set2 = set(title2.split())
-
     jaccard_similarity_title = jaccard_similarity(title_set1, title_set2)
 
-    if author_names_df1 is None or author_names_df2 is None:
+    if isNoneOrEmpty(author_names_df1) or isNoneOrEmpty(author_names_df2):
         combined_similarity = jaccard_similarity_title
     else:
         trigram_similarity_author = trigram_similarity(
@@ -86,60 +105,72 @@ def calculate_combined_similarity(title1, title2, author_names_df1, author_names
     return combined_similarity
 
 
-process_udf = udf(calculate_combined_similarity, StringType())
+process_udf = udf(calculate_combined_similarity_dp, StringType())
 
 
-def FirstLetterBlocking(df1, df2):
+def blocking(df1, df2, blocking_method):
+    blocking_function = globals()[f"create_{blocking_method}Blocking"]
+    return blocking_function(df1, df2)
+
+
+def create_cross_product_pyspark(df1, df2):
+    bucket_df1 = df1.alias("df_copy")
+    bucket_df2 = df2.alias("df_copy")
+    # Rename columns for df1
+    df1_columns = [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
+    bucket_df1 = bucket_df1.select(df1_columns)
+
+    # Rename columns for df2
+    df2_columns = [col(col_name).alias(col_name + "_df2") for col_name in df2.columns]
+    bucket_df2 = bucket_df2.select(df2_columns)
+    pairs = bucket_df1.crossJoin(bucket_df2)
+    return pairs
+
+
+def create_FirstLetterBlocking(df1, df2):
     df1 = df1.withColumn("bucket", substring(col("paper title"), 1, 1))
     df2 = df2.withColumn("bucket", substring(col("paper title"), 1, 1))
-    return df1, df2
+    pairs = create_cross_product_pyspark(df1, df2)
+    pairs = pairs.filter(pairs.bucket_df1 == pairs.bucket_df2)
+    return pairs
+
+
+def create_FirstOrLastLetterBlocking(df1, df2):
+    df1 = df1.withColumn("bucket1", substring(col("paper title"), 1, 1))
+    df1 = df1.withColumn("bucket2", substring(col("paper title"), -1, 1))
+    df2 = df2.withColumn("bucket1", substring(col("paper title"), 1, 1))
+    df2 = df2.withColumn("bucket2", substring(col("paper title"), -1, 1))
+    pairs = create_cross_product_pyspark(df1, df2)
+    pairs.show(2)
+    pairs = pairs.filter(
+        (pairs.bucket1_df1 == pairs.bucket1_df2)
+        | (pairs.bucket2_df1 == pairs.bucket2_df2)
+    )
+    return pairs
 
 
 # Assuming similarity_udf is defined elsewhere in your code
-def FirstLetterMatching(df1, df2, threshold, output=FILENAME_DP_MATCHED_ENTITIES):
-    matched_pairs = None
+def matching(
+    pairs,
+    threshold=DefaultERconfiguration["threshold"],
+    output=FILENAME_DP_MATCHED_ENTITIES,
+):
+    pairs = pairs.withColumn(
+        "similarity_score",
+        process_udf(
+            col("paper title_df1"),
+            col("paper title_df2"),
+            col("author names_df1"),
+            col("author names_df2"),
+        ),
+    )
+    pairs = pairs.filter(pairs.similarity_score > threshold)
+    save_result(pairs.toPandas(), output)
 
-    for bucket_id in range(26):
-        bucket_df1 = df1.filter(df1.bucket == chr(ord("a") + bucket_id))
-        bucket_df2 = df2.filter(df2.bucket == chr(ord("a") + bucket_id))
-
-        # Rename columns for df1
-        df1_columns = [
-            col(col_name).alias(col_name + "_df1") for col_name in bucket_df1.columns
-        ]
-        bucket_df1 = bucket_df1.select(df1_columns)
-
-        # Rename columns for df2
-        df2_columns = [
-            col(col_name).alias(col_name + "_df2") for col_name in bucket_df2.columns
-        ]
-        bucket_df2 = bucket_df2.select(df2_columns)
-
-        # Perform cross join
-        pairs = bucket_df1.crossJoin(bucket_df2)
-        pairs = pairs.withColumn(
-            "similarity_score",
-            process_udf(
-                col("paper title_df1"),
-                col("paper title_df2"),
-                col("author names_df1"),
-                col("author names_df2"),
-            ),
-        )
-
-        # Filter based on the similarity score
-        pairs = pairs.filter(pairs.similarity_score > threshold)
-
-        # Union the DataFrames
-        if matched_pairs == None:
-            matched_pairs = pairs
-        else:
-            matched_pairs = matched_pairs.union(pairs)
-    matched_pairs.toPandas().to_csv(output, index=False)
-    return matched_pairs
+    return pairs
 
 
-def create_baseline(df1, df2):
+def create_baseline(df1, df2, threshold=DefaultERconfiguration["threshold"]):
     t_df1 = df1.select(
         [col(col_name).alias(col_name + "_df1") for col_name in df1.columns]
     )
@@ -158,7 +189,7 @@ def create_baseline(df1, df2):
                 col("author names_df2"),
             ),
         )
-        .filter(col("similarity_score") > 0.8)
+        .filter(col("similarity_score") > threshold)
     )
 
     return baseline_pairs

@@ -16,7 +16,7 @@ DATABASES_LOCATIONS = ["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_200
 DefaultERconfiguration = {
     "threshold": 0.7,
     "matching_method": "Combined",
-    "blocking_method": "FirstLetter",
+    "blocking_method": "FirstOrLastLetter",
     "clustering_method": "basic",
     "output_filename": "clustering_results_local.csv",
 }
@@ -29,6 +29,7 @@ FILENAME_LOCAL_CLUSTERING = "clustering_results_local.csv"
 FILENAME_DP_CLUSTERING = "clustering_results_dp.csv"
 FILENAME_ALL_METHODS_RESULTS = "method_results.csv"
 FILENAME_SCABILITY_TEST_RESULTS = "scability_results.csv"
+FILENAME_DP_LOCAL_DIFFERENCE="difference_results.csv"
 
 
 def baseline_filename(matching_method, threshold):

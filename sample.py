@@ -29,5 +29,5 @@ ER_pipline(
     DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], DefaultERconfiguration
 )  # test the entire local pipline including clustering
 DP_ER_pipline(
-    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1]
+    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1],DefaultERconfiguration
 )  # test the entire parallel pipline including clustering

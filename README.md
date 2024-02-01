@@ -1,29 +1,22 @@
-## Entity Resolution of Publication Data
+# Entity Resolution of Publication Data
 
-### :books: Table of Contents
+## :books: Table of Contents
 
-- [Entity Resolution of Publication Data](#entity-resolution-of-publication-data)
-  - [:books: Table of Contents](#books-table-of-contents)
-  - [:test\_tube: Abstract](#test_tube-abstract)
-  - [Quick Overview and User Instruction](#quick-overview-and-user-instruction)
+- [:books: Table of Contents](#books-table-of-contents)
+- [:test\_tube: Abstract](#test_tube-abstract)
+- [Quick Overview and User Instruction](#quick-overview-and-user-instruction)
   - [Installation](#installation)
   - [Sample to Run Exercise](#sample-to-run-exercise)
   - [Quick Project Overview](#quick-project-overview)
-  - [Data Source](#data-source)
-  - [erp Folder](#erp-folder)
-    - [Selected Functions in local pipline](#selected-functions-in-local-pipline)
-    - [Selected Configuration](#selected-configuration)
-  - [Results Folder](#results-folder)
-  - [Data Folder](#data-folder)
-  - [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
-  - [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
-- [Prepare Data](#prepare-data)
-- [Blocking](#blocking)
-- [Matching](#matching)
-- [Clustering](#clustering)
+- [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
+- [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
+  - [Prepare Data](#prepare-data)
+  - [Blocking](#blocking)
+  - [Matching](#matching)
+  - [Clustering](#clustering)
 - [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
 
-### :test_tube: Abstract
+## :test_tube: Abstract
 
 In this project, we explore the development of data engineering and ML pipelines, with a specific emphasis on constructing an Entity Resolution (ER) pipeline for deduplicating research publication datasets.
 
@@ -31,7 +24,7 @@ The initial phase involves acquiring the datasets and transforming them from TXT
 
 In the final stage, we were hands-on PySpark framework to reimplement our local pipline on top of a data-parallel computation framework. We also evaluate the scalability of the module through comprehensive testing.
 
-### Quick Overview and User Instruction
+## Quick Overview and User Instruction
 
 <details>
 <summary>
@@ -70,7 +63,7 @@ part3() # scability test
 
 The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
 
-### Data Source
+#### Data Source
 
 The project starts with two large dataset text files you need to download:
 
@@ -100,22 +93,22 @@ Below is the structure of the project:
   - 📄 `setup.py`
   - 📄 `README.md`
 
-### erp Folder
+#### erp Folder
 
 The erp folder contains scripts for the entity resolution pipeline with specific configurations:
 
 - **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**:
-  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, matched_output="path-to-output-file", cluster=True)` the clustering result will be store in
-  - DP Version: Run `DP_ER_pipline(databasefilename1, databasefilename2,  baseline=False, threshold=0.5, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file")`
+  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file")` the clustering result will be store in
+  - DP Version: Run `DP_ER_pipline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file")`
 - **Configuration Options**:
-  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
+  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, "FirstOrLastLetter", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
   - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
   - `clustering_method`(String): Altogirthm for clustering {"basic"}.
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
   - `output_filename`(String): path and file name of clustering results to be saved.
 
-#### Selected Functions in local pipline
+**Selected Functions in local pipline**
 
 - Blocking: `erp.blocking(df1,df2,blocking_method)`
   - Parameters:
@@ -132,7 +125,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
     - df1,df2 (pandas.DataFrame) : input databases
     - clustering_method (String) :{'basic'}
 
-#### Selected Configuration
+**Selected Configuration**
 
 ERconfiguration:
 
@@ -146,13 +139,13 @@ ERconfiguration:
 }
 ```
 
-### Results Folder
+#### Results Folder
 
 - The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results_local.csv` within the `results` folder.
 
 - This folder also contains `dperp.py`, which serves as a reimplementation of the local entity recognition pipeline within the Apache Spark framework.
 
-### Data Folder
+#### Data Folder
 
 The data folder includes the prepared and cleaned datasets and additional samples:
 
@@ -168,7 +161,7 @@ The data folder includes the prepared and cleaned datasets and additional sample
 
 ---
 
-### Data Acquisition and Preparation (Part 1)
+## Data Acquisition and Preparation (Part 1)
 
 In this section, we acquire datasets related to research publications. These
 datasets, available in text format, can be reached by
@@ -192,7 +185,7 @@ are exported to the local `data` folder.
 > the function called `prepare_data`. Additionally, the resulting CSV files are
 > available in the local `data` folder with the suffix `__1995_2004.csv`.
 
-### Entity Resolution Pipeline (Part 2)
+## Entity Resolution Pipeline (Part 2)
 
 We aim to apply an entity resolution pipeline to the aforementioned datasets,
 following the scheme depicted below:
@@ -201,7 +194,7 @@ following the scheme depicted below:
 
 _Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis Course, TU Berlin._
 
-## Prepare Data
+### Prepare Data
 
 Continuing from the previous section, we employ various data cleaning techniques.
 It converts all characters to lowercase, ensures uniformity, and eliminates
@@ -212,7 +205,7 @@ and analysis.
 > The code for this part is available in the file named `preparing.py` under
 > the function called `prepare_data`.
 
-## Blocking
+### Blocking
 
 Blocking is employed to reduce the number of comparisons by using effective
 partitioning strategies. In each 'bucket', we run the comparisons
@@ -227,7 +220,7 @@ partitioning strategies. In each 'bucket', we run the comparisons
 > The code for blocking is in the file named `matching.py`, with functions
 > named `blocking_x`, where x is the respective blocking method.
 
-## Matching
+### Matching
 
 Before discussing comparison methods, some terms related to our pipeline are
 introduced:
@@ -279,7 +272,7 @@ Testing different combinations yields the results shown below:
 
 ![Matching Results](https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png)
 
-## Clustering
+### Clustering
 
 In the final part of the pipeline, we chose to cluster the matched entities. The example is
 based on the combination of the **'First Letter'** blocking and the **Combined**
