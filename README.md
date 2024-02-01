@@ -14,7 +14,7 @@
     - [Selected Functions in local pipline](#selected-functions-in-local-pipline)
     - [Selected Configuration](#selected-configuration)
   - [Results Folder](#results-folder)
-- [Data Folder](#data-folder)
+  - [Data Folder](#data-folder)
   - [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
   - [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
 - [Prepare Data](#prepare-data)
@@ -152,7 +152,7 @@ ERconfiguration:
 
 - This folder also contains `dperp.py`, which serves as a reimplementation of the local entity recognition pipeline within the Apache Spark framework.
 
-## Data Folder
+### Data Folder
 
 The data folder includes the prepared and cleaned datasets and additional samples:
 
