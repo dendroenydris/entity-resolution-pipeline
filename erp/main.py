@@ -230,15 +230,15 @@ def part3():
     )  # DP vs local results is printed in terminal
 
 
-def compareTwoDatabase(df1, df2, name_df1="df1", name_df2="df2"):
+def compareTwoDatabase(df1, df2, name_df1="df1", name_df2="df2", item_name="matched pairs"):
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(df1, df2)
     merged = pd.merge(df1, df2, how="outer", indicator=True)
     differences = merged[merged["_merge"] != "both"]
     differences.to_csv(RESULTS_FOLDER + FILENAME_DP_LOCAL_DIFFERENCE)
 
-    # print the number of matched pairs in each DataFrame
-    logging.info(f"Number of matched pairs in {name_df1}: {len(df1)}")
-    logging.info(f"Number of matched pairs in {name_df2}: {len(df2)}")
+    # print the number of {item_name} in each DataFrame
+    logging.info(f"Number of {item_name} in {name_df1}: {len(df1)}")
+    logging.info(f"Number of {item_name} in {name_df2}: {len(df2)}")
 
     # print the results
     logging.info(f"Number of differences: {fn+fp}")
@@ -264,3 +264,4 @@ def naive_DPvsLocal(fdp, flocal):
     )
     df_dp = pd.read_csv(RESULTS_FOLDER + fdp)
     df_local = pd.read_csv(RESULTS_FOLDER + flocal)
+    compareTwoDatabase(df_dp, df_local, name_df1="DP ERP", name_df2="local ERP")
