@@ -277,7 +277,7 @@ into account the number of authors in the comparison.
 
 Testing different combinations yields the results shown below:
 
-![Matching Results]((https://i.ibb.co/Hg6zJgH/Whats-App-Image-2024-01-31-at-20-58-07.jpg)
+![Matching Results]([https://i.ibb.co/Hg6zJgH/Whats-App-Image-2024-01-31-at-20-58-07.jpg](https://i.ibb.co/h8bWq8m/Whats-App-Image-2024-01-31-at-20-58-07.jpg))
 
 ## Clustering
 
