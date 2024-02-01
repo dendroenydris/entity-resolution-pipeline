@@ -266,6 +266,18 @@ with similar titles and a similar number of authors.
 **Jaccard** and **First Letter** partitioning identifies matching articles
 with similar titles and the same first letter of the paper title.
 
+**Jaccard** and **First Letter** partitioning identifies matching articles
+with similar titles and the same first letter of the paper title.
+
+**Jaccard** and **Authors last name** partitioning identifies matching articles
+with similar titles and the author last name.
+
+**Jaccard** and **Common Authors** partitioning identifies matching articles
+with similar titles and the same authors.
+
+**Jaccard** and **Num of Authors** partitioning identifies matching articles
+with similar titles and the same numbers of authors.
+
 Likewise, the **Combined** similarity will yield results for the
 different blocking methods, with only difference being that it takes
 into account the number of authors in the comparison.
@@ -303,7 +315,6 @@ contributing to the organization of clusters in the final results.
 > and the resulting CSV will be exported to a local `results` folder under
 > the name `clustering_results`.
 
-## Data Parallel Entity Resolution Pipeline (Part 3)
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
 At the beginning of this stage, we create an Entity Resolution pipeline using Apache Spark. We walk through all the phases of the Entity Resolution pipeline with the structured data frame and find that Spark could make our lives easier. During the implementation, for example, `df.filter` and `df.groupBy` help us with our bloacking method .
