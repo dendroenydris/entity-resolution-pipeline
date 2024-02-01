@@ -10,11 +10,11 @@ DATABSE_COLUMNS = [
     "publication venue",
     "year of publication",
 ]
-DATABASES_LOCATIONS=["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
+DATABASES_LOCATIONS = ["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
 
 
 DefaultERconfiguration = {
-    "threshold": 0.5,
+    "threshold": 0.7,
     "matching_method": "Combined",
     "blocking_method": "FirstLetter",
     "clustering_method": "basic",
@@ -25,15 +25,19 @@ DATA_FOLDER = "data/"
 RESULTS_FOLDER = "results/"
 FILENAME_LOCAL_MATCHED_ENTITIES = "matched_entities_local.csv"
 FILENAME_DP_MATCHED_ENTITIES = "matched_entities_dp.csv"
-FILENAME_LOCAL_CLUSTERING=  "clustering_results_local.csv"
-FILENAME_DP_CLUSTERING= "clustering_results_dp.csv"
-FILENAME_ALL_METHODS_RESULTS= "method_results.csv"
+FILENAME_LOCAL_CLUSTERING = "clustering_results_local.csv"
+FILENAME_DP_CLUSTERING = "clustering_results_dp.csv"
+FILENAME_ALL_METHODS_RESULTS = "method_results.csv"
+FILENAME_SCABILITY_TEST_RESULTS = "scability_results.csv"
 
-def baseline_filename(matching_method,threshold):
+
+def baseline_filename(matching_method, threshold):
     return f"baseline_{matching_method}_{threshold}.csv"
 
-def matched_entities_filename(blocking_method,matching_method,threshold):
+
+def matched_entities_filename(blocking_method, matching_method, threshold):
     return f"MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv"
+
 
 def create_cartesian_product(df1, df2):
     # Create a common key for the Cartesian product
@@ -103,5 +107,3 @@ def save_data(df, filename):
 
 def test():
     logging.info("hello world")
-
-

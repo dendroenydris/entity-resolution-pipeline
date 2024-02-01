@@ -11,6 +11,7 @@ from erp.utils import (
     FILENAME_LOCAL_CLUSTERING,
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
+    FILENAME_SCABILITY_TEST_RESULTS,
     RESULTS_FOLDER,
     test_and_create_folder,
     DefaultERconfiguration,
@@ -82,8 +83,8 @@ def ER_pipline(
         )
     return {
         "local rate": round(len(c_df) / (len(df1) + len(df2)), 4),
-        "local excution time": round((end_time - start_time) / 60, 2),
-        "local excution time(matching+blocking)": round(matching_time / 60, 2),
+        "local execution time": round((end_time - start_time) / 60, 2),
+        "local execution time(matching+blocking)": round(matching_time / 60, 2),
     }
 
 
@@ -140,22 +141,44 @@ def create_databaseWithChanges(L_filename, num=3, cnum=3):
 
 
 def plot_scability_figures(results):
+    # Assuming results is a DataFrame or a dictionary containing the required data
+    # results = {"d1-d2": [...], "dp execution time": [...], "local execution time": [...]}
+
+    # Convert "d1-d2" values to strings
     results["d1-d2"] = [str(i) for i in results["d1-d2"]]
+
+    # Set the width of the bars
+    bar_width = 0.35
+
+    # Create an array of indices for the first set of bars
+    indices = np.arange(len(results["d1-d2"]))
+
+    # Plot the first set of bars
     plt.figure(figsize=(10, 4), dpi=100)
-    plt.title("resulting execution time")
     plt.bar(
-        results["d1-d2"],
-        results["dp excution time(matching+blocking)"],
-        label="dp excution time",
+        indices,
+        results["dp execution time"],
+        label="dp execution time",
         alpha=0.6,
+        width=bar_width,
     )
+
+    # Shift the indices for the second set of bars
+    indices_shifted = indices + bar_width
+
+    # Plot the second set of bars
     plt.bar(
-        results["d1-d2"],
-        results["local excution time(matching+blocking)"],
-        label="local excution time",
+        indices_shifted,
+        results["local execution time"],
+        label="local execution time",
         alpha=0.6,
+        width=bar_width,
     )
-    plt.xticks(fontsize=7)
+
+    plt.xlabel("replication factor")
+    plt.ylabel("execution time(min)")
+    plt.title("Resulting Execution Time")
+    plt.xticks(indices + bar_width / 2, results["d1-d2"], fontsize=7)
     plt.legend(loc="upper right")
     plt.savefig(RESULTS_FOLDER + "scability.png")
 
@@ -177,11 +200,11 @@ def part2(thresholds=[0.5, 0.7]):
     )
 
 
-def part3(
+def scability_test(
     ERconfiguration=DefaultERconfiguration,
     num_duplicates=3,
     num_changes=4,
-    output="scability_results.csv",
+    output=FILENAME_SCABILITY_TEST_RESULTS,
 ):
     L_filenames = create_databaseWithChanges(
         DATABASES_LOCATIONS, num_duplicates, num_changes
@@ -201,17 +224,26 @@ def part3(
     plot_scability_figures(results)
 
 
+def part3():
+    scability_test()
+    naive_DPvsLocal(
+        FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
+    )  # DP vs local results is printed in terminal
+
+
 def naive_DPvsLocal(fdp, flocal):
     DP_ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
         threshold=DefaultERconfiguration["threshold"],
+        matched_output=fdp,
         cluster=False,
     )
     ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
         ERconfiguration=DefaultERconfiguration,
+        matched_output=flocal,
         cluster=False,
     )
     df_dp = pd.read_csv(fdp)

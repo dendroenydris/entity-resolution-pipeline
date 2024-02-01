@@ -61,8 +61,8 @@ def DP_ER_pipline(
 
     out = {
         "dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4),
-        "dp excution time": round((end_time - start_time) / 60, 2),
-        "dp excution time(matching+blocking)": round(matching_time / 60, 2),
+        "dp execution time": round((end_time - start_time) / 60, 2),
+        "dp execution time(matching+blocking)": round(matching_time / 60, 2),
     }
     spark.stop()
     return out
