@@ -339,7 +339,9 @@ The results are quite the same for all the method we implemented.
 
 > you can see the code for this part under the functoin `naive_DPvsLocal` in `main.py`
 
-Now that we are sure that Spark's pipeline is reliable, we would like to assess the scalability performance of our pipelines. This is why we created bigger datasets with a few changes derived from our original data
+Given that we have established the reliability of Spark’s pipeline, our objective is to evaluate the scalability performance of our pipelines. As a result, we have generated larger datasets with several modifications derived from our initial data.
+
+To investigate the impact on our model, we introduced various alterations to the title, year, and author name. Specifically, for string inputs, we randomly selected n positions within the string and replaced a letter at each position with a randomly chosen alphabet. Moreover, for number inputs, we modified them by either incrementing or decrementing the value by n/2.
 
 > see the function `create_databaseWithChanges`, we moved on with
 
@@ -347,4 +349,4 @@ attched to here our scailbilty results:
 
 ![Scability Results](https://i.ibb.co/7gF9jdj/scability.png)
 
-x-asis: replication factor ,y-axis: run time in seconds
+x-asis: replication factor (first four letter indicates which factor in the original database we choose to cmodify, and the last letter indicates the value of n), y-axis: run time in seconds
