@@ -14,7 +14,7 @@ DATABASES_LOCATIONS = ["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_200
 
 
 DEFAULT_ER_CONFIGURATION = {
-    "threshold": 0.7,
+    "threshold": 0.65,
     "matching_method": "Combined",
     "blocking_method": "FirstLetterTitle",
     "clustering_method": "basic",

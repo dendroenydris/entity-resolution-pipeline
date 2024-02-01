@@ -75,7 +75,7 @@ The project starts with two large dataset text files you need to download:
 Below is the structure of the project:
 
 - 📁 **project**
-
+  
   - 📁 **erp**: Contains Python scripts for the entity resolution pipeline.
     - 📄 `__init__.py`
     - 📄 `clustering.py`
@@ -171,9 +171,9 @@ As a prerequisite for Entity Resolution and Model Training, we have
 generated a dataset containing the following attributes:
 
 > - Paper ID, paper title, author names, publication venue, year of publication
->
+> 
 > - Publications published between 1995 and 2004
->
+> 
 > - Publications from VLDB and SIGMOD venues
 
 We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code
@@ -213,9 +213,12 @@ partitioning strategies. In each 'bucket', we run the comparisons
 
 1. **Year :** Articles that were published in the same year would be in the same bucket.
 2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket.
-3. **Num Authors :** Articles with a similar number of authors (up to 2 difference) would be in the same bucket.
-4. **First Letter :** Articles with the same first letter of title would be in the same bucket.
-5. **Last Name :** Articles with at least an author with the common last name would be in the same bucket.
+3. **Num Authors :** Articles with a similar number of authors (up to 1 difference) would be in the same bucket.
+4. **Common Author :** Articles with at leat one common authors would be in the same bucket.
+5. **Num Authors and Common Author :** Articles with at leat one common authors and a similar number of authors (up to 2 difference) would be in the same bucket.
+6. **First Letter :** Articles with the same first letter of title would be in the same bucket.
+7. **First or Last Letter :** Articles with the same first letter or the last letter of title would be in the same bucket.
+8. **Last Name :** Articles with at least an author with the common last name would be in the same bucket.
 
 > The code for blocking is in the file named `matching.py`, with functions
 > named `blocking_x`, where x is the respective blocking method.
@@ -259,8 +262,11 @@ with similar titles and a similar number of authors.
 **Jaccard** and **First Letter** partitioning identifies matching articles
 with similar titles and the same first letter of the paper title.
 
-**Jaccard** and **First Letter** partitioning identifies matching articles
-with similar titles and the same first letter of the paper title.
+**Jaccard** and **Last Letter** partitioning identifies matching articles
+with similar titles and the same last letter of the paper title.
+
+**Jaccard** and **First or Last Letter** partitioning identifies matching articles
+with similar titles and the same first or last letter of the paper title.
 
 **Jaccard** and **Authors last name** partitioning identifies matching articles
 with similar titles and the author last name.
@@ -269,7 +275,10 @@ with similar titles and the author last name.
 with similar titles and the same authors.
 
 **Jaccard** and **Num of Authors** partitioning identifies matching articles
-with similar titles and the same numbers of authors.
+with similar titles and the difference between their numbers of authors are smaller than 1.
+
+**Jaccard** and **Num of Authors and Common Author** partitioning identifies matching articles
+with similar titles and at leat one common Author with the difference between their numbers of authors smaller than 1.
 
 Likewise, the **Combined** similarity will yield results for the
 different blocking methods, with only difference being that it takes
@@ -282,41 +291,53 @@ into account the number of authors in the comparison.
 
 Testing different combinations yields the results shown below:
 
-![Matching Results](https://i.ibb.co/h8bWq8m/Whats-App-Image-2024-01-31-at-20-58-07.jpg)
+[Matching Results csv File](./results/method_results.csv)
+![Matching Results](./results/comparasion_img.png)
 
-### Clustering
-
-In the final part of the pipeline, we chose to cluster the matched entities. The example is
-based on the combination of the **'First Letter'** blocking and the **Combined**
-similarity function, for two main reasons:
+The best model is based on the combination of the **'First or Last Letter'** blocking and the **Combined** similarity function, for two main reasons:
 
 1. The Combined similarity function has proven to yield more reliable results
    for matched entities upon close inspection of the data.
-2. First Letter has seemed to outperform all the other methods, both in
-   execution time reduction and in other measures, such as Precision, Recall
-   and F1 Score.
+2. First or Last Letter Matching has seemed to outperform all the other methods in terms of Precision, Recall and F1 Score, and the execution time reduction is also enumerous.
 
-We use the Numpy package to create a graph, organizing related items
-into clusters of similar entities in our clustering process
-(clustering_basic). Each item is represented as a point in the graph.
-Connections between similar items, as identified in our matching output,
-are drawn in the graph. We then employ depth-first search (DFS) to
-traverse these connections, updating values as we explore and
-contributing to the organization of clusters in the final results.
+### Clustering
+
+In the final part of the pipeline, we chose to cluster the matched entities.
+
+We use the Numpy package to create a graph, organizing related items into clusters of similar entities in our clustering process (clustering_basic). Each item is represented as a point in the graph. Connections between similar items, as identified in our matching output, are drawn in the graph. We then employ depth-first search (DFS) to traverse these connections, updating values as we explore and contributing to the organization of clusters in the final results.
 
 > The code for clustering is available in the file named `clustering.py`,
 > and the resulting CSV will be exported to a local `results` folder under
-> the name `clustering_results`.
+> the name `clustering_results_local.csv`.
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
-At the beginning of this stage, we create an Entity Resolution pipeline using Apache Spark. We walk through all the phases of the Entity Resolution pipeline with the structured data frame and find that Spark could make our lives easier. During the implementation, for example, `df.filter` and `df.groupBy` help us with our bloacking method .
+At the beginning of this stage, we create an Entity Resolution pipeline using Apache Spark. We walk through all the phases of the Entity Resolution pipeline with the structured data frame. We employ a deployment model in our Pyspark environment utilizing a maximum number of local threads specified as local[*]. This deployment configuration enables parallel processing, leading to a substantial reduction in overall runtime. It also has a number of convenient built-in functions, for example, `df.filter` and `df.groupBy` help us with our blocking method.
+
+In this Data Parallel framework, we mainly deploy one matching method (Combined Similarity), two matching methods (FirstLetterTitle and FirstLetter Matching) and one clustering method (basic clustering with graph).
 
 > you can see the code for this part at ` dprep.py`
 
-After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). We were surprised to see that the results are quite similar: **xugin here please: comparison data is missing**
+After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). The Two ER pipline is configured as :
 
-> you can see the code for this part under the functoin `naive_DPvsLocal` in `main .py`
+```json
+DEFAULT_ER_CONFIGURATION = {
+    "threshold": 0.7,
+    "matching_method": "Combined",
+    "blocking_method": "FirstLetterTitle",
+    "clustering_method": "basic",
+    "output_filename": "clustering_results_local.csv",
+}
+```
+
+The results are quite the same for all the method we implemented. 
+
+|                                      | FirstLetterTitle | FirstOrLastLetterTitle |
+| ------------------------------------ | ---------------- | ---------------------- |
+| Number of differences (dp and local) | 0                | 0                      |
+| Number of matched pairs              | 1750             | 1778                   |
+
+> you can see the code for this part under the functoin `naive_DPvsLocal` in `main.py`
 
 Now that we are sure that Spark's pipeline is reliable, we would like to assess the scalability performance of our pipelines. This is why we created bigger datasets with a few changes derived from our original data
 
@@ -324,6 +345,6 @@ Now that we are sure that Spark's pipeline is reliable, we would like to assess 
 
 attched to here our scailbilty results:
 
-![Matching Results](https://i.ibb.co/7gF9jdj/scability.png)
+![Scability Results](https://i.ibb.co/7gF9jdj/scability.png)
 
-                                        x-asis: replication factor ,y-axis: run time in seconds
+x-asis: replication factor ,y-axis: run time in seconds
