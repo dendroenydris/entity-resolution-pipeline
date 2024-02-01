@@ -218,7 +218,7 @@ def create_commonAuthorsBlocking(df1, df2):
     )
     result_df = result_df[
         result_df["common_authors"].apply(
-            lambda x: len(x["common_authors"]) > 0
+            lambda x: len(x) > 0
         )
     ]
     return result_df
