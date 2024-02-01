@@ -1,7 +1,6 @@
 # Entity Resolution of Publication Data
 <div align="center">
 <a href="https://github.com/Catoblepases/DIA">Github link</a>
-[![GitHub](https://fontawesome.com/icons/github?f=brands&s=solid)](https://github.com/Catoblepases/DIA)
 </div>
 ## :books: Table of Contents
 
