@@ -310,7 +310,7 @@ At the beginning of this stage, we create an Entity Resolution pipeline using Ap
 
 > you can see the code for this part at ` dprep.py`
 
-After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). We were surprised to see that the results are quite similar: **xugin here please:**
+After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). We were surprised to see that the results are quite similar: **xugin here please: comparison data is missing**
 
 > you can see the code for this part under the functoin `naive_DPvsLocal` in `main .py`
 
