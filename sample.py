@@ -22,15 +22,12 @@ from erp.utils import (
 from erp.dperp import DP_ER_pipline
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
-# part1()  # cleaned data stored in "data" as "data/citation-acm-v8_1995_2004.csv" and "data/dblp_1995_2004.csv"
-# part2()  # results of all methods stored in "results/method_results.csv"
+part1()  # cleaned data stored in "data" as "data/citation-acm-v8_1995_2004.csv" and "data/dblp_1995_2004.csv"
+part2()  # results of all methods stored in "results/method_results.csv"
 part3()  # scability test results stored in "results/scability_results.csv" and "results/scability.png"
-# naive_DPvsLocal(
-#     FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
-# )  # DP vs local results is printed in terminal
-# ER_pipline(
-#     DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], DefaultERconfiguration
-# )  # test the entire local pipline including clustering
-# DP_ER_pipline(
-#     DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1]
-# )  # test the entire parallel pipline including clustering
+ER_pipline(
+    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], DefaultERconfiguration
+)  # test the entire local pipline including clustering
+DP_ER_pipline(
+    DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1]
+)  # test the entire parallel pipline including clustering
