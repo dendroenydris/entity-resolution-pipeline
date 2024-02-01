@@ -8,11 +8,12 @@
   - [Quick Overview and User Instruction](#quick-overview-and-user-instruction)
   - [Installation](#installation)
   - [Sample to Run Exercise](#sample-to-run-exercise)
-  - [Quick Introduction](#quick-introduction)
-- [Added by Nevo:](#added-by-nevo)
 - [Quick Project Overview](#quick-project-overview)
   - [Data Source](#data-source)
 - [erp Folder](#erp-folder)
+  - [Selected Functions in local pipline](#selected-functions-in-local-pipline)
+  - [Selected Configuration](#selected-configuration)
+  - [Results](#results)
 - [Data Folder](#data-folder)
   - [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
   - [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
@@ -65,34 +66,6 @@ part2() # results of all methods stored in "method_results.csv"
 part3() # scability test
 ```
 
-### Quick Introduction
-
-- part1 : `erp.preparing.prepare_data("path_to_txt_file")`
-- part2 :
-  - Blocking: `erp.blocking(df1,df2,blocking_method)`
-    - Parameters:
-      - df1,df2 (pandas.DataFrame) : input databases
-      - blocking_method(str) : {"Year", "TwoYear", "numAuthors", "FirstLetter"}
-  - Matching: `erp.matching(blocking_df,similarity_threshold, matching_method)`
-    - Parameters:
-      - blocking_df(pandas.DataFrame)
-      - similarity_threshold (float from 0.0 to 1.0)
-      - matching_method (String) : {"Jaccard", "Combined"}
-  - Clustering: `erp.run_clustering(matched_entities, df1, df2, clustering_method)`
-    - Parameters:
-      - matched_entities(pandas.DataFrame)
-      - df1,df2 (pandas.DataFrame) : input databases
-      - clustering_method (String) :{'basic'}
-  - ER_pipline : `erp.ER_pipline(df1,df2,ERconfiguration)`
-    - Parameters:
-      - df1,df2 (pandas.DataFrame) : input databases
-      - ERconfiguration : sample`{ "matching_method": "Jaccard", "blocking_method": "Year","clustering_method":"basic", "threshold": 0.7, "output_filename": "results/clustering_results.csv",}`
-- part 3 :
-
-## Added by Nevo:
-
----
-
 ## Quick Project Overview
 
 The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
@@ -109,6 +82,7 @@ The project starts with two large dataset text files you need to download:
 Below is the structure of the project:
 
 - 📁 **project**
+
   - 📁 **erp**: Contains Python scripts for the entity resolution pipeline.
     - 📄 `__init__.py`
     - 📄 `clustering.py`
@@ -131,31 +105,52 @@ Below is the structure of the project:
 The erp folder contains scripts for the entity resolution pipeline with specific configurations:
 
 - **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
-- **Running Pipeline**: Execute `main.py` with ER configurations.
+- **Running Pipeline**:
+  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, matched_output="path-to-output-file", cluster=True)` the clustering result will be store in
+  - DP Version: Run `DP_ER_pipline(databasefilename1, databasefilename2,  baseline=False, threshold=0.5, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file")`
 - **Configuration Options**:
-  - `blocking_method`(String): Methods to reduce execution time {"Year", "TwoYear", "numAuthors", "FirstLetter"}.
+  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
   - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
   - `clustering_method`(String): Altogirthm for clustering {"basic"}.
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
-  - `output_filename`(String): path and file name of results to be saved.
+  - `output_filename`(String): path and file name of clustering results to be saved.
 
-**Selected Configuration**:
+### Selected Functions in local pipline
+
+- Blocking: `erp.blocking(df1,df2,blocking_method)`
+  - Parameters:
+    - df1,df2 (pandas.DataFrame) : input databases
+    - blocking_method(str) : {“Year”, “TwoYear”, “numAuthors”, “FirstLetter”, “LastLetter”, “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}
+- Matching: `erp.matching(blocking_df,similarity_threshold, matching_method)`
+  - Parameters:
+    - blocking_df(pandas.DataFrame)
+    - similarity_threshold (float from 0.0 to 1.0)
+    - matching_method (String) : {"Jaccard", "Combined"}
+- Clustering: `erp.clustering(matched_entities, df1, df2, clustering_method)`
+  - Parameters:
+    - matched_entities(pandas.DataFrame)
+    - df1,df2 (pandas.DataFrame) : input databases
+    - clustering_method (String) :{'basic'}
+
+### Selected Configuration
 
 ERconfiguration:
 
+```json
+{
+  "matching_method": "Combined",
+  "blocking_method": "FirstLetter",
+  "clustering_method": "basic",
+  "threshold": 0.5,
+  "output_filename": "clustering_results_local.csv"
+}
 ```
-{"matching_method": "Combined",
- "blocking_method": "FirstLetter",
- "clustering_method":"basic",
- "threshold": 0.5,
- "output_filename": "results/clustering_results.csv"}
-```
 
-**Results**:
+### Results
 
-- The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results.csv` within the `results` folder.
+- The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results_local.csv` within the `results` folder.
 
-- This folder also contains `dperp.py` to compare our ER results with the Apache Spark framework.
+- This folder also contains `dperp.py`, which serves as a reimplementation of the local entity recognition pipeline within the Apache Spark framework.
 
 ## Data Folder
 

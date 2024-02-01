@@ -1,7 +1,24 @@
 import logging
 import pandas as pd
 import numpy as np
-from erp.utils import DATABSE_COLUMNS
+from erp.utils import DATABSE_COLUMNS, FILENAME_LOCAL_CLUSTERING, save_result
+
+CLUSTERING_METHODS = ["basic"]
+
+
+def clustering(
+    result_df, df1, df2, clustering_method, filename=FILENAME_LOCAL_CLUSTERING
+):
+    # Run the clustering function and save the results to a CSV file
+    df1["index"] = np.arange(len(df1))
+    df2["index"] = np.arange(len(df2)) + len(df1)
+    if clustering_method == "basic":
+        combined_df = clustering_basic(result_df, df1, df2)
+    save_result(combined_df[DATABSE_COLUMNS + ["index"]], filename)
+    logging.info(
+        "%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2)))
+    )
+    return combined_df
 
 
 def dfs(graph, node, value, visited, L_propa):
@@ -110,17 +127,4 @@ def clustering_basic(result_df, df1, df2):
     combined_df = pd.concat(
         [df1[df1.index.isin(idx_list)], df2[df2.index.isin(idx_list)]]
     )
-    return combined_df
-
-CLUSTERING_METHODS=["basic"]
-def run_clustering(result_df, df1, df2, clustering_method, filename="results/clustering_results.csv"):
-    # Run the clustering function and save the results to a CSV file
-    df1["index"] = np.arange(len(df1))
-    df2["index"] = np.arange(len(df2)) + len(df1)
-    if clustering_method =="basic":
-        combined_df = clustering_basic(result_df, df1, df2)
-    combined_df[DATABSE_COLUMNS + ["index"]].to_csv(
-        "results/clustering_results.csv", index=None
-    )
-    logging.info("%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2))))
     return combined_df

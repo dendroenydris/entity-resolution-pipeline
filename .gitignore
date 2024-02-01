@@ -37,5 +37,4 @@ DIA.egg-info
 build
 First Vertices.csv
 results/*baseline*.csv
-results/clustering*.csv
 results/*match*.csv

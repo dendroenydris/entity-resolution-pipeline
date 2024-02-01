@@ -9,10 +9,63 @@ import pandas as pd
 from graphframes import GraphFrame
 from erp.utils import (
     FILENAME_DP_MATCHED_ENTITIES,
+    FILENAME_DP_CLUSTERING,
+    RESULTS_FOLDER,
     jaccard_similarity,
+    save_result,
     trigram_similarity,
     DefaultERconfiguration,
 )
+
+
+def DP_ER_pipline(
+    filename1,
+    filename2,
+    baseline=False,
+    threshold=0.5,
+    cluster=True,
+    matched_output=FILENAME_DP_MATCHED_ENTITIES,
+    cluster_output=FILENAME_DP_CLUSTERING,
+):
+    conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
+    sc = SparkContext(conf=conf)
+    sc.setCheckpointDir("inbox")
+
+    spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
+    # Read the datasets from two databases
+    start_time = time()
+    df1 = spark.read.option("delimiter", ",").option("header", True).csv(filename1)
+    df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
+    df1 = df1.withColumn("index", monotonically_increasing_id())
+    df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
+    df1, df2 = FirstLetterBlocking(df1, df2)
+    matched_pairs = FirstLetterMatching(df1, df2, threshold, output=matched_output)
+    end_time = time()
+    matching_time = end_time - start_time
+    if cluster:
+        clustering(df1, df2, matched_pairs, filename=cluster_output)
+    end_time = time()
+    matched_pairs.show(2)
+
+    if baseline:
+        baseline_matches = create_baseline(df1, df2)
+        return resultToString(
+            DefaultERconfiguration,
+            -1,
+            -1,
+            -1,
+            baseline_matches,
+            matched_df=matched_pairs,
+            suffix="_dp",
+        )
+
+    out = {
+        "dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4),
+        "dp excution time": round((end_time - start_time) / 60, 2),
+        "dp excution time(matching+blocking)": round(matching_time / 60, 2),
+    }
+    spark.stop()
+    return out
 
 
 def calculate_combined_similarity(title1, title2, author_names_df1, author_names_df2):
@@ -43,7 +96,7 @@ def FirstLetterBlocking(df1, df2):
 
 
 # Assuming similarity_udf is defined elsewhere in your code
-def FirstLetterMatching(df1, df2, threshold):
+def FirstLetterMatching(df1, df2, threshold, output=FILENAME_DP_MATCHED_ENTITIES):
     matched_pairs = None
 
     for bucket_id in range(26):
@@ -82,7 +135,7 @@ def FirstLetterMatching(df1, df2, threshold):
             matched_pairs = pairs
         else:
             matched_pairs = matched_pairs.union(pairs)
-    matched_pairs.toPandas().to_csv(FILENAME_DP_MATCHED_ENTITIES, index=False)
+    matched_pairs.toPandas().to_csv(output, index=False)
     return matched_pairs
 
 
@@ -114,24 +167,22 @@ def create_baseline(df1, df2):
 def calculate_confusion_score(
     matched_df,
     baseline_matches,
-    filename_matched="DP_baseline_matches.csv",
+    filename_matched=FILENAME_DP_MATCHED_ENTITIES,
     filename_baseline="DP_baseline_matches.csv",
 ):
     matched_df_pd = matched_df.toPandas()
     matched_df_pd["ID"] = matched_df_pd["paper ID_df1"] + matched_df_pd["paper ID_df2"]
 
     # Write matched pairs to CSV file
-    matched_df_pd.to_csv("results/" + filename_matched, index=False)
-
+    save_result(matched_df_pd, filename_matched)
     baseline_matches_pd = baseline_matches.toPandas()
     baseline_matches_pd["ID"] = (
         baseline_matches_pd["paper ID_df1"] + baseline_matches_pd["paper ID_df2"]
     )
+    save_result(baseline_matches_pd, filename_baseline)
 
-    baseline_matches_pd.to_csv("results/" + filename_baseline, index=False)
-
-    baseline_matches_pd = pd.read_csv("results/" + filename_baseline, sep=",")
-    matched_pairs_pd = pd.read_csv("results/" + filename_matched, sep=",")
+    baseline_matches_pd = pd.read_csv(RESULTS_FOLDER + filename_baseline, sep=",")
+    matched_pairs_pd = pd.read_csv(RESULTS_FOLDER + filename_matched, sep=",")
 
     tp, fn, fp, precision, recall, f1 = calculate_confusion_matrix(
         baseline_matches_pd, matched_pairs_pd
@@ -142,7 +193,7 @@ def calculate_confusion_score(
     logging.info("F1-score:", f1)
 
 
-def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
+def clustering(df1, df2, matched_df, filename=FILENAME_DP_CLUSTERING):
     df = df1.union(df2)
     vertices = df.withColumnRenamed("index", "id")
     vertices = vertices.select("id")
@@ -169,47 +220,5 @@ def clustering(df1, df2, matched_df, filename="clustering Results_DP.csv"):
 
     # Construct the DataFrame
     first_vertices_df = first_vertices_df.orderBy("component")
-    first_vertices_df.toPandas().to_csv("results/" + filename, index="false")
+    save_result(first_vertices_df.toPandas(), filename)
     logging.info("finish clustering")
-
-
-def DP_ER_pipline(filename1, filename2, baseline=False, threshold=0.5, cluster=True):
-    conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
-    sc = SparkContext(conf=conf)
-    sc.setCheckpointDir("inbox")
-
-    spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
-    # Read the datasets from two databases
-    start_time = time()
-    df1 = spark.read.option("delimiter", ",").option("header", True).csv(filename1)
-    df2 = spark.read.option("delimiter", ",").option("header", True).csv(filename2)
-    df1 = df1.withColumn("index", monotonically_increasing_id())
-    df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
-    df1, df2 = FirstLetterBlocking(df1, df2)
-    matched_pairs = FirstLetterMatching(df1, df2, threshold)
-    end_time = time()
-    matching_time = end_time - start_time
-    if cluster:
-        clustering(df1, df2, matched_pairs)
-    end_time = time()
-    matched_pairs.show(2)
-
-    if baseline:
-        baseline_matches = create_baseline(df1, df2)
-        return resultToString(
-            DefaultERconfiguration,
-            -1,
-            -1,
-            -1,
-            baseline_matches,
-            matched_df=matched_pairs,
-            suffix="_dp",
-        )
-
-    out = {
-        "dp rate": round(matched_pairs.count() / (df1.count() + df2.count()), 4),
-        "dp excution time": round((end_time - start_time) / 60, 2),
-        "dp excution time(matching+blocking)": round(matching_time / 60, 2),
-    }
-    spark.stop()
-    return out

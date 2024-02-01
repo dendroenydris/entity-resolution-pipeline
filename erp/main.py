@@ -5,11 +5,13 @@ import numpy as np
 import pandas as pd
 from erp.dperp import DP_ER_pipline
 from erp.matching import *
-from erp.clustering import clustering_basic, run_clustering
+from erp.clustering import clustering_basic, clustering
 from erp.preparing import prepare_data
 from erp.utils import (
+    FILENAME_LOCAL_CLUSTERING,
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
+    RESULTS_FOLDER,
     test_and_create_folder,
     DefaultERconfiguration,
     DATABSE_COLUMNS,
@@ -20,14 +22,6 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 import string
 import matplotlib.pyplot as plt
 
-ERconfiguration = {
-    "matching_method": "Jaccard",
-    "blocking_method": "Year",
-    "threshold": 0.5,
-    "clustering_method": "basic",
-    "output_filename": "results/clustering_results.csv",
-}
-
 
 def ER_pipline(
     dfilename1,
@@ -35,6 +29,7 @@ def ER_pipline(
     ERconfiguration,
     baseline=False,
     matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
+    cluster_output=FILENAME_LOCAL_CLUSTERING,
     cluster=True,
 ):
     # import database
@@ -57,7 +52,13 @@ def ER_pipline(
     matching_time = end_time - start_time
     c_df = []
     if cluster:
-        c_df = run_clustering(result_df, df1, df2, ERconfiguration["clustering_method"])
+        c_df = clustering(
+            result_df,
+            df1,
+            df2,
+            ERconfiguration["clustering_method"],
+            filename=cluster_output,
+        )
     end_time = time()
 
     if baseline:
@@ -84,7 +85,8 @@ def ER_pipline(
         "local excution time": round((end_time - start_time) / 60, 2),
         "local excution time(matching+blocking)": round(matching_time / 60, 2),
     }
-    
+
+
 def add_random_characters_to_string(str, number):
     characters = string.ascii_lowercase
     new_string = list(str)
@@ -155,19 +157,19 @@ def plot_scability_figures(results):
     )
     plt.xticks(fontsize=7)
     plt.legend(loc="upper right")
-    plt.savefig("results/scability.png")
+    plt.savefig(RESULTS_FOLDER + "scability.png")
 
 
 def part1():
-    for data in ["data/citation-acm-v8.txt", "data/dblp.txt"]:
+    for data in DATABASES_LOCATIONS:
         prepare_data(data)
 
 
 def part2(thresholds=[0.5, 0.7]):
     # import database
-    df1 = pd.read_csv("data/citation-acm-v8_1995_2004.csv", sep=",", engine="python")
+    df1 = pd.read_csv(DATABASES_LOCATIONS[0], sep=",", engine="python")
     df1["index"] = np.arange(len(df1))
-    df2 = pd.read_csv("data/dblp_1995_2004.csv", sep=",", engine="python")
+    df2 = pd.read_csv(DATABASES_LOCATIONS[1], sep=",", engine="python")
     df2["index"] = np.arange(len(df2)) + len(df1)
     # Run all blocking methods for each baseline and record results
     run_all_blocking_matching_methods(
@@ -175,7 +177,12 @@ def part2(thresholds=[0.5, 0.7]):
     )
 
 
-def part3(ERconfiguration=DefaultERconfiguration, num_duplicates=3, num_changes=4):
+def part3(
+    ERconfiguration=DefaultERconfiguration,
+    num_duplicates=3,
+    num_changes=4,
+    output="scability_results.csv",
+):
     L_filenames = create_databaseWithChanges(
         DATABASES_LOCATIONS, num_duplicates, num_changes
     )
@@ -190,12 +197,17 @@ def part3(ERconfiguration=DefaultERconfiguration, num_duplicates=3, num_changes=
         )
         results.append({**result2, **result})
     results = pd.DataFrame(results)
-    save_result(results, "scability_results.csv")
+    save_result(results, output)
     plot_scability_figures(results)
 
 
 def naive_DPvsLocal(fdp, flocal):
-    DP_ER_pipline(DATABASES_LOCATIONS[0], DATABASES_LOCATIONS[1], cluster=False)
+    DP_ER_pipline(
+        DATABASES_LOCATIONS[0],
+        DATABASES_LOCATIONS[1],
+        threshold=DefaultERconfiguration["threshold"],
+        cluster=False,
+    )
     ER_pipline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],

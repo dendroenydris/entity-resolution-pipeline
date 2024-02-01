@@ -18,13 +18,22 @@ DefaultERconfiguration = {
     "matching_method": "Combined",
     "blocking_method": "FirstLetter",
     "clustering_method": "basic",
-    "output_filename": "results/clustering_results.csv",
+    "output_filename": "clustering_results_local.csv",
 }
 
+DATA_FOLDER = "data/"
 RESULTS_FOLDER = "results/"
-FILENAME_LOCAL_MATCHED_ENTITIES = RESULTS_FOLDER + "matched_entities_local.csv"
-FILENAME_DP_MATCHED_ENTITIES = RESULTS_FOLDER + "matched_entities_dp.csv"
+FILENAME_LOCAL_MATCHED_ENTITIES = "matched_entities_local.csv"
+FILENAME_DP_MATCHED_ENTITIES = "matched_entities_dp.csv"
+FILENAME_LOCAL_CLUSTERING=  "clustering_results_local.csv"
+FILENAME_DP_CLUSTERING= "clustering_results_dp.csv"
+FILENAME_ALL_METHODS_RESULTS= "method_results.csv"
 
+def baseline_filename(matching_method,threshold):
+    return f"baseline_{matching_method}_{threshold}.csv"
+
+def matched_entities_filename(blocking_method,matching_method,threshold):
+    return f"MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv"
 
 def create_cartesian_product(df1, df2):
     # Create a common key for the Cartesian product
@@ -81,13 +90,13 @@ def test_and_create_folder(folder_path):
 
 
 def save_result(result_df, filename):
-    folder_path = "results/"
+    folder_path = RESULTS_FOLDER
     test_and_create_folder(folder_path)
     result_df.to_csv(folder_path + filename, index=False)
 
 
 def save_data(df, filename):
-    folder_path = "data/"
+    folder_path = DATA_FOLDER
     test_and_create_folder(folder_path)
     df.to_csv(folder_path + filename, index=False)
 

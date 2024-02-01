@@ -4,13 +4,14 @@
 # ```shell
 # cd path-to-this-project
 # pip install -e .
+# pyspark --packages graphframes:graphframes:0.8.3-spark3.5-s_2.12
 # ```
 # spark == 3.5.0
-# scala == 2.12.18
-# graphframes == 0.8.3-spark3.5-s_2.12 `pyspark --packages graphframes:graphframes:0.8.3-spark3.5-s_2.12`
+# scala == 2.12.x
+# graphframes == 0.8.3-spark3.5-s_2.12
 ###################################################################################################
 import logging
-from erp import run_clustering, part1, part2, part3, naive_DPvsLocal
+from erp import clustering, part1, part2, part3, naive_DPvsLocal
 from erp.main import ER_pipline
 from erp.utils import (
     FILENAME_DP_MATCHED_ENTITIES,

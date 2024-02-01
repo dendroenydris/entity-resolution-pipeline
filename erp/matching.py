@@ -2,8 +2,11 @@ import logging
 from time import time
 import pandas as pd
 from erp.utils import (
+    FILENAME_ALL_METHODS_RESULTS,
+    baseline_filename,
     create_cartesian_product,
     jaccard_similarity,
+    matched_entities_filename,
     save_result,
     trigram_similarity,
 )
@@ -18,7 +21,7 @@ BLOCKING_METHODS = {
     "LastLetter",
     "authorLastName",
     "commonAuthors",
-    "commonAndNumAuthors"
+    "commonAndNumAuthors",
 }
 
 MATCHING_METHODS = {"Jaccard", "Combined"}
@@ -177,6 +180,7 @@ def create_FirstLetterBlocking(df1, df2):
     result_df = result_df.dropna(subset=["paper title_df1", "paper title_df2"])
     return result_df
 
+
 # Function for blocking by last letter of title
 def create_FirstLetterBlocking(df1, df2):
     result_df = create_cartesian_product(df1, df2)
@@ -233,11 +237,7 @@ def create_commonAuthorsBlocking(df1, df2):
         ),
         axis=1,
     )
-    result_df = result_df[
-        result_df["common_authors"].apply(
-            lambda x: len(x) > 0
-        )
-    ]
+    result_df = result_df[result_df["common_authors"].apply(lambda x: len(x) > 0)]
     return result_df
 
 
@@ -338,7 +338,13 @@ def resultToString(
 
 
 def run_all_blocking_matching_methods(
-    df1, df2, thresholds, matching_methods, blocking_methods, save=True
+    df1,
+    df2,
+    thresholds,
+    matching_methods,
+    blocking_methods,
+    save=True,
+    output=FILENAME_ALL_METHODS_RESULTS,
 ):
     # Create an empty DataFrame to store the results
     results_list = []
@@ -351,10 +357,7 @@ def run_all_blocking_matching_methods(
             )
             end_time = time()
             logging.info("finished baseline: " + matching_method)
-            save_result(
-                baseline_df,
-                f"baseline_{matching_method}_{threshold}.csv",
-            )
+            save_result(baseline_df, baseline_filename(matching_method, threshold))
             baseline_execution_time = end_time - start_time
             # Iterate through each blocking method
             for blocking_method in blocking_methods:
@@ -372,9 +375,10 @@ def run_all_blocking_matching_methods(
                 logging.info("finished matching method: " + matching_method)
                 save_result(
                     matched_df,
-                    f"MatchedEntities_{blocking_method}{matching_method}_{threshold}.csv",
+                    matched_entities_filename(
+                        blocking_method, matching_method, threshold
+                    ),
                 )
-
                 # Append results to the list
                 results_list.append(
                     resultToString(
@@ -395,6 +399,6 @@ def run_all_blocking_matching_methods(
     if save:
         save_result(
             pd.DataFrame(results_list),
-            "method_results.csv",
+            output,
         )
     return results_list
