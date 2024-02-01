@@ -8,12 +8,12 @@
   - [Quick Overview and User Instruction](#quick-overview-and-user-instruction)
   - [Installation](#installation)
   - [Sample to Run Exercise](#sample-to-run-exercise)
-- [Quick Project Overview](#quick-project-overview)
+  - [Quick Project Overview](#quick-project-overview)
   - [Data Source](#data-source)
-- [erp Folder](#erp-folder)
-  - [Selected Functions in local pipline](#selected-functions-in-local-pipline)
-  - [Selected Configuration](#selected-configuration)
-  - [Results](#results)
+  - [erp Folder](#erp-folder)
+    - [Selected Functions in local pipline](#selected-functions-in-local-pipline)
+    - [Selected Configuration](#selected-configuration)
+  - [Results Folder](#results-folder)
 - [Data Folder](#data-folder)
   - [Data Acquisition and Preparation (Part 1)](#data-acquisition-and-preparation-part-1)
   - [Entity Resolution Pipeline (Part 2)](#entity-resolution-pipeline-part-2)
@@ -66,7 +66,7 @@ part2() # results of all methods stored in "method_results.csv"
 part3() # scability test
 ```
 
-## Quick Project Overview
+### Quick Project Overview
 
 The project involves implementing an Entity Resolution Pipelining on citation networks from ACM and DBLP datasets.
 
@@ -100,7 +100,7 @@ Below is the structure of the project:
   - 📄 `setup.py`
   - 📄 `README.md`
 
-## erp Folder
+### erp Folder
 
 The erp folder contains scripts for the entity resolution pipeline with specific configurations:
 
@@ -115,7 +115,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
   - `output_filename`(String): path and file name of clustering results to be saved.
 
-### Selected Functions in local pipline
+#### Selected Functions in local pipline
 
 - Blocking: `erp.blocking(df1,df2,blocking_method)`
   - Parameters:
@@ -132,7 +132,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
     - df1,df2 (pandas.DataFrame) : input databases
     - clustering_method (String) :{'basic'}
 
-### Selected Configuration
+#### Selected Configuration
 
 ERconfiguration:
 
@@ -146,7 +146,7 @@ ERconfiguration:
 }
 ```
 
-### Results
+### Results Folder
 
 - The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results_local.csv` within the `results` folder.
 
