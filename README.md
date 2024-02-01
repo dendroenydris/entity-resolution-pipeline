@@ -259,6 +259,18 @@ with similar titles and a similar number of authors.
 **Jaccard** and **First Letter** partitioning identifies matching articles
 with similar titles and the same first letter of the paper title.
 
+**Jaccard** and **First Letter** partitioning identifies matching articles
+with similar titles and the same first letter of the paper title.
+
+**Jaccard** and **Authors last name** partitioning identifies matching articles
+with similar titles and the author last name.
+
+**Jaccard** and **Common Authors** partitioning identifies matching articles
+with similar titles and the same authors.
+
+**Jaccard** and **Num of Authors** partitioning identifies matching articles
+with similar titles and the same numbers of authors.
+
 Likewise, the **Combined** similarity will yield results for the
 different blocking methods, with only difference being that it takes
 into account the number of authors in the comparison.
@@ -270,7 +282,7 @@ into account the number of authors in the comparison.
 
 Testing different combinations yields the results shown below:
 
-![Matching Results](https://i.ibb.co/yd5DPGq/Screenshot-2024-01-29-at-15-09-24.png)
+![Matching Results](https://i.ibb.co/h8bWq8m/Whats-App-Image-2024-01-31-at-20-58-07.jpg)
 
 ### Clustering
 
@@ -298,4 +310,20 @@ contributing to the organization of clusters in the final results.
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
-kakii
+At the beginning of this stage, we create an Entity Resolution pipeline using Apache Spark. We walk through all the phases of the Entity Resolution pipeline with the structured data frame and find that Spark could make our lives easier. During the implementation, for example, `df.filter` and `df.groupBy` help us with our bloacking method .
+
+> you can see the code for this part at ` dprep.py`
+
+After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). We were surprised to see that the results are quite similar: **xugin here please: comparison data is missing**
+
+> you can see the code for this part under the functoin `naive_DPvsLocal` in `main .py`
+
+Now that we are sure that Spark's pipeline is reliable, we would like to assess the scalability performance of our pipelines. This is why we created bigger datasets with a few changes derived from our original data
+
+> see the function `create_databaseWithChanges`, we moved on with
+
+attched to here our scailbilty results:
+
+![Matching Results](https://i.ibb.co/7gF9jdj/scability.png)
+
+                                        x-asis: replication factor ,y-axis: run time in seconds
