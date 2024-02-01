@@ -304,5 +304,22 @@ contributing to the organization of clusters in the final results.
 > the name `clustering_results`.
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
+## Data Parallel Entity Resolution Pipeline (Part 3)
 
-kakii
+At the beginning of this stage, we create an Entity Resolution pipeline using Apache Spark. We walk through all the phases of the Entity Resolution pipeline with the structured data frame and find that Spark could make our lives easier. During the implementation, for example, `df.filter` and `df.groupBy` help us with our bloacking method .
+
+> you can see the code for this part at ` dprep.py`
+
+After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). We were surprised to see that the results are quite similar: **xugin here please:**
+
+> you can see the code for this part under the functoin `naive_DPvsLocal` in `main .py`
+
+Now that we are sure that Spark's pipeline is reliable, we would like to assess the scalability performance of our pipelines. This is why we created bigger datasets with a few changes derived from our original data
+
+> see the function `create_databaseWithChanges`, we moved on with
+
+attched to here our scailbilty results:
+
+![Matching Results](https://i.ibb.co/7gF9jdj/scability.png)
+
+                                        x-asis: replication factor ,y-axis: run time in seconds
