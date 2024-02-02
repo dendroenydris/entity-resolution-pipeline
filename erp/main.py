@@ -322,7 +322,7 @@ def scability_test(
     for d1, d2 in D:
         result = ER_pipeline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = ER_pipeline(d1, d2, ERconfiguration, cluster=False,isdp=True)
+        result2 = ER_pipeline(d1, d2, ERconfiguration, baseline=False, cluster=False, isdp=True)
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, output)
