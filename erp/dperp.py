@@ -27,6 +27,7 @@ from erp.utils import (
     save_result,
     trigram_similarity,
     DEFAULT_ER_CONFIGURATION,
+    test_and_create_folder,
 )
 
 
@@ -56,6 +57,7 @@ def ER_pipeline_dp(
 
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
+    test_and_create_folder("inbox")
     sc.setCheckpointDir("inbox")
 
     spark = SparkSession.builder.appName("Entity Resolution").getOrCreate()
