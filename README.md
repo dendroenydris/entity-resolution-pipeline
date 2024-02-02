@@ -270,7 +270,7 @@ Likewise, the **Combined** similarity will yield results for the different block
 > CSV files for each similarity function and blocking method will be exported
 > to a local `results` folder.
 
-By testing various combinations, we obtained results that can be seen [here](./results/method_results.csv), with a screenshot displayed below:
+By testing various combinations, we obtained results that can be seen at [./source/results/method_results.csv](./results/method_results.csv), with a screenshot displayed below:
 
 ![Matching Results](./results/comparasion_img.png)
 
