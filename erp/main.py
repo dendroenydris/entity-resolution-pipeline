@@ -64,7 +64,7 @@ def ER_pipeline(
     logging.info(f"Begin {er_type} ER pipeline with configuration :\n{ERconfiguration}")
     logging_delimiter(t="-")
     if isdp:
-        ER_pipeline_dp(
+        out = ER_pipeline_dp(
             dfilename1,
             dfilename2,
             ERconfiguration,
@@ -74,7 +74,7 @@ def ER_pipeline(
             cluster_output=cluster_output,
         )
     else:
-        ER_pipeline_local(
+        out = ER_pipeline_local(
             dfilename1,
             dfilename2,
             ERconfiguration,
@@ -88,6 +88,7 @@ def ER_pipeline(
         f"Matched entities are stored in {RESULTS_FOLDER+matched_output}, \nclustering results are stored in {RESULTS_FOLDER+cluster_output}."
     )
     logging_delimiter()
+    return out
 
 
 def ER_pipeline_local(
@@ -195,7 +196,9 @@ def part3():
     """compare local and dp ERpipeline and scability tests"""
     logging_delimiter(str="scability test")
     scability_test()
-    logging.info(f"scability test result is stored in {FILENAME_SCABILITY_TEST_RESULTS}")
+    logging.info(
+        f"scability test result is stored in {FILENAME_SCABILITY_TEST_RESULTS}"
+    )
     logging.info("scability test figure is stored in results/scability.png")
     logging_delimiter(str="comparing local and dp ERpipeline")
     naive_DPvsLocal(

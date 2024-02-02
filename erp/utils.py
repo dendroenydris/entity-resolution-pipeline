@@ -111,5 +111,5 @@ def test():
     logging.info("hello world")
 
 
-def logging_delimiter(t="=", str=None, num=90):
-    logging.info(t * ((num - len(str)) / 2) + str + t * ((num - len(str)) / 2))
+def logging_delimiter(t="=", str="", num=90):
+    logging.info(t * (int)((num - len(str)) / 2) + str + t * (int)((num - len(str)) / 2))
