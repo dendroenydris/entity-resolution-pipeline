@@ -193,10 +193,15 @@ def part2(thresholds=[0.5, 0.7]):
 
 def part3():
     """compare local and dp ERpipeline and scability tests"""
+    logging_delimiter(str="scability test")
     scability_test()
+    logging.info(f"scability test result is stored in {FILENAME_SCABILITY_TEST_RESULTS}")
+    logging.info("scability test figure is stored in results/scability.png")
+    logging_delimiter(str="comparing local and dp ERpipeline")
     naive_DPvsLocal(
         FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
     )  # DP vs local results is printed in terminal
+    logging_delimiter()
 
 
 # ==================================================================================
