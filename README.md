@@ -1,4 +1,5 @@
 # Entity Resolution of Publication Data
+<center>Yuxin XUE, Ofir Topchy, NevoLevi</center>
 
 <div align="center">
 <a href="https://github.com/Catoblepases/DIA">Github link</a>
@@ -281,9 +282,11 @@ The best model is based on the combination of the **'First or Last Letter'** blo
 
 ### Clustering
 
-In the final part of the pipeline, we chose to cluster the matched entities.
+In the final part of the pipeline, we choose to cluster the matched entities.
 
-We use the Numpy package to create a graph, organizing related items into clusters of similar entities in our clustering process (clustering_basic). Each item is represented as a point in the graph. Connections between similar items, as identified in our matching output, are drawn in the graph. We then employ depth-first search (DFS) to traverse these connections, updating values as we explore and contributing to the organization of clusters in the final results.
+We employ a very basic clustering technique in which we group papers based on connected component edges exceeding a threshold value θ. These edges represent matched entities inferred from previous steps.
+
+To be more precise, we utilize the Numpy package to construct a graph, wherein we arrange related items into clusters based on their similarity in the clustering process (referred to as clustering_basic). Each item is depicted as a node within the graph, while connections between items sharing similarities, identified during the matching phase, are depicted as edges. Subsequently, we employ depth-first search (DFS) to traverse these edges, updating values as we explore, thereby contributing to the organization of clusters in the final outcomes.
 
 > The code for clustering is available in the file named `clustering.py`,
 > and The resulting CSV file will be exported to a local directory called “results” with the chosen name (by default: “clustering_results_local.csv”).
