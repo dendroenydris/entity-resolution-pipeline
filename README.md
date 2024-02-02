@@ -96,8 +96,8 @@ The erp folder contains scripts for the entity resolution pipeline with specific
 
 - **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**:
-  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file")` the clustering result will be store in
-  - DP Version: Run `DP_ER_pipline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file")`
+  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file", cluster_output="path-to-output-file", isdp=False)` (in `erp/main.py`)
+  - DP Version: Run `ER_pipline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file", isdp=True)` (`ER_pipline_dp` in `erp.dperp.py`)
 - **Configuration Options**:
   - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, "FirstOrLastLetterTitle", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
   - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
@@ -346,7 +346,7 @@ To investigate the impact on our model, we introduced various alterations to the
 
 attached here are our scailbilty results:
 
-![Scability Results](https://i.ibb.co/7gF9jdj/scability.png)
+![Scability Results](./results/scability.png)
 
 x-asis: Replication factor (first four letter indicates which factor in the original database we choose to cmodify, and the last letter indicates the value of n), 
 y-axis: Runtime in minutes

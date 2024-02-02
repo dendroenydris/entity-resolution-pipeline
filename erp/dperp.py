@@ -30,15 +30,30 @@ from erp.utils import (
 )
 
 
-def DP_ER_pipline(
-    filename1,
-    filename2,
-    ERconfiguration,
+def ER_pipline_dp(
+    filename1: str,
+    filename2: str,
+    ERconfiguration=DEFAULT_ER_CONFIGURATION,
     baseline=False,
     cluster=True,
     matched_output=FILENAME_DP_MATCHED_ENTITIES,
     cluster_output=FILENAME_DP_CLUSTERING,
 ):
+    """ER pipline in the Data Parallel Framework
+
+    Args:
+        filename1 (str): database input1 filename
+        filename2 (str): database input2 filename
+        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        baseline (bool, optional): if baseline is created. Defaults to False.
+        cluster (bool, optional): if we do clustering. Defaults to True.
+        matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
+        cluster_output (str, optional): clustering output filename. Defaults to FILENAME_DP_CLUSTERING.
+
+    Returns:
+        dict: execution information
+    """
+
     conf = SparkConf().setAppName("YourAppName").setMaster("local[*]")
     sc = SparkContext(conf=conf)
     sc.setCheckpointDir("inbox")
@@ -51,9 +66,7 @@ def DP_ER_pipline(
     df1 = df1.withColumn("index", monotonically_increasing_id())
     df2 = df2.withColumn("index", monotonically_increasing_id() + df1.count())
     pairs = blocking(df1, df2, ERconfiguration["blocking_method"])
-    matched_pairs = matching(
-        pairs, ERconfiguration["threshold"], output=matched_output
-    )
+    matched_pairs = matching(pairs, ERconfiguration["threshold"], output=matched_output)
     end_time = time()
     matching_time = end_time - start_time
     if cluster:
@@ -82,6 +95,95 @@ def DP_ER_pipline(
     return out
 
 
+def blocking(
+    df1: str, df2: str, blocking_method=DEFAULT_ER_CONFIGURATION["blocking_method"]
+):
+    """blocking in dp framwork
+
+    Args:
+        filename1 (str): database input1 filename
+        filename2 (str): database input2 filename
+        blocking_method (str, optional): 
+        {“FirstLetterTitle”, “FirstOrLastLetterTitle”}. Defaults to DEFAULT_ER_CONFIGURATION["blocking_method"].
+
+    Returns:
+        DataFrame
+    """
+    blocking_function = globals()[f"create_{blocking_method}Blocking"]
+    return blocking_function(df1, df2)
+
+
+def matching(
+    pairs,
+    threshold=DEFAULT_ER_CONFIGURATION["threshold"],
+    output=FILENAME_DP_MATCHED_ENTITIES,
+):
+    """Matching in dp framework
+
+    Args:
+        pairs (DataFrame): cross product of databases after blocking
+        threshold (float, optional): Defaults to DEFAULT_ER_CONFIGURATION["threshold"].
+        output (str, optional): Defaults to FILENAME_DP_MATCHED_ENTITIES.
+
+    Returns:
+        DataFrame
+    """
+    pairs = pairs.withColumn(
+        "similarity_score",
+        process_udf(
+            col("paper title_df1"),
+            col("paper title_df2"),
+            col("author names_df1"),
+            col("author names_df2"),
+        ),
+    )
+    pairs = pairs.filter(pairs.similarity_score > threshold)
+    save_result(pairs.toPandas(), output)
+    return pairs
+
+def clustering(df1, df2, matched_df, filename=FILENAME_DP_CLUSTERING):
+    """clustering in dp framework
+
+    Args:
+        df1 (DataFrame): database1
+        df2 (DataFrame): database2
+        matched_df (DataFrame): matched entities
+        filename (str, optional):  Defaults to FILENAME_DP_CLUSTERING.
+    """
+    df = df1.union(df2)
+    vertices = df.withColumnRenamed("index", "id")
+    vertices = vertices.select("id")
+    # Create edges DataFrame
+    edges = matched_df.select("index_df1", "index_df2")
+    edges = edges.withColumnRenamed("index_df1", "src")
+    edges = edges.withColumnRenamed("index_df2", "dst")
+
+    # Create a GraphFrame
+    graph = GraphFrame(vertices, edges)
+    # graph = GraphFrame(
+    #     vertices, edges.union(edges.selectExpr("dst as src", "src as dst"))
+    # )
+
+    # Find connected components
+    connected_components = graph.connectedComponents()
+    # logging.info(connected_components.count(), vertices.count(), edges.count())
+
+    # Select the first vertex in every connected component
+    first_vertices_df = connected_components.groupBy("component").agg({"id": "max"})
+
+    # Rename the column to "first_vertex"
+    first_vertices_df = first_vertices_df.withColumnRenamed("max(id)", "id")
+
+    # Construct the DataFrame
+    first_vertices_df = first_vertices_df.orderBy("component")
+    save_result(first_vertices_df.toPandas(), filename)
+    logging.info("finish clustering")
+
+
+#==================================================================================
+#==============Functions basically never called externally=========================
+#==================================================================================
+
 def isNoneOrEmpty(str):
     return (str == None) or (str == "")
 
@@ -106,11 +208,6 @@ def calculate_combined_similarity_dp(
 
 
 process_udf = udf(calculate_combined_similarity_dp, StringType())
-
-
-def blocking(df1, df2, blocking_method):
-    blocking_function = globals()[f"create_{blocking_method}Blocking"]
-    return blocking_function(df1, df2)
 
 
 def create_cross_product_pyspark(df1, df2):
@@ -146,27 +243,6 @@ def create_FirstOrLastLetterTitleBlocking(df1, df2):
         (pairs.bucket1_df1 == pairs.bucket1_df2)
         | (pairs.bucket2_df1 == pairs.bucket2_df2)
     )
-    return pairs
-
-
-# Assuming similarity_udf is defined elsewhere in your code
-def matching(
-    pairs,
-    threshold=DEFAULT_ER_CONFIGURATION["threshold"],
-    output=FILENAME_DP_MATCHED_ENTITIES,
-):
-    pairs = pairs.withColumn(
-        "similarity_score",
-        process_udf(
-            col("paper title_df1"),
-            col("paper title_df2"),
-            col("author names_df1"),
-            col("author names_df2"),
-        ),
-    )
-    pairs = pairs.filter(pairs.similarity_score > threshold)
-    save_result(pairs.toPandas(), output)
-
     return pairs
 
 
@@ -224,32 +300,3 @@ def calculate_confusion_score(
     logging.info("F1-score:", f1)
 
 
-def clustering(df1, df2, matched_df, filename=FILENAME_DP_CLUSTERING):
-    df = df1.union(df2)
-    vertices = df.withColumnRenamed("index", "id")
-    vertices = vertices.select("id")
-    # Create edges DataFrame
-    edges = matched_df.select("index_df1", "index_df2")
-    edges = edges.withColumnRenamed("index_df1", "src")
-    edges = edges.withColumnRenamed("index_df2", "dst")
-
-    # Create a GraphFrame
-    graph = GraphFrame(vertices, edges)
-    # graph = GraphFrame(
-    #     vertices, edges.union(edges.selectExpr("dst as src", "src as dst"))
-    # )
-
-    # Find connected components
-    connected_components = graph.connectedComponents()
-    # logging.info(connected_components.count(), vertices.count(), edges.count())
-
-    # Select the first vertex in every connected component
-    first_vertices_df = connected_components.groupBy("component").agg({"id": "max"})
-
-    # Rename the column to "first_vertex"
-    first_vertices_df = first_vertices_df.withColumnRenamed("max(id)", "id")
-
-    # Construct the DataFrame
-    first_vertices_df = first_vertices_df.orderBy("component")
-    save_result(first_vertices_df.toPandas(), filename)
-    logging.info("finish clustering")

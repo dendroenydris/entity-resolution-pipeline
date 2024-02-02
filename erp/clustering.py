@@ -5,10 +5,17 @@ from erp.utils import DATABSE_COLUMNS, FILENAME_LOCAL_CLUSTERING, save_result
 
 CLUSTERING_METHODS = ["basic"]
 
-
 def clustering(
-    result_df, df1, df2, clustering_method, filename=FILENAME_LOCAL_CLUSTERING
+    result_df, df1, df2, clustering_method="basic", filename=FILENAME_LOCAL_CLUSTERING
 ):
+    """clustering locally
+
+    Args:
+        df1 (DataFrame): database1
+        df2 (DataFrame): database2
+        matched_df (DataFrame): matched entities
+        filename (str, optional):  Defaults to FILENAME_DP_CLUSTERING.
+    """
     # Run the clustering function and save the results to a CSV file
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
@@ -20,6 +27,9 @@ def clustering(
     )
     return combined_df
 
+#==================================================================================
+#==============Functions basically never called externally=========================
+#==================================================================================
 
 def dfs(graph, node, value, visited, L_propa):
     # Depth-first search function to traverse the graph and update values

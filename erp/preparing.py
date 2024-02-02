@@ -3,7 +3,12 @@ import pandas as pd
 
 from erp.utils import DATABSE_COLUMNS
 
-def prepare_data(file_name):
+def prepare_data(file_name:str):
+    """extracting and cleaning data
+
+    Args:
+        file_name (str): database txt file
+    """
     databases = []
     # paper ID, paper title, author names, publication venue, and year of publication
     with open(file_name) as f:

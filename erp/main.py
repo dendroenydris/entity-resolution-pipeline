@@ -3,7 +3,7 @@ import random
 from time import time
 import numpy as np
 import pandas as pd
-from erp.dperp import DP_ER_pipline
+from erp.dperp import ER_pipline_dp
 from erp.matching import *
 from erp.clustering import clustering_basic, clustering
 from erp.preparing import prepare_data
@@ -26,14 +26,74 @@ import matplotlib.pyplot as plt
 
 
 def ER_pipline(
-    dfilename1,
-    dfilename2,
-    ERconfiguration,
+    dfilename1: str,
+    dfilename2: str,
+    ERconfiguration=DEFAULT_ER_CONFIGURATION,
+    baseline=False,
+    matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
+    cluster_output=FILENAME_LOCAL_CLUSTERING,
+    cluster=True,
+    isdp=False,
+):
+    """ER pipline
+
+    Args:
+        filename1 (str): database input1 filename
+        filename2 (str): database input2 filename
+        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        baseline (bool, optional): if baseline is created. Defaults to False.
+        cluster (bool, optional): if we do clustering. Defaults to True.
+        matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
+        cluster_output (str, optional): clustering output filename. Defaults to FILENAME_DP_CLUSTERING.
+        isdp (bool, optional): whether we use dp pipline. Defaults to False.
+
+    Returns:
+        dict: execution information
+    """
+    if isdp:
+        ER_pipline_dp(
+            dfilename1,
+            dfilename2,
+            ERconfiguration,
+            baseline=baseline,
+            matched_output=matched_output,
+            cluster=cluster,
+            cluster_output=cluster_output,
+        )
+    else:
+        ER_pipline_local(
+            dfilename1,
+            dfilename2,
+            ERconfiguration,
+            baseline=baseline,
+            matched_output=matched_output,
+            cluster=cluster,
+            cluster_output=cluster_output,
+        )
+
+def ER_pipline_local(
+    dfilename1: str,
+    dfilename2: str,
+    ERconfiguration=DEFAULT_ER_CONFIGURATION,
     baseline=False,
     matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
     cluster_output=FILENAME_LOCAL_CLUSTERING,
     cluster=True,
 ):
+    """ER pipline locally
+
+    Args:
+        filename1 (str): database input1 filename
+        filename2 (str): database input2 filename
+        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        baseline (bool, optional): if baseline is created. Defaults to False.
+        cluster (bool, optional): if we do clustering. Defaults to True.
+        matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
+        cluster_output (str, optional): clustering output filename. Defaults to FILENAME_DP_CLUSTERING.
+
+    Returns:
+        dict: execution information
+    """
     # import database
     df1 = pd.read_csv(dfilename1, sep=",", engine="python")
     df2 = pd.read_csv(dfilename2, sep=",", engine="python")
@@ -87,6 +147,44 @@ def ER_pipline(
         "local execution time": round((end_time - start_time) / 60, 2),
         "local execution time(matching+blocking)": round(matching_time / 60, 2),
     }
+
+
+def part1():
+    """pareparing and clean data from original database file
+    """
+    for data in DATABASES_LOCATIONS:
+        prepare_data(data)
+
+
+def part2(thresholds=[0.5, 0.7]):
+    """un_all_blocking_matching_methods
+
+    Args:
+        thresholds (list, optional): _description_. Defaults to [0.5, 0.7].
+    """
+    # import database
+    df1 = pd.read_csv(DATABASES_LOCATIONS[0], sep=",", engine="python")
+    df1["index"] = np.arange(len(df1))
+    df2 = pd.read_csv(DATABASES_LOCATIONS[1], sep=",", engine="python")
+    df2["index"] = np.arange(len(df2)) + len(df1)
+    # Run all blocking methods for each baseline and record results
+    run_all_blocking_matching_methods(
+        df1, df2, thresholds, MATCHING_METHODS, BLOCKING_METHODS
+    )
+
+
+def part3():
+    """compare local and dp ERpipline and scability tests
+    """
+    scability_test()
+    naive_DPvsLocal(
+        FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
+    )  # DP vs local results is printed in terminal
+
+
+# ==================================================================================
+# ==============Functions basically never called externally=========================
+# ==================================================================================
 
 
 def add_random_characters_to_string(str, number):
@@ -184,23 +282,6 @@ def plot_scability_figures(results):
     plt.savefig(RESULTS_FOLDER + "scability.png")
 
 
-def part1():
-    for data in DATABASES_LOCATIONS:
-        prepare_data(data)
-
-
-def part2(thresholds=[0.5, 0.7]):
-    # import database
-    df1 = pd.read_csv(DATABASES_LOCATIONS[0], sep=",", engine="python")
-    df1["index"] = np.arange(len(df1))
-    df2 = pd.read_csv(DATABASES_LOCATIONS[1], sep=",", engine="python")
-    df2["index"] = np.arange(len(df2)) + len(df1)
-    # Run all blocking methods for each baseline and record results
-    run_all_blocking_matching_methods(
-        df1, df2, thresholds, MATCHING_METHODS, BLOCKING_METHODS
-    )
-
-
 def scability_test(
     ERconfiguration=DEFAULT_ER_CONFIGURATION,
     num_duplicates=3,
@@ -216,18 +297,11 @@ def scability_test(
     for d1, d2 in D:
         result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = DP_ER_pipline(d1, d2, DEFAULT_ER_CONFIGURATION, cluster=False)
+        result2 = ER_pipline_dp(d1, d2, DEFAULT_ER_CONFIGURATION, cluster=False)
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, output)
     plot_scability_figures(results)
-
-
-def part3():
-    scability_test()
-    naive_DPvsLocal(
-        FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES
-    )  # DP vs local results is printed in terminal
 
 
 def compareTwoDatabase(
@@ -258,7 +332,7 @@ def compareTwoDatabase(
 
 
 def naive_DPvsLocal(fdp, flocal):
-    DP_ER_pipline(
+    ER_pipline_dp(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
         DEFAULT_ER_CONFIGURATION,

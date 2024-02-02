@@ -2,6 +2,7 @@ import logging
 from time import time
 import pandas as pd
 from erp.utils import (
+    DEFAULT_ER_CONFIGURATION,
     FILENAME_ALL_METHODS_RESULTS,
     baseline_filename,
     create_cartesian_product,
@@ -28,17 +29,41 @@ BLOCKING_METHODS = {
 MATCHING_METHODS = {"Jaccard", "Combined"}
 
 
-def blocking(df1, df2, blocking_method):
+def blocking(df1, df2, blocking_method=DEFAULT_ER_CONFIGURATION["blocking_method"]):
+    """blocking non-dp
+
+    Args:
+        filename1 (str): database input1 filename
+        filename2 (str): database input2 filename
+        blocking_method (str, optional):
+        {Year”,“TwoYear”,“FirstLetterTitle”,“LastLetterTitle”,“FirstOrLastLetterTitle”,
+        “numAuthors”,“authorLastName”,“commonAuthors”,“commonAndNumAuthors”}.
+        Defaults to DEFAULT_ER_CONFIGURATION["blocking_method"].
+
+    Returns:
+        DataFrame
+    """
     blocking_function = globals()[f"create_{blocking_method}Blocking"]
     return blocking_function(df1, df2)
 
 
 def matching(
     blocking_results,
-    similarity_threshold,
-    matching_method,
+    similarity_threshold=DEFAULT_ER_CONFIGURATION["threshold"],
+    matching_method=DEFAULT_ER_CONFIGURATION["matching_method"],
     outputfile=None,
 ):
+    """Matching non-dp
+
+    Args:
+        pairs (DataFrame): cross product of databases after blocking
+        threshold (float, optional): Defaults to DEFAULT_ER_CONFIGURATION["threshold"].
+        matching_method (str, optional): Defaults to DEFAULT_ER_CONFIGURATION["matching method"],
+        output (str, optional): Defaults to FILENAME_DP_MATCHED_ENTITIES.
+
+    Returns:
+        DataFrame
+    """
     result_df = blocking_results.copy()
     # Calculate similarity based on the specified matching method
     if matching_method == "Jaccard":
@@ -57,6 +82,10 @@ def matching(
     # Add a new column 'id' with the addition of 'paper title_df1' and 'paper title_df2'
     return result_df
 
+
+#==================================================================================
+#==============Functions basically never called externally=========================
+#==================================================================================
 
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row: pd.ArrowDtype):
@@ -188,9 +217,7 @@ def create_FirstOrLastLetterTitleBlocking(df1, df2):
     # Filter rows based on the starting letter of the paper title
     result_df = result_df[
         (result_df["paper title_df1"].str[0] == result_df["paper title_df2"].str[0])
-        | (
-            result_df["paper title_df1"].str[-1] == result_df["paper title_df2"].str[-1]
-        )
+        | (result_df["paper title_df1"].str[-1] == result_df["paper title_df2"].str[-1])
     ]
 
     # Optionally, reset the index
@@ -371,6 +398,7 @@ def run_all_blocking_matching_methods(
 
     for matching_method in matching_methods:
         for threshold in thresholds:
+            logging.info(f"begin baseline {matching_method}{threshold}")
             start_time = time()
             baseline_df = calculate_baseline(
                 df1, df2, {"method": matching_method, "threshold": threshold}
@@ -382,12 +410,13 @@ def run_all_blocking_matching_methods(
             # Iterate through each blocking method
             for blocking_method in blocking_methods:
                 # Dynamically call the blocking method function
+                logging.info("begin blocking method {blocking_method}")
                 start_time = time()
                 blocking_df = blocking(df1, df2, blocking_method)
                 end_time = time()
                 blocking_execution_time = end_time - start_time
                 logging.info("finished blocking method: " + blocking_method)
-
+                logging.info("begin matching method {matching_method}")
                 start_time = time()
                 matched_df = matching(blocking_df, threshold, matching_method)
                 end_time = time()
