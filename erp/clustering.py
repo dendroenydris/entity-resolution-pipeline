@@ -23,7 +23,7 @@ def clustering(
         combined_df = clustering_basic(result_df, df1, df2)
     save_result(combined_df[DATABSE_COLUMNS + ["index"]], filename)
     logging.info(
-        "%.2f entities are deleted" % (1 - len(combined_df) / (len(df1) + len(df2)))
+        "%.2f entities are deleted in clustering." % (1 - len(combined_df) / (len(df1) + len(df2)))
     )
     return combined_df
 

@@ -8,16 +8,19 @@ from erp.matching import *
 from erp.clustering import clustering_basic, clustering
 from erp.preparing import prepare_data
 from erp.utils import (
+    FILENAME_DP_CLUSTERING,
     FILENAME_DP_LOCAL_DIFFERENCE,
     FILENAME_LOCAL_CLUSTERING,
     FILENAME_LOCAL_MATCHED_ENTITIES,
     FILENAME_DP_MATCHED_ENTITIES,
     FILENAME_SCABILITY_TEST_RESULTS,
+    ORIGINAL_DATABASE_LOCALTIONS,
     RESULTS_FOLDER,
     test_and_create_folder,
     DEFAULT_ER_CONFIGURATION,
     DATABSE_COLUMNS,
     DATABASES_LOCATIONS,
+    logging_delimiter,
 )
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
@@ -30,8 +33,8 @@ def ER_pipeline(
     dfilename2: str,
     ERconfiguration=DEFAULT_ER_CONFIGURATION,
     baseline=False,
-    matched_output=FILENAME_LOCAL_MATCHED_ENTITIES,
-    cluster_output=FILENAME_LOCAL_CLUSTERING,
+    matched_output=None,
+    cluster_output=None,
     cluster=True,
     isdp=False,
 ):
@@ -50,6 +53,16 @@ def ER_pipeline(
     Returns:
         dict: execution information
     """
+    if matched_output is None:
+        matched_output = (
+            FILENAME_DP_MATCHED_ENTITIES if isdp else FILENAME_LOCAL_MATCHED_ENTITIES
+        )
+    if cluster_output is None:
+        cluster_output = FILENAME_DP_CLUSTERING if isdp else FILENAME_LOCAL_CLUSTERING
+    logging_delimiter()
+    er_type = "local" if (not isdp) else "data parallel"
+    logging.info(f"Begin {er_type} ER pipeline with configuration :\n{ERconfiguration}")
+    logging_delimiter(t="-")
     if isdp:
         ER_pipeline_dp(
             dfilename1,
@@ -70,6 +83,12 @@ def ER_pipeline(
             cluster=cluster,
             cluster_output=cluster_output,
         )
+    logging_delimiter(t="-")
+    logging.info(
+        f"Matched entities are stored in {RESULTS_FOLDER+matched_output}, \nclustering results are stored in {RESULTS_FOLDER+cluster_output}."
+    )
+    logging_delimiter()
+
 
 def ER_pipeline_local(
     dfilename1: str,
@@ -150,9 +169,8 @@ def ER_pipeline_local(
 
 
 def part1():
-    """pareparing and clean data from original database file
-    """
-    for data in DATABASES_LOCATIONS:
+    """pareparing and clean data from original database file"""
+    for data in ORIGINAL_DATABASE_LOCALTIONS:
         prepare_data(data)
 
 
@@ -174,8 +192,7 @@ def part2(thresholds=[0.5, 0.7]):
 
 
 def part3():
-    """compare local and dp ERpipeline and scability tests
-    """
+    """compare local and dp ERpipeline and scability tests"""
     scability_test()
     naive_DPvsLocal(
         FILENAME_DP_MATCHED_ENTITIES, FILENAME_LOCAL_MATCHED_ENTITIES

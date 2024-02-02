@@ -72,7 +72,6 @@ def ER_pipeline_dp(
     if cluster:
         clustering(df1, df2, matched_pairs, filename=cluster_output)
     end_time = time()
-    matched_pairs.show(2)
 
     if baseline:
         baseline_matches = create_baseline(df1, df2)
@@ -177,7 +176,6 @@ def clustering(df1, df2, matched_df, filename=FILENAME_DP_CLUSTERING):
     # Construct the DataFrame
     first_vertices_df = first_vertices_df.orderBy("component")
     save_result(first_vertices_df.toPandas(), filename)
-    logging.info("finish clustering")
 
 
 #==================================================================================
@@ -238,7 +236,6 @@ def create_FirstOrLastLetterTitleBlocking(df1, df2):
     df2 = df2.withColumn("bucket1", substring(col("paper title"), 1, 1))
     df2 = df2.withColumn("bucket2", substring(col("paper title"), -1, 1))
     pairs = create_cross_product_pyspark(df1, df2)
-    pairs.show(2)
     pairs = pairs.filter(
         (pairs.bucket1_df1 == pairs.bucket1_df2)
         | (pairs.bucket2_df1 == pairs.bucket2_df2)

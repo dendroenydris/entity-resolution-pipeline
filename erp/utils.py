@@ -10,11 +10,12 @@ DATABSE_COLUMNS = [
     "publication venue",
     "year of publication",
 ]
+ORIGINAL_DATABASE_LOCALTIONS = ["data/citation-acm-v8.txt", "data/dblp.txt"]
 DATABASES_LOCATIONS = ["data/citation-acm-v8_1995_2004.csv", "data/dblp_1995_2004.csv"]
 
 
 DEFAULT_ER_CONFIGURATION = {
-    "threshold": 0.65,
+    "threshold": 0.7,
     "matching_method": "Combined",
     "blocking_method": "FirstLetterTitle",
     "clustering_method": "basic",
@@ -29,7 +30,7 @@ FILENAME_LOCAL_CLUSTERING = "clustering_results_local.csv"
 FILENAME_DP_CLUSTERING = "clustering_results_dp.csv"
 FILENAME_ALL_METHODS_RESULTS = "method_results.csv"
 FILENAME_SCABILITY_TEST_RESULTS = "scability_results.csv"
-FILENAME_DP_LOCAL_DIFFERENCE="difference_results.csv"
+FILENAME_DP_LOCAL_DIFFERENCE = "difference_results.csv"
 
 
 def baseline_filename(matching_method, threshold):
@@ -108,3 +109,7 @@ def save_data(df, filename):
 
 def test():
     logging.info("hello world")
+
+
+def logging_delimiter(t="="):
+    logging.info(t * 90)

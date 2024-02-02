@@ -1,7 +1,7 @@
 import logging
 import pandas as pd
 
-from erp.utils import DATABSE_COLUMNS
+from erp.utils import DATABSE_COLUMNS, logging_delimiter
 
 def prepare_data(file_name:str):
     """extracting and cleaning data
@@ -10,6 +10,8 @@ def prepare_data(file_name:str):
         file_name (str): database txt file
     """
     databases = []
+    logging_delimiter()
+    logging.info(f"Preparing database: {file_name}")
     # paper ID, paper title, author names, publication venue, and year of publication
     with open(file_name) as f:
         # Split the file into a list of entries
@@ -25,8 +27,8 @@ def prepare_data(file_name:str):
         list_of_papers = [col.split("\n") for col in list_of_papers]
         # for i in range(len(list_of_papers)):
         for i in range(len(list_of_papers)):
-            if i % 10000 == 0:
-                logging.info("\b\r%.2f" % (i / len(list_of_papers) * 100), "%")
+            if i % 100000 == 0:
+                logging.info(f"Progress: {i / len(list_of_papers) * 100 :.2f}%")
 
             for col in list_of_papers[i]:
                 for j in range(len(identify_string)):
@@ -59,4 +61,6 @@ def prepare_data(file_name:str):
     database = database.drop_duplicates(subset=["paper ID"])
     # Write the filtered data to a CSV file
     database.to_csv(file_name[:-4] + "_1995_2004.csv", index=False)
+    logging.info(f"Cleaned data is stored in {file_name[:-4] + '_1995_2004.csv'}")
+    logging_delimiter()
 

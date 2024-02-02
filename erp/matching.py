@@ -9,7 +9,7 @@ from erp.utils import (
     jaccard_similarity,
     matched_entities_filename,
     save_result,
-    trigram_similarity,
+    trigram_similarity,logging_delimiter
 )
 
 # change here if you would like to asses spesific combnation:
@@ -395,7 +395,8 @@ def run_all_blocking_matching_methods(
 ):
     # Create an empty DataFrame to store the results
     results_list = []
-
+    
+    logging_delimiter()
     for matching_method in matching_methods:
         for threshold in thresholds:
             logging.info(f"begin baseline {matching_method}{threshold}")
@@ -410,13 +411,13 @@ def run_all_blocking_matching_methods(
             # Iterate through each blocking method
             for blocking_method in blocking_methods:
                 # Dynamically call the blocking method function
-                logging.info("begin blocking method {blocking_method}")
+                logging.info(f"begin blocking method {blocking_method}")
                 start_time = time()
                 blocking_df = blocking(df1, df2, blocking_method)
                 end_time = time()
                 blocking_execution_time = end_time - start_time
                 logging.info("finished blocking method: " + blocking_method)
-                logging.info("begin matching method {matching_method}")
+                logging.info(f"begin matching method {matching_method}")
                 start_time = time()
                 matched_df = matching(blocking_df, threshold, matching_method)
                 end_time = time()
@@ -450,4 +451,5 @@ def run_all_blocking_matching_methods(
             pd.DataFrame(results_list),
             output,
         )
+    logging_delimiter()
     return results_list
