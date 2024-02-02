@@ -1,13 +1,13 @@
-
 # Entity Resolution of Publication Data
+
 <div align="center">
 <a href="https://github.com/Catoblepases/DIA">Github link</a>
 </div>
 
 ## Table of Contents
 
-- [:books: Table of Contents](#books-table-of-contents)
-- [:test\_tube: Abstract](#test_tube-abstract)
+- [Table of Contents](#table-of-contents)
+- [Abstract](#abstract)
 - [Quick Overview and User Instruction](#quick-overview-and-user-instruction)
   - [Installation](#installation)
   - [Sample to Run Exercise](#sample-to-run-exercise)
@@ -26,7 +26,7 @@ In this project, we explore the development of data engineering and ML pipelines
 
 The initial phase involves acquiring the datasets and transforming them from TXT to CSV format. Subsequently, we proceed to create a local entity resolution pipeline designed to merge related entities.
 
-In the final stage, we were hands-on PySpark framework to reimplement our local pipline on top of a data-parallel computation framework. We also evaluate the scalability of the module through comprehensive testing.
+In the final stage, we were hands-on PySpark framework to reimplement our local pipeline on top of a data-parallel computation framework. We also evaluate the scalability of the module through comprehensive testing.
 
 ## Quick Overview and User Instruction
 
@@ -95,13 +95,13 @@ Below is the structure of the project:
 
 The erp folder contains scripts for the entity resolution pipeline with specific configurations:
 
-- **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
+- **Preparing Data**: Run `erp.preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**:
-  - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file", cluster_output="path-to-output-file", isdp=False)` (in `erp/main.py`)
-  - DP Version: Run `ER_pipline_dp(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file", isdp=True)` (in `erp/dperp.py`)
+  - Local Version : Run `erp.ER_pipeline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file", cluster_output="path-to-output-file", isdp=False)` (in `erp/main.py`)
+  - DP Version: Run `erp.ER_pipeline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file", isdp=True)` (it calls `ER_pipeline_dp` in `erp/dperp.py`)
 - **Configuration Options**:
-  - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, "FirstOrLastLetterTitle", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
-  - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
+  - `blocking_method`(String): Methods to reduce execution time `{“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, "FirstOrLastLetterTitle", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}`.
+  - `matching_method`(String): Algorithms for entity matching `{"Jaccard", "Combined"}`.
   - `clustering_method`(String): Altogirthm for clustering {"basic"}.
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
   - `output_filename`(String): path and file name of clustering results to be saved.
@@ -130,20 +130,19 @@ ERconfiguration:
 ```json
 {
   "matching_method": "Combined",
-  "blocking_method": "FirstLetterTitle",
+  "blocking_method": "FirstOrLastLetterTitle",
   "clustering_method": "basic",
-  "threshold": 0.5,
+  "threshold": 0.7,
   "output_filename": "clustering_results_local.csv"
 }
 ```
 
 - This folder also contains `dperp.py`, which serves as a reimplementation of the local entity recognition pipeline within the Apache Spark framework.
-  
+
 #### Results Folder
 
 - The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results_local.csv` within the `results` folder.
 - This folder contains all the results that are calculated and used in part 2 and part 3.
-
 
 #### Data Folder
 
@@ -167,8 +166,7 @@ In this section, we acquire datasets related to research publications. These
 datasets, available in text format, can be reached by
 [clicking here](https://www.aminer.org/citation).
 
-As a prerequisite for Entity Resolution and Model Training, we have
-generated a dataset containing the following attributes:
+As a prerequisite for Entity Resolution and Model Training, we have generated a dataset containing the following attributes:
 
 > - Paper ID, paper title, author names, publication venue, year of publication
 >
@@ -176,10 +174,7 @@ generated a dataset containing the following attributes:
 >
 > - Publications from VLDB and SIGMOD venues
 
-We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code
-iterates through the text file, extracting entries separated by double newlines
-and filtering based on the specified criteria. The resulting cleaned dataframes
-are exported to the local `data` folder.
+We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code iterates through the text file, extracting entries separated by double newlines and filtering based on the specified criteria. The resulting cleaned dataframes are exported to the local `data` folder.
 
 > The code for this section can be found in the file named `preparing.py` under
 > the function called `prepare_data`. Additionally, the resulting CSV files are
@@ -187,10 +182,9 @@ are exported to the local `data` folder.
 
 ## Entity Resolution Pipeline (Part 2)
 
-We aim to apply an entity resolution pipeline to the aforementioned datasets,
-following the scheme depicted below:
+We aim to apply an entity resolution pipeline to the aforementioned datasets, following the scheme depicted below:
 
-![Entity Resolution Pipeline](https://i.ibb.co/bNBH9Xc/Screenshot-2024-01-29-at-15-15-09.png)
+![Entity Resolution Pipeline](./results/erp_lecture.png)
 
 _Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis Course, TU Berlin._
 
@@ -199,8 +193,7 @@ _Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis C
 Continuing from the previous section, we employ various data-cleaning techniques.
 This step converts all characters to lowercase, ensures uniformity, and eliminates
 special characters, retaining only alphanumeric characters, spaces, and commas.
-This process standardizes and cleans the textual data for easier comparison
-and analysis.
+This process standardizes and cleans the textual data for easier comparisonmand analysis.
 
 > The code for this part is available in the file named `preparing.py` under
 > the function called `prepare_data`.
@@ -208,8 +201,7 @@ and analysis.
 ### Blocking
 
 Blocking is employed to reduce the number of comparisons by using effective
-partitioning strategies. In each 'bucket', we run the comparisons
-(see the section below). Our blocking is achieved through partitioning based on attributes:
+partitioning strategies. In each 'bucket', we run the comparisons (see the section below). Our blocking is achieved through partitioning based on attributes:
 
 1. **Year:** Articles that were published in the same year would be in the same bucket.
 2. **Two Year:** Articles that were published in the same year or in the adjacent year would be in the same bucket.
@@ -220,33 +212,23 @@ partitioning strategies. In each 'bucket', we run the comparisons
 7. **First or Last Letter:** Articles with the same first letter or the last letter of the title would be in the same bucket.
 8. **Last Name:** Articles with at least one author with a common last name would be in the same bucket.
 
-> The code for blocking is in the file named `matching.py`, with functions
-> named `blocking_x`, where x is the respective blocking method.
+> The code for blocking is in the file named `matching.py`, with functions named `blocking` and
+> `create_xBlocking`, where x is the respective blocking method. (see [selected functions](#quick-overview-and-user-instruction) for more detail to use them.)
 
 ### Matching
 
-Before discussing comparison methods, some terms related to our pipeline are
-introduced:
+Before discussing comparison methods, some terms related to our pipeline are introduced:
 
 - Baseline - We establish a baseline by comparing every pair between datasets, given a certain
   similarity function applied. This is our 'ground truth'.
 - Matched Entities - Our matched entities are generated by comparing each pair within a bucket, with the
   same similarity function applied to the respective baseline.
 
-**Jaccard -** The Jaccard similarity function is employed to measure the
-extent to which two sets share common elements. It does so by calculating
-the ratio of the shared elements to the total elements in both sets.
+**Jaccard -** The Jaccard similarity function is employed to measure the extent to which two sets share common elements. It does so by calculating the ratio of the shared elements to the total elements in both sets.
 Thresholds of 0.5 and 0.7 are used in the comparison of the 'paper title'
 attribute.
 
-**Combined -** This function calculates a combined similarity score
-between two papers based on their titles and author names. It utilizes
-Jaccard similarity for title comparison and, if available, trigram
-similarity for author name comparison. The final combined similarity
-score is a weighted sum of title and author name similarities, with
-70% weight is assigned to the title and 30% to the author names. If author
-names are missing for either paper, the function defaults to using
-only the Jaccard similarity of titles.
+**Combined -** This function calculates a combined similarity score between two papers based on their titles and author names. It utilizes Jaccard similarity for title comparison and, if available, trigram similarity for author name comparison. The final combined similarity score is a weighted sum of title and author name similarities, with 70% weight is assigned to the title and 30% to the author names. If author names are missing for either paper, the function defaults to using only the Jaccard similarity of titles.
 
 For the blocking methods mentioned above:
 
@@ -280,18 +262,16 @@ with similar titles and the difference between their numbers of authors are smal
 **Jaccard** and **Num of Authors and Common Author** partitioning identifies matching articles
 with similar titles and at least one common Author with the difference between their numbers of authors smaller than 3.
 
-Likewise, the **Combined** similarity will yield results for the
-different blocking methods, with the only difference being that it takes
-into account the number of authors in the comparison.
+Likewise, the **Combined** similarity will yield results for the different blocking methods, with the only difference being that it takes into account the number of authors in the comparison.
 
-> The code for this part is available in the file named `matching.py`, with
-> functions named `calculate_x`, where x is the respective similarity method.
+> The code for this part is available in the file named `matching.py`, with function `matching(blocking_results, similarity_threshold, matching_method, outputfile)`
+> similarity functions named `calculate_x_similarity`, where x is the respective similarity method.
 > CSV files for each similarity function and blocking method will be exported
 > to a local `results` folder.
 
-Testing different combinations yields the results shown below:
+By testing various combinations, we obtained results that can be seen [here](./results/method_results.csv), with a screenshot displayed below:
 
-![Matching Results](https://ibb.co/0Y5DW1r)
+![Matching Results](./results/comparasion_img.png)
 
 The best model is based on the combination of the **'First or Last Letter'** blocking and the **Combined** similarity function, for two main reasons:
 
@@ -306,8 +286,7 @@ In the final part of the pipeline, we chose to cluster the matched entities.
 We use the Numpy package to create a graph, organizing related items into clusters of similar entities in our clustering process (clustering_basic). Each item is represented as a point in the graph. Connections between similar items, as identified in our matching output, are drawn in the graph. We then employ depth-first search (DFS) to traverse these connections, updating values as we explore and contributing to the organization of clusters in the final results.
 
 > The code for clustering is available in the file named `clustering.py`,
-> and the resulting CSV will be exported to a local `results` folder under
-> the name `clustering_results_local.csv`.
+> and The resulting CSV file will be exported to a local directory called “results” with the chosen name (by default: “clustering_results_local.csv”).
 
 ## Data Parallel Entity Resolution Pipeline (Part 3)
 
@@ -346,7 +325,7 @@ To investigate the impact on our model, we introduced various alterations to the
 
 attached here are our scalability results:
 
-![Scability Results](https://ibb.co/LvL9H2M)
+![Scability Results](./results/scability.png)
 
-x-asis: Replication factor (first four letter indicates which factor in the original database we choose to modify, and the last letter indicates the value of n), 
+x-asis: Replication factor (first four letter indicates which factor in the original database we choose to modify, and the last letter indicates the value of n),
 y-axis: Runtime in minutes

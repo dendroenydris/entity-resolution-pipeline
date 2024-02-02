@@ -3,7 +3,7 @@ import random
 from time import time
 import numpy as np
 import pandas as pd
-from erp.dperp import ER_pipline_dp
+from erp.dperp import ER_pipeline_dp
 from erp.matching import *
 from erp.clustering import clustering_basic, clustering
 from erp.preparing import prepare_data
@@ -25,7 +25,7 @@ import string
 import matplotlib.pyplot as plt
 
 
-def ER_pipline(
+def ER_pipeline(
     dfilename1: str,
     dfilename2: str,
     ERconfiguration=DEFAULT_ER_CONFIGURATION,
@@ -35,23 +35,23 @@ def ER_pipline(
     cluster=True,
     isdp=False,
 ):
-    """ER pipline
+    """ER pipeline
 
     Args:
         filename1 (str): database input1 filename
         filename2 (str): database input2 filename
-        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        ERconfiguration (_type_, optional): ER pipeline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
         baseline (bool, optional): if baseline is created. Defaults to False.
         cluster (bool, optional): if we do clustering. Defaults to True.
         matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
         cluster_output (str, optional): clustering output filename. Defaults to FILENAME_DP_CLUSTERING.
-        isdp (bool, optional): whether we use dp pipline. Defaults to False.
+        isdp (bool, optional): whether we use dp pipeline. Defaults to False.
 
     Returns:
         dict: execution information
     """
     if isdp:
-        ER_pipline_dp(
+        ER_pipeline_dp(
             dfilename1,
             dfilename2,
             ERconfiguration,
@@ -61,7 +61,7 @@ def ER_pipline(
             cluster_output=cluster_output,
         )
     else:
-        ER_pipline_local(
+        ER_pipeline_local(
             dfilename1,
             dfilename2,
             ERconfiguration,
@@ -71,7 +71,7 @@ def ER_pipline(
             cluster_output=cluster_output,
         )
 
-def ER_pipline_local(
+def ER_pipeline_local(
     dfilename1: str,
     dfilename2: str,
     ERconfiguration=DEFAULT_ER_CONFIGURATION,
@@ -80,12 +80,12 @@ def ER_pipline_local(
     cluster_output=FILENAME_LOCAL_CLUSTERING,
     cluster=True,
 ):
-    """ER pipline locally
+    """ER pipeline locally
 
     Args:
         filename1 (str): database input1 filename
         filename2 (str): database input2 filename
-        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        ERconfiguration (_type_, optional): ER pipeline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
         baseline (bool, optional): if baseline is created. Defaults to False.
         cluster (bool, optional): if we do clustering. Defaults to True.
         matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
@@ -174,7 +174,7 @@ def part2(thresholds=[0.5, 0.7]):
 
 
 def part3():
-    """compare local and dp ERpipline and scability tests
+    """compare local and dp ERpipeline and scability tests
     """
     scability_test()
     naive_DPvsLocal(
@@ -295,9 +295,9 @@ def scability_test(
     results = []
 
     for d1, d2 in D:
-        result = ER_pipline(d1, d2, ERconfiguration, baseline=False, cluster=False)
+        result = ER_pipeline(d1, d2, ERconfiguration, baseline=False, cluster=False)
         result["d1-d2"] = (d1[-9:-4], d2[-9:-4])
-        result2 = ER_pipline_dp(d1, d2, DEFAULT_ER_CONFIGURATION, cluster=False)
+        result2 = ER_pipeline_dp(d1, d2, DEFAULT_ER_CONFIGURATION, cluster=False)
         results.append({**result2, **result})
     results = pd.DataFrame(results)
     save_result(results, output)
@@ -332,14 +332,14 @@ def compareTwoDatabase(
 
 
 def naive_DPvsLocal(fdp, flocal):
-    ER_pipline_dp(
+    ER_pipeline_dp(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
         DEFAULT_ER_CONFIGURATION,
         matched_output=fdp,
         cluster=False,
     )
-    ER_pipline(
+    ER_pipeline(
         DATABASES_LOCATIONS[0],
         DATABASES_LOCATIONS[1],
         ERconfiguration=DEFAULT_ER_CONFIGURATION,

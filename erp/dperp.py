@@ -30,7 +30,7 @@ from erp.utils import (
 )
 
 
-def ER_pipline_dp(
+def ER_pipeline_dp(
     filename1: str,
     filename2: str,
     ERconfiguration=DEFAULT_ER_CONFIGURATION,
@@ -39,12 +39,12 @@ def ER_pipline_dp(
     matched_output=FILENAME_DP_MATCHED_ENTITIES,
     cluster_output=FILENAME_DP_CLUSTERING,
 ):
-    """ER pipline in the Data Parallel Framework
+    """ER pipeline in the Data Parallel Framework
 
     Args:
         filename1 (str): database input1 filename
         filename2 (str): database input2 filename
-        ERconfiguration (_type_, optional): ER pipline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
+        ERconfiguration (_type_, optional): ER pipeline Configuration. Defaults to DEFAULT_ER_CONFIGURATION.
         baseline (bool, optional): if baseline is created. Defaults to False.
         cluster (bool, optional): if we do clustering. Defaults to True.
         matched_output (str, optional): matched output filename. Defaults to FILENAME_DP_MATCHED_ENTITIES.
