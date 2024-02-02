@@ -1,9 +1,10 @@
+
 # Entity Resolution of Publication Data
 <div align="center">
 <a href="https://github.com/Catoblepases/DIA">Github link</a>
 </div>
 
-## :books: Table of Contents
+## Table of Contents
 
 - [:books: Table of Contents](#books-table-of-contents)
 - [:test\_tube: Abstract](#test_tube-abstract)
@@ -19,7 +20,7 @@
   - [Clustering](#clustering)
 - [Data Parallel Entity Resolution Pipeline (Part 3)](#data-parallel-entity-resolution-pipeline-part-3)
 
-## :test_tube: Abstract
+## Abstract
 
 In this project, we explore the development of data engineering and ML pipelines, with a specific emphasis on constructing an Entity Resolution (ER) pipeline for deduplicating research publication datasets.
 
@@ -97,7 +98,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
 - **Preparing Data**: Run `preparing.prepare_data("path_to_txt_file")` for both text files. This will clean and extract the relevant data (1995-2004 citations by "SIGMOD" or "VLDB" venues). The resulting csv files will show in `data` folder.
 - **Running Pipeline**:
   - Local Version : Run `ER_pipline(databasefilename1, databasefilename2, ERconfiguration, baseline=False, cluster=True,matched_output="path-to-output-file", cluster_output="path-to-output-file", isdp=False)` (in `erp/main.py`)
-  - DP Version: Run `ER_pipline(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file", isdp=True)` (`ER_pipline_dp` in `erp.dperp.py`)
+  - DP Version: Run `ER_pipline_dp(databasefilename1, databasefilename2,  ERconfiguration, baseline=False, cluster=True, matched_output=F"path-to-output-file", cluster_output="path-to-output-file", isdp=True)` (in `erp/dperp.py`)
 - **Configuration Options**:
   - `blocking_method`(String): Methods to reduce execution time {“Year”, “TwoYear”, “numAuthors”, “FirstLetterTitle”, “LastLetterTitle”, "FirstOrLastLetterTitle", “authorLastName”, “commonAuthors”, “commonAndNumAuthors”}.
   - `matching_method`(String): Algorithms for entity matching {"Jaccard", "Combined"}.
@@ -105,7 +106,7 @@ The erp folder contains scripts for the entity resolution pipeline with specific
   - `threshold`(float): A value between 0.0-1.0 for the matching similarity threshold.
   - `output_filename`(String): path and file name of clustering results to be saved.
 
-**Selected Functions in local pipline**
+**Selected Functions in local pipeline**
 
 - Blocking: `erp.blocking(df1,df2,blocking_method)`
   - Parameters:
@@ -141,7 +142,7 @@ ERconfiguration:
 #### Results Folder
 
 - The steps above will produce the results. They are saved according to your `output_filename` configuration. In our ERconfiguration shown above, it will be saved as `clustering_results_local.csv` within the `results` folder.
-- This folder contains all the results which are calculated and used in part2 and part3.
+- This folder contains all the results that are calculated and used in part 2 and part 3.
 
 
 #### Data Folder
@@ -195,7 +196,7 @@ _Image Source: Prof. Matthias Boehm, Data Integration and Large-Scale Analysis C
 
 ### Prepare Data
 
-Continuing from the previous section, we employ various data cleaning techniques.
+Continuing from the previous section, we employ various data-cleaning techniques.
 This step converts all characters to lowercase, ensures uniformity, and eliminates
 special characters, retaining only alphanumeric characters, spaces, and commas.
 This process standardizes and cleans the textual data for easier comparison
@@ -208,16 +209,16 @@ and analysis.
 
 Blocking is employed to reduce the number of comparisons by using effective
 partitioning strategies. In each 'bucket', we run the comparisons
-(see section below). Our blocking is achieved through partitioning based on attributes:
+(see the section below). Our blocking is achieved through partitioning based on attributes:
 
-1. **Year :** Articles that were published in the same year would be in the same bucket.
-2. **Two Year :** Articles that were published in the same year or in the adjacent year would be in the same bucket.
-3. **Num Authors :** Articles with a similar number of authors (up to 1 difference) would be in the same bucket.
-4. **Common Author :** Articles with at leat one common authors would be in the same bucket.
-5. **Num Authors and Common Author :** Articles with at leat one common authors and a similar number of authors (up to 2 difference) would be in the same bucket.
-6. **First Letter :** Articles with the same first letter of title would be in the same bucket.
-7. **First or Last Letter :** Articles with the same first letter or the last letter of title would be in the same bucket.
-8. **Last Name :** Articles with at least an author with the common last name would be in the same bucket.
+1. **Year:** Articles that were published in the same year would be in the same bucket.
+2. **Two Year:** Articles that were published in the same year or in the adjacent year would be in the same bucket.
+3. **Num Authors:** Articles with a similar number of authors (up to 1 difference) would be in the same bucket.
+4. **Common Author:** Articles with at least one common author would be in the same bucket.
+5. **Num Authors and Common Author:** Articles with at least one common author and a similar number of authors (up to 2 differences) would be in the same bucket.
+6. **First Letter:** Articles with the same first letter of the title would be in the same bucket.
+7. **First or Last Letter:** Articles with the same first letter or the last letter of the title would be in the same bucket.
+8. **Last Name:** Articles with at least one author with a common last name would be in the same bucket.
 
 > The code for blocking is in the file named `matching.py`, with functions
 > named `blocking_x`, where x is the respective blocking method.
@@ -243,7 +244,7 @@ between two papers based on their titles and author names. It utilizes
 Jaccard similarity for title comparison and, if available, trigram
 similarity for author name comparison. The final combined similarity
 score is a weighted sum of title and author name similarities, with
-70% weight assigned to the title and 30% to the author names. If author
+70% weight is assigned to the title and 30% to the author names. If author
 names are missing for either paper, the function defaults to using
 only the Jaccard similarity of titles.
 
@@ -268,19 +269,19 @@ with similar titles and the same last letter of the paper title.
 with similar titles and the same first or last letter of the paper title.
 
 **Jaccard** and **Authors last name** partitioning identifies matching articles
-with similar titles and the author last name.
+with similar titles and the author's last name.
 
 **Jaccard** and **Common Authors** partitioning identifies matching articles
 with similar titles and the same authors.
 
 **Jaccard** and **Num of Authors** partitioning identifies matching articles
-with similar titles and the difference between their numbers of authors are smaller than 1.
+with similar titles and the difference between their numbers of authors are smaller than 2.
 
 **Jaccard** and **Num of Authors and Common Author** partitioning identifies matching articles
-with similar titles and at leat one common Author with the difference between their numbers of authors smaller than 1.
+with similar titles and at least one common Author with the difference between their numbers of authors smaller than 3.
 
 Likewise, the **Combined** similarity will yield results for the
-different blocking methods, with only difference being that it takes
+different blocking methods, with the only difference being that it takes
 into account the number of authors in the comparison.
 
 > The code for this part is available in the file named `matching.py`, with
@@ -290,8 +291,7 @@ into account the number of authors in the comparison.
 
 Testing different combinations yields the results shown below:
 
-[Matching Results csv File](./results/method_results.csv)
-![Matching Results](./results/comparasion_img.png)
+![Matching Results](https://ibb.co/0Y5DW1r)
 
 The best model is based on the combination of the **'First or Last Letter'** blocking and the **Combined** similarity function, for two main reasons:
 
@@ -315,9 +315,9 @@ At the beginning of this stage, we create an Entity Resolution pipeline using Ap
 
 In this Data Parallel framework, we mainly deploy one matching method (Combined Similarity), two blocking methods (FirstLetterTitle and FirstLetter Matching) and one clustering method (basic clustering with graph).
 
-> you can see the code for this part at ` dprep.py`
+> You can see the code for this part at ` dprep.py`
 
-After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). The Two ER pipline is configured as:
+After using Spark's data frame, we wanted to compare it with our local pipeline (the one we constructed in part 2). The Two ER pipeline is configured as:
 
 ```json
 DEFAULT_ER_CONFIGURATION = {
@@ -329,14 +329,14 @@ DEFAULT_ER_CONFIGURATION = {
 }
 ```
 
-The results are quite the same for all the method we implemented.
+The results are quite the same for all the methods we implemented.
 
 |                                      | FirstLetterTitle | FirstOrLastLetterTitle |
 | ------------------------------------ | ---------------- | ---------------------- |
 | Number of differences (dp and local) | 0                | 0                      |
 | Number of matched pairs              | 1750             | 1778                   |
 
-> you can see the code for this part under the functoin `naive_DPvsLocal` in `main.py`
+> You can see the code for this part under the function `naive_DPvsLocal` in `main.py`
 
 Given that we have established the reliability of Spark’s pipeline, our objective is to evaluate the scalability performance of our pipelines. As a result, we have generated larger datasets with several modifications derived from our initial data.
 
@@ -344,9 +344,9 @@ To investigate the impact on our model, we introduced various alterations to the
 
 > see the function `create_databaseWithChanges`
 
-attached here are our scailbilty results:
+attached here are our scalability results:
 
-![Scability Results](./results/scability.png)
+![Scability Results](https://ibb.co/LvL9H2M)
 
-x-asis: Replication factor (first four letter indicates which factor in the original database we choose to cmodify, and the last letter indicates the value of n), 
+x-asis: Replication factor (first four letter indicates which factor in the original database we choose to modify, and the last letter indicates the value of n), 
 y-axis: Runtime in minutes
