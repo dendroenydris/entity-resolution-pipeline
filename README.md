@@ -1,5 +1,5 @@
 # Entity Resolution of Publication Data
-<center>Yuxin XUE, Ofir Topchy, NevoLevi</center>
+<center>Yuxin XUE, Ofir Topchy, Nevo Levi</center>
 
 <div align="center">
 <a href="https://github.com/Catoblepases/DIA">Github link</a>
