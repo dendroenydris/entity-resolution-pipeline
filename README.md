@@ -81,7 +81,7 @@ Make sure to save these in the local `data` folder.
 Below is the structure of the project:
 
 - 📁 **project**
-
+  
   - 📁 **erp**: Contains Python scripts for the entity resolution pipeline.
   - 📁 **data**: Stores datasets and instruction files.
   - 📁 **results**: Contains results of the entity resolution pipeline process.
@@ -169,9 +169,9 @@ datasets, available in text format, can be reached by
 As a prerequisite for Entity Resolution and Model Training, we have generated a dataset containing the following attributes:
 
 > - Paper ID, paper title, author names, publication venue, year of publication
->
+> 
 > - Publications published between 1995 and 2004
->
+> 
 > - Publications from VLDB and SIGMOD venues
 
 We utilized Pandas DataFrame, to convert the datasets from TXT to CSV. Our code iterates through the text file, extracting entries separated by double newlines and filtering based on the specified criteria. The resulting cleaned dataframes are exported to the local `data` folder.

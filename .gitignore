@@ -39,3 +39,4 @@ First Vertices.csv
 results/*baseline*.csv
 results/*match*.csv
 results/*test*
+*.zip
