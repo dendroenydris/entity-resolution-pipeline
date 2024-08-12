@@ -11,6 +11,10 @@ from erp.utils import (
     save_result,
     trigram_similarity,logging_delimiter
 )
+import xgboost as xgb
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+
 
 # change here if you would like to asses spesific combnation:
 
@@ -26,7 +30,7 @@ BLOCKING_METHODS = {
     "commonAndNumAuthors",
 }
 
-MATCHING_METHODS = {"Jaccard", "Combined"}
+MATCHING_METHODS = {"Jaccard", "Combined", "XGBoost"}
 
 
 def blocking(df1, df2, blocking_method=DEFAULT_ER_CONFIGURATION["blocking_method"]):
@@ -86,6 +90,44 @@ def matching(
 #==================================================================================
 #==============Functions basically never called externally=========================
 #==================================================================================
+
+def xgboost_matching(df: pd.DataFrame, threshold=0.5):
+    """
+    Perform XGBoost-based matching using simple similarity features.
+    Assumes df is the cartesian/blocking result.
+    """
+    df = df.copy()
+
+    # Feature engineering: similarity scores
+    df["jaccard_title"] = df.apply(lambda row: jaccard_similarity(
+        set(str(row["paper title_df1"]).split()), set(str(row["paper title_df2"]).split())
+    ), axis=1)
+
+    df["trigram_author"] = df.apply(lambda row: trigram_similarity(
+        str(row.get("author names_df1", "")), str(row.get("author names_df2", ""))
+    ), axis=1)
+
+    # Build feature matrix
+    X = df[["jaccard_title", "trigram_author"]].fillna(0)
+
+    # Heuristic pseudo-labeling
+    df["pseudo_label"] = (X["jaccard_title"] > 0.85).astype(int)
+
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, df["pseudo_label"], test_size=0.2, random_state=42
+    )
+
+    model = xgb.XGBClassifier(use_label_encoder=False, eval_metric="logloss")
+    model.fit(X_train, y_train)
+
+    df["xgb_score"] = model.predict_proba(X)[:, 1]
+
+    # Filter by threshold
+    matched_df = df[df["xgb_score"] >= threshold].copy()
+    matched_df["similarity_score"] = matched_df["xgb_score"]
+
+    return matched_df
+
 
 # Define a function to calculate Jaccard similarity
 def calculate_jaccard_similarity(row: pd.ArrowDtype):

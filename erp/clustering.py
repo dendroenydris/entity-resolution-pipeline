@@ -2,8 +2,11 @@ import logging
 import pandas as pd
 import numpy as np
 from erp.utils import DATABSE_COLUMNS, FILENAME_LOCAL_CLUSTERING, save_result
+from sklearn.cluster import DBSCAN
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import pairwise_distances
 
-CLUSTERING_METHODS = ["basic"]
+CLUSTERING_METHODS = ["basic", "dbscan"]
 
 def clustering(
     result_df, df1, df2, clustering_method="basic", filename=FILENAME_LOCAL_CLUSTERING
@@ -19,8 +22,14 @@ def clustering(
     # Run the clustering function and save the results to a CSV file
     df1["index"] = np.arange(len(df1))
     df2["index"] = np.arange(len(df2)) + len(df1)
+
     if clustering_method == "basic":
         combined_df = clustering_basic(result_df, df1, df2)
+    elif clustering_method == "dbscan":
+        combined_df = clustering_dbscan(result_df, df1, df2)
+    else:
+        raise ValueError(f"Unsupported clustering method: {clustering_method}")
+
     save_result(combined_df[DATABSE_COLUMNS + ["index"]], filename)
     logging.info(
         "%.2f entities are deleted in clustering." % (1 - len(combined_df) / (len(df1) + len(df2)))
@@ -30,6 +39,40 @@ def clustering(
 #==================================================================================
 #==============Functions basically never called externally=========================
 #==================================================================================
+
+def clustering_dbscan(result_df, df1, df2, eps=0.5, min_samples=2):
+    """
+    DBSCAN clustering based on pairwise matches.
+    Args:
+        result_df (DataFrame): matched entity pairs
+        df1 (DataFrame): first database
+        df2 (DataFrame): second database
+        eps (float): DBSCAN epsilon parameter
+        min_samples (int): DBSCAN min_samples parameter
+    Returns:
+        combined_df (DataFrame): clustered entities
+    """
+    # Combine all rows
+    all_df = pd.concat([df1, df2], ignore_index=True)
+    all_df["index"] = all_df.index
+
+    # Construct adjacency matrix from match results
+    n = len(all_df)
+    adj_matrix = np.zeros((n, n))
+    for _, row in result_df.iterrows():
+        idx1, idx2 = row["index_df1"], row["index_df2"] + len(df1)
+        adj_matrix[idx1][idx2] = 1
+        adj_matrix[idx2][idx1] = 1
+
+    # Use pairwise distances as DBSCAN input
+    distance_matrix = 1 - adj_matrix  # Invert to resemble distance (1 = no connection)
+    clustering_labels = DBSCAN(eps=eps, min_samples=min_samples, metric="precomputed").fit_predict(distance_matrix)
+
+    # Select non-noise clusters (label != -1)
+    clustered_indices = np.where(clustering_labels != -1)[0]
+    combined_df = all_df.loc[clustered_indices]
+    return combined_df
+
 
 def dfs(graph, node, value, visited, L_propa):
     # Depth-first search function to traverse the graph and update values
